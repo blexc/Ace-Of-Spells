@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
         //get mouse position
         Vector3 mouse = Input.mousePosition;
         // get screen point
-        Vector3 screenPoint = mainCamera.WorldToScreenPoint(transform.localPosition);
+        Vector3 screenPoint = mainCamera.WorldToScreenPoint(transform.position);
 
         Vector2 offset = new Vector2(mouse.x - screenPoint.x, mouse.y - screenPoint.y);
         //get angle
@@ -37,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
     public void CastSpell()
     {
         //spawn spell at my rotation
-        Instantiate(spellPrefab[0], new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), transform.rotation);
+        Instantiate(spellPrefab[0], new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), transform.rotation);
 
     }
 }
