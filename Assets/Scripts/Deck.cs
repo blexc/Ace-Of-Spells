@@ -42,7 +42,6 @@ public class Deck : MonoBehaviour
         handSelectionIndex %= HAND_SIZE_MAX;
 
         var selectedCard = hand[handSelectionIndex];
-
         print("Selected: " + selectedCard.name + " at index " + handSelectionIndex + ". Cost is: " + selectedCard.manaCost);
     }
 
@@ -63,6 +62,11 @@ public class Deck : MonoBehaviour
 
         msg += debugCounter + " card(s)";
         print(msg);
+    }
+
+    public void AddNewCard(Card card)
+    {
+        drawPile.Add(card);
     }
 
     // scan discard, hand, and draw lists. if you find a matching card name,
