@@ -17,7 +17,7 @@ public class Deck : MonoBehaviour
     public bool ActivateSelectedCard(ref int playerMana)
     {
         var selectedCard = hand[handSelectionIndex];
-        print("Activating selected card: " + selectedCard.name + " cost: " + selectedCard.manaCost);
+        //print("Activating selected card: " + selectedCard.name + " cost: " + selectedCard.manaCost);
 
         // player has enough mana to cast...
         if (selectedCard.manaCost <= playerMana)
@@ -39,29 +39,22 @@ public class Deck : MonoBehaviour
     public void SwapSelectedCard()
     {
         handSelectionIndex++;
-        handSelectionIndex %= HAND_SIZE_MAX;
+        handSelectionIndex %= hand.Count;
 
-        var selectedCard = hand[handSelectionIndex];
-        print("Selected: " + selectedCard.name + " at index " + handSelectionIndex + ". Cost is: " + selectedCard.manaCost);
+        //var selectedCard = hand[handSelectionIndex];
+        //print("Selected: " + selectedCard.name + " at index " + handSelectionIndex + ". Cost is: " + selectedCard.manaCost);
     }
 
     // draws a specified amount of cards (default is 1)
     public void DrawCard(int amount = 1)
     {
-        string msg = "Drew ";
-        int debugCounter = 0;
-
         while (amount > 0 && hand.Count < HAND_SIZE_MAX)
         {
             if (drawPile.Count == 0) RefillHand();
             hand.Add(drawPile[0]);
             drawPile.RemoveAt(0);
             --amount;
-            ++debugCounter;
         }
-
-        msg += debugCounter + " card(s)";
-        print(msg);
     }
 
     public void AddNewCard(Card card)
@@ -107,7 +100,7 @@ public class Deck : MonoBehaviour
     // takes cards from discard and adds it to draw
     void RefillHand()
     {
-        print("Moving all discarded cards to the draw pile");
+        //print("Moving all discarded cards to the draw pile");
 
         // shuffle discard list
         ShuffleList(ref discardPile);
@@ -136,13 +129,13 @@ public class Deck : MonoBehaviour
     void DebugPrint()
     {
         debugCall++;
-        print(debugCall + ": Discard, hand, draw sizes: " + discardPile.Count + ", " + hand.Count + ", " + drawPile.Count);
+        //print(debugCall + ": Discard, hand, draw sizes: " + discardPile.Count + ", " + hand.Count + ", " + drawPile.Count);
     }
 
     private void Start()
     {
         ShuffleList(ref drawPile);
-        DrawCard(3);
+        DrawCard(HAND_SIZE_MAX);
     }
 
     void Update()
@@ -156,7 +149,7 @@ public class Deck : MonoBehaviour
             else
                 msg += "... not enough mana";
 
-            print(msg);
+            //print(msg);
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -171,8 +164,7 @@ public class Deck : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (DestroyCard("Fireball")) print("Destroyed fireball");
-            else print("Couldn't find fireball");
+            DestroyCard("Fireball");
         }
 
         if (Input.GetKeyDown(KeyCode.T))
