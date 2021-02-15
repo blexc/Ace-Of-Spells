@@ -10,7 +10,6 @@ public class GameplayUI : MonoBehaviour
     public int HPtemp = 100; //AHL - Temporary HP value until we have the actual player stats implemented
     public Text Hp; //Text that will hold and adjust the player health for the player to see during gameplay
     public Button Hurt; //AHL - Temporary button that will damage the health of the player to show the change.
-    
 
     //AHL - Temporary function to show how the damage works
     public void Damage()

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -468,6 +468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395033406}
   - component: {fileID: 395033405}
+  - component: {fileID: 395033407}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -505,6 +506,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &395033407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395033404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6707b6afbfc7044a37580a66140445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 0}
+  elementText: {fileID: 0}
+  desctiptionText: {fileID: 0}
 --- !u!1 &473177903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1318,6 @@ GameObject:
   - component: {fileID: 1648875497}
   - component: {fileID: 1648875499}
   - component: {fileID: 1648875498}
-  - component: {fileID: 1648875500}
   m_Layer: 5
   m_Name: Card 1
   m_TagString: Untagged
@@ -1370,23 +1385,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648875496}
   m_CullTransparentMesh: 0
---- !u!114 &1648875500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648875496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6fdfdb2f6ecf2f438de3fd2e7539074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  card: {fileID: 0}
-  nameText: {fileID: 0}
-  elementText: {fileID: 0}
-  desctiptionText: {fileID: 0}
-  manaCostText: {fileID: 0}
 --- !u!1 &1713075089
 GameObject:
   m_ObjectHideFlags: 0
