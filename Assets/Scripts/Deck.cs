@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
+    public List<Card> Hand { get { return hand; } }
+
     public List<Card> drawPile = new List<Card>();
     private List<Card> discardPile = new List<Card>();
     private List<Card> hand = new List<Card>();
@@ -11,13 +13,16 @@ public class Deck : MonoBehaviour
     int handSelectionIndex = 0;
     const int HAND_SIZE_MAX = 3;
 
-    int debugCall = 0;
+    public bool showDebugPrints = false;
     int debugMana = 20;
+    int debugCall = 0; 
 
+    // uses the currently selected card (calls selected card's spell function)
     public bool ActivateSelectedCard(ref int playerMana)
     {
         var selectedCard = hand[handSelectionIndex];
-        print("Activating selected card: " + selectedCard.name + " cost: " + selectedCard.manaCost);
+        if (showDebugPrints)
+            print("Activating selected card: " + selectedCard.name + " cost: " + selectedCard.manaCost);
 
         // player has enough mana to cast...
         if (selectedCard.manaCost <= playerMana)
@@ -36,33 +41,40 @@ public class Deck : MonoBehaviour
         return false;
     }
 
+    // changes the currently selected card to the next card in hand
     public void SwapSelectedCard()
     {
         handSelectionIndex++;
-        handSelectionIndex %= HAND_SIZE_MAX;
+        handSelectionIndex %= hand.Count;
 
-        var selectedCard = hand[handSelectionIndex];
-
-        print("Selected: " + selectedCard.name + " at index " + handSelectionIndex + ". Cost is: " + selectedCard.manaCost);
+        if (showDebugPrints)
+        {
+            var selectedCard = hand[handSelectionIndex];
+            print("Selected: " + selectedCard.name + " at index " + handSelectionIndex + ". Cost is: " + selectedCard.manaCost);
+        }
     }
 
     // draws a specified amount of cards (default is 1)
     public void DrawCard(int amount = 1)
     {
-        string msg = "Drew ";
-        int debugCounter = 0;
-
+        int cardsDrew = 0;
         while (amount > 0 && hand.Count < HAND_SIZE_MAX)
         {
             if (drawPile.Count == 0) RefillHand();
             hand.Add(drawPile[0]);
             drawPile.RemoveAt(0);
             --amount;
-            ++debugCounter;
+            cardsDrew++;
         }
 
-        msg += debugCounter + " card(s)";
-        print(msg);
+        if (showDebugPrints) print("Cards drew: " + cardsDrew);
+    }
+
+    // adds a new card to the draw pile
+    // used for when player finds a card in-game 
+    public void AddNewCard(Card card)
+    {
+        drawPile.Add(card);
     }
 
     // scan discard, hand, and draw lists. if you find a matching card name,
@@ -103,7 +115,8 @@ public class Deck : MonoBehaviour
     // takes cards from discard and adds it to draw
     void RefillHand()
     {
-        print("Moving all discarded cards to the draw pile");
+        if (showDebugPrints)
+            print("Moving all discarded cards to the draw pile");
 
         // shuffle discard list
         ShuffleList(ref discardPile);
@@ -131,14 +144,17 @@ public class Deck : MonoBehaviour
 
     void DebugPrint()
     {
-        debugCall++;
-        print(debugCall + ": Discard, hand, draw sizes: " + discardPile.Count + ", " + hand.Count + ", " + drawPile.Count);
+        if (showDebugPrints)
+        {
+            debugCall++;
+            print(debugCall + ": Discard, hand, draw sizes: " + discardPile.Count + ", " + hand.Count + ", " + drawPile.Count);
+        }
     }
 
     private void Start()
     {
         ShuffleList(ref drawPile);
-        DrawCard(3);
+        DrawCard(HAND_SIZE_MAX);
     }
 
     void Update()
@@ -152,7 +168,8 @@ public class Deck : MonoBehaviour
             else
                 msg += "... not enough mana";
 
-            print(msg);
+            if (showDebugPrints)
+                print(msg);
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -167,8 +184,13 @@ public class Deck : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (DestroyCard("Fireball")) print("Destroyed fireball");
-            else print("Couldn't find fireball");
+            bool didDestroy = DestroyCard("Fireball");
+
+            if (showDebugPrints)
+            {
+                if (didDestroy) print("Destroyed a Fireball");
+                else print("Did not find Fireball object to destroy");
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.T))
