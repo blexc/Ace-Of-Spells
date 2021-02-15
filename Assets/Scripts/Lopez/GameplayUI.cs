@@ -22,11 +22,10 @@ public class GameplayUI : MonoBehaviour
     /// </summary>
     void HealthUpdate(int health)
     {
-        HPtemp = Mathf.Clamp(health, 0, 100);
-        Hp.text = "" + health;
-        //AHL - Int to %
-        int HPBaradjustment = (health / 100) * 360;
-        hpBarFull.fillAmount = HPBaradjustment;
+        HPtemp = Mathf.Clamp(health, 0, 100); //Sets health to be within a range of values
+        Hp.text = "" + health; //Changes the text
+        float HPBaradjustment = (float)health / 100f; //Gets a percantage of health remaining to adjust the HP UI
+        hpBarFull.fillAmount = HPBaradjustment; //Adjusts the HP Image
     }
 
     // Update is called once per frame
