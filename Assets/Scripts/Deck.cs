@@ -58,6 +58,11 @@ public class Deck : MonoBehaviour
         }
     }
 
+    public void AddNewCard(Card card)
+    {
+        drawPile.Add(card);
+    }
+
     // scan discard, hand, and draw lists. if you find a matching card name,
     // destroy that card and return true
     public bool DestroyCard(string name)
