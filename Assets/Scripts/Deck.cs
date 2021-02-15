@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
+    public List<Card> Hand { get { return hand; } }
+
     public List<Card> drawPile = new List<Card>();
     private List<Card> discardPile = new List<Card>();
     private List<Card> hand = new List<Card>();
@@ -11,7 +13,6 @@ public class Deck : MonoBehaviour
     int handSelectionIndex = 0;
     const int HAND_SIZE_MAX = 3;
 
-    int debugCall = 0;
     int debugMana = 20;
 
     public bool ActivateSelectedCard(ref int playerMana)
@@ -123,7 +124,7 @@ public class Deck : MonoBehaviour
 
     void DebugPrint()
     {
-        debugCall++;
+        //debugCall++;
         //print(debugCall + ": Discard, hand, draw sizes: " + discardPile.Count + ", " + hand.Count + ", " + drawPile.Count);
     }
 
