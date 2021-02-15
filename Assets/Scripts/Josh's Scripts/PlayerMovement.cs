@@ -9,6 +9,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
+
+    }
+
+    private void Update()
+    {
         //If Player Hits W
         if (Input.GetKey(KeyCode.W))
         {
@@ -36,9 +42,8 @@ public class PlayerMovement : MonoBehaviour
             //Move Player Back
             transform.position += -transform.up * Time.deltaTime * movementSpeed;
         }
-
     }
 
-    
+
 }
 
