@@ -5,16 +5,37 @@ using UnityEngine.UI;
 
 public class GameplayUI : MonoBehaviour
 {
+    /// <summary>
+    /// **AHL - MAKE SURE TO CHECK OUT JOSH'S SCRIPT FOR PLAYER STATS**
+    /// </summary>
+
     //Variable Initialization/Declaration
     public Image hpBarFull; //Full HP bar that will be adjusted when the player heals/takes damage
     public int HPtemp = 100; //AHL - Temporary HP value until we have the actual player stats implemented
     public Text Hp; //Text that will hold and adjust the player health for the player to see during gameplay
-    public Button Hurt; //AHL - Temporary button that will damage the health of the player to show the change.
+    public Image timeFull; //Stop Time image that will be adjusted to show that it is filling up
+    public Text time; //Time value to be adjusted to show that it is tracking time %
+    public int timeNum = 25; //AHL -Temporary time variable to show the number change
+    public Text coins; //Coin # value to be adjusted to show that it is tracking coins collected
+    public int coinNum = 10; //AHL -Temporary coin variable to show the number change
+
 
     //AHL - Temporary function to show how the damage works
     public void Damage()
     {
         HPtemp -= 12;
+    }
+
+    //AHL - Temporary function to show how the time stop works
+    public void TimeGain()
+    {
+        timeNum += 10;
+    }
+
+    //AHL - Temporary function to show coin addition
+    public void GotCoins()
+    {
+        coinNum += 2;
     }
 
     /// <summary>
@@ -28,10 +49,13 @@ public class GameplayUI : MonoBehaviour
         hpBarFull.fillAmount = HPBaradjustment; //Adjusts the HP Image
     }
 
+    
+    
     // Update is called once per frame
     void Update()
     {
         //AHL - Will need to remove this and put this with enemy collisons or when the player takes damage.
         HealthUpdate(HPtemp); //Checks to make sure that the health of the player is always up to date.
+    
     }
 }
