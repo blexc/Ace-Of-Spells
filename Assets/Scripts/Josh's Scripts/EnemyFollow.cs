@@ -73,6 +73,6 @@ public class EnemyFollow : MonoBehaviour
     public void MoveCharacter(Vector2 direction)
     {
         //move enemy to player
-        enemyRB.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        enemyRB.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.fixedDeltaTime));
     }
 }
