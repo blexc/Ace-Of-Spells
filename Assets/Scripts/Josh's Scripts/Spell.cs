@@ -34,6 +34,11 @@ public class Spell : MonoBehaviour
             //destroy enemy
             Destroy(other.gameObject);
             Destroy(this.gameObject);
+
+            GameObject roomManager = other.gameObject.transform.parent.gameObject;
+            RoomManager roomScript = roomManager.GetComponent<RoomManager>();
+            roomScript.enemiesRemaining--;
+
         }
     }
 
