@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7252567977041878555}
   - component: {fileID: 7252567977041878554}
   m_Layer: 11
-  m_Name: Enemy (1)
+  m_Name: FlyingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fa21c62f71f4e4c9e3c71091c07390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 5
   detectionRadius: 5
   canFollow: 0
 --- !u!61 &7252567977041878552
