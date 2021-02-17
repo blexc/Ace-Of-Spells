@@ -59,8 +59,7 @@ public class Deck : MonoBehaviour
         }
 
         FindObjectOfType<CardManager>().cardUpdate(); //Updates what is displayed for the cards in hand UI
-
-        if (showDebugPrints) print("Cards drew: " + cardsDrew);
+        FindObjectOfType<CardManager>().deckUI.text = "" + drawPile.Count; //Updates the deck Num UI
     }
 
     // adds a new card to the draw pile
