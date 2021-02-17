@@ -18,27 +18,18 @@ public class Deck : MonoBehaviour
     int debugCall = 0;
 
     // uses the currently selected card (calls selected card's spell function)
-    public bool ActivateSelectedCard(ref int playerMana)
+    public void ActivateSelectedCard()
     {
         var selectedCard = hand[handSelectionIndex];
         if (showDebugPrints)
-            print("Activating selected card: " + selectedCard.name + " cost: " + selectedCard.manaCost);
+            print("Activating selected card: " + selectedCard.name);
 
-        // player has enough mana to cast...
-        if (selectedCard.manaCost <= playerMana)
-        {
-            playerMana = Mathf.Max(0, playerMana - selectedCard.manaCost);
-            selectedCard.InstantiateSpell();
+        selectedCard.InstantiateSpell();
 
-            discardPile.Add(selectedCard);
-            hand.RemoveAt(handSelectionIndex);
+        discardPile.Add(selectedCard);
+        hand.RemoveAt(handSelectionIndex);
 
-            DrawCard();
-
-            return true;
-        }
-
-        return false;
+        DrawCard();
     }
 
     // changes the currently selected card to the next card in hand
@@ -50,7 +41,7 @@ public class Deck : MonoBehaviour
         if (showDebugPrints)
         {
             var selectedCard = hand[handSelectionIndex];
-            print("Selected: " + selectedCard.name + " at index " + handSelectionIndex + ". Cost is: " + selectedCard.manaCost);
+            print("Selected: " + selectedCard.name + " at index " + handSelectionIndex);
         }
     }
 
@@ -73,7 +64,7 @@ public class Deck : MonoBehaviour
     }
 
     // adds a new card to the draw pile
-    // used for when player finds a card in-game 
+    // used for when player finds a card in-game
     public void AddNewCard(Card card)
     {
         drawPile.Add(card);
@@ -163,15 +154,7 @@ public class Deck : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            string msg = "Player mana before: " + debugMana;
-
-            if (ActivateSelectedCard(ref debugMana))
-                msg += "... after: " + debugMana;
-            else
-                msg += "... not enough mana";
-
-            if (showDebugPrints)
-                print(msg);
+            ActivateSelectedCard();
         }
 
         if (Input.GetKeyDown(KeyCode.W))
