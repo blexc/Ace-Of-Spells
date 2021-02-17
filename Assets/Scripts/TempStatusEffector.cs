@@ -9,7 +9,9 @@ public class TempStatusEffector : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            FindObjectOfType<EnemyBase>().SetStatusEffect = StatusEffect.Freeze;
+            int r = Random.Range(0, 5);
+
+            FindObjectOfType<EnemyBase>().SetStatusEffect = r + StatusEffect.Freeze;
         }
     }
 }

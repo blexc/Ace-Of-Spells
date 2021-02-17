@@ -41,7 +41,7 @@ public class EnemyBase : MonoBehaviour
     // child enemy classes will override this function
     protected virtual void Attack()
     {
-        print("parent attack"); 
+        //print("parent attack"); 
     }
 
     void ChangeColor()
@@ -59,6 +59,7 @@ public class EnemyBase : MonoBehaviour
             default: c = Color.white; break;
         }
 
+        print(statusEffect);
         GetComponent<SpriteRenderer>().color = c;
     }
 }
