@@ -11,21 +11,20 @@ public class CardManager : MonoBehaviour
     List<Card> cardsInHand;
 
     /// <summary>
-    /// AHL (2/15/21) - Function that takes in the card that was used and then updates it based off the deck pull
+    /// AHL (2/17/21) - Function that updates the cards UI based off the deck pull
     /// </summary>
-    private void cardUpdate(GameObject card)
+    public void cardUpdate()
     {
-        card.GetComponent<CardDisplay>().card = cardsInHand[0];
-       //     Find("Name").GetComponent<Text>() = card.name;
-        //elementText.text = card.element;
-        //desctiptionText.text = card.description;
+        cardsInHand = deck.GetComponent<Deck>().Hand;
+        card1.GetComponent<CardDisplay>().card = cardsInHand[0];
+        card2.GetComponent<CardDisplay>().card = cardsInHand[1];
+        card3.GetComponent<CardDisplay>().card = cardsInHand[2];
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        cardsInHand = deck.GetComponent<Deck>().Hand;
-        cardUpdate(card1);
+        cardUpdate();
     }
 
     /*// Update is called once per frame
