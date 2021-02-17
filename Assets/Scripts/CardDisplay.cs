@@ -11,14 +11,14 @@ public class CardDisplay : MonoBehaviour
     //public Image artworkImage;
 
     public TMP_Text nameText;
-    public TMP_Text elementText;
-    public TMP_Text desctiptionText;
+    //public TMP_Text elementText;
+    //public TMP_Text desctiptionText;
 
 
-    private void Start()
+    private void Update()
     {
         nameText.text = card.name;
-        elementText.text = card.element;
-        desctiptionText.text = card.description;
+        //elementText.text = card.element;
+        //desctiptionText.text = card.description;
     }
 }
