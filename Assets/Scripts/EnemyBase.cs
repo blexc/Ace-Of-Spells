@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-    public StatusEffect SetStatusEffect { set { statusEffect = value; } }
+    public StatusEffect SetStatusEffect
+    {
+        set
+        {
+            statusEffect = value;
+            ChangeColor();
+        }
+    }
 
     public int healthMax;
     public int attackDmg;
@@ -35,5 +42,23 @@ public class EnemyBase : MonoBehaviour
     protected virtual void Attack()
     {
         print("parent attack"); 
+    }
+
+    void ChangeColor()
+    {
+        Color c;
+
+        switch (statusEffect)
+        {
+            case StatusEffect.Normal:   c = Color.white; break;
+            case StatusEffect.Freeze:   c = Color.blue; break;
+            case StatusEffect.Rot:      c = Color.green; break;
+            case StatusEffect.Ignite:   c = Color.red; break;
+            case StatusEffect.Sap:      c = Color.gray; break;
+            case StatusEffect.Shock:    c = Color.yellow; break;
+            default: c = Color.white; break;
+        }
+
+        GetComponent<SpriteRenderer>().color = c;
     }
 }
