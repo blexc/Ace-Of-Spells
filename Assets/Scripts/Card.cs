@@ -11,7 +11,6 @@ public class Card : ScriptableObject
     public string description;
     public string element;
 
-    public int manaCost;
     public GameObject spell;
 
     public void InstantiateSpell()
@@ -27,7 +26,6 @@ public class Card : ScriptableObject
 
     public void Print()
     {
-        Debug.Log("Card name: " + name + "\nDescription: " + description +
-                "\nMana Cost: " + manaCost);
+        Debug.Log("Card name: " + name + "\nDescription: " + description);
     }
 }
