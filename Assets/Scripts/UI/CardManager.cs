@@ -9,7 +9,8 @@ public class CardManager : MonoBehaviour
     //Variable Initalization/Declaration
     public GameObject card1, card2, card3; //Card variables to get the card templates from the deck.
     public GameObject deck; //Deck variable to hold the deck prefab
-    public TMP_Text deckUI; //Deck UI variable to adjust that number as needed
+    public TMP_Text deckUI; //Deck # UI variable to adjust that number as needed
+    public TMP_Text discardUI; //Discard # UI variable to adjust that number as needed
     List<Card> cardsInHand;
 
     /// <summary>

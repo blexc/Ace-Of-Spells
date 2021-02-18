@@ -29,6 +29,8 @@ public class Deck : MonoBehaviour
         discardPile.Add(selectedCard);
         hand.RemoveAt(handSelectionIndex);
 
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+
         DrawCard();
     }
 
@@ -101,6 +103,7 @@ public class Deck : MonoBehaviour
             }
         }
 
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
         return false;
     }
 
@@ -119,6 +122,8 @@ public class Deck : MonoBehaviour
             drawPile.Add(discardPile[i]);
             discardPile.RemoveAt(i);
         }
+
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
     }
 
     // randomizes the items in a list of cards
@@ -147,6 +152,7 @@ public class Deck : MonoBehaviour
     {
         ShuffleList(ref drawPile);
         DrawCard(HAND_SIZE_MAX);
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
     }
 
     void Update()
