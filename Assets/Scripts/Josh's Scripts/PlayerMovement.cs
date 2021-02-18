@@ -5,8 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
    //player movement speed
-    public float movementSpeed;
+    private float movementSpeed;
 
+
+    private void Awake()
+    {
+        movementSpeed = GetComponent<PlayerStats>().moveSpeed;
+    }
     private void FixedUpdate()
     {
         

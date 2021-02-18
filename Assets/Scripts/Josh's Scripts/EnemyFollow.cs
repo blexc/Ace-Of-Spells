@@ -33,11 +33,12 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void FixedUpdate()
     {
+
         //get player direction & rotate
         Vector3 direction = (player.transform.position - transform.position) * moveSpeed;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -45,13 +46,12 @@ public class EnemyFollow : MonoBehaviour
         direction.Normalize();
         movementDirection = direction;
 
-        if(canFollow)
+        if (canFollow)
         {
             //move enemy
             MoveCharacter(movementDirection);
 
         }
-
     }
 
     private void OnTriggerStay2D(Collider2D other)
