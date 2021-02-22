@@ -10,11 +10,12 @@ public class Deck : MonoBehaviour
     private List<Card> discardPile = new List<Card>();
     private List<Card> hand = new List<Card>();
 
-    int handSelectionIndex = 0;
+    public int handSelectionIndex = 0;
     const int HAND_SIZE_MAX = 3;
 
     public bool showDebugPrints = false;
-    int debugCall = 0; 
+    int debugMana = 20;
+    int debugCall = 0;
 
     // uses the currently selected card (calls selected card's spell function)
     public void ActivateSelectedCard()
@@ -57,11 +58,13 @@ public class Deck : MonoBehaviour
             cardsDrew++;
         }
 
+        FindObjectOfType<CardManager>().cardUpdate(); //Updates what is displayed for the cards in hand UI
+
         if (showDebugPrints) print("Cards drew: " + cardsDrew);
     }
 
     // adds a new card to the draw pile
-    // used for when player finds a card in-game 
+    // used for when player finds a card in-game
     public void AddNewCard(Card card)
     {
         drawPile.Add(card);

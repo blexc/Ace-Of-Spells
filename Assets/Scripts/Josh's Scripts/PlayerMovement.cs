@@ -5,9 +5,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
    //player movement speed
-    public float movementSpeed;
+    private float movementSpeed;
 
+
+    private void Awake()
+    {
+        movementSpeed = GetComponent<PlayerStats>().moveSpeed;
+    }
     private void FixedUpdate()
+    {
+        
+
+    }
+
+    private void Update()
     {
         //If Player Hits W
         if (Input.GetKey(KeyCode.W))
@@ -36,9 +47,8 @@ public class PlayerMovement : MonoBehaviour
             //Move Player Back
             transform.position += -transform.up * Time.deltaTime * movementSpeed;
         }
-
     }
 
-    
+
 }
 
