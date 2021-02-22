@@ -14,7 +14,6 @@ public class Deck : MonoBehaviour
     const int HAND_SIZE_MAX = 3;
 
     public bool showDebugPrints = false;
-    int debugMana = 20;
     int debugCall = 0;
 
     // uses the currently selected card (calls selected card's spell function)

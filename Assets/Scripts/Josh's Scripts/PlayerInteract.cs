@@ -13,9 +13,11 @@ public class PlayerInteract : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && canInteract)
         {
-            Debug.Log(interactableObject);
+            // if the object is a door, then go interact with that
+            var door = interactableObject.GetComponent<Door>();
+            if (door) door.Open();
 
-            //Do something
+            // otherwise, do something else....
         }
     }
 
@@ -25,17 +27,21 @@ public class PlayerInteract : MonoBehaviour
        {
             canInteract = true;
             interactableObject = other.gameObject;
-       }
 
+            var door = interactableObject.GetComponent<Door>();
+            if (door) door.IndicateActive();
+       }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Interactable")
         {
+            var door = interactableObject.GetComponent<Door>();
+            if (door) door.IndicateStop();
+
             canInteract = false;
             interactableObject = null;
-
         }
     }
 
