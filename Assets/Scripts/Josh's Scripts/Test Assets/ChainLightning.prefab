@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: -2244860691256358237}
   - component: {fileID: 5320697417864867459}
   - component: {fileID: 25947001877480549}
-  m_Layer: 13
-  m_Name: Lightning Bolt
-  m_TagString: Untagged
+  m_Layer: 14
+  m_Name: ChainLightning
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +128,10 @@ MonoBehaviour:
   explosionCollider: {fileID: 5320697417864867459}
   eruptionCollider: {fileID: 25947001877480549}
   explosionDamage: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  hit: 0
   spellSpeed: 10
   enemyHit: {fileID: 0}
 --- !u!61 &-2244860691256358237
