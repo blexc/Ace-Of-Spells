@@ -49,6 +49,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Enemy")
+        {
+            this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+        }
+    }
+
 
 }
 
