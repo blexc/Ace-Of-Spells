@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // empty script used for Door object
-// to find Lock child object
-public class Lock : MonoBehaviour
+// to find DoorIcon child object
+public class DoorIcon : MonoBehaviour
 {
 }

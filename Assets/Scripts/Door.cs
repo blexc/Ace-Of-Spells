@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     public string sceneName;
+    public Sprite rewardSprite;
 
     Color originalColor;
     [SerializeField] bool locked = true;
@@ -47,8 +48,11 @@ public class Door : MonoBehaviour
         locked = false;
         
         // hide the lock sprite
-        GameObject lockObject = GetComponentInChildren<Lock>().gameObject;
-        if (lockObject.activeSelf) lockObject.SetActive(false);
+        GameObject iconObject = GetComponentInChildren<DoorIcon>().gameObject;
+        if (iconObject.activeSelf)
+        {
+            iconObject.GetComponent<SpriteRenderer>().sprite = rewardSprite;
+        }
     }
 }
 
