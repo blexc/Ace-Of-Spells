@@ -53,7 +53,7 @@ public class EnemyBase : MonoBehaviour
                 ChangeColor();
             }
         }
-        PrintStatusEffectList();
+        //PrintStatusEffectList();
     }
 
     // child enemy classes will override this function
@@ -90,6 +90,12 @@ public class EnemyBase : MonoBehaviour
         var pair = new KeyValuePair<StatusEffect, float>(effect, durationSeconds);
         statusEffects.Add(pair);
         ChangeColor();
+    }
+
+    public void TakeDamage(int amount)
+    {
+        print(health);
+        health -= amount;
     }
 
     void PrintStatusEffectList()
