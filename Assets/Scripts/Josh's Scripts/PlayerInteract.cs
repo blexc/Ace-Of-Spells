@@ -18,6 +18,8 @@ public class PlayerInteract : MonoBehaviour
             if (door) door.Open();
 
             // otherwise, do something else....
+            var chest = interactableObject.GetComponent<Reward>();
+            if (chest) chest.RecieveReward();
         }
     }
 

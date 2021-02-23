@@ -7,6 +7,7 @@ public class EnemyRoomManager : MonoBehaviour
 {
     public bool DefeatedAllEnemies { get { return enemiesLeft == 0; } }
 
+    public GameObject rewardObject;
     [SerializeField] int enemiesLeft;
     [SerializeField] int checkFrequency = 3;
     
@@ -25,7 +26,6 @@ public class EnemyRoomManager : MonoBehaviour
         enemiesLeft = FindObjectsOfType<EnemyBase>().Length;
         yield return new WaitForSeconds(checkFrequency);
 
-        print("enemiesleft: " + enemiesLeft);
         if (!DefeatedAllEnemies)
         {
             // check for enemies again
@@ -35,6 +35,9 @@ public class EnemyRoomManager : MonoBehaviour
         {
             // unlock all of the doors, do not check for enemies again
             foreach (Door d in FindObjectsOfType<Door>()) d.Unlock();
+
+            // activate the reward
+            if (rewardObject) rewardObject.SetActive(true); 
         }
     }
 }

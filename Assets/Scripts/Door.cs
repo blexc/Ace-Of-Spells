@@ -16,7 +16,6 @@ public class Door : MonoBehaviour
         originalColor = GetComponent<SpriteRenderer>().color;
     }
 
-
     /// <summary>
     /// change the scene to be door's destinationScene 
     /// send player to new room
