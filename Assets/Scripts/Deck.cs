@@ -149,6 +149,7 @@ public class Deck : MonoBehaviour
         DrawCard(HAND_SIZE_MAX);
     }
 
+    /*
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -182,4 +183,5 @@ public class Deck : MonoBehaviour
             DebugPrint();
         }
     }
+    */
 }

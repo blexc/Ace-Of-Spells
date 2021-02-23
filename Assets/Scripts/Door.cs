@@ -6,15 +6,16 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     public string sceneName;
-    Color originalColor;
 
-    GameObject playerObject;
-    AsyncOperation sceneAsync;
+    Color originalColor;
+    [SerializeField] bool locked = true;
 
     private void Start()
     {
+        if (!locked) Unlock();
         originalColor = GetComponent<SpriteRenderer>().color;
     }
+
 
     /// <summary>
     /// change the scene to be door's destinationScene 
@@ -22,7 +23,7 @@ public class Door : MonoBehaviour
     /// </summary>
     public void Open()
     {
-        SceneManager.LoadScene(sceneName);
+        if (!locked) SceneManager.LoadScene(sceneName);
     }
 
     /// <summary>
@@ -30,7 +31,8 @@ public class Door : MonoBehaviour
     /// </summary>
     public void IndicateActive()
     {
-        GetComponent<SpriteRenderer>().color = Color.red;
+        if (!locked)
+            GetComponent<SpriteRenderer>().color = Color.red;
     }
 
     /// <summary>
@@ -41,6 +43,14 @@ public class Door : MonoBehaviour
         GetComponent<SpriteRenderer>().color = originalColor;
     }
 
+    public void Unlock()
+    {
+        locked = false;
+        
+        // hide the lock sprite
+        GameObject lockObject = GetComponentInChildren<Lock>().gameObject;
+        if (lockObject.activeSelf) lockObject.SetActive(false);
+    }
 }
 
 
