@@ -40,6 +40,8 @@ public class Deck : MonoBehaviour
         handSelectionIndex++;
         handSelectionIndex %= hand.Count;
 
+        FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
+
         if (showDebugPrints)
         {
             var selectedCard = hand[handSelectionIndex];
@@ -153,6 +155,8 @@ public class Deck : MonoBehaviour
         ShuffleList(ref drawPile);
         DrawCard(HAND_SIZE_MAX);
         FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+        FindObjectOfType<CardManager>().cardUpdate();
+        FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
     }
 
     void Update()
