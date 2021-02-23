@@ -182,10 +182,5 @@ public class Deck : MonoBehaviour
                 else print("Did not find Fireball object to destroy");
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            DebugPrint();
-        }
     }
 }

@@ -15,7 +15,8 @@ public class GameplayUI : MonoBehaviour
     public Text Hptxt; //Text that will hold and adjust the player health for the player to see during gameplay
     public Image timeFull; //Stop Time image that will be adjusted to show that it is filling up
     public Text timetxt; //Time value to be adjusted to show that it is tracking time %
-    public int timeNum = 25; //AHL -Temporary time variable to show the number change
+    public int timeNum; //Time variable to show the number change
+    public float timeAdjuster; //Adjustable float variable to change the time manipulation speed of the scene
     public Text coinstxt; //Coin # value to be adjusted to show that it is tracking coins collected
     public int coinNum = 10; //AHL -Temporary coin variable to show the number change
 
