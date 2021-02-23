@@ -59,7 +59,8 @@ public class Spell : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             enemyHit = other.gameObject;
-            Destroy(other.gameObject);
+            enemyHit.GetComponent<EnemyBase>().TakeDamage((int)spellDamage);
+            enemyHit.GetComponent<EnemyBase>().AddStatusEffect(StatusEffect.Shock, 3);
             Destroy(this.gameObject);
             //GameObject roomManager = other.gameObject.transform.parent.gameObject;
             //RoomManager roomScript = roomManager.GetComponent<RoomManager>();
