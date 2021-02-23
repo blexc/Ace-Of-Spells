@@ -59,7 +59,8 @@ public class Spell : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             enemyHit = other.gameObject;
-           
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
             //GameObject roomManager = other.gameObject.transform.parent.gameObject;
             //RoomManager roomScript = roomManager.GetComponent<RoomManager>();
             //roomScript.enemiesRemaining--;
@@ -67,6 +68,11 @@ public class Spell : MonoBehaviour
             
         }
 
+        
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
         
     }
 
@@ -78,7 +84,7 @@ public class Spell : MonoBehaviour
     public void Damage()
     {
         //damage enemy
-        enemyHit.GetComponent<EnemyStats>().enemyHealth -= spellDamage;
+        //enemyHit.GetComponent<EnemyStats>().enemyHealth -= spellDamage;
     }
 
     public void Chain()
