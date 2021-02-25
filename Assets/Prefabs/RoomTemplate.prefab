@@ -41,7 +41,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6868531034242462556}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &6868531034111208082
 PolygonCollider2D:
@@ -207,15 +207,15 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6868531035442075019}
   - {fileID: 6868531035524457648}
-  - {fileID: 6868531034493827887}
+  - {fileID: 6868531035442075019}
   - {fileID: 6868531034465454390}
-  - {fileID: 6868531034304604015}
   - {fileID: 6868531034111208083}
+  - {fileID: 6868531034304604015}
+  - {fileID: 6868531034544706179}
   - {fileID: 6868531033739062816}
   - {fileID: 6868531033989559797}
-  - {fileID: 6868531034544706179}
+  - {fileID: 6868531034493827887}
   - {fileID: 6931461475392701531}
   - {fileID: 8234833950298672273}
   m_Father: {fileID: 0}
@@ -534,7 +534,7 @@ Transform:
   m_Children:
   - {fileID: 6868531034300551519}
   m_Father: {fileID: 6868531034242462556}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6868531034465454389
 MonoBehaviour:
@@ -653,7 +653,7 @@ Transform:
   - {fileID: 6868531034199146757}
   - {fileID: 6868531034673907316}
   m_Father: {fileID: 6868531034242462556}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6868531034673907319
 GameObject:
@@ -1011,7 +1011,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6868531034242462556}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &6868531035442075031
 Camera:
@@ -1184,7 +1184,7 @@ PrefabInstance:
     - target: {fileID: 4889278154387037159, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4889278154387037159, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
@@ -1412,7 +1412,7 @@ PrefabInstance:
     - target: {fileID: 7633043847203764949, guid: a74ed609d8abd184eacac5fa20850900,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7633043847203764949, guid: a74ed609d8abd184eacac5fa20850900,
         type: 3}
@@ -1431,15 +1431,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a74ed609d8abd184eacac5fa20850900, type: 3}
---- !u!4 &6868531034493827887 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7633043847203764949, guid: a74ed609d8abd184eacac5fa20850900,
-    type: 3}
-  m_PrefabInstance: {fileID: 3945127410563777018}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6868531034493827886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7633043847203764948, guid: a74ed609d8abd184eacac5fa20850900,
+    type: 3}
+  m_PrefabInstance: {fileID: 3945127410563777018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6868531034493827887 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7633043847203764949, guid: a74ed609d8abd184eacac5fa20850900,
     type: 3}
   m_PrefabInstance: {fileID: 3945127410563777018}
   m_PrefabAsset: {fileID: 0}
@@ -1535,7 +1535,7 @@ PrefabInstance:
     - target: {fileID: 4191481047657712671, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
       propertyPath: m_Name
-      value: EnemySpawner
+      value: EnemySpawner01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9960371577c7441b0db3889fd14a63, type: 3}
@@ -1753,7 +1753,7 @@ PrefabInstance:
     - target: {fileID: 4191481047657712671, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
       propertyPath: m_Name
-      value: EnemySpawner (1)
+      value: EnemySpawner02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9960371577c7441b0db3889fd14a63, type: 3}
