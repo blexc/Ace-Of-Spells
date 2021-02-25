@@ -14,7 +14,6 @@ public class Deck : MonoBehaviour
     const int HAND_SIZE_MAX = 3;
 
     public bool showDebugPrints = false;
-    int debugMana = 20;
     int debugCall = 0;
 
     // uses the currently selected card (calls selected card's spell function)
@@ -159,6 +158,7 @@ public class Deck : MonoBehaviour
         FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
     }
 
+    /*
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -187,4 +187,5 @@ public class Deck : MonoBehaviour
             }
         }
     }
+    */
 }
