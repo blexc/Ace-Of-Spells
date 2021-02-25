@@ -1375,6 +1375,7 @@ GameObject:
   - component: {fileID: 395033406}
   - component: {fileID: 395033407}
   - component: {fileID: 395033405}
+  - component: {fileID: 395033408}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -1400,6 +1401,7 @@ MonoBehaviour:
   timeFull: {fileID: 1923758676}
   timetxt: {fileID: 1412903286}
   timeNum: 25
+  timeAdjuster: 0
   coinstxt: {fileID: 1379749399}
   coinNum: 10
 --- !u!4 &395033406
@@ -1434,7 +1436,56 @@ MonoBehaviour:
   deck: {fileID: 1373146812}
   deckUI: {fileID: 93100116}
   discardUI: {fileID: 1171798858}
-  selectedCard: 1
+--- !u!114 &395033408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395033404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 182554fd063845945ab0980615fc73e4,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 1713075090}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 36a54f31-f984-4e31-bd64-ecc25bcea1ae
+    m_ActionName: Gameplay UI/Movement[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1373146813}
+        m_MethodName: SwitchActiveCard
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2cf9c43f-9f33-45f8-b83b-b7ad14b3e541
+    m_ActionName: Gameplay UI/Switch Active Card[/Mouse/rightButton]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Mouse and Keyboard
+  m_DefaultActionMap: Gameplay UI
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &473177903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,6 +3016,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1373146811}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1373146813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
+    type: 3}
+  m_PrefabInstance: {fileID: 1373146811}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373146812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418243497b1f018418ff3b651540d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1379749397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3854,16 +3917,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713075089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 182554fd063845945ab0980615fc73e4,
+    type: 3}
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: 0}
+  m_SubmitAction: {fileID: 0}
+  m_CancelAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 8878734284904363707, guid: 182554fd063845945ab0980615fc73e4,
+    type: 3}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!114 &1713075091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3876,7 +3949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1648875496}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1713075092

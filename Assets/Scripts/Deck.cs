@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Deck : MonoBehaviour
 {
@@ -188,4 +189,13 @@ public class Deck : MonoBehaviour
         }
     }
     */
+
+    public void SwitchActiveCard(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            Debug.Log("Right Click!");
+            SwapSelectedCard();
+        }
+    }
 }
