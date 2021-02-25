@@ -1,0 +1,110 @@
+{
+    "name": "Player",
+    "maps": [
+        {
+            "name": "Gameplay UI",
+            "id": "c2f0b2b5-d250-45a5-b0cc-6c72ed2c1d11",
+            "actions": [
+                {
+                    "name": "Switch Active Card",
+                    "type": "Button",
+                    "id": "2cf9c43f-9f33-45f8-b83b-b7ad14b3e541",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "260238ec-b573-4a5a-a0d0-9ddfd450031b",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Switch Active Card",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "id": "8a51733c-e71d-449c-84d5-da344859dc8c",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "type": "Button",
+                    "id": "f0430066-6a3c-4960-852e-d05b2af7f3ef",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2ca652dd-d17c-4ba0-ae2e-3f185fb3e9ee",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7abbab1-5f77-4091-aa2c-8ec3cb929cdf",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4d7d4023-79c0-4e77-a046-a06d5de5b54f",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a4e8001-1308-4516-a96a-989f225ff755",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Mouse and Keyboard",
+            "bindingGroup": "Mouse and Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

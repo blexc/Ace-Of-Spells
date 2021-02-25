@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Deck : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class Deck : MonoBehaviour
         discardPile.Add(selectedCard);
         hand.RemoveAt(handSelectionIndex);
 
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+
         DrawCard();
     }
 
@@ -36,6 +39,8 @@ public class Deck : MonoBehaviour
     {
         handSelectionIndex++;
         handSelectionIndex %= hand.Count;
+
+        FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
 
         if (showDebugPrints)
         {
@@ -58,8 +63,7 @@ public class Deck : MonoBehaviour
         }
 
         FindObjectOfType<CardManager>().cardUpdate(); //Updates what is displayed for the cards in hand UI
-
-        if (showDebugPrints) print("Cards drew: " + cardsDrew);
+        FindObjectOfType<CardManager>().deckUI.text = "" + drawPile.Count; //Updates the deck Num UI
     }
 
     // adds a new card to the draw pile
@@ -101,6 +105,7 @@ public class Deck : MonoBehaviour
             }
         }
 
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
         return false;
     }
 
@@ -119,6 +124,8 @@ public class Deck : MonoBehaviour
             drawPile.Add(discardPile[i]);
             discardPile.RemoveAt(i);
         }
+
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
     }
 
     // randomizes the items in a list of cards
@@ -147,6 +154,9 @@ public class Deck : MonoBehaviour
     {
         ShuffleList(ref drawPile);
         DrawCard(HAND_SIZE_MAX);
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+        FindObjectOfType<CardManager>().cardUpdate();
+        FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
     }
 
     /*
@@ -177,11 +187,15 @@ public class Deck : MonoBehaviour
                 else print("Did not find Fireball object to destroy");
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            DebugPrint();
-        }
     }
     */
+
+    public void SwitchActiveCard(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            Debug.Log("Right Click!");
+            SwapSelectedCard();
+        }
+    }
 }
