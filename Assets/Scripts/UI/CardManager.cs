@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.EventSystems;
 
 public class CardManager : MonoBehaviour
 {
     //Variable Initalization/Declaration
     public GameObject card1, card2, card3; //Card variables to get the card templates from the deck.
-    public GameObject deck;
-    List<Card> cardsInHand;
+    public GameObject deck; //Deck variable to hold the deck prefab
+    public TMP_Text deckUI; //Deck # UI variable to adjust that number as needed
+    public TMP_Text discardUI; //Discard # UI variable to adjust that number as needed
+    List<Card> cardsInHand; //Connects with the CardsInHand List from the Deck script
+    private Vector3 maxScale = new Vector3(1f, 1f, 1f); //Vector to hold the maximum scale for the selected card in hand
+    private Vector3 minScale = new Vector3(0.5f, 0.5f, 0.5f); //Vector to hold the maximum scale for the selected card in hand
+
 
     /// <summary>
     /// AHL (2/17/21) - Function that updates the cards UI based off the deck pull
@@ -21,15 +28,25 @@ public class CardManager : MonoBehaviour
         card3.GetComponent<CardDisplay>().card = cardsInHand[2];
     }
 
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// AHL (2/23/21) - Function that updates the cards UI based on what is selected
+    /// </summary>
+    public void showSelectedCard(int cardCurr)
     {
-        cardUpdate();
+        if(cardCurr == 0) //First card is selected
+        {
+            card3.transform.localScale = minScale;
+            card1.transform.localScale = maxScale;
+        }
+        else if(cardCurr == 1) //Second card is selected
+        {
+            card1.transform.localScale = minScale;
+            card2.transform.localScale = maxScale;
+        }  
+        else //Third card is selected
+        {
+            card2.transform.localScale = minScale;
+            card3.transform.localScale = maxScale;
+        }
     }
-
-    /*// Update is called once per frame
-    void Update()
-    {
-        
-    }*/
 }
