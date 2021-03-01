@@ -35,17 +35,20 @@ public class Deck : MonoBehaviour
     }
 
     // changes the currently selected card to the next card in hand
-    public void SwapSelectedCard()
+    public void SwapSelectedCard(InputAction.CallbackContext context)
     {
-        handSelectionIndex++;
-        handSelectionIndex %= hand.Count;
-
-        FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
-
-        if (showDebugPrints)
+        if(context.performed)
         {
-            var selectedCard = hand[handSelectionIndex];
-            print("Selected: " + selectedCard.name + " at index " + handSelectionIndex);
+            handSelectionIndex++;
+            handSelectionIndex %= hand.Count;
+
+            FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
+
+            if (showDebugPrints)
+            {
+                var selectedCard = hand[handSelectionIndex];
+                print("Selected: " + selectedCard.name + " at index " + handSelectionIndex);
+            }
         }
     }
 
@@ -189,13 +192,4 @@ public class Deck : MonoBehaviour
         }
     }
     */
-
-    public void SwitchActiveCard(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-            Debug.Log("Right Click!");
-            SwapSelectedCard();
-        }
-    }
 }

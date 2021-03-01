@@ -2,13 +2,53 @@
     "name": "Player",
     "maps": [
         {
-            "name": "Gameplay UI",
+            "name": "Gameplay",
             "id": "c2f0b2b5-d250-45a5-b0cc-6c72ed2c1d11",
             "actions": [
                 {
                     "name": "Switch Active Card",
                     "type": "Button",
                     "id": "2cf9c43f-9f33-45f8-b83b-b7ad14b3e541",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Movement",
+                    "type": "Value",
+                    "id": "5a2f7a17-180c-4179-8490-b1a15f2b99f1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Mouse Position",
+                    "type": "Value",
+                    "id": "e5871313-65c8-4c94-afca-d6153bc9f3f8",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "46a01126-4aa3-4cf3-a674-b9a2b80eb8af",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Cast Spell",
+                    "type": "Button",
+                    "id": "84ac69d2-535e-435c-982d-30ca26407dad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Time Manipulation",
+                    "type": "Button",
+                    "id": "e70590cd-d757-414d-b28d-90fa1953314b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -25,64 +65,226 @@
                     "action": "Switch Active Card",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Player",
-            "id": "8a51733c-e71d-449c-84d5-da344859dc8c",
-            "actions": [
+                },
                 {
-                    "name": "Movement",
-                    "type": "Button",
-                    "id": "f0430066-6a3c-4960-852e-d05b2af7f3ef",
-                    "expectedControlType": "Button",
+                    "name": "WASD",
+                    "id": "45aef61d-0ec0-4178-818c-0ff520f8ddaa",
+                    "path": "2DVector",
+                    "interactions": "",
                     "processors": "",
-                    "interactions": "Hold"
-                }
-            ],
-            "bindings": [
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
                 {
-                    "name": "",
-                    "id": "2ca652dd-d17c-4ba0-ae2e-3f185fb3e9ee",
+                    "name": "up",
+                    "id": "5aecf317-4d19-4b4e-bae3-299508d59cb7",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
                     "action": "Movement",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "b7abbab1-5f77-4091-aa2c-8ec3cb929cdf",
-                    "path": "<Keyboard>/a",
+                    "name": "up",
+                    "id": "8c01f8f1-eb62-420b-8583-4adb6ebff63f",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
                     "action": "Movement",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "4d7d4023-79c0-4e77-a046-a06d5de5b54f",
+                    "name": "down",
+                    "id": "8c429d21-bd3d-4e67-9e39-16cf96aed85f",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
                     "action": "Movement",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "9a4e8001-1308-4516-a96a-989f225ff755",
+                    "name": "down",
+                    "id": "65dbb465-ab90-4c4e-8d86-3662ee75fed1",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "bc7d9841-5fa8-4221-a04b-cc6c4e6b55bd",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "b21f615d-2b06-4f73-bba5-e0d86786d069",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "267d5719-d2af-4ffa-a7c0-ed96c7d1f013",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
                     "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "39da6161-445b-4168-a576-7fe780817bd8",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d37affef-b205-4e41-b382-66a48a6babf3",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Time Manipulation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "006406c1-2119-40b8-939a-f2bfbf94bf63",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Mouse Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "848e4df8-5bff-4c07-8ede-f874038ec20f",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Cast Spell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "673dd3b8-4aee-4082-b176-3d3604a348b9",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Menu's",
+            "id": "8a51733c-e71d-449c-84d5-da344859dc8c",
+            "actions": [
+                {
+                    "name": "Selection",
+                    "type": "Button",
+                    "id": "9c312989-5333-4770-b0d6-d027b203d165",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "fdc33f95-7a3a-41aa-b498-3889d788ab7c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f6a620aa-16a3-4d66-9c72-7e1bcdec90a0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Selection",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f804660-511a-4899-8fc2-d13fd97343c9",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fe17fde4-36ee-45ce-b8bb-e135f1ff09e8",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "72169e25-e2e4-46e1-beed-a2baa5089787",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e9571df-9c2c-4c3e-87d9-fd128be90e6c",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
