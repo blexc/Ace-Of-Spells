@@ -98,11 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_UseShadowmask: 0
-=======
   m_UseShadowmask: 1
->>>>>>> Stashed changes
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -125,11 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< Updated upstream
---- !u!1 &173508930
-=======
---- !u!1 &805420168
->>>>>>> Stashed changes
+--- !u!1 &1216210339
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,15 +129,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream
-  - component: {fileID: 173508933}
-  - component: {fileID: 173508932}
-  - component: {fileID: 173508931}
-=======
-  - component: {fileID: 805420171}
-  - component: {fileID: 805420170}
-  - component: {fileID: 805420169}
->>>>>>> Stashed changes
+  - component: {fileID: 1216210342}
+  - component: {fileID: 1216210341}
+  - component: {fileID: 1216210340}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -153,35 +139,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream
---- !u!81 &173508931
-=======
---- !u!81 &805420169
->>>>>>> Stashed changes
+--- !u!81 &1216210340
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 173508930}
+  m_GameObject: {fileID: 1216210339}
   m_Enabled: 1
---- !u!20 &173508932
-=======
-  m_GameObject: {fileID: 805420168}
-  m_Enabled: 1
---- !u!20 &805420170
->>>>>>> Stashed changes
+--- !u!20 &1216210341
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 173508930}
-=======
-  m_GameObject: {fileID: 805420168}
->>>>>>> Stashed changes
+  m_GameObject: {fileID: 1216210339}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -218,21 +190,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-<<<<<<< Updated upstream
---- !u!4 &173508933
-=======
---- !u!4 &805420171
->>>>>>> Stashed changes
+--- !u!4 &1216210342
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 173508930}
-=======
-  m_GameObject: {fileID: 805420168}
->>>>>>> Stashed changes
+  m_GameObject: {fileID: 1216210339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -240,11 +204,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
---- !u!1 &1300881748
-=======
---- !u!1 &2095855054
->>>>>>> Stashed changes
+--- !u!1 &1345892036
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,13 +212,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream
-  - component: {fileID: 1300881750}
-  - component: {fileID: 1300881749}
-=======
-  - component: {fileID: 2095855056}
-  - component: {fileID: 2095855055}
->>>>>>> Stashed changes
+  - component: {fileID: 1345892038}
+  - component: {fileID: 1345892037}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -266,21 +221,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream
---- !u!108 &1300881749
-=======
---- !u!108 &2095855055
->>>>>>> Stashed changes
+--- !u!108 &1345892037
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 1300881748}
-=======
-  m_GameObject: {fileID: 2095855054}
->>>>>>> Stashed changes
+  m_GameObject: {fileID: 1345892036}
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
@@ -335,21 +282,13 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-<<<<<<< Updated upstream
---- !u!4 &1300881750
-=======
---- !u!4 &2095855056
->>>>>>> Stashed changes
+--- !u!4 &1345892038
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 1300881748}
-=======
-  m_GameObject: {fileID: 2095855054}
->>>>>>> Stashed changes
+  m_GameObject: {fileID: 1345892036}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
