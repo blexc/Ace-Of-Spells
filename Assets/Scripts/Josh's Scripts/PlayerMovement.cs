@@ -32,33 +32,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         transform.position += new Vector3(moveInput.x, moveInput.y, 0) * Time.deltaTime * movementSpeed;
-        /*//If Player Hits W
-        if (Input.GetKey(KeyCode.W))
-        {
-            //Move Player Forward
-            transform.position += transform.up * Time.deltaTime * movementSpeed;
-        }
-
-        //If Player Hits A
-        if (Input.GetKey(KeyCode.A))
-        {
-            //Move Player Left
-            transform.position += -transform.right * Time.deltaTime * movementSpeed;
-        }
-
-        //If Player Hits D
-        if (Input.GetKey(KeyCode.D))
-        {
-            //Move Player Right
-            transform.position += transform.right * Time.deltaTime * movementSpeed;
-        }
-
-        //If Player Hits S
-        if (Input.GetKey(KeyCode.S))
-        {
-            //Move Player Back
-            transform.position += -transform.up * Time.deltaTime * movementSpeed;
-        }*/
     }
 
     private void OnCollisionExit2D(Collision2D other)
