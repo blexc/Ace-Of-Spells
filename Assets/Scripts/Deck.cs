@@ -18,13 +18,26 @@ public class Deck : MonoBehaviour
     int debugCall = 0;
 
     // uses the currently selected card (calls selected card's spell function)
-    public void ActivateSelectedCard()
+    public void ActivateSelectedCard(InputAction.CallbackContext context)
     {
+        // do not work unless you've pressed and released left mouse
+        if (!context.performed) return;
+
         var selectedCard = hand[handSelectionIndex];
+        var spell = selectedCard.spell;
         if (showDebugPrints)
             print("Activating selected card: " + selectedCard.name);
 
-        selectedCard.InstantiateSpell();
+        if (spell == null)
+        {
+            Debug.LogError("Spell unset for card: " + name);
+            return;
+        }
+
+        // pass the spellPrefab into PlayerAttack script to spawn it
+        var pa = FindObjectOfType<PlayerAttack>();
+        if (pa) pa.CastSpell(spell);
+        else Debug.LogError("Player Attack script not found in scene.");
 
         discardPile.Add(selectedCard);
         hand.RemoveAt(handSelectionIndex);

@@ -128,22 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5902504057094275335, guid: e9b2360814fa38d4ca4709cddfe75593,
-        type: 3}
-      propertyPath: rewardSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c589c0ac273047b409cf85efa7ee4241,
-        type: 3}
-    - target: {fileID: 6868531033739062818, guid: e9b2360814fa38d4ca4709cddfe75593,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6868531033739062818, guid: e9b2360814fa38d4ca4709cddfe75593,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6868531034242462553, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: m_Name
@@ -204,21 +188,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6868531034493827884, guid: e9b2360814fa38d4ca4709cddfe75593,
-        type: 3}
-      propertyPath: rewardObject
-      value: 
-      objectReference: {fileID: 6868531034107558715}
-    - target: {fileID: 6868531035442075019, guid: e9b2360814fa38d4ca4709cddfe75593,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.669888
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b2360814fa38d4ca4709cddfe75593, type: 3}
---- !u!1 &6868531034107558715 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6868531033739062829, guid: e9b2360814fa38d4ca4709cddfe75593,
-    type: 3}
-  m_PrefabInstance: {fileID: 6868531034107558714}
-  m_PrefabAsset: {fileID: 0}
