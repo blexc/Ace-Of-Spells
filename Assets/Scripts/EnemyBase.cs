@@ -94,7 +94,7 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        print(health);
+        //print(health); **AHL - Reference for enemy damage UI**
         health -= amount;
     }
 
