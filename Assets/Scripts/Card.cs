@@ -13,17 +13,6 @@ public class Card : ScriptableObject
 
     public GameObject spell;
 
-    public void InstantiateSpell()
-    {
-        if (spell == null)
-        {
-            Debug.LogError("Spell unset for card: " + name);
-            return;
-        }
-
-        Instantiate(spell);
-    }
-
     public void Print()
     {
         Debug.Log("Card name: " + name + "\nDescription: " + description);

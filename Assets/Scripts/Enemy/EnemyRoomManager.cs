@@ -5,15 +5,40 @@ using UnityEngine;
 // this script keeps track of the number of enemies in the room
 public class EnemyRoomManager : MonoBehaviour
 {
-    public bool DefeatedAllEnemies { get { return enemiesLeft == 0; } }
+    // returns true if there are no enemy instances in the scene nor
+    // are there enemies to be spawned
+    public bool DefeatedAllEnemies
+    {
+        get
+        {
+            // if AT LEAST ONE of the spawners are spawning, its true
+            bool roomHasEnemiesToSpawn = false;
+            foreach (EnemySpawner es in enemySpawners)
+            {
+                if (es.HasEnemiesToSpawn)
+                {
+                    roomHasEnemiesToSpawn = true;
+                    break;
+                }
+            }
+            return enemiesLeft == 0 && !roomHasEnemiesToSpawn;
+        }
+    }
 
     public GameObject rewardObject;
+    public float enemySpawnFrequency;
+
     [SerializeField] int enemiesLeft;
     [SerializeField] int checkFrequency = 3;
+
+    // used to make sure there are no more enemies to spawn
+    // before spawning reward
+    [SerializeField] EnemySpawner[] enemySpawners;
     
     private void Start()
     {
         enemiesLeft = FindObjectsOfType<EnemyBase>().Length;
+        enemySpawners = FindObjectsOfType<EnemySpawner>();
         StartCoroutine("CheckEnemyCount");
     }
 

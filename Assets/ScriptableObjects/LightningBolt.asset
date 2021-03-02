@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
-  m_Name: Root
+  m_Name: LightningBolt
   m_EditorClassIdentifier: 
-  name: Root
-  description: Roots enemies to the ground, preventing them from moving.
-  element: Nature
-  manaCost: 1
-  spell: {fileID: 2309898997970855667, guid: 05403aab2b3d0de478c8355e3439f722, type: 3}
+  name: Lightning Bold
+  description: Lightning Wow!
+  element: Lightning
+  spell: {fileID: 8880743940131354364, guid: 1aed62be1c7f5854cb1de0283966f456, type: 3}
