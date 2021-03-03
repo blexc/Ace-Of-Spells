@@ -6,6 +6,10 @@ TagManager:
   tags:
   - CameraBarrier
   - Enemy
+  - Room1
+  - Room2
+  - Spell
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -18,10 +22,10 @@ TagManager:
   - CameraBarrier
   - Camera
   - Player
-  - 
-  - 
-  - 
-  - 
+  - FlyingEnemy
+  - Wall
+  - Spell
+  - Hit
   - 
   - 
   - 

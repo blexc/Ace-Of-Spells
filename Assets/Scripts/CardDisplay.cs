@@ -8,20 +8,18 @@ public class CardDisplay : MonoBehaviour
 {
     public Card card;
 
-    //public Image artworkImage;
-
+    public Image artworkImage;
     public TMP_Text nameText;
     public TMP_Text elementText;
     public TMP_Text desctiptionText;
+    //public TMP_Text manaCostText;
 
-    public TMP_Text manaCostText;
 
-
-    private void Start()
+    private void Update()
     {
         nameText.text = card.name;
         elementText.text = card.element;
         desctiptionText.text = card.description;
-        manaCostText.text = card.manaCost.ToString();
+        //manaCostText.text = card.manaCost.ToString();
     }
 }

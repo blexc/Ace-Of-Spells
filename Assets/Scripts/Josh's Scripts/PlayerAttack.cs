@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    //spell prefab array
-    [SerializeField]
-    private GameObject[] spellPrefab;
-
     //camera reference
     public Camera mainCamera;
 
@@ -16,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         //get mouse position
-        Vector3 mouse = Input.mousePosition;
+        Vector3 mouse = Mouse.current.position.ReadValue();
         // get screen point
         Vector3 screenPoint = mainCamera.WorldToScreenPoint(transform.position);
 
@@ -25,19 +22,16 @@ public class PlayerAttack : MonoBehaviour
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
         //rotate to angle
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
-
-        //if player clicks
-        if (Input.GetMouseButtonDown(0))
-        {
-            //cast spell
-            CastSpell();
-        }
     }
 
-    public void CastSpell()
+    public void CastSpell(GameObject spellPrefab)
     {
-        //spawn spell at my rotation
-        Instantiate(spellPrefab[0], new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), transform.rotation);
-
+        // if spellPrefab is not null...
+        if (spellPrefab)
+        {
+            //spawn spell at my rotation
+            print("PlayerAttack: spawning spell: " + spellPrefab.name);
+            Instantiate(spellPrefab, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), transform.rotation);
+        }
     }
 }

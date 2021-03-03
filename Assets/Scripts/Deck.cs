@@ -1,68 +1,92 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Deck : MonoBehaviour
 {
+    public List<Card> Hand { get { return hand; } }
+
     public List<Card> drawPile = new List<Card>();
     private List<Card> discardPile = new List<Card>();
     private List<Card> hand = new List<Card>();
 
-    int handSelectionIndex = 0;
+    public int handSelectionIndex = 0;
     const int HAND_SIZE_MAX = 3;
 
+    public bool showDebugPrints = false;
     int debugCall = 0;
-    int debugMana = 20;
 
-    public bool ActivateSelectedCard(ref int playerMana)
+    // uses the currently selected card (calls selected card's spell function)
+    public void ActivateSelectedCard(InputAction.CallbackContext context)
     {
+        // do not work unless you've pressed and released left mouse
+        if (!context.performed) return;
+
         var selectedCard = hand[handSelectionIndex];
-        print("Activating selected card: " + selectedCard.name + " cost: " + selectedCard.manaCost);
+        var spell = selectedCard.spell;
+        if (showDebugPrints)
+            print("Activating selected card: " + selectedCard.name);
 
-        // player has enough mana to cast...
-        if (selectedCard.manaCost <= playerMana)
+        if (spell == null)
         {
-            playerMana = Mathf.Max(0, playerMana - selectedCard.manaCost);
-            selectedCard.InstantiateSpell();
-
-            discardPile.Add(selectedCard);
-            hand.RemoveAt(handSelectionIndex);
-
-            DrawCard();
-
-            return true;
+            Debug.LogError("Spell unset for card: " + name);
+            return;
         }
 
-        return false;
+        // pass the spellPrefab into PlayerAttack script to spawn it
+        var pa = FindObjectOfType<PlayerAttack>();
+        if (pa) pa.CastSpell(spell);
+        else Debug.LogError("Player Attack script not found in scene.");
+
+        discardPile.Add(selectedCard);
+        hand.RemoveAt(handSelectionIndex);
+
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+
+        DrawCard();
     }
 
-    public void SwapSelectedCard()
+    // changes the currently selected card to the next card in hand
+    public void SwapSelectedCard(InputAction.CallbackContext context)
     {
-        handSelectionIndex++;
-        handSelectionIndex %= HAND_SIZE_MAX;
+        if(context.performed)
+        {
+            handSelectionIndex++;
+            handSelectionIndex %= hand.Count;
 
-        var selectedCard = hand[handSelectionIndex];
+            FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
 
-        print("Selected: " + selectedCard.name + " at index " + handSelectionIndex + ". Cost is: " + selectedCard.manaCost);
+            if (showDebugPrints)
+            {
+                var selectedCard = hand[handSelectionIndex];
+                print("Selected: " + selectedCard.name + " at index " + handSelectionIndex);
+            }
+        }
     }
 
     // draws a specified amount of cards (default is 1)
     public void DrawCard(int amount = 1)
     {
-        string msg = "Drew ";
-        int debugCounter = 0;
-
+        int cardsDrew = 0;
         while (amount > 0 && hand.Count < HAND_SIZE_MAX)
         {
             if (drawPile.Count == 0) RefillHand();
             hand.Add(drawPile[0]);
             drawPile.RemoveAt(0);
             --amount;
-            ++debugCounter;
+            cardsDrew++;
         }
 
-        msg += debugCounter + " card(s)";
-        print(msg);
+        FindObjectOfType<CardManager>().cardUpdate(); //Updates what is displayed for the cards in hand UI
+        FindObjectOfType<CardManager>().deckUI.text = "" + drawPile.Count; //Updates the deck Num UI
+    }
+
+    // adds a new card to the draw pile
+    // used for when player finds a card in-game
+    public void AddNewCard(Card card)
+    {
+        drawPile.Add(card);
     }
 
     // scan discard, hand, and draw lists. if you find a matching card name,
@@ -97,13 +121,15 @@ public class Deck : MonoBehaviour
             }
         }
 
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
         return false;
     }
 
     // takes cards from discard and adds it to draw
     void RefillHand()
     {
-        print("Moving all discarded cards to the draw pile");
+        if (showDebugPrints)
+            print("Moving all discarded cards to the draw pile");
 
         // shuffle discard list
         ShuffleList(ref discardPile);
@@ -114,6 +140,8 @@ public class Deck : MonoBehaviour
             drawPile.Add(discardPile[i]);
             discardPile.RemoveAt(i);
         }
+
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
     }
 
     // randomizes the items in a list of cards
@@ -131,28 +159,28 @@ public class Deck : MonoBehaviour
 
     void DebugPrint()
     {
-        debugCall++;
-        print(debugCall + ": Discard, hand, draw sizes: " + discardPile.Count + ", " + hand.Count + ", " + drawPile.Count);
+        if (showDebugPrints)
+        {
+            debugCall++;
+            print(debugCall + ": Discard, hand, draw sizes: " + discardPile.Count + ", " + hand.Count + ", " + drawPile.Count);
+        }
     }
 
     private void Start()
     {
         ShuffleList(ref drawPile);
-        DrawCard(3);
+        DrawCard(HAND_SIZE_MAX);
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+        FindObjectOfType<CardManager>().cardUpdate();
+        FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
     }
 
+    /*
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            string msg = "Player mana before: " + debugMana;
-
-            if (ActivateSelectedCard(ref debugMana))
-                msg += "... after: " + debugMana;
-            else
-                msg += "... not enough mana";
-
-            print(msg);
+            ActivateSelectedCard();
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -167,13 +195,14 @@ public class Deck : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (DestroyCard("Fireball")) print("Destroyed fireball");
-            else print("Couldn't find fireball");
-        }
+            bool didDestroy = DestroyCard("Fireball");
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            DebugPrint();
+            if (showDebugPrints)
+            {
+                if (didDestroy) print("Destroyed a Fireball");
+                else print("Did not find Fireball object to destroy");
+            }
         }
     }
+    */
 }
