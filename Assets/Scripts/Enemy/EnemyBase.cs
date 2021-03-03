@@ -33,6 +33,7 @@ public class EnemyBase : MonoBehaviour
         // enemy dies when 0 or less health
         if (health <= 0) Destroy(gameObject);
 
+        // iterate through all status effects
         // decrement the life time of each status effect
         // remove it if the time is less than or equal to 0
         for (int i = statusEffects.Count; --i >= 0;)
@@ -94,8 +95,12 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        //print(health); **AHL - Reference for enemy damage UI**
+        // double the damage taken if shocked
+        if (HasStatusEffect(StatusEffect.Shock)) amount *= 2;
+
         health -= amount;
+
+        print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax); //**AHL - Reference for enemy damage UI**
     }
 
     void PrintStatusEffectList()
@@ -106,5 +111,19 @@ public class EnemyBase : MonoBehaviour
             msg += i + ": " + statusEffects[i].Key + " " + statusEffects[i].Value + " | ";
 
         print(msg);
+    }
+
+    // will return whether or not this enemy has a certain
+    // status effect applied to it
+    bool HasStatusEffect(StatusEffect se)
+    {
+        // scan the list of status effects..
+        for (int i = statusEffects.Count; --i >= 0;)
+        {
+            if (statusEffects[i].Key == se)
+                return true;
+        }
+
+        return false;
     }
 }

@@ -7,6 +7,8 @@ public class Spell : MonoBehaviour
     //spell rigidbody reference
     private Rigidbody2D spellRigidbody;
 
+    [SerializeField] float spellLifetime = 10f; // in seconds
+
     public float spellDamage;
 
     public bool fire;
@@ -51,7 +53,14 @@ public class Spell : MonoBehaviour
 
     }
 
-    
+    private void Update()
+    {
+        // delete projectile if spell lifetime is 0
+        spellLifetime -= Time.deltaTime;
+        if (spellLifetime < 0) Destroy(gameObject);
+    }
+
+
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -61,7 +70,6 @@ public class Spell : MonoBehaviour
             enemyHit = other.gameObject;
             enemyHit.GetComponent<EnemyBase>().TakeDamage((int)spellDamage);
             enemyHit.GetComponent<EnemyBase>().AddStatusEffect(StatusEffect.Shock, 3);
-            Destroy(this.gameObject);
             //GameObject roomManager = other.gameObject.transform.parent.gameObject;
             //RoomManager roomScript = roomManager.GetComponent<RoomManager>();
             //roomScript.enemiesRemaining--;
@@ -69,6 +77,8 @@ public class Spell : MonoBehaviour
             
         }
 
+        // delete spell if hits anything
+        Destroy(this.gameObject);
         
     }
 
