@@ -78,9 +78,10 @@ public class Spell : MonoBehaviour
 
             if (fire)
             {
-                eb.AddStatusEffect(StatusEffect.Ignite, 3);
+                float lifeTime = 3f;
+                eb.AddStatusEffect(StatusEffect.Ignite, (int)lifeTime);
                 var burnerInstance = Instantiate(burnerPrefab, eb.transform);
-                //burnerInstance.GetComponent<Burner>().Init(0.5f, 10, 1);
+                burnerInstance.GetComponent<Burner>().Init(0.5f, lifeTime, 1);
             }
 
             //GameObject roomManager = other.gameObject.transform.parent.gameObject;
