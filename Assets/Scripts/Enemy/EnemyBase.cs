@@ -100,7 +100,7 @@ public class EnemyBase : MonoBehaviour
 
         health -= amount;
 
-        print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax); //**AHL - Reference for enemy damage UI**
+        //print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax); //**AHL - Reference for enemy damage UI**
     }
 
     void PrintStatusEffectList()
