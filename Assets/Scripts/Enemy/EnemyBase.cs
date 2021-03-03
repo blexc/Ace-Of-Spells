@@ -20,6 +20,7 @@ public class EnemyBase : MonoBehaviour
     void Start()
     {
         health = healthMax;
+        GetComponent<EnemyUI>().HPMax = healthMax; //Sets the enemies max HP in the UI script - AHL (3/3/21)
         attackCooldownTimer = attackSpd;
         originalColor = GetComponent<SpriteRenderer>().color;
     }
@@ -94,8 +95,8 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        //print(health); **AHL - Reference for enemy damage UI**
         health -= amount;
+        GetComponent<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
     }
 
     void PrintStatusEffectList()
