@@ -38,6 +38,9 @@ public class Spell : MonoBehaviour
 
     public GameObject enemyHit;
 
+    // this object will be spawned upon an enemy if the spell causes ignite 
+    public GameObject burnerPrefab;
+
     private void Awake()
     {
         //get rigidbody
@@ -68,8 +71,18 @@ public class Spell : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             enemyHit = other.gameObject;
-            enemyHit.GetComponent<EnemyBase>().TakeDamage((int)spellDamage);
-            enemyHit.GetComponent<EnemyBase>().AddStatusEffect(StatusEffect.Shock, 3);
+            var eb = enemyHit.GetComponent<EnemyBase>();
+            eb.TakeDamage((int)spellDamage);
+
+            if (lightning) eb.AddStatusEffect(StatusEffect.Shock, 3);
+
+            if (fire)
+            {
+                eb.AddStatusEffect(StatusEffect.Ignite, 3);
+                var burnerInstance = Instantiate(burnerPrefab, eb.transform);
+                //burnerInstance.GetComponent<Burner>().Init(0.5f, 10, 1);
+            }
+
             //GameObject roomManager = other.gameObject.transform.parent.gameObject;
             //RoomManager roomScript = roomManager.GetComponent<RoomManager>();
             //roomScript.enemiesRemaining--;
