@@ -13,7 +13,7 @@ public class EnemyBase : MonoBehaviour
     public List<KeyValuePair<StatusEffect, float>> statusEffects =
         new List<KeyValuePair<StatusEffect, float>>();
 
-    int health;
+    public int health;
     float attackCooldownTimer;
     Color originalColor;
 

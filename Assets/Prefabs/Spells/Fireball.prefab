@@ -134,6 +134,8 @@ MonoBehaviour:
   hit: 0
   spellSpeed: 10
   enemyHit: {fileID: 0}
+  spellPrefab: {fileID: 465657183414590700, guid: 7c1955f9045754742beac5df572f52ca,
+    type: 3}
 --- !u!61 &-2244860691256358237
 BoxCollider2D:
   m_ObjectHideFlags: 0

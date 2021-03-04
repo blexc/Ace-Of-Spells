@@ -36,6 +36,8 @@ public class Spell : MonoBehaviour
 
     public GameObject enemyHit;
 
+    public GameObject spellPrefab;
+
     private void Awake()
     {
         //get rigidbody
@@ -59,8 +61,9 @@ public class Spell : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             enemyHit = other.gameObject;
-            enemyHit.GetComponent<EnemyBase>().TakeDamage((int)spellDamage);
-            enemyHit.GetComponent<EnemyBase>().AddStatusEffect(StatusEffect.Shock, 3);
+            //enemyHit.GetComponent<EnemyBase>().TakeDamage((int)spellDamage);
+            //enemyHit.GetComponent<EnemyBase>().AddStatusEffect(StatusEffect.Shock, 3);
+            Chain();
             Destroy(this.gameObject);
             //GameObject roomManager = other.gameObject.transform.parent.gameObject;
             //RoomManager roomScript = roomManager.GetComponent<RoomManager>();
@@ -90,9 +93,10 @@ public class Spell : MonoBehaviour
 
     public void Chain()
     {
-        
 
-        
+        Instantiate(spellPrefab, enemyHit.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
+
     }
 
     public void ApplyStatusEffect()
