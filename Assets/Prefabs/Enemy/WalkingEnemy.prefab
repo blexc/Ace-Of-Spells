@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPBarFull: {fileID: 847655656396061805}
+  HPBarRect: {fileID: 847655656216855616}
   HPMax: 0
 --- !u!1001 &3107955965902963430
 PrefabInstance:
@@ -382,6 +383,12 @@ PrefabInstance:
 --- !u!224 &847655656457945632 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2369692954743079110, guid: 5ee64039029269c48b40e8305be02258,
+    type: 3}
+  m_PrefabInstance: {fileID: 3107955965902963430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &847655656216855616 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2369692954934363814, guid: 5ee64039029269c48b40e8305be02258,
     type: 3}
   m_PrefabInstance: {fileID: 3107955965902963430}
   m_PrefabAsset: {fileID: 0}

@@ -7,10 +7,7 @@ public class EnemyUI : MonoBehaviour
 {
     //Variable Initialization/Declaration
     public Image HPBarFull; //Full HP bar that will be adjusted when the enemy heals/takes damage
-    public RectTransform HPBarRect;
-
-    private Quaternion rotation;
-    private Vector3 pos;
+     private Quaternion rotation;
     
     //[HideInInspector]
     public int HPMax; //Int for the maximum amount of hp that the enemy has
@@ -19,13 +16,11 @@ public class EnemyUI : MonoBehaviour
     private void Awake()
     {
         rotation = transform.rotation;
-        pos = transform.parent.position - transform.position;
     }
 
     private void Update()
     {
         transform.rotation = rotation;
-        transform.position = transform.parent.position - pos;
     }
 
     /// <summary>
