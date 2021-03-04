@@ -48,7 +48,10 @@ public class EnemyBase : MonoBehaviour
                 if (HasStatusEffect(StatusEffect.Freeze))
                 {
                     // deal percentage damage to self once unthawed from freeze
-                    TakeDamage((int)(healthMax * 0.3f));
+                    int finalDmg = (int)(healthMax * 0.3f);
+                    if (HasStatusEffect(StatusEffect.Rot))
+                        finalDmg *= 2;
+                    TakeDamage(finalDmg);
                 }
             }
         }
@@ -110,7 +113,7 @@ public class EnemyBase : MonoBehaviour
             case StatusEffect.Freeze:   c = Color.blue; break;
             case StatusEffect.Rot:      c = Color.green; break;
             case StatusEffect.Ignite:   c = Color.red; break;
-            case StatusEffect.Sap:      c = Color.gray; break;
+            case StatusEffect.Bramble:  c = Color.gray; break;
             case StatusEffect.Shock:    c = Color.yellow; break;
             default: c = originalColor; break;
         }
@@ -147,7 +150,7 @@ public class EnemyBase : MonoBehaviour
 
     // will return whether or not this enemy has a certain
     // status effect applied to it
-    bool HasStatusEffect(StatusEffect se)
+    public bool HasStatusEffect(StatusEffect se)
     {
         // scan the list of status effects..
         for (int i = statusEffects.Count; --i >= 0;)

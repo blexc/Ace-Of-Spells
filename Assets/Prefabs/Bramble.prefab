@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2061318786083438457}
   - component: {fileID: 2061318786083438458}
-  - component: {fileID: -2978237677331286761}
-  - component: {fileID: -8240148570548068158}
+  - component: {fileID: 5007809806758226944}
+  - component: {fileID: 4429844340780489666}
   m_Layer: 0
-  m_Name: Burner
+  m_Name: Bramble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   tickRate: 0.5
   lifeTime: 5
   damagePerTick: 1
---- !u!198 &-2978237677331286761
+--- !u!198 &5007809806758226944
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4706,7 +4706,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &-8240148570548068158
+--- !u!199 &4429844340780489666
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -4725,7 +4725,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54bc46077d35bdc4fbf41472a85abc68, type: 2}
+  - {fileID: 2100000, guid: 02e7aee002529bf4e98964ae43c0cca0, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

@@ -27,8 +27,12 @@ public class ChainLightning : MonoBehaviour
                 if (triggerList.Count > 0)
                 {
                     Instantiate(spellPrefab, other.gameObject.transform.position, Quaternion.identity);
-                    other.gameObject.GetComponent<EnemyBase>().TakeDamage(5);
-
+                    
+                    // deal more damage if affected by rot
+                    int finalDmg = 5;
+                    if (other.gameObject.GetComponent<EnemyBase>().HasStatusEffect(StatusEffect.Rot))
+                        finalDmg *= 2;
+                    other.gameObject.GetComponent<EnemyBase>().TakeDamage(finalDmg);
                 }
             }
         }

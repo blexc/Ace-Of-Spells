@@ -38,8 +38,9 @@ public class Spell : MonoBehaviour
 
     public GameObject enemyHit;
 
-    // this object will be spawned upon an enemy if the spell causes ignite 
+    // these object will be spawned upon an enemy if the spell causes ignite or bramble
     public GameObject burnerPrefab;
+    public GameObject bramblePrefab;
 
     public GameObject chainLightningPrefab;
 
@@ -88,7 +89,7 @@ public class Spell : MonoBehaviour
             {
                 eb.AddStatusEffect(StatusEffect.Ignite, (int)lifeTime);
                 var burnerInstance = Instantiate(burnerPrefab, eb.transform);
-                burnerInstance.GetComponent<Burner>().Init(0.5f, lifeTime, 1);
+                burnerInstance.GetComponent<DamageOverTime>().Init(0.5f, lifeTime, 1);
             }
 
             if (frost)
@@ -99,12 +100,16 @@ public class Spell : MonoBehaviour
 
             if (nature)
             {
-                eb.AddStatusEffect(StatusEffect.Sap, (int)lifeTime);
+                eb.AddStatusEffect(StatusEffect.Bramble, (int)lifeTime);
                 eb.FreezeCharacter(lifeTime);
+                var brambleInstance = Instantiate(bramblePrefab, eb.transform);
+                brambleInstance.GetComponent<DamageOverTime>().Init(0.5f, lifeTime, 1);
             }
 
             if (shadow)
             {
+                // shadow effects last longer
+                lifeTime = 6;
                 eb.AddStatusEffect(StatusEffect.Rot, (int)lifeTime);
             }
 
