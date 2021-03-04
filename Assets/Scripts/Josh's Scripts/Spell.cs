@@ -119,6 +119,8 @@ public class Spell : MonoBehaviour
 
         // delete spell if hits anything
         Destroy(this.gameObject);
+        
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -145,13 +147,9 @@ public class Spell : MonoBehaviour
 
     }
 
-    public void ApplyStatusEffect()
-    {
-        //status effect
-    }
-
     public void Explosion()
     {
+        //screen size collider
         explosionCollider.enabled = true;
     }
 
@@ -162,8 +160,14 @@ public class Spell : MonoBehaviour
 
     public void Erupt()
     {
+        //room size collider
         eruptionCollider.enabled = true;
 
+    }
+
+    public void ApplyStatusEffect()
+    {
+        //status effect
     }
 }
 

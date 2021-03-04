@@ -17,12 +17,6 @@ public class ChainLightning : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
@@ -35,6 +29,8 @@ public class ChainLightning : MonoBehaviour
                 if (triggerList.Count > 0)
                 {
                     Instantiate(spellPrefab, other.gameObject.transform.position, Quaternion.identity);
+                    other.gameObject.GetComponent<EnemyBase>().TakeDamage(5);
+
                 }
             }
         }
@@ -47,13 +43,4 @@ public class ChainLightning : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-
-    }
 }
