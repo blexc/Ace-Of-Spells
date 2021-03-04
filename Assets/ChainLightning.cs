@@ -37,7 +37,7 @@ public class ChainLightning : MonoBehaviour
                 {
 
                     Instantiate(spellPrefab, other.gameObject.transform.position, Quaternion.identity);
-                    other.gameObject.GetComponent<EnemyBase>().health -= spellDamage;
+                    //other.gameObject.GetComponent<EnemyBase>().health -= spellDamage;
 
                 }
 
