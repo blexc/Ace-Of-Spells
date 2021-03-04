@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5692373219687574246, guid: e9b2360814fa38d4ca4709cddfe75593,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6868531034242462553, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: m_Name
@@ -188,5 +193,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6868531035442075019, guid: e9b2360814fa38d4ca4709cddfe75593,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.71040726
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359602793798964654, guid: e9b2360814fa38d4ca4709cddfe75593,
+        type: 3}
+      propertyPath: drawPile.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359602793798964654, guid: e9b2360814fa38d4ca4709cddfe75593,
+        type: 3}
+      propertyPath: drawPile.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa,
+        type: 2}
+    - target: {fileID: 7359602793798964654, guid: e9b2360814fa38d4ca4709cddfe75593,
+        type: 3}
+      propertyPath: drawPile.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa,
+        type: 2}
+    - target: {fileID: 7359602793798964654, guid: e9b2360814fa38d4ca4709cddfe75593,
+        type: 3}
+      propertyPath: drawPile.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b2360814fa38d4ca4709cddfe75593, type: 3}

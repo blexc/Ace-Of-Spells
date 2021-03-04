@@ -7,6 +7,8 @@ public class Spell : MonoBehaviour
     //spell rigidbody reference
     private Rigidbody2D spellRigidbody;
 
+    [SerializeField] float spellLifetime = 10f; // in seconds
+
     public float spellDamage;
 
     public bool fire;
@@ -36,6 +38,9 @@ public class Spell : MonoBehaviour
 
     public GameObject enemyHit;
 
+    // this object will be spawned upon an enemy if the spell causes ignite 
+    public GameObject burnerPrefab;
+
     private void Awake()
     {
         //get rigidbody
@@ -51,7 +56,14 @@ public class Spell : MonoBehaviour
 
     }
 
-    
+    private void Update()
+    {
+        // delete projectile if spell lifetime is 0
+        spellLifetime -= Time.deltaTime;
+        if (spellLifetime < 0) Destroy(gameObject);
+    }
+
+
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -59,9 +71,19 @@ public class Spell : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             enemyHit = other.gameObject;
-            enemyHit.GetComponent<EnemyBase>().TakeDamage((int)spellDamage);
-            enemyHit.GetComponent<EnemyBase>().AddStatusEffect(StatusEffect.Shock, 3);
-            Destroy(this.gameObject);
+            var eb = enemyHit.GetComponent<EnemyBase>();
+            eb.TakeDamage((int)spellDamage);
+
+            if (lightning) eb.AddStatusEffect(StatusEffect.Shock, 3);
+
+            if (fire)
+            {
+                float lifeTime = 3f;
+                eb.AddStatusEffect(StatusEffect.Ignite, (int)lifeTime);
+                var burnerInstance = Instantiate(burnerPrefab, eb.transform);
+                burnerInstance.GetComponent<Burner>().Init(0.5f, lifeTime, 1);
+            }
+
             //GameObject roomManager = other.gameObject.transform.parent.gameObject;
             //RoomManager roomScript = roomManager.GetComponent<RoomManager>();
             //roomScript.enemiesRemaining--;
@@ -69,6 +91,8 @@ public class Spell : MonoBehaviour
             
         }
 
+        // delete spell if hits anything
+        Destroy(this.gameObject);
         
     }
 

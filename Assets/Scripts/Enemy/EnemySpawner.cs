@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -9,8 +8,13 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] List<GameObject> enemiesToSpawn;
     [SerializeField] float spawnFrequency; // in seconds
+    int enemiesSpawned;
 
-    void Start() { StartCoroutine("SpawnNextEnemy"); }
+    void Start()
+    {
+        enemiesSpawned = 0;
+        StartCoroutine("SpawnNextEnemy");
+    }
     
     IEnumerator SpawnNextEnemy()
     {
@@ -21,6 +25,10 @@ public class EnemySpawner : MonoBehaviour
             // spawn more enemies relative to spawn pos
             var spawnPos = transform.position;
             var e = Instantiate(enemiesToSpawn[0], spawnPos, Quaternion.identity);
+
+            // increment counter and update the name of the enemy
+            enemiesSpawned++;
+            e.name = gameObject.name + "_" + enemiesToSpawn[0].name + "_" + enemiesSpawned.ToString();
 
             // give them a target
             var playerTransform = FindObjectOfType<PlayerStats>().gameObject.transform;
