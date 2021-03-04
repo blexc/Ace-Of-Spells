@@ -41,6 +41,8 @@ public class Spell : MonoBehaviour
     // this object will be spawned upon an enemy if the spell causes ignite 
     public GameObject burnerPrefab;
 
+    public GameObject chainLightningPrefab;
+
     private void Awake()
     {
         //get rigidbody
@@ -74,6 +76,8 @@ public class Spell : MonoBehaviour
             var eb = enemyHit.GetComponent<EnemyBase>();
             eb.TakeDamage((int)spellDamage);
 
+            Chain();
+
             if (lightning) eb.AddStatusEffect(StatusEffect.Shock, 3);
 
             if (fire)
@@ -94,6 +98,24 @@ public class Spell : MonoBehaviour
         // delete spell if hits anything
         Destroy(this.gameObject);
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -114,9 +136,10 @@ public class Spell : MonoBehaviour
 
     public void Chain()
     {
-        
 
-        
+        Instantiate(chainLightningPrefab, enemyHit.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
+
     }
 
     public void ApplyStatusEffect()
@@ -140,3 +163,6 @@ public class Spell : MonoBehaviour
 
     }
 }
+
+
+

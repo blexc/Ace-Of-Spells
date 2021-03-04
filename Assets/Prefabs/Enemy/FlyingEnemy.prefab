@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  detectionRadius: 5
+  detectionRadius: 1
   canFollow: 0
 --- !u!61 &7252567977041878552
 BoxCollider2D:
@@ -178,4 +178,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.2
