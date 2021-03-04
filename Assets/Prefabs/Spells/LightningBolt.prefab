@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a3989676b343c44aed6219b87cba05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellLifetime: 10
   spellDamage: 5
   fire: 0
   frost: 0
@@ -134,7 +135,7 @@ MonoBehaviour:
   hit: 0
   spellSpeed: 10
   enemyHit: {fileID: 0}
-  spellPrefab: {fileID: 465657183414590700, guid: 7c1955f9045754742beac5df572f52ca,
+  burnerPrefab: {fileID: 2061318786083438459, guid: fc2d9a7aede5a6149b6479912c64d4b9,
     type: 3}
 --- !u!61 &-2244860691256358237
 BoxCollider2D:
