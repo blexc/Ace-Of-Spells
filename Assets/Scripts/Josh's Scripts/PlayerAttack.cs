@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
         if (spellPrefab)
         {
             //spawn spell at my rotation
-            print("PlayerAttack: spawning spell: " + spellPrefab.name);
+            //print("PlayerAttack: spawning spell: " + spellPrefab.name);
             Instantiate(spellPrefab, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), transform.rotation);
         }
     }
