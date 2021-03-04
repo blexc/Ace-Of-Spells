@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
+    private bool IsFrozen { get { return GetComponent<EnemyBase>().IsFrozen; } }
+
     //enemy movement speed
     public float moveSpeed = 1;
     //enemy detection radius
@@ -17,8 +19,6 @@ public class EnemyFollow : MonoBehaviour
     //if enemy can follow player
     public bool canFollow = false;
 
-    // if greater than 0, then you cannot move
-    public float frozenTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -29,26 +29,11 @@ public class EnemyFollow : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         //get enemy rigidbody
         enemyRB = GetComponent<Rigidbody2D>();
-
-        frozenTimer = -1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if the freeze timer isn't inactive
-        if (!Mathf.Approximately(-1f, frozenTimer))
-        {
-            // decrement timer
-            frozenTimer = Mathf.Max(0f, frozenTimer - Time.deltaTime);
-
-            // if the timer hits 0, unfreeze the enemy and
-            // set the timer to be inactive
-            if (Mathf.Approximately(frozenTimer, 0f))
-            {
-                frozenTimer = -1f;
-            }
-        }
     }
 
     private void FixedUpdate()
@@ -62,7 +47,7 @@ public class EnemyFollow : MonoBehaviour
         movementDirection = direction;
 
         // if can follow and not frozen 
-        if (canFollow && frozenTimer <= 0)
+        if (canFollow && !IsFrozen)
         {
             //move enemy
             MoveCharacter(movementDirection);
@@ -90,11 +75,5 @@ public class EnemyFollow : MonoBehaviour
     {
         //move enemy to player
         enemyRB.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.fixedDeltaTime));
-    }
-
-    // begins to freeze the enemy for a specified amount of time
-    public void FreezeCharacter(float amountSec = 1)
-    {
-        frozenTimer = amountSec;
     }
 }

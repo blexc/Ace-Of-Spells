@@ -207,13 +207,13 @@ PrefabInstance:
         type: 3}
       propertyPath: drawPile.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa,
+      objectReference: {fileID: 11400000, guid: eedd7c73ef202fa49885246aea24d50b,
         type: 2}
     - target: {fileID: 7359602793798964654, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: drawPile.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa,
+      objectReference: {fileID: 11400000, guid: eedd7c73ef202fa49885246aea24d50b,
         type: 2}
     - target: {fileID: 7359602793798964654, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
@@ -221,5 +221,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa,
         type: 2}
+    - target: {fileID: 7412676942345361401, guid: e9b2360814fa38d4ca4709cddfe75593,
+        type: 3}
+      propertyPath: enemiesToSpawn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b2360814fa38d4ca4709cddfe75593, type: 3}

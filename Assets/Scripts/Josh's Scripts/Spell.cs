@@ -94,15 +94,13 @@ public class Spell : MonoBehaviour
             if (frost)
             {
                 eb.AddStatusEffect(StatusEffect.Freeze, (int)lifeTime);
-                if (eb.GetComponent<EnemyFollow>())
-                    eb.GetComponent<EnemyFollow>().FreezeCharacter(lifeTime);
+                eb.FreezeCharacter(lifeTime);
             }
 
             if (nature)
             {
                 eb.AddStatusEffect(StatusEffect.Sap, (int)lifeTime);
-                if (eb.GetComponent<EnemyFollow>())
-                    eb.GetComponent<EnemyFollow>().FreezeCharacter(lifeTime);
+                eb.FreezeCharacter(lifeTime);
             }
 
             if (shadow)

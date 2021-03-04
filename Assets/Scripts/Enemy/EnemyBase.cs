@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
+    public bool IsFrozen { get { return frozenTimer > 0; } }
+
     public int healthMax;
     public int attackDmg;
     public int attackSpd; // in seconds
@@ -17,15 +19,45 @@ public class EnemyBase : MonoBehaviour
     float attackCooldownTimer;
     Color originalColor;
 
+    // if greater than 0, then you cannot move
+    public float frozenTimer;
+
     void Start()
     {
         health = healthMax;
         attackCooldownTimer = attackSpd;
         originalColor = GetComponent<SpriteRenderer>().color;
+
+        frozenTimer = -1f;
     }
 
     void Update()
     {
+        // if the freeze timer isn't inactive
+        if (!Mathf.Approximately(-1f, frozenTimer))
+        {
+            // decrement timer
+            frozenTimer = Mathf.Max(0f, frozenTimer - Time.deltaTime);
+
+            // if the timer hits 0, unfreeze the enemy and
+            // set the timer to be inactive
+            if (Mathf.Approximately(frozenTimer, 0f))
+            {
+                // "thaw" the enemy
+                frozenTimer = -1f;
+                if (HasStatusEffect(StatusEffect.Freeze))
+                {
+                    // deal percentage damage to self once unthawed from freeze
+                    TakeDamage((int)(healthMax * 0.3f));
+                }
+            }
+        }
+
+        // if the enemy is using AI pathfinding and their frozen, stop them 
+        if (GetComponent<Pathfinding.AIPath>())
+            GetComponent<Pathfinding.AIPath>().canMove = !IsFrozen;
+
+
         // attack in intervals
         attackCooldownTimer -= Time.deltaTime;
         if (attackCooldownTimer < 0) Attack();
@@ -125,5 +157,11 @@ public class EnemyBase : MonoBehaviour
         }
 
         return false;
+    }
+
+    // begins to freeze the enemy for a specified amount of time
+    public void FreezeCharacter(float amountSec = 1)
+    {
+        frozenTimer = amountSec;
     }
 }

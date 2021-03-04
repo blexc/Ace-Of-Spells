@@ -21,8 +21,6 @@ public class ChainLightning : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<EnemyBase>().TakeDamage(5);
-
             if (!triggerList.Contains(other.gameObject))
             {
                 triggerList.Add(other.gameObject);
