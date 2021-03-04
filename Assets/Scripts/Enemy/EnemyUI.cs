@@ -16,8 +16,8 @@ public class EnemyUI : MonoBehaviour
     /// </summary>
     public void enemyHPUpdate(int health)
     {
-        int currHeatlh = Mathf.Clamp(health, 0, HPMax); //Sets health to be within a range of values
-        float HPBaradjustment = (float)health / (float)HPMax; //Gets a percantage of health remaining to adjust the HP UI
+        int currHealth = Mathf.Clamp(health, 0, HPMax); //Sets health to be within a range of values
+        float HPBaradjustment = (float)currHealth / (float)HPMax; //Gets a percantage of health remaining to adjust the HP UI
         HPBarFull.fillAmount = HPBaradjustment; //Adjusts the HP bar Image
     }
 }
