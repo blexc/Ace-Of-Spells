@@ -76,16 +76,38 @@ public class Spell : MonoBehaviour
             var eb = enemyHit.GetComponent<EnemyBase>();
             eb.TakeDamage((int)spellDamage);
 
-            Chain();
 
-            if (lightning) eb.AddStatusEffect(StatusEffect.Shock, 3);
+            float lifeTime = 3f;
+            if (lightning)
+            {
+                Chain();
+                eb.AddStatusEffect(StatusEffect.Shock, 3);
+            }
 
             if (fire)
             {
-                float lifeTime = 3f;
                 eb.AddStatusEffect(StatusEffect.Ignite, (int)lifeTime);
                 var burnerInstance = Instantiate(burnerPrefab, eb.transform);
                 burnerInstance.GetComponent<Burner>().Init(0.5f, lifeTime, 1);
+            }
+
+            if (frost)
+            {
+                eb.AddStatusEffect(StatusEffect.Freeze, (int)lifeTime);
+                if (eb.GetComponent<EnemyFollow>())
+                    eb.GetComponent<EnemyFollow>().FreezeCharacter(lifeTime);
+            }
+
+            if (nature)
+            {
+                eb.AddStatusEffect(StatusEffect.Sap, (int)lifeTime);
+                if (eb.GetComponent<EnemyFollow>())
+                    eb.GetComponent<EnemyFollow>().FreezeCharacter(lifeTime);
+            }
+
+            if (shadow)
+            {
+                eb.AddStatusEffect(StatusEffect.Rot, (int)lifeTime);
             }
 
             //GameObject roomManager = other.gameObject.transform.parent.gameObject;
@@ -97,25 +119,6 @@ public class Spell : MonoBehaviour
 
         // delete spell if hits anything
         Destroy(this.gameObject);
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)

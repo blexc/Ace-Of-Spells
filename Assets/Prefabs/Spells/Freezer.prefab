@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: -2244860691256358237}
   - component: {fileID: 5320697417864867459}
   - component: {fileID: 25947001877480549}
-  m_Layer: 14
-  m_Name: ChainLightning
-  m_TagString: Spell
+  m_Layer: 13
+  m_Name: Freezer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8880743940131354364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4309.17, y: 2202.879, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.9953642, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 0, g: 0.8721261, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -119,21 +119,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a3989676b343c44aed6219b87cba05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellLifetime: 10
   spellDamage: 5
   fire: 0
-  frost: 0
+  frost: 1
   nature: 0
-  lightning: 1
+  lightning: 0
   shadow: 0
   explosionCollider: {fileID: 5320697417864867459}
   eruptionCollider: {fileID: 25947001877480549}
   explosionDamage: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 0
   hit: 0
   spellSpeed: 10
   enemyHit: {fileID: 0}
+  burnerPrefab: {fileID: 2061318786083438459, guid: fc2d9a7aede5a6149b6479912c64d4b9,
+    type: 3}
+  chainLightningPrefab: {fileID: 465657183414590700, guid: 7c1955f9045754742beac5df572f52ca,
+    type: 3}
 --- !u!61 &-2244860691256358237
 BoxCollider2D:
   m_ObjectHideFlags: 0
