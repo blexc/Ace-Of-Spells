@@ -110,10 +110,10 @@ public class EnemyBase : MonoBehaviour
 
         switch (statusEffects[0].Key)
         {
-            case StatusEffect.Freeze:   c = Color.blue; break;
-            case StatusEffect.Rot:      c = Color.green; break;
+            case StatusEffect.Freeze:   c = Color.cyan; break;
+            case StatusEffect.Rot:      c = Color.magenta; break;
             case StatusEffect.Ignite:   c = Color.red; break;
-            case StatusEffect.Bramble:  c = Color.gray; break;
+            case StatusEffect.Bramble:  c = Color.green; break;
             case StatusEffect.Shock:    c = Color.yellow; break;
             default: c = originalColor; break;
         }

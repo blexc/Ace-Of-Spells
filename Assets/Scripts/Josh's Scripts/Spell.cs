@@ -76,54 +76,41 @@ public class Spell : MonoBehaviour
             enemyHit = other.gameObject;
             var eb = enemyHit.GetComponent<EnemyBase>();
             eb.TakeDamage((int)spellDamage);
+            int effectlifeTime = 3; // duration of effect in seconds
 
-
-            float lifeTime = 3f;
+            // apply spell effect
             if (lightning)
             {
                 Chain();
                 eb.AddStatusEffect(StatusEffect.Shock, 3);
             }
-
-            if (fire)
+            else if (fire)
             {
-                eb.AddStatusEffect(StatusEffect.Ignite, (int)lifeTime);
+                eb.AddStatusEffect(StatusEffect.Ignite, effectlifeTime);
                 var burnerInstance = Instantiate(burnerPrefab, eb.transform);
-                burnerInstance.GetComponent<DamageOverTime>().Init(0.5f, lifeTime, 1);
+                burnerInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
             }
-
-            if (frost)
+            else if (frost)
             {
-                eb.AddStatusEffect(StatusEffect.Freeze, (int)lifeTime);
-                eb.FreezeCharacter(lifeTime);
+                eb.AddStatusEffect(StatusEffect.Freeze, effectlifeTime);
+                eb.FreezeCharacter(effectlifeTime);
             }
-
-            if (nature)
+            else if (nature)
             {
-                eb.AddStatusEffect(StatusEffect.Bramble, (int)lifeTime);
-                eb.FreezeCharacter(lifeTime);
+                eb.AddStatusEffect(StatusEffect.Bramble, effectlifeTime);
+                eb.FreezeCharacter(effectlifeTime);
                 var brambleInstance = Instantiate(bramblePrefab, eb.transform);
-                brambleInstance.GetComponent<DamageOverTime>().Init(0.5f, lifeTime, 1);
+                brambleInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
             }
-
-            if (shadow)
+            else if (shadow)
             {
                 // shadow effects last longer
-                lifeTime = 6;
-                eb.AddStatusEffect(StatusEffect.Rot, (int)lifeTime);
+                effectlifeTime = 6;
+                eb.AddStatusEffect(StatusEffect.Rot, effectlifeTime);
             }
-
-            //GameObject roomManager = other.gameObject.transform.parent.gameObject;
-            //RoomManager roomScript = roomManager.GetComponent<RoomManager>();
-            //roomScript.enemiesRemaining--;
-
-            
         }
-
         // delete spell if hits anything
-        Destroy(this.gameObject);
-        
-
+        Destroy(gameObject);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
