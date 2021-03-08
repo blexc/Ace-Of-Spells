@@ -17,7 +17,6 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
-
     }
 
     // Start is called before the first frame update

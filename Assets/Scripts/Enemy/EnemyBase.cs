@@ -25,6 +25,7 @@ public class EnemyBase : MonoBehaviour
     void Start()
     {
         health = healthMax;
+        GetComponent<EnemyUI>().HPMax = healthMax;
         attackCooldownTimer = attackSpd;
         originalColor = GetComponent<SpriteRenderer>().color;
 
@@ -95,7 +96,7 @@ public class EnemyBase : MonoBehaviour
     // child enemy classes will override this function
     protected virtual void Attack()
     {
-        //print("parent attack"); 
+        //print("parent attack");
     }
 
     void ChangeColor()
@@ -103,7 +104,7 @@ public class EnemyBase : MonoBehaviour
         Color c = originalColor;
 
         if (statusEffects.Count == 0)
-        { 
+        {
             GetComponent<SpriteRenderer>().color = c;
             return;
         }
@@ -136,6 +137,7 @@ public class EnemyBase : MonoBehaviour
         health -= amount;
 
         print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax); //**AHL - Reference for enemy damage UI**
+        GetComponent<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
     }
 
     void PrintStatusEffectList()
