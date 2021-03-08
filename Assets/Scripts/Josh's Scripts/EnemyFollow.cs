@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
+    private bool IsFrozen { get { return GetComponent<EnemyBase>().IsFrozen; } }
+
     //enemy movement speed
     public float moveSpeed = 1;
     //enemy detection radius
@@ -17,6 +19,7 @@ public class EnemyFollow : MonoBehaviour
     //if enemy can follow player
     public bool canFollow = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,14 +29,11 @@ public class EnemyFollow : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         //get enemy rigidbody
         enemyRB = GetComponent<Rigidbody2D>();
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     private void FixedUpdate()
@@ -46,7 +46,8 @@ public class EnemyFollow : MonoBehaviour
         direction.Normalize();
         movementDirection = direction;
 
-        if (canFollow)
+        // if can follow and not frozen 
+        if (canFollow && !IsFrozen)
         {
             //move enemy
             MoveCharacter(movementDirection);

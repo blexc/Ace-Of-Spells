@@ -4,7 +4,7 @@ using UnityEngine;
 
 // this object will burn the ENEMY it's attached to for a certain amount of 
 // ticks and for a certain amount of time
-public class Burner : MonoBehaviour
+public class DamageOverTime : MonoBehaviour
 {
     [SerializeField] float tickRate = 0.5f; // in seconds
     [SerializeField] float lifeTime = 5f; // in seconds
@@ -44,7 +44,11 @@ public class Burner : MonoBehaviour
         tick -= Time.deltaTime;
         if (tick < 0)
         {
-            myEnemy.TakeDamage(damagePerTick);
+            // double damage if enemy is rotted 
+            int finalDmg = damagePerTick; 
+            if (myEnemy.HasStatusEffect(StatusEffect.Rot))
+                finalDmg *= 2;
+            myEnemy.TakeDamage(finalDmg);
             tick = tickRate;
         } 
     }

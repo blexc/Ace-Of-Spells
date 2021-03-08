@@ -196,7 +196,7 @@ PrefabInstance:
     - target: {fileID: 6868531035442075019, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.71040726
+      value: 1.5127258
       objectReference: {fileID: 0}
     - target: {fileID: 7359602793798964654, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
@@ -207,19 +207,30 @@ PrefabInstance:
         type: 3}
       propertyPath: drawPile.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa,
+      objectReference: {fileID: 11400000, guid: 3f2c47c1c56a51e48bdcf86220827d76,
         type: 2}
     - target: {fileID: 7359602793798964654, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: drawPile.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa,
+      objectReference: {fileID: 11400000, guid: 3f2c47c1c56a51e48bdcf86220827d76,
         type: 2}
     - target: {fileID: 7359602793798964654, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: drawPile.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa,
+      objectReference: {fileID: 11400000, guid: 3f2c47c1c56a51e48bdcf86220827d76,
         type: 2}
+    - target: {fileID: 7359602793798964654, guid: e9b2360814fa38d4ca4709cddfe75593,
+        type: 3}
+      propertyPath: drawPile.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f2c47c1c56a51e48bdcf86220827d76,
+        type: 2}
+    - target: {fileID: 7412676942345361401, guid: e9b2360814fa38d4ca4709cddfe75593,
+        type: 3}
+      propertyPath: enemiesToSpawn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b2360814fa38d4ca4709cddfe75593, type: 3}

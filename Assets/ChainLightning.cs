@@ -8,7 +8,7 @@ public class ChainLightning : MonoBehaviour
 
     public List<GameObject> triggerList = new List<GameObject>();
 
-    public int spellDamage;
+    //public int spellDamage = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -21,21 +21,20 @@ public class ChainLightning : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-
             if (!triggerList.Contains(other.gameObject))
             {
                 triggerList.Add(other.gameObject);
                 if (triggerList.Count > 0)
                 {
-
                     Instantiate(spellPrefab, other.gameObject.transform.position, Quaternion.identity);
-                    other.gameObject.GetComponent<EnemyBase>().TakeDamage(5);
-
+                    
+                    // deal more damage if affected by rot
+                    int finalDmg = 5;
+                    if (other.gameObject.GetComponent<EnemyBase>().HasStatusEffect(StatusEffect.Rot))
+                        finalDmg *= 2;
+                    other.gameObject.GetComponent<EnemyBase>().TakeDamage(finalDmg);
                 }
-
             }
-
-
         }
     }
 
