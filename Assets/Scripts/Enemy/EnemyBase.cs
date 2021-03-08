@@ -20,7 +20,7 @@ public class EnemyBase : MonoBehaviour
     void Start()
     {
         health = healthMax;
-        GetComponent<EnemyUI>().HPMax = healthMax;
+        GetComponentInChildren<EnemyUI>().HPMax = healthMax;
         attackCooldownTimer = attackSpd;
         originalColor = GetComponent<SpriteRenderer>().color;
     }
@@ -98,8 +98,9 @@ public class EnemyBase : MonoBehaviour
     {
       if (HasStatusEffect(StatusEffect.Shock)) 
             amount *= 2;
+      
       health -= amount;
-      GetComponent<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
+      GetComponentInChildren<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
     }
 
     void PrintStatusEffectList()

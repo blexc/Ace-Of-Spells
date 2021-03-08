@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2369692954743079128}
   - component: {fileID: 2369692954743079129}
   - component: {fileID: 5056110004460552829}
+  - component: {fileID: 1052686801507182216}
   m_Layer: 5
   m_Name: Enemy UI
   m_TagString: Untagged
@@ -27,7 +28,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2369692954743079130}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
@@ -57,7 +58,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -112,6 +113,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853be8ae642f64242bd8c247debad9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1052686801507182216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2369692954743079130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab58291d00fed94991fc212b64a393e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HPBarFull: {fileID: 2369692954813382283}
+  HPMax: 0
 --- !u!1 &2369692954813382285
 GameObject:
   m_ObjectHideFlags: 0
