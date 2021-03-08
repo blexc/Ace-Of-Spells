@@ -26,7 +26,6 @@ public class EnemyRoomManager : MonoBehaviour
     }
 
     public GameObject rewardObject;
-    public float enemySpawnFrequency;
 
     [SerializeField] int enemiesLeft;
     [SerializeField] int checkFrequency = 3;
@@ -48,9 +47,9 @@ public class EnemyRoomManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator CheckEnemyCount()
     {
-        enemiesLeft = FindObjectsOfType<EnemyBase>().Length;
         yield return new WaitForSeconds(checkFrequency);
 
+        enemiesLeft = FindObjectsOfType<EnemyBase>().Length;
         if (!DefeatedAllEnemies)
         {
             // check for enemies again
