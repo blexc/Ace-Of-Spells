@@ -131,8 +131,15 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        // double the damage taken if shocked
-        if (HasStatusEffect(StatusEffect.Shock)) amount *= 2;
+        // take more damage if shocked
+        if (HasStatusEffect(StatusEffect.Shock))
+        {
+            // mutiply damage by two
+            amount *= 2;
+
+            // remove that shock from the list
+            RemoveEffect(StatusEffect.Shock);
+        }
 
         health -= amount;
 
@@ -159,6 +166,25 @@ public class EnemyBase : MonoBehaviour
         {
             if (statusEffects[i].Key == se)
                 return true;
+        }
+
+        return false;
+    }
+
+    // return true if remove effect, false otherwise
+    // removes ONE effect of a specific type (not all stacked types)
+    bool RemoveEffect(StatusEffect se)
+    {
+        // scan the list of status effects..
+        for (int i = statusEffects.Count; --i >= 0;)
+        {
+            if (statusEffects[i].Key == se)
+            {
+                statusEffects.RemoveAt(i);
+                print("removed effect from list");
+                ChangeColor();
+                return true;
+            }
         }
 
         return false;
