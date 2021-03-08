@@ -11,42 +11,30 @@ public class GameplayUI : MonoBehaviour
 
     //Variable Initialization/Declaration
     public Image hpBarFull; //Full HP bar that will be adjusted when the player heals/takes damage
-    public int HPtemp = 100; //AHL - Temporary HP value until we have the actual player stats implemented
+    [HideInInspector] public float HPMax; //Max possible HP variable to keep track of the players max HP
     public Text Hptxt; //Text that will hold and adjust the player health for the player to see during gameplay
     public Image timeFull; //Stop Time image that will be adjusted to show that it is filling up
     public Text timetxt; //Time value to be adjusted to show that it is tracking time %
-    public int timeNum; //Time variable to show the number change
-    public float timeAdjuster; //Adjustable float variable to change the time manipulation speed of the scene
     public Text coinstxt; //Coin # value to be adjusted to show that it is tracking coins collected
     public int coinNum = 10; //AHL -Temporary coin variable to show the number change
 
+    //References to other game objects (Mainly the player stats)
+    public PlayerStats playerStats;
 
-    //AHL - Temporary function to show how the damage works
-    public void Damage()
+    private void Awake()
     {
-        HPtemp -= 12;
-    }
-
-    //AHL - Temporary function to show how the time stop works
-    public void TimeGain()
-    {
-        timeNum += 10;
-    }
-
-    //AHL - Temporary function to show coin addition
-    public void GotCoins()
-    {
-        coinNum += 2;
+        HPMax = playerStats.maxHealth; //Sets max health on the UI - AHL (3/4/21)
+        Hptxt.text = "" + (int)HPMax; //Changes the text
     }
 
     /// <summary>
     /// Alexander Lopez (2/15/21): Function that takes in the player health and adjusts the health bar based on it. 
     /// </summary>
-    void HealthUpdate(int health)
+    public void HealthUpdate(float health)
     {
-        HPtemp = Mathf.Clamp(health, 0, 100); //Sets health to be within a range of values
-        Hptxt.text = "" + health; //Changes the text
-        float HPBaradjustment = (float)health / 100f; //Gets a percantage of health remaining to adjust the HP UI
+        float HPtemp = Mathf.Clamp(health, 0, HPMax); //Sets health to be within a range of values
+        Hptxt.text = "" + (int)HPtemp; //Changes the text
+        float HPBaradjustment = HPtemp / HPMax; //Gets a percantage of health remaining to adjust the HP UI
         hpBarFull.fillAmount = HPBaradjustment; //Adjusts the HP Image
     }
 
@@ -54,10 +42,9 @@ public class GameplayUI : MonoBehaviour
     /// Alexander Lopez (2/16/21): Function that takes in the time addition and adjusts the time bar based on it. 
     /// **AHL- Might need to be removed with an enum or power-up section. Need to talk to lead about it.**
     /// </summary>
-    void TimeUpdate(int Time)
+    public void TimeUpdate(int Time)
     {
-        timeNum = Mathf.Clamp(Time, 0, 100); //Sets time to be within a range of values
-        timetxt.text = "" + timeNum + '%'; //Changes the text
+        timetxt.text = "" + Time + '%'; //Changes the text
         float TimeBaradjustment = (float)Time / 100f; //Gets a percantage of health remaining to adjust the HP UI
         timeFull.fillAmount = TimeBaradjustment; //Adjusts the HP Image
     }
@@ -75,8 +62,7 @@ public class GameplayUI : MonoBehaviour
     void Update()
     {
         //AHL - Will need to remove this and put this with enemy collisons or when the player takes damage.
-        HealthUpdate(HPtemp); //Checks to make sure that the health of the player is always up to date.
-        TimeUpdate(timeNum); //Checks to make sure that the time is always up to date.
+        //HealthUpdate(HPtemp); //Checks to make sure that the health of the player is always up to date.
         coinUpdate(coinNum); //Checks to make sure that the coins are always up to date.
     }
 }
