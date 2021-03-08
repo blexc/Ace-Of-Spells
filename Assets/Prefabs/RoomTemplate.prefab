@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 395033406}
   - component: {fileID: 395033407}
   - component: {fileID: 395033405}
+  - component: {fileID: 770789964665195336}
   - component: {fileID: 395033408}
   m_Layer: 0
   m_Name: ScriptManager
@@ -71,6 +72,22 @@ MonoBehaviour:
   coinstxt: {fileID: 73646513}
   coinNum: 10
   playerStats: {fileID: 6868531035524457654}
+--- !u!114 &770789964665195336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395033404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359d1e8205a34294db5435dfacf16371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeNum: 98
+  slowedTime: 0.55
+  increaseDelayNum: 1
+  decreaseDelayNum: 0.05
 --- !u!114 &395033408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +146,7 @@ MonoBehaviour:
     m_ActionName: Gameplay/Movement[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 770789964665195336}
         m_MethodName: slowtime
         m_Mode: 0
         m_Arguments:
@@ -1888,15 +1905,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aad61ee156de7040898088cf0f73338, type: 3}
---- !u!1 &874076238 stripped
+--- !u!1 &1874536598 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2814680346951469637, guid: 1aad61ee156de7040898088cf0f73338,
+  m_CorrespondingSourceObject: {fileID: 2814680345536019101, guid: 1aad61ee156de7040898088cf0f73338,
     type: 3}
   m_PrefabInstance: {fileID: 2814680347152323083}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1406277618 stripped
+--- !u!114 &327595244 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2814680346402719225, guid: 1aad61ee156de7040898088cf0f73338,
+  m_CorrespondingSourceObject: {fileID: 2814680347479844583, guid: 1aad61ee156de7040898088cf0f73338,
     type: 3}
   m_PrefabInstance: {fileID: 2814680347152323083}
   m_PrefabAsset: {fileID: 0}
@@ -1906,6 +1923,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &874076238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2814680346951469637, guid: 1aad61ee156de7040898088cf0f73338,
+    type: 3}
+  m_PrefabInstance: {fileID: 2814680347152323083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &415484996 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2814680347290787407, guid: 1aad61ee156de7040898088cf0f73338,
@@ -1936,18 +1959,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2814680347152323083}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1874536598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2814680345536019101, guid: 1aad61ee156de7040898088cf0f73338,
-    type: 3}
-  m_PrefabInstance: {fileID: 2814680347152323083}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1007810117 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2814680346817750094, guid: 1aad61ee156de7040898088cf0f73338,
-    type: 3}
-  m_PrefabInstance: {fileID: 2814680347152323083}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &620017138 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2814680346690136057, guid: 1aad61ee156de7040898088cf0f73338,
@@ -1972,18 +1983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &327595244 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2814680347479844583, guid: 1aad61ee156de7040898088cf0f73338,
-    type: 3}
-  m_PrefabInstance: {fileID: 2814680347152323083}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &73646513 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2814680347217384378, guid: 1aad61ee156de7040898088cf0f73338,
@@ -1994,6 +1993,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1007810117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2814680346817750094, guid: 1aad61ee156de7040898088cf0f73338,
+    type: 3}
+  m_PrefabInstance: {fileID: 2814680347152323083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1406277618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2814680346402719225, guid: 1aad61ee156de7040898088cf0f73338,
+    type: 3}
+  m_PrefabInstance: {fileID: 2814680347152323083}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3945127410563777018
@@ -2302,6 +2319,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6868531034242462556}
     m_Modifications:
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: destinationScene
+      value: AlexChapman02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: destinationName
+      value: Assets/Scenes/AlexChapman02.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: scenePath
+      value: Assets/Scenes/AlexChapman02.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: sceneName
+      value: AlexChapman02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: rewardSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c589c0ac273047b409cf85efa7ee4241,
+        type: 3}
     - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
       propertyPath: enemiesToSpawn.Array.size
@@ -2394,32 +2437,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: destinationScene
-      value: AlexChapman02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: destinationName
-      value: Assets/Scenes/AlexChapman02.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: scenePath
-      value: Assets/Scenes/AlexChapman02.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: sceneName
-      value: AlexChapman02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: rewardSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c589c0ac273047b409cf85efa7ee4241,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9960371577c7441b0db3889fd14a63, type: 3}
 --- !u!4 &8234833950298672273 stripped
