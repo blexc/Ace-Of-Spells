@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPBarFull: {fileID: 2369692954813382283}
+  damageText: {fileID: 4732583620067882615, guid: ea2bbd0b1c6514e41897c83e75f181e5,
+    type: 3}
   HPMax: 0
 --- !u!1 &2369692954813382285
 GameObject:
