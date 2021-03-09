@@ -7,3 +7,4 @@ public enum StatusEffect
     Bramble,// freezes enemy and deals damage over time
     Rot,    // doubles damage of all current status effects
 }
+
