@@ -38,8 +38,11 @@ public class Spell : MonoBehaviour
 
     public GameObject enemyHit;
 
-    // this object will be spawned upon an enemy if the spell causes ignite 
+    // these object will be spawned upon an enemy if the spell causes ignite or bramble
     public GameObject burnerPrefab;
+    public GameObject bramblePrefab;
+
+    public GameObject chainLightningPrefab;
 
     private void Awake()
     {
@@ -73,27 +76,41 @@ public class Spell : MonoBehaviour
             enemyHit = other.gameObject;
             var eb = enemyHit.GetComponent<EnemyBase>();
             eb.TakeDamage((int)spellDamage);
+            int effectlifeTime = 3; // duration of effect in seconds
 
-            if (lightning) eb.AddStatusEffect(StatusEffect.Shock, 3);
-
-            if (fire)
+            // apply spell effect
+            if (lightning)
             {
-                float lifeTime = 3f;
-                eb.AddStatusEffect(StatusEffect.Ignite, (int)lifeTime);
-                var burnerInstance = Instantiate(burnerPrefab, eb.transform);
-                burnerInstance.GetComponent<Burner>().Init(0.5f, lifeTime, 1);
+                Chain();
+                eb.AddStatusEffect(StatusEffect.Shock, 3);
             }
-
-            //GameObject roomManager = other.gameObject.transform.parent.gameObject;
-            //RoomManager roomScript = roomManager.GetComponent<RoomManager>();
-            //roomScript.enemiesRemaining--;
-
-            
+            else if (fire)
+            {
+                eb.AddStatusEffect(StatusEffect.Ignite, effectlifeTime);
+                var burnerInstance = Instantiate(burnerPrefab, eb.transform);
+                burnerInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
+            }
+            else if (frost)
+            {
+                eb.AddStatusEffect(StatusEffect.Freeze, effectlifeTime);
+                eb.FreezeCharacter(effectlifeTime);
+            }
+            else if (nature)
+            {
+                eb.AddStatusEffect(StatusEffect.Bramble, effectlifeTime);
+                eb.FreezeCharacter(effectlifeTime);
+                var brambleInstance = Instantiate(bramblePrefab, eb.transform);
+                brambleInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
+            }
+            else if (shadow)
+            {
+                // shadow effects last longer
+                effectlifeTime = 6;
+                eb.AddStatusEffect(StatusEffect.Rot, effectlifeTime);
+            }
         }
-
         // delete spell if hits anything
-        Destroy(this.gameObject);
-        
+        Destroy(gameObject);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -114,18 +131,15 @@ public class Spell : MonoBehaviour
 
     public void Chain()
     {
-        
 
-        
-    }
+        Instantiate(chainLightningPrefab, enemyHit.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
 
-    public void ApplyStatusEffect()
-    {
-        //status effect
     }
 
     public void Explosion()
     {
+        //screen size collider
         explosionCollider.enabled = true;
     }
 
@@ -136,7 +150,16 @@ public class Spell : MonoBehaviour
 
     public void Erupt()
     {
+        //room size collider
         eruptionCollider.enabled = true;
 
     }
+
+    public void ApplyStatusEffect()
+    {
+        //status effect
+    }
 }
+
+
+

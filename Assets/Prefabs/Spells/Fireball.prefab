@@ -137,6 +137,10 @@ MonoBehaviour:
   enemyHit: {fileID: 0}
   burnerPrefab: {fileID: 2061318786083438459, guid: fc2d9a7aede5a6149b6479912c64d4b9,
     type: 3}
+  bramblePrefab: {fileID: 2061318786083438459, guid: 611bc24b61491d445bdbbcd414e4658f,
+    type: 3}
+  chainLightningPrefab: {fileID: 465657183414590700, guid: 7c1955f9045754742beac5df572f52ca,
+    type: 3}
 --- !u!61 &-2244860691256358237
 BoxCollider2D:
   m_ObjectHideFlags: 0

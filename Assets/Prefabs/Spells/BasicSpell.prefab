@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5320697417864867459}
   - component: {fileID: 25947001877480549}
   m_Layer: 13
-  m_Name: LightningBolt
+  m_Name: BasicSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.9953642, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -120,11 +120,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellLifetime: 10
-  spellDamage: 1
+  spellDamage: 5
   fire: 0
   frost: 0
   nature: 0
-  lightning: 1
+  lightning: 0
   shadow: 0
   explosionCollider: {fileID: 5320697417864867459}
   eruptionCollider: {fileID: 25947001877480549}
