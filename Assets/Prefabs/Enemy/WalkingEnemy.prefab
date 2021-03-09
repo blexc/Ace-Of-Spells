@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &4786491136670744445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847655656457945660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab58291d00fed94991fc212b64a393e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HPBarFull: {fileID: 847655656396061805}
+  HPMax: 0
 --- !u!1 &8883940010358041061
 GameObject:
   m_ObjectHideFlags: 0
@@ -17,7 +31,6 @@ GameObject:
   - component: {fileID: 8883940010358041087}
   - component: {fileID: 8883940010358041085}
   - component: {fileID: 7544297313292112267}
-  - component: {fileID: 2763758108403558052}
   m_Layer: 14
   m_Name: WalkingEnemy
   m_TagString: Enemy
@@ -246,21 +259,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2763758108403558052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8883940010358041061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab58291d00fed94991fc212b64a393e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HPBarFull: {fileID: 847655656396061805}
-  HPBarRect: {fileID: 847655656216855616}
-  HPMax: 0
 --- !u!1001 &3107955965902963430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -380,15 +378,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ee64039029269c48b40e8305be02258, type: 3}
---- !u!224 &847655656457945632 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2369692954743079110, guid: 5ee64039029269c48b40e8305be02258,
+--- !u!1 &847655656457945660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2369692954743079130, guid: 5ee64039029269c48b40e8305be02258,
     type: 3}
   m_PrefabInstance: {fileID: 3107955965902963430}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &847655656216855616 stripped
+--- !u!224 &847655656457945632 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2369692954934363814, guid: 5ee64039029269c48b40e8305be02258,
+  m_CorrespondingSourceObject: {fileID: 2369692954743079110, guid: 5ee64039029269c48b40e8305be02258,
     type: 3}
   m_PrefabInstance: {fileID: 3107955965902963430}
   m_PrefabAsset: {fileID: 0}
