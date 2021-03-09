@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: -2244860691256358237}
   - component: {fileID: 5320697417864867459}
   - component: {fileID: 25947001877480549}
+  - component: {fileID: -4947009444928555337}
   m_Layer: 13
-  m_Name: Freezer
+  m_Name: FlameStrike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0.8721261, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.008489549, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -119,10 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a3989676b343c44aed6219b87cba05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLifetime: 10
+  spellLifetime: 1.1
   spellDamage: 5
-  fire: 0
-  frost: 1
+  fire: 1
+  frost: 0
   nature: 0
   lightning: 0
   shadow: 0
@@ -209,3 +210,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.417529, y: 1.8627932}
   m_EdgeRadius: 0
+--- !u!114 &-4947009444928555337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880743940131354364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1f079d05941d14c92896293c8c74b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flameStrikePrefab: {fileID: 3210945271931674300, guid: 2c1290dbeae455c4880fc691598a7f3f,
+    type: 3}
