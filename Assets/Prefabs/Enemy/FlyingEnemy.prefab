@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7252567977041878552}
   - component: {fileID: 7252567977041878555}
   - component: {fileID: 7252567977041878554}
-  - component: {fileID: 1968587002764032124}
   m_Layer: 11
   m_Name: FlyingEnemy
   m_TagString: Enemy
@@ -181,21 +180,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
---- !u!114 &1968587002764032124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7252567977041878557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab58291d00fed94991fc212b64a393e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HPBarFull: {fileID: 4939851874382913864}
-  HPBarRect: {fileID: 4939851874321080069}
-  HPMax: 0
 --- !u!1001 &7237062725753479107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -321,15 +305,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7237062725753479107}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4939851874382913864 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2369692954813382283, guid: 5ee64039029269c48b40e8305be02258,
-    type: 3}
-  m_PrefabInstance: {fileID: 7237062725753479107}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

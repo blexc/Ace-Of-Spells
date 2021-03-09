@@ -7,7 +7,7 @@ public class EnemyUI : MonoBehaviour
 {
     //Variable Initialization/Declaration
     public Image HPBarFull; //Full HP bar that will be adjusted when the enemy heals/takes damage
-    
+
     [HideInInspector]
     public int HPMax; //Int for the maximum amount of hp that the enemy has
 
