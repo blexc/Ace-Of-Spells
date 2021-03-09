@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ece8fb408081aa4eb2294f33472e8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 10
+  maxHealth: 100
+  currentHealth: 100
   moveSpeed: 10
   spellCooldown: 0
   timeControl: 0
@@ -292,6 +292,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93409bbc33bc8d64fb27a542eb2ca537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellPrefab:
-  - {fileID: 8880743940131354364, guid: 8e999fd2944fd244c98c342167057978, type: 3}
   mainCamera: {fileID: 0}

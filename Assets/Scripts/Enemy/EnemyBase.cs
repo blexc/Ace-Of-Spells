@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
+    public bool IsFrozen { get { return frozenTimer > 0; } }
+
     public int healthMax;
     public int attackDmg;
     public int attackSpd; // in seconds
@@ -17,15 +19,49 @@ public class EnemyBase : MonoBehaviour
     float attackCooldownTimer;
     Color originalColor;
 
+    // if greater than 0, then you cannot move
+    public float frozenTimer;
+
     void Start()
     {
         health = healthMax;
+        GetComponent<EnemyUI>().HPMax = healthMax;
         attackCooldownTimer = attackSpd;
         originalColor = GetComponent<SpriteRenderer>().color;
+
+        frozenTimer = -1f;
     }
 
     void Update()
     {
+        // if the freeze timer isn't inactive
+        if (!Mathf.Approximately(-1f, frozenTimer))
+        {
+            // decrement timer
+            frozenTimer = Mathf.Max(0f, frozenTimer - Time.deltaTime);
+
+            // if the timer hits 0, unfreeze the enemy and
+            // set the timer to be inactive
+            if (Mathf.Approximately(frozenTimer, 0f))
+            {
+                // "thaw" the enemy
+                frozenTimer = -1f;
+                if (HasStatusEffect(StatusEffect.Freeze))
+                {
+                    // deal percentage damage to self once unthawed from freeze
+                    int finalDmg = (int)(healthMax * 0.3f);
+                    if (HasStatusEffect(StatusEffect.Rot))
+                        finalDmg *= 2;
+                    TakeDamage(finalDmg);
+                }
+            }
+        }
+
+        // if the enemy is using AI pathfinding and their frozen, stop them 
+        if (GetComponent<Pathfinding.AIPath>())
+            GetComponent<Pathfinding.AIPath>().canMove = !IsFrozen;
+
+
         // attack in intervals
         attackCooldownTimer -= Time.deltaTime;
         if (attackCooldownTimer < 0) Attack();
@@ -60,7 +96,7 @@ public class EnemyBase : MonoBehaviour
     // child enemy classes will override this function
     protected virtual void Attack()
     {
-        //print("parent attack"); 
+        //print("parent attack");
     }
 
     void ChangeColor()
@@ -68,17 +104,17 @@ public class EnemyBase : MonoBehaviour
         Color c = originalColor;
 
         if (statusEffects.Count == 0)
-        { 
+        {
             GetComponent<SpriteRenderer>().color = c;
             return;
         }
 
         switch (statusEffects[0].Key)
         {
-            case StatusEffect.Freeze:   c = Color.blue; break;
-            case StatusEffect.Rot:      c = Color.green; break;
+            case StatusEffect.Freeze:   c = Color.cyan; break;
+            case StatusEffect.Rot:      c = Color.magenta; break;
             case StatusEffect.Ignite:   c = Color.red; break;
-            case StatusEffect.Sap:      c = Color.gray; break;
+            case StatusEffect.Bramble:  c = Color.green; break;
             case StatusEffect.Shock:    c = Color.yellow; break;
             default: c = originalColor; break;
         }
@@ -95,12 +131,20 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        // double the damage taken if shocked
-        if (HasStatusEffect(StatusEffect.Shock)) amount *= 2;
+        // take more damage if shocked
+        if (HasStatusEffect(StatusEffect.Shock))
+        {
+            // mutiply damage by two
+            amount *= 2;
+
+            // remove that shock from the list
+            RemoveEffect(StatusEffect.Shock);
+        }
 
         health -= amount;
 
-        //print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax); //**AHL - Reference for enemy damage UI**
+        print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax); //**AHL - Reference for enemy damage UI**
+        GetComponent<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
     }
 
     void PrintStatusEffectList()
@@ -115,7 +159,7 @@ public class EnemyBase : MonoBehaviour
 
     // will return whether or not this enemy has a certain
     // status effect applied to it
-    bool HasStatusEffect(StatusEffect se)
+    public bool HasStatusEffect(StatusEffect se)
     {
         // scan the list of status effects..
         for (int i = statusEffects.Count; --i >= 0;)
@@ -125,5 +169,30 @@ public class EnemyBase : MonoBehaviour
         }
 
         return false;
+    }
+
+    // return true if remove effect, false otherwise
+    // removes ONE effect of a specific type (not all stacked types)
+    bool RemoveEffect(StatusEffect se)
+    {
+        // scan the list of status effects..
+        for (int i = statusEffects.Count; --i >= 0;)
+        {
+            if (statusEffects[i].Key == se)
+            {
+                statusEffects.RemoveAt(i);
+                print("removed effect from list");
+                ChangeColor();
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    // begins to freeze the enemy for a specified amount of time
+    public void FreezeCharacter(float amountSec = 1)
+    {
+        frozenTimer = amountSec;
     }
 }
