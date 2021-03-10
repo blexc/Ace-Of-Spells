@@ -123,6 +123,7 @@ public class Spell : MonoBehaviour
         
     }
 
+    /*
     private void OnTriggerEnter2D(Collider2D other)
     {
         //if hits an enemy
@@ -171,6 +172,7 @@ public class Spell : MonoBehaviour
 
         }
     }
+    */
 
     public void Damage()
     {
