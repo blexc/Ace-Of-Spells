@@ -23,18 +23,23 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// Player movement with Unity's input manager system - AHL (3/1/21)
     /// </summary>
+    /// 
+    
     public void playerMovement(InputAction.CallbackContext context)
     {
+        Debug.Log(moveInput);
         moveInput = context.ReadValue<Vector2>();
     }
+    
 
 
     private void FixedUpdate()
     {
-
+        transform.position = new Vector2(transform.position.x + (moveInput.x * Time.deltaTime * movementSpeed), transform.position.y + (moveInput.y * Time.deltaTime * movementSpeed));
 
     }
 
+    /*
     private void Update()
     {
         //If Player Hits W
@@ -108,6 +113,8 @@ public class PlayerMovement : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         }
     }
+    */
+    
 }
 
  
