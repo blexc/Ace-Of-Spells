@@ -9,6 +9,8 @@ TagManager:
   - Room1
   - Room2
   - Spell
+  - Interactable
+  - FlameStrike
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - FlyingEnemy
   - Wall
   - Spell
-  - 
+  - Hit
   - 
   - 
   - 

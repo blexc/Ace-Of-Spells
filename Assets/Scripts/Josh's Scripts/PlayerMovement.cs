@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
    //player movement speed
     private float movementSpeed;
+
     private Animator animator;
-    private SpriteRenderer sprite;
+    private SpriteRenderer sprite
+    private Vector2 moveInput;
+
 
     private void Awake()
     {
@@ -15,9 +19,19 @@ public class PlayerMovement : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         sprite = gameObject.GetComponent<SpriteRenderer>();
     }
+
+    /// <summary>
+    /// Player movement with Unity's input manager system - AHL (3/1/21)
+    /// </summary>
+    public void playerMovement(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
+    }
+
+
     private void FixedUpdate()
     {
-        
+
 
     }
 
@@ -65,7 +79,8 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("side", false);
         }
-
+        transform.position += new Vector3(moveInput.x, moveInput.y, 0) * Time.deltaTime * movementSpeed;
+        
         //If Player Hits S
         if (Input.GetKey(KeyCode.S))
         {
@@ -77,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("front", false);
         }
+        
 
         if (!Input.GetKey(KeyCode.S) && 
             !Input.GetKey(KeyCode.D) &&
@@ -89,8 +105,24 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             animator.SetBool("moving", true);
+            this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         }
     }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Enemy")
+        {
+          TakeDamage(other.gamObject.GetComponent<EnemyBase>().attackDmg);
+        }
+    }
+    
+    public void TakeDamage(int damage)
+    {
+      currentHealth-=damage;
+    }
+            
 
 
 }

@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: 
   name: Fireball
-  description: Deal low damage to an enemy and discard the top card to attack another
-    enemy
+  description: It's hot!
   element: Fire
-  manaCost: 2
-  spell: {fileID: 2309898997970855667, guid: 05403aab2b3d0de478c8355e3439f722, type: 3}
+  spell: {fileID: 8880743940131354364, guid: adf6c49375a88e44f9b8b057d74426c5, type: 3}

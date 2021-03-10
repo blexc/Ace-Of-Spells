@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Deck : MonoBehaviour
 {
@@ -14,34 +15,53 @@ public class Deck : MonoBehaviour
     const int HAND_SIZE_MAX = 3;
 
     public bool showDebugPrints = false;
-    int debugMana = 20;
     int debugCall = 0;
 
     // uses the currently selected card (calls selected card's spell function)
-    public void ActivateSelectedCard()
+    public void ActivateSelectedCard(InputAction.CallbackContext context)
     {
+        // do not work unless you've pressed and released left mouse
+        if (!context.performed) return;
+
         var selectedCard = hand[handSelectionIndex];
+        var spell = selectedCard.spell;
         if (showDebugPrints)
             print("Activating selected card: " + selectedCard.name);
 
-        selectedCard.InstantiateSpell();
+        if (spell == null)
+        {
+            Debug.LogError("Spell unset for card: " + name);
+            return;
+        }
+
+        // pass the spellPrefab into PlayerAttack script to spawn it
+        var pa = FindObjectOfType<PlayerAttack>();
+        if (pa) pa.CastSpell(spell);
+        else Debug.LogError("Player Attack script not found in scene.");
 
         discardPile.Add(selectedCard);
         hand.RemoveAt(handSelectionIndex);
+
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
 
         DrawCard();
     }
 
     // changes the currently selected card to the next card in hand
-    public void SwapSelectedCard()
+    public void SwapSelectedCard(InputAction.CallbackContext context)
     {
-        handSelectionIndex++;
-        handSelectionIndex %= hand.Count;
-
-        if (showDebugPrints)
+        if(context.performed)
         {
-            var selectedCard = hand[handSelectionIndex];
-            print("Selected: " + selectedCard.name + " at index " + handSelectionIndex);
+            handSelectionIndex++;
+            handSelectionIndex %= hand.Count;
+
+            FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
+
+            if (showDebugPrints)
+            {
+                var selectedCard = hand[handSelectionIndex];
+                print("Selected: " + selectedCard.name + " at index " + handSelectionIndex);
+            }
         }
     }
 
@@ -59,8 +79,7 @@ public class Deck : MonoBehaviour
         }
 
         FindObjectOfType<CardManager>().cardUpdate(); //Updates what is displayed for the cards in hand UI
-
-        if (showDebugPrints) print("Cards drew: " + cardsDrew);
+        FindObjectOfType<CardManager>().deckUI.text = "" + drawPile.Count; //Updates the deck Num UI
     }
 
     // adds a new card to the draw pile
@@ -102,6 +121,7 @@ public class Deck : MonoBehaviour
             }
         }
 
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
         return false;
     }
 
@@ -120,6 +140,8 @@ public class Deck : MonoBehaviour
             drawPile.Add(discardPile[i]);
             discardPile.RemoveAt(i);
         }
+
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
     }
 
     // randomizes the items in a list of cards
@@ -148,8 +170,12 @@ public class Deck : MonoBehaviour
     {
         ShuffleList(ref drawPile);
         DrawCard(HAND_SIZE_MAX);
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+        FindObjectOfType<CardManager>().cardUpdate();
+        FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
     }
 
+    /*
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -177,10 +203,6 @@ public class Deck : MonoBehaviour
                 else print("Did not find Fireball object to destroy");
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            DebugPrint();
-        }
     }
+    */
 }

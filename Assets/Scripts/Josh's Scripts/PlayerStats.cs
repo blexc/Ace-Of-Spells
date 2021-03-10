@@ -31,4 +31,17 @@ public class PlayerStats : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Enemy")
+        {
+            TakeDamage(other.gameObject.GetComponent<EnemyBase>().attackDmg);
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+    }
 }
