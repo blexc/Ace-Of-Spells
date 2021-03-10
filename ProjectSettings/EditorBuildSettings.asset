@@ -17,4 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AlexChapman03.unity
     guid: 129074d302cd07445833cef9bfa8cb95
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 2962227a1e382f04c82ea356392c29ba,
+      type: 2}

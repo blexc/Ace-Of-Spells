@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     [Header("Time")]
     public float spellCooldown;
     public float timeControl;
+    public float cd;
 
     private void Awake()
     {
@@ -30,6 +31,10 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         
+        if (cd > 0)
+        {
+            cd -= Time.deltaTime * 1f;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
