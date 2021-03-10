@@ -14,9 +14,11 @@ public class PlayerStats : MonoBehaviour
     [Header("Time")]
     public float spellCooldown;
     public float timeControl;
+    public float cd;
 
     private void Awake()
     {
+
     }
 
     // Start is called before the first frame update
@@ -29,5 +31,22 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         
+        if (cd > 0)
+        {
+            cd -= Time.deltaTime * 1f;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Enemy")
+        {
+            TakeDamage(other.gameObject.GetComponent<EnemyBase>().attackDmg);
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
     }
 }

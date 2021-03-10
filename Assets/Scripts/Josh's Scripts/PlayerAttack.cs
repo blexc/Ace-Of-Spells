@@ -7,8 +7,14 @@ public class PlayerAttack : MonoBehaviour
 {
     //camera reference
     public Camera mainCamera;
+    private GameObject par;
 
-   
+    private void Start()
+    {
+        par = transform.parent.gameObject;
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -27,11 +33,46 @@ public class PlayerAttack : MonoBehaviour
     public void CastSpell(GameObject spellPrefab)
     {
         // if spellPrefab is not null...
-        if (spellPrefab)
+        if (spellPrefab && par.GetComponent<PlayerStats>().cd <= 0f)
         {
+            par.GetComponent<PlayerStats>().cd = par.GetComponent<PlayerStats>().spellCooldown;
             //spawn spell at my rotation
             //print("PlayerAttack: spawning spell: " + spellPrefab.name);
             Instantiate(spellPrefab, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), transform.rotation);
+            if (transform.eulerAngles.z <= 45f || transform.eulerAngles.z > 315f)
+            {
+                //face right
+                Debug.Log("face right");
+                //Debug.Log(transform.rotation.z);
+                par.GetComponent<PlayerMovement>().animator.SetTrigger("SideCast");
+            }
+
+            if (transform.eulerAngles.z > 45f && transform.eulerAngles.z <= 135f)
+            {
+                //face up
+                Debug.Log("face up");
+                par.GetComponent<PlayerMovement>().animator.SetTrigger("BackCast");
+                //Debug.Log(transform.rotation.z);
+            }
+
+            if (transform.eulerAngles.z > 135f && transform.eulerAngles.z <= 225f)
+            {
+                //face left
+                Debug.Log("face left");
+                par.GetComponent<PlayerMovement>().animator.SetTrigger("SideAltCast");
+                
+
+                //Debug.Log(transform.rotation.z);
+            }
+
+            if (transform.eulerAngles.z > 225f && transform.eulerAngles.z <= 315f)
+            {
+                //face down
+                Debug.Log("face down");
+                par.GetComponent<PlayerMovement>().animator.SetTrigger("FrontCast");
+                //Debug.Log(transform.rotation.z);
+            }
+            Debug.Log(transform.eulerAngles.z);
         }
     }
 }
