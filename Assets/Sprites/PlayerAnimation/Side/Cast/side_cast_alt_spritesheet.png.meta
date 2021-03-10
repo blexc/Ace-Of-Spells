@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 906d893d645cad349afacb6ef9aebc9e
+guid: 8dc6e923a1aa6e84b9c03aad597c0c7f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5467432982663281343
-    second: Side_cast_Spritesheet_0
+      213: 6981671811108910929
+    second: side_cast_alt_spritesheet_0
   - first:
-      213: 6603849856048750732
-    second: Side_cast_Spritesheet_1
+      213: 6213387049323659077
+    second: side_cast_alt_spritesheet_1
   - first:
-      213: -6327704325569139228
-    second: Side_cast_Spritesheet_2
+      213: -2107844516619249365
+    second: side_cast_alt_spritesheet_2
   - first:
-      213: -755270827464963802
-    second: Side_cast_Spritesheet_3
+      213: -190890566006869553
+    second: side_cast_alt_spritesheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -135,85 +135,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Side_cast_Spritesheet_0
+      name: side_cast_alt_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 4
-        width: 383
-        height: 496
-      alignment: 9
-      pivot: {x: 0.53000224, y: 0.51698923}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fba36ec745930eb40800000000000000
-      internalID: 5467432982663281343
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Side_cast_Spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 450
-        y: 0
-        width: 404
-        height: 487
-      alignment: 9
-      pivot: {x: 0.54740465, y: 0.5110111}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c80ecc3947695ab50800000000000000
-      internalID: 6603849856048750732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Side_cast_Spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 942
-        y: 0
-        width: 329
-        height: 500
-      alignment: 9
-      pivot: {x: 0.51629955, y: 0.52911025}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4edafb6017a7f28a0800000000000000
-      internalID: -6327704325569139228
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Side_cast_Spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 1317
+        x: 45
         y: 8
         width: 383
         height: 492
       alignment: 9
-      pivot: {x: 0.5320028, y: 0.5280265}
+      pivot: {x: 0.51554143, y: 0.5120984}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6294cbb1f2db485f0800000000000000
-      internalID: -755270827464963802
+      spriteID: 157318f8581e3e060800000000000000
+      internalID: 6981671811108910929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: side_cast_alt_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 329
+        height: 500
+      alignment: 9
+      pivot: {x: 0.53316915, y: 0.5297619}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ff2f6f9926a3650800000000000000
+      internalID: 6213387049323659077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: side_cast_alt_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 0
+        width: 404
+        height: 487
+      alignment: 9
+      pivot: {x: 0.47544393, y: 0.5122225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b299729749e6fb2e0800000000000000
+      internalID: -2107844516619249365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: side_cast_alt_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 4
+        width: 383
+        height: 496
+      alignment: 9
+      pivot: {x: 0.4948195, y: 0.516001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1ff26aa02d95df0800000000000000
+      internalID: -190890566006869553
       vertices: []
       indices: 
       edges: []
@@ -221,7 +221,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c22b4c43349be4149845962ddaecbbed
+    spriteID: 73cf5d2d4bc9af743825d0fd6c82e878
     internalID: 0
     vertices: []
     indices: 

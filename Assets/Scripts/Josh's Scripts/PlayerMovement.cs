@@ -8,16 +8,14 @@ public class PlayerMovement : MonoBehaviour
    //player movement speed
     private float movementSpeed;
 
-    private Animator animator;
-    private SpriteRenderer sprite;
+    public Animator animator;
+    public SpriteRenderer sprite;
     private Vector2 moveInput;
 
 
     private void Awake()
     {
         movementSpeed = GetComponent<PlayerStats>().moveSpeed;
-        animator = gameObject.GetComponent<Animator>();
-        sprite = gameObject.GetComponent<SpriteRenderer>();
     }
 
     /// <summary>
@@ -27,15 +25,66 @@ public class PlayerMovement : MonoBehaviour
     
     public void playerMovement(InputAction.CallbackContext context)
     {
-        Debug.Log(moveInput);
         moveInput = context.ReadValue<Vector2>();
     }
     
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         transform.position = new Vector2(transform.position.x + (moveInput.x * Time.deltaTime * movementSpeed), transform.position.y + (moveInput.y * Time.deltaTime * movementSpeed));
+
+        if  (moveInput.x != 0 || moveInput.y !=0)
+        {
+            animator.SetBool("moving", true);
+        }
+        else
+        {
+            animator.SetBool("moving", false);
+        }
+
+        
+
+        if ((moveInput.x > 0.5f) && !animator.GetBool("front"))
+        {
+            animator.SetBool("side", true);
+            animator.SetBool("sidealt", false);
+        }
+        else if ((moveInput.x < -0.5f) && !animator.GetBool("front"))
+        {
+            animator.SetBool("sidealt", true);
+            animator.SetBool("side", false);
+        }
+        else
+        {
+            animator.SetBool("side", false);
+            animator.SetBool("sidealt", false);
+        }
+
+        if (moveInput.y > 0.5f && !animator.GetBool("side"))
+        {
+            animator.SetBool("back", true);
+            animator.SetBool("front", false);
+        }
+        else if (moveInput.y < -0.5f)
+        {
+            animator.SetBool("front", true);
+            animator.SetBool("back", false);
+        }
+        else
+        {
+            animator.SetBool("front", false);
+            animator.SetBool("back", false);
+        }
+
+        if (moveInput.x == 0f && moveInput.y ==0f)
+        {
+            animator.SetBool("idle", true);
+        }
+        else
+        {
+            animator.SetBool("idle", false);
+        }
 
     }
 
