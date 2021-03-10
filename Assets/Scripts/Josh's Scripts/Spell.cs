@@ -110,69 +110,15 @@ public class Spell : MonoBehaviour
             }
         }
 
-        // delete spell if hits anything
-        if(this.gameObject.tag != "FlameStrike")
-        {
-            //Destroy(gameObject);
-
-        }
+        // delete spell if hits ANYTHING
+        // should not be left, since it could hit multiple enemies
+        Destroy(gameObject);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         
     }
-
-    /*
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        //if hits an enemy
-        if (other.gameObject.tag == "Enemy")
-        {
-            enemyHit = other.gameObject;
-            var eb = enemyHit.GetComponent<EnemyBase>();
-            eb.TakeDamage((int)spellDamage);
-            int effectlifeTime = 3; // duration of effect in seconds
-
-            // apply spell effect
-            if (lightning)
-            {
-                Chain();
-                eb.AddStatusEffect(StatusEffect.Shock, 3);
-            }
-            else if (fire)
-            {
-                eb.AddStatusEffect(StatusEffect.Ignite, effectlifeTime);
-                var burnerInstance = Instantiate(burnerPrefab, eb.transform);
-                burnerInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
-            }
-            else if (frost)
-            {
-                eb.AddStatusEffect(StatusEffect.Freeze, effectlifeTime);
-                eb.FreezeCharacter(effectlifeTime);
-            }
-            else if (nature)
-            {
-                eb.AddStatusEffect(StatusEffect.Bramble, effectlifeTime);
-                eb.FreezeCharacter(effectlifeTime);
-                var brambleInstance = Instantiate(bramblePrefab, eb.transform);
-                brambleInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
-            }
-            else if (shadow)
-            {
-                // shadow effects last longer
-                effectlifeTime = 6;
-                eb.AddStatusEffect(StatusEffect.Rot, effectlifeTime);
-            }
-        }
-        // delete spell if hits anything
-        if(this.gameObject.tag != "FlameStrike")
-        {
-            Destroy(gameObject);
-
-        }
-    }
-    */
 
     public void Damage()
     {
