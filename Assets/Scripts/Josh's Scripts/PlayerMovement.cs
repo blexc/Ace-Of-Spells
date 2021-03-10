@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float movementSpeed;
 
     private Animator animator;
-    private SpriteRenderer sprite
+    private SpriteRenderer sprite;
     private Vector2 moveInput;
 
 
@@ -108,22 +108,9 @@ public class PlayerMovement : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         }
     }
-    }
+}
 
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if(other.gameObject.tag == "Enemy")
-        {
-          TakeDamage(other.gamObject.GetComponent<EnemyBase>().attackDmg);
-        }
-    }
-    
-    public void TakeDamage(int damage)
-    {
-      currentHealth-=damage;
-    }
+ 
             
 
-
-}
 
