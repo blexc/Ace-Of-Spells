@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("sidealt", false);
         }
 
-        if (moveInput.y > 0.5f && !animator.GetBool("side"))
+        if (moveInput.y > 0.5f && !animator.GetBool("side") && !animator.GetBool("sidealt"))
         {
             animator.SetBool("back", true);
             animator.SetBool("front", false);
