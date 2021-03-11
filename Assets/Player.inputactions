@@ -52,6 +52,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Pause Button",
+                    "type": "Button",
+                    "id": "7f1b7322-2a1a-4d04-9969-0fa178aab618",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -208,25 +216,68 @@
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef3d2d9b-c594-4a60-b9cd-f69f687e85d5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Pause Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "Menu's",
+            "name": "Menu",
             "id": "8a51733c-e71d-449c-84d5-da344859dc8c",
             "actions": [
                 {
-                    "name": "Selection",
-                    "type": "Button",
-                    "id": "9c312989-5333-4770-b0d6-d027b203d165",
-                    "expectedControlType": "Button",
+                    "name": "Keyboard Navigation",
+                    "type": "Value",
+                    "id": "d159e5de-4744-4743-ba81-2432c6353db2",
+                    "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": ""
                 },
                 {
-                    "name": "Move",
+                    "name": "Keyboard Selection",
                     "type": "Button",
-                    "id": "fdc33f95-7a3a-41aa-b498-3889d788ab7c",
+                    "id": "b760bc24-2b08-41ef-b4d4-5ce86854bb7b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Mouse Navigation",
+                    "type": "PassThrough",
+                    "id": "8fcab034-120b-448d-afe5-76d618a8016c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Mouse Selection",
+                    "type": "PassThrough",
+                    "id": "8cbfc415-000e-43db-b08d-250f53b6a28e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Mouse Scroll",
+                    "type": "PassThrough",
+                    "id": "541ee8c3-8415-41f1-a01d-27735cb7063c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Resume Button",
+                    "type": "Button",
+                    "id": "109835a8-5b89-494f-b43b-8db855a99575",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -234,57 +285,156 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "f6a620aa-16a3-4d66-9c72-7e1bcdec90a0",
-                    "path": "<Mouse>/leftButton",
+                    "name": "Keyboard",
+                    "id": "bf922329-9513-42e5-8bdb-9315ccfb77b9",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse and Keyboard",
-                    "action": "Selection",
-                    "isComposite": false,
+                    "groups": "",
+                    "action": "Keyboard Navigation",
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "8f804660-511a-4899-8fc2-d13fd97343c9",
+                    "name": "up",
+                    "id": "0fa623f9-690e-4122-98dc-d9266f61f1c8",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "Move",
+                    "action": "Keyboard Navigation",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "fe17fde4-36ee-45ce-b8bb-e135f1ff09e8",
-                    "path": "<Keyboard>/a",
+                    "name": "up",
+                    "id": "d8675085-a37f-4fef-b598-0c2e34e65abe",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "Move",
+                    "action": "Keyboard Navigation",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "72169e25-e2e4-46e1-beed-a2baa5089787",
+                    "name": "down",
+                    "id": "01b58811-77e4-48b3-bf71-259871edd3d6",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "Move",
+                    "action": "Keyboard Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "509d1a79-ee73-45c5-9456-3c8d8c7ab16a",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Keyboard Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "bc9e5264-7bb4-4222-a9be-dec71d3e1b3f",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Keyboard Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "019d152b-f0b9-43b8-a0fb-4a9a2b01ae2f",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Keyboard Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "e00e22a9-5d6d-4831-ac24-3d433c40ecff",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Keyboard Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "dca2c31e-f658-4ef7-839a-224ad8473c66",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Keyboard Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "4763d4b2-60a8-4a3a-8365-95f4d3613341",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Keyboard Selection",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "5e9571df-9c2c-4c3e-87d9-fd128be90e6c",
-                    "path": "<Keyboard>/d",
+                    "id": "c2b3b951-4c7f-4569-8dce-b59f9d8787c2",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "Move",
+                    "action": "Mouse Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "18dd243a-0bbb-43b5-be43-39edf1189348",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Mouse Selection",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa8c0cc7-8a4f-40cb-8ceb-b2d5781e7218",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Mouse Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6649eaa-d63d-4042-ade6-7f6760b4ad59",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Resume Button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
