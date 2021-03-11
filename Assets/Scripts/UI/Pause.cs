@@ -22,7 +22,11 @@ public class Pause : MonoBehaviour
     /// </summary>
     public void mainMenu()
     {
+        GetComponent<GameplayUI>().gamePaused = false;
+        Time.timeScale = 1f;
+        GetComponent<GameplayUI>().pauseMenu.SetActive(false);     
         SceneManager.LoadScene("Main Menu");
+        Destroy(GetComponentInParent<DontDestroyOnLoad>().gameObject);
     }
 
     /// <summary>
