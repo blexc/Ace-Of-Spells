@@ -15,11 +15,12 @@ public class PlayerStats : MonoBehaviour
     public float spellCooldown;
     public float timeControl;
     public float cd;
-    private SpriteRenderer sprite;
+
+    [SerializeField] private GameObject ScriptManager;
 
     private void Awake()
     {
-        sprite = gameObject.GetComponent<PlayerMovement>().sprite;
+
     }
 
     // Start is called before the first frame update
@@ -31,7 +32,6 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (cd > 0)
         {
             cd -= Time.deltaTime * 1f;
@@ -49,14 +49,6 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        StartCoroutine(Flash());
-    }
-
-    public IEnumerator Flash()
-    {
-        sprite.color = Color.red;
-        yield return new WaitForSeconds(.125f);
-        sprite.color = Color.white;
-
+        ScriptManager.GetComponent<GameplayUI>().HealthUpdate(currentHealth);
     }
 }
