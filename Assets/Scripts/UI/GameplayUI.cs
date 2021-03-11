@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameplayUI : MonoBehaviour
 {
@@ -37,10 +38,18 @@ public class GameplayUI : MonoBehaviour
     /// </summary>
     public void HealthUpdate(float health)
     {
-        float HPtemp = Mathf.Clamp(health, 0, HPMax); //Sets health to be within a range of values
-        Hptxt.text = "" + (int)HPtemp; //Changes the text
-        float HPBaradjustment = HPtemp / HPMax; //Gets a percantage of health remaining to adjust the HP UI
-        hpBarFull.fillAmount = HPBaradjustment; //Adjusts the HP Image
+        if(health <= 0)
+        {
+            playerDeath();
+        }
+
+        else
+        {
+            float HPtemp = Mathf.Clamp(health, 0, HPMax); //Sets health to be within a range of values
+            Hptxt.text = "" + (int)HPtemp; //Changes the text
+            float HPBaradjustment = HPtemp / HPMax; //Gets a percantage of health remaining to adjust the HP UI
+            hpBarFull.fillAmount = HPBaradjustment; //Adjusts the HP Image
+        }
     }
 
     /// <summary>
@@ -69,6 +78,15 @@ public class GameplayUI : MonoBehaviour
         //AHL - Will need to remove this and put this with enemy collisons or when the player takes damage.
         //HealthUpdate(HPtemp); //Checks to make sure that the health of the player is always up to date.
         coinUpdate(coinNum); //Checks to make sure that the coins are always up to date.
+    }
+
+    /// <summary>
+    /// Function to kill the player and end the game - AHL (3/10/21)
+    /// </summary>
+    private void playerDeath()
+    {
+        GetComponent<PlayerInput>().SwitchCurrentActionMap("Menu");
+        SceneManager.LoadScene("Game Over");
     }
 
     /// <summary>

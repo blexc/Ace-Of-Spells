@@ -31,4 +31,13 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    /// <summary>
+    /// Function that puts the player back to the main menu - AHL (3/10/21)
+    /// </summary>
+    public void mainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+        Destroy(FindObjectOfType<PlayerStats>().GetComponentInParent<DontDestroyOnLoad>().gameObject);
+    }
 }
