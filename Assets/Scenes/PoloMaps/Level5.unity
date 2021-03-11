@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -328,11 +328,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5902504057094275335, guid: e9b2360814fa38d4ca4709cddfe75593,
-        type: 3}
-      propertyPath: sceneName
-      value: Level6
-      objectReference: {fileID: 0}
     - target: {fileID: 6868531033739062816, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -491,12 +486,12 @@ PrefabInstance:
     - target: {fileID: 6868531035442075019, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.299997
+      value: -20.3
       objectReference: {fileID: 0}
     - target: {fileID: 6868531035442075019, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 93.34035
+      value: 92.03146
       objectReference: {fileID: 0}
     - target: {fileID: 6868531035524457648, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
@@ -1559,7 +1554,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0019517913, y: 0.00073954836}
   m_SpriteTilingProperty:
     border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
@@ -1570,7 +1565,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.11706011, y: 0.13485509}
   m_EdgeRadius: 0
 --- !u!212 &663855678
 SpriteRenderer:
@@ -2010,7 +2005,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0012026858, y: -0.0013173372}
   m_SpriteTilingProperty:
     border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
@@ -2021,7 +2016,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.114297315, y: 0.12768859}
   m_EdgeRadius: 0
 --- !u!212 &964462222
 SpriteRenderer:
