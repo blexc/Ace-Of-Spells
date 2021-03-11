@@ -15,4 +15,20 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    /// <summary>
+    /// Function that opens up a browser tab to the feedback form - AHL (3/10/21)
+    /// </summary>
+    public void feedbackForm()
+    {
+        Application.OpenURL("https://forms.gle/WWURFyrLW8bmNAE39");
+    }
+
+    /// <summary>
+    /// Function that quits the game entirely- AHL (3/10/21)
+    /// </summary>
+    public void quit()
+    {
+        Application.Quit();
+    }
 }
