@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthMax: 10
-  attackDmg: 2
+  attackDmg: 5
   attackSpd: 2
   frozenTimer: 0
 --- !u!114 &7252567977041878553
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  detectionRadius: 16
+  detectionRadius: 40
   canFollow: 0
 --- !u!61 &7252567977041878552
 BoxCollider2D:
@@ -154,7 +154,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7252567977041878557}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -182,7 +182,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 14.32
+  m_Radius: 40
 --- !u!95 &4261265811182381498
 Animator:
   serializedVersion: 3
