@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1077672221632126224}
   - component: {fileID: 1916339001672008310}
+  - component: {fileID: 7934204441117938352}
   m_Layer: 0
   m_Name: chainimage
   m_TagString: Untagged
@@ -81,3 +82,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7934204441117938352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8321941504294198269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a03c26a554fb594395a14214290b8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0

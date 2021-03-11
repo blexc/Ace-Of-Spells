@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     //camera reference
     public Camera mainCamera;
     private GameObject par;
+    public bool spellCast = false;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
         // if spellPrefab is not null...
         if (spellPrefab && par.GetComponent<PlayerStats>().cd <= 0f)
         {
+            spellCast = true;
             par.GetComponent<PlayerStats>().cd = par.GetComponent<PlayerStats>().spellCooldown;
             //spawn spell at my rotation
             //print("PlayerAttack: spawning spell: " + spellPrefab.name);
