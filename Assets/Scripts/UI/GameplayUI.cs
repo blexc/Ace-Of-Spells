@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class GameplayUI : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class GameplayUI : MonoBehaviour
 
     //References to other game objects (Mainly the player stats)
     public PlayerStats playerStats;
+
+    //Pause Menu Variables
+    public GameObject pauseMenu; //Pause menu that will be set to active or de-active during certain conditions
+    public bool gamePaused = false; //Variable to hold the game paused bool
 
     private void Awake()
     {
@@ -64,5 +69,20 @@ public class GameplayUI : MonoBehaviour
         //AHL - Will need to remove this and put this with enemy collisons or when the player takes damage.
         //HealthUpdate(HPtemp); //Checks to make sure that the health of the player is always up to date.
         coinUpdate(coinNum); //Checks to make sure that the coins are always up to date.
+    }
+
+    /// <summary>
+    /// Function to pause the game based on the esc key being pressed - AHL (3/10/21)
+    /// **Key bindings can be changed by using the input manager**
+    /// </summary>
+    public void gamePause(InputAction.CallbackContext context)
+    {
+        if(context.performed && gamePaused == false)
+        {
+            gamePaused = true;
+            Time.timeScale = 0f;
+            GetComponent<GameplayUI>().pauseMenu.SetActive(true);
+            GetComponent<PlayerInput>().SwitchCurrentActionMap("Menu");
+        }
     }
 }

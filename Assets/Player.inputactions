@@ -52,6 +52,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Pause Button",
+                    "type": "Button",
+                    "id": "7f1b7322-2a1a-4d04-9969-0fa178aab618",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -208,11 +216,22 @@
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef3d2d9b-c594-4a60-b9cd-f69f687e85d5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Pause Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "Menu's",
+            "name": "Menu",
             "id": "8a51733c-e71d-449c-84d5-da344859dc8c",
             "actions": [
                 {
@@ -254,6 +273,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Resume Button",
+                    "type": "Button",
+                    "id": "109835a8-5b89-494f-b43b-8db855a99575",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -397,6 +424,17 @@
                     "processors": "",
                     "groups": "Mouse and Keyboard",
                     "action": "Mouse Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6649eaa-d63d-4042-ade6-7f6760b4ad59",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Resume Button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
