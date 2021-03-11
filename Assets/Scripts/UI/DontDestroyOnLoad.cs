@@ -21,5 +21,4 @@ public class DontDestroyOnLoad : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }
