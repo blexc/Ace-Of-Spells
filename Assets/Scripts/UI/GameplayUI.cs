@@ -24,7 +24,7 @@ public class GameplayUI : MonoBehaviour
 
     //Pause Menu Variables
     public GameObject pauseMenu; //Pause menu that will be set to active or de-active during certain conditions
-    public bool gamePaused = false; //Variable to hold the game paused bool
+    [HideInInspector] public bool gamePaused = false; //Variable to hold the game paused bool
 
     private void Awake()
     {

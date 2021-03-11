@@ -11,6 +11,7 @@ public class Pause : MonoBehaviour
     /// </summary>
     public void resume()
     {
+        GetComponent<GameplayUI>().gamePaused = false;
         Time.timeScale = 1f;
         GetComponent<GameplayUI>().pauseMenu.SetActive(false);
         GetComponent<PlayerInput>().SwitchCurrentActionMap("Gameplay");
@@ -30,5 +31,20 @@ public class Pause : MonoBehaviour
     public void quit()
     {
         Application.Quit();
+    }
+
+    /// <summary>
+    /// Function to un-pause the game based on the esc key being pressed - AHL (3/10/21)
+    /// **Key bindings can be changed by using the input manager**
+    /// </summary>
+    public void gameResume(InputAction.CallbackContext context)
+    {
+        if (context.performed && GetComponent<GameplayUI>().gamePaused == true)
+        {
+            GetComponent<GameplayUI>().gamePaused = false;
+            Time.timeScale = 1f;
+            GetComponent<GameplayUI>().pauseMenu.SetActive(false);
+            GetComponent<PlayerInput>().SwitchCurrentActionMap("Gameplay");
+        }
     }
 }
