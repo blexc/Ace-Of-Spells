@@ -721,6 +721,11 @@ PrefabInstance:
       propertyPath: spellCooldown
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 4889278154387037153, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
+        type: 3}
+      propertyPath: ScriptManager
+      value: 
+      objectReference: {fileID: 8560584751444804969}
     - target: {fileID: 4889278154387037154, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
       propertyPath: m_Radius
@@ -870,12 +875,12 @@ PrefabInstance:
     - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.177639
+      value: -15.300998
       objectReference: {fileID: 0}
     - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -33.333336
+      value: -29.666666
       objectReference: {fileID: 0}
     - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
