@@ -16,6 +16,8 @@ public class PlayerStats : MonoBehaviour
     public float timeControl;
     public float cd;
 
+    [SerializeField] private GameObject ScriptManager;
+
     private void Awake()
     {
 
@@ -30,7 +32,6 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (cd > 0)
         {
             cd -= Time.deltaTime * 1f;
@@ -48,5 +49,6 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        ScriptManager.GetComponent<GameplayUI>().HealthUpdate(currentHealth);
     }
 }
