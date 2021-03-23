@@ -13,6 +13,8 @@ public class Card : ScriptableObject
 
     public GameObject spell;
 
+    public bool isObtained; //Variable to keep track of if the card has been collected to show in the card collection menu
+
     public void Print()
     {
         Debug.Log("Card name: " + name + "\nDescription: " + description);
