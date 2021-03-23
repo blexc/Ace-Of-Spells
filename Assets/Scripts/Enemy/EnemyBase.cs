@@ -25,7 +25,7 @@ public class EnemyBase : MonoBehaviour
     void Start()
     {
         health = healthMax;
-        GetComponent<EnemyUI>().HPMax = healthMax;
+        GetComponentInChildren<EnemyUI>().HPMax = healthMax;
         attackCooldownTimer = attackSpd;
         originalColor = GetComponent<SpriteRenderer>().color;
 
@@ -57,7 +57,7 @@ public class EnemyBase : MonoBehaviour
             }
         }
 
-        // if the enemy is using AI pathfinding and their frozen, stop them 
+        // if the enemy is using AI pathfinding and their frozen, stop them
         if (GetComponent<Pathfinding.AIPath>())
             GetComponent<Pathfinding.AIPath>().canMove = !IsFrozen;
 
@@ -143,8 +143,9 @@ public class EnemyBase : MonoBehaviour
 
         health -= amount;
 
-        print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax); //**AHL - Reference for enemy damage UI**
-        GetComponent<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
+        print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax);
+        GetComponentInChildren<EnemyUI>().damagePopUP(amount); //Calls the spawn of the enemy damage text in the UI script - AHL (3/9/21)
+        GetComponentInChildren<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
     }
 
     void PrintStatusEffectList()

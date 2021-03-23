@@ -36,15 +36,27 @@ public class Deck : MonoBehaviour
 
         // pass the spellPrefab into PlayerAttack script to spawn it
         var pa = FindObjectOfType<PlayerAttack>();
-        if (pa) pa.CastSpell(spell);
+        if (pa)
+        {
+            if (!pa.spellCast)
+            {
+                pa.CastSpell(spell);
+            }
+        }
+        
         else Debug.LogError("Player Attack script not found in scene.");
 
-        discardPile.Add(selectedCard);
-        hand.RemoveAt(handSelectionIndex);
+        if (pa.spellCast)
+        {
+            discardPile.Add(selectedCard);
+            hand.RemoveAt(handSelectionIndex);
 
-        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+            FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
 
-        DrawCard();
+            DrawCard();
+            pa.spellCast = false;
+        }
+        
     }
 
     // changes the currently selected card to the next card in hand
