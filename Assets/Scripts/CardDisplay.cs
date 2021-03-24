@@ -17,9 +17,21 @@ public class CardDisplay : MonoBehaviour
 
     private void Update()
     {
-        nameText.text = card.name;
-        elementText.text = card.element;
-        desctiptionText.text = card.description;
+        if (nameText!=null)
+        {
+            nameText.text = card.name;
+        }
+
+        if (elementText != null)
+        {
+            elementText.text = card.element;
+        }
+
+        if (desctiptionText != null)
+        {
+            desctiptionText.text = card.description;
+        }
+        
         //manaCostText.text = card.manaCost.ToString();
     }
 }

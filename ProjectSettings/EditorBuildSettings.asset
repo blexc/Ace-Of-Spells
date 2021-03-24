@@ -6,17 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/JoshTEST.unity
-    guid: 5a42d7b9b4b56d74fb333c9873e39ea0
-  - enabled: 1
-    path: Assets/Scenes/AlexChapman02.unity
-    guid: bee0667e78581f3498c7cf0cbc10440b
-  - enabled: 1
-    path: Assets/Scenes/AlexChapman01.unity
-    guid: da89998c705c67d4a99f035f1885393f
-  - enabled: 1
-    path: Assets/Scenes/AlexChapman03.unity
-    guid: 129074d302cd07445833cef9bfa8cb95
+    path: Assets/Scenes/Main Menu.unity
+    guid: 44c16426166b03a4fa26b78a0e6e128e
   - enabled: 1
     path: Assets/Scenes/PoloMaps/Level1.unity
     guid: 3c4079fae8f1d40b1867aa943abe35b7
@@ -24,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/PoloMaps/Level2.unity
     guid: f3259e814f49e4dbb8407cf68b96756d
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 44c16426166b03a4fa26b78a0e6e128e
+    path: Assets/Scenes/PoloMaps/Level3.unity
+    guid: b7739d4ea6c044fd69055ebc92823788
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2962227a1e382f04c82ea356392c29ba,
       type: 2}
