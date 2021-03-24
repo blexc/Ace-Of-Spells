@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
-  m_Name: BigTree
+  m_Name: FreezeEarth
   m_EditorClassIdentifier: 
-  name: Big Tree
-  description: The power of nature.
-  element: Nature
-  spell: {fileID: 8880743940131354364, guid: 4e9e0e3db1ca00947b6a8bd357d700d3, type: 3}
+  name: Freeze Earth
+  description: Freezes all enemies in target area
+  element: Frost
+  spell: {fileID: 0}

@@ -8,18 +8,17 @@ public class Spell : MonoBehaviour
     private Rigidbody2D spellRigidbody;
 
     [SerializeField] float spellLifetime = 10f; // in seconds
+    [SerializeField] int effectlifeTime = 3; // duration of effect in seconds
 
     public float spellDamage;
 
-    public bool fire;
+    public bool applyIgniteEffect;
+    public bool applyFreezeEffect;
+    public bool applyShockEffect;
+    public bool applyRotEffect;
 
-    public bool frost;
-
-    public bool nature;
-
-    public bool lightning;
-
-    public bool shadow;
+    public bool applyChainLightning;
+    public int numIceCounters; 
 
     public Collider2D explosionCollider;
 
@@ -40,8 +39,6 @@ public class Spell : MonoBehaviour
 
     // these object will be spawned upon an enemy if the spell causes ignite or bramble
     public GameObject burnerPrefab;
-    public GameObject bramblePrefab;
-
     public GameObject chainLightningPrefab;
 
     private void Awake()
@@ -50,13 +47,11 @@ public class Spell : MonoBehaviour
         spellRigidbody = GetComponent<Rigidbody2D>();
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
         //move spell 
         spellRigidbody.velocity = transform.right * spellSpeed;
-
     }
 
     private void Update()
@@ -66,48 +61,41 @@ public class Spell : MonoBehaviour
         if (spellLifetime < 0) Destroy(gameObject);
     }
 
-
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         //if hits an enemy
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.CompareTag("Enemy"))
         {
             enemyHit = other.gameObject;
             var eb = enemyHit.GetComponent<EnemyBase>();
             eb.TakeDamage((int)spellDamage);
-            int effectlifeTime = 3; // duration of effect in seconds
 
-            // apply spell effect
-            if (lightning)
+            if (applyChainLightning) Chain();
+            if (numIceCounters > 0) eb.AddIceCounters(numIceCounters);
+
+            #region apply spell effects
+            if (applyShockEffect)
             {
-                Chain();
                 eb.AddStatusEffect(StatusEffect.Shock, 3);
             }
-            else if (fire)
+            else if (applyIgniteEffect)
             {
                 eb.AddStatusEffect(StatusEffect.Ignite, effectlifeTime);
                 var burnerInstance = Instantiate(burnerPrefab, eb.transform);
                 burnerInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
             }
-            else if (frost)
+            else if (applyFreezeEffect)
             {
                 eb.AddStatusEffect(StatusEffect.Freeze, effectlifeTime);
                 eb.FreezeCharacter(effectlifeTime);
             }
-            else if (nature)
-            {
-                eb.AddStatusEffect(StatusEffect.Bramble, effectlifeTime);
-                eb.FreezeCharacter(effectlifeTime);
-                var brambleInstance = Instantiate(bramblePrefab, eb.transform);
-                brambleInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
-            }
-            else if (shadow)
+            else if (applyRotEffect)
             {
                 // shadow effects last longer
                 effectlifeTime = 6;
                 eb.AddStatusEffect(StatusEffect.Rot, effectlifeTime);
             }
+            #endregion
         }
 
         // delete spell if hits ANYTHING
@@ -128,10 +116,11 @@ public class Spell : MonoBehaviour
 
     public void Chain()
     {
-
-        Instantiate(chainLightningPrefab, enemyHit.transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
-
+        if (chainLightningPrefab)
+        {
+            Instantiate(chainLightningPrefab, enemyHit.transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
     }
 
     public void Explosion()
