@@ -12,8 +12,6 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text elementText;
     public TMP_Text desctiptionText;
-    //public TMP_Text manaCostText;
-
 
     private void Update()
     {
@@ -31,7 +29,5 @@ public class CardDisplay : MonoBehaviour
         {
             desctiptionText.text = card.description;
         }
-        
-        //manaCostText.text = card.manaCost.ToString();
     }
 }

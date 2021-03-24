@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5320697417864867459}
   - component: {fileID: 25947001877480549}
   m_Layer: 13
-  m_Name: Freezer
+  m_Name: FrostBolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,12 +120,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellLifetime: 10
+  effectlifeTime: 3
   spellDamage: 5
-  fire: 0
-  frost: 1
-  nature: 0
-  lightning: 0
-  shadow: 0
+  applyIgniteEffect: 0
+  applyFreezeEffect: 0
+  applyShockEffect: 0
+  applyRotEffect: 0
+  applyChainLightning: 0
+  numIceCounters: 1
   explosionCollider: {fileID: 5320697417864867459}
   eruptionCollider: {fileID: 25947001877480549}
   explosionDamage: 0
@@ -136,8 +138,6 @@ MonoBehaviour:
   spellSpeed: 10
   enemyHit: {fileID: 0}
   burnerPrefab: {fileID: 2061318786083438459, guid: fc2d9a7aede5a6149b6479912c64d4b9,
-    type: 3}
-  bramblePrefab: {fileID: 2061318786083438459, guid: 611bc24b61491d445bdbbcd414e4658f,
     type: 3}
   chainLightningPrefab: {fileID: 465657183414590700, guid: 7c1955f9045754742beac5df572f52ca,
     type: 3}

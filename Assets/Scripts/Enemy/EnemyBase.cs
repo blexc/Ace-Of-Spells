@@ -15,6 +15,7 @@ public class EnemyBase : MonoBehaviour
     public List<KeyValuePair<StatusEffect, float>> statusEffects =
         new List<KeyValuePair<StatusEffect, float>>();
 
+    int iceCounter; // if ice counter becomes 3, freeze 
     int health;
     float attackCooldownTimer;
     Color originalColor;
@@ -29,6 +30,7 @@ public class EnemyBase : MonoBehaviour
         attackCooldownTimer = attackSpd;
         originalColor = GetComponent<SpriteRenderer>().color;
 
+        iceCounter = 0;
         frozenTimer = -1f;
     }
 
@@ -114,7 +116,6 @@ public class EnemyBase : MonoBehaviour
             case StatusEffect.Freeze:   c = Color.cyan; break;
             case StatusEffect.Rot:      c = Color.magenta; break;
             case StatusEffect.Ignite:   c = Color.red; break;
-            case StatusEffect.Bramble:  c = Color.green; break;
             case StatusEffect.Shock:    c = Color.yellow; break;
             default: c = originalColor; break;
         }
@@ -122,9 +123,16 @@ public class EnemyBase : MonoBehaviour
         GetComponent<SpriteRenderer>().color = c;
     }
 
-    public void AddStatusEffect(StatusEffect effect, int durationSeconds)
+    /// <summary>
+    /// applies a status effect to the enemy for a specified amount of time
+    /// default duration three seconds
+    /// </summary>
+    /// <param name="effect"></param>
+    /// <param name="durationSeconds"></param>
+    public void AddStatusEffect(StatusEffect effect, int durationSeconds = 3)
     {
         var pair = new KeyValuePair<StatusEffect, float>(effect, durationSeconds);
+
         statusEffects.Add(pair);
         ChangeColor();
     }
@@ -143,7 +151,7 @@ public class EnemyBase : MonoBehaviour
 
         health -= amount;
 
-        print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax);
+        //print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax);
         GetComponentInChildren<EnemyUI>().damagePopUP(amount); //Calls the spawn of the enemy damage text in the UI script - AHL (3/9/21)
         GetComponentInChildren<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
     }
@@ -182,7 +190,7 @@ public class EnemyBase : MonoBehaviour
             if (statusEffects[i].Key == se)
             {
                 statusEffects.RemoveAt(i);
-                print("removed effect from list");
+                //print("removed effect from list");
                 ChangeColor();
                 return true;
             }
@@ -192,8 +200,24 @@ public class EnemyBase : MonoBehaviour
     }
 
     // begins to freeze the enemy for a specified amount of time
-    public void FreezeCharacter(float amountSec = 1)
+    public void FreezeCharacter(float amountSec = 3)
     {
         frozenTimer = amountSec;
+    }
+
+    /// <summary>
+    /// increases the ice counter by specified amount
+    /// if the enemy has three, they will be frozen
+    /// </summary>
+    public void AddIceCounters(int numIceCounters)
+    {
+        iceCounter += numIceCounters;
+        if (iceCounter >= 3)
+        {
+            int freezeDuration = 3;
+            AddStatusEffect(StatusEffect.Freeze, freezeDuration);
+            FreezeCharacter(freezeDuration);
+            iceCounter %= 3; // mod 3 
+        }
     }
 }
