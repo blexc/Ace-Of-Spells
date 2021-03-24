@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2244860691256358237}
   - component: {fileID: 5320697417864867459}
   - component: {fileID: 25947001877480549}
+  - component: {fileID: 8894174864701209098}
   m_Layer: 13
   m_Name: LightningBolt
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 8880743940131354364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,8 +76,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.9953642, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: -8386576520133175966, guid: 6351bcb14e95a0d41b73fc1b00862211,
+    type: 3}
+  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -133,7 +135,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   hit: 0
-  spellSpeed: 10
+  spellSpeed: 20
   enemyHit: {fileID: 0}
   burnerPrefab: {fileID: 2061318786083438459, guid: fc2d9a7aede5a6149b6479912c64d4b9,
     type: 3}
@@ -157,8 +159,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    pivot: {x: 0.6033399, y: 0.5034128}
+    oldSize: {x: 1.92, y: 1.71}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -199,8 +201,8 @@ BoxCollider2D:
   m_Offset: {x: 0.02239418, y: 0.018463492}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    pivot: {x: 0.6033399, y: 0.5034128}
+    oldSize: {x: 1.92, y: 1.71}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -209,3 +211,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.417529, y: 1.8627932}
   m_EdgeRadius: 0
+--- !u!95 &8894174864701209098
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880743940131354364}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba3f774acaac88c4aa5c7ddef5e68d95, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
