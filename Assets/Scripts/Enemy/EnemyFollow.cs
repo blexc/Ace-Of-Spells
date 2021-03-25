@@ -31,27 +31,25 @@ public class EnemyFollow : MonoBehaviour
         enemyRB = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     private void FixedUpdate()
     {
-
         //get player direction & rotate
         Vector3 direction = (player.transform.position - transform.position) * moveSpeed;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        enemyRB.rotation = angle;
-        direction.Normalize();
-        movementDirection = direction;
 
         // if can follow and not frozen 
         if (canFollow && !IsFrozen)
         {
+            enemyRB.rotation = angle;
+            direction.Normalize();
+            movementDirection = direction;
+
             //move enemy
             MoveCharacter(movementDirection);
-
+        }
+        else
+        {
+            enemyRB.velocity = Vector2.zero;
         }
     }
 

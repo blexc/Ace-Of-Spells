@@ -8,7 +8,6 @@ public class IceSpear : Spell
 {
     protected override void OnTriggerEnter2D(Collider2D other)
     {
-        print("hey");
         //if hits an enemy
         if (other.gameObject.CompareTag("Enemy"))
         {
