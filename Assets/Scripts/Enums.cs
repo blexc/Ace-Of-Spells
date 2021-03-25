@@ -1,4 +1,6 @@
-﻿// used in EnemyBase script
+﻿// all enums should be defined here 
+
+// used in EnemyBase script
 public enum StatusEffect
 {
     Shock,  // double damage taken
