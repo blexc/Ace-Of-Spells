@@ -24,6 +24,11 @@ public class EnemySpawner : MonoBehaviour
         {
             // spawn more enemies relative to spawn pos
             var spawnPos = transform.position;
+
+            // vary the spawn location slightly
+            spawnPos.x += Random.Range(0f, 2f);
+            spawnPos.y += Random.Range(0f, 2f);
+
             var e = Instantiate(enemiesToSpawn[0], spawnPos, Quaternion.identity);
 
             // increment counter and update the name of the enemy
