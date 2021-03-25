@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// assumes EnemyDetectionRadius.cs is attached to a child object
 public class EnemyFollow : MonoBehaviour
 {
     private bool IsFrozen { get { return GetComponent<EnemyBase>().IsFrozen; } }
@@ -9,7 +10,7 @@ public class EnemyFollow : MonoBehaviour
     //enemy movement speed
     public float moveSpeed = 1;
     //enemy detection radius
-    public float detectionRadius = 40f;
+    public int detectionRadius = 40;
     //player reference
     GameObject player;
     //enemy rigidbody reference
@@ -19,12 +20,11 @@ public class EnemyFollow : MonoBehaviour
     //if enemy can follow player
     public bool canFollow = false;
 
-
     // Start is called before the first frame update
     void Start()
     {
         //set detection radius
-        GetComponent<CircleCollider2D>().radius = detectionRadius;
+        GetComponentInChildren<EnemyDetectionRadius>().SetRadius(detectionRadius);
         //set player
         player = GameObject.FindGameObjectWithTag("Player");
         //get enemy rigidbody
@@ -52,22 +52,6 @@ public class EnemyFollow : MonoBehaviour
             //move enemy
             MoveCharacter(movementDirection);
 
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if(other.gameObject.tag == "Player")
-        {
-            canFollow = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            canFollow = false;
         }
     }
 
