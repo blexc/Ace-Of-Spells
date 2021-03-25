@@ -6,8 +6,8 @@ public class EnemySpawner : MonoBehaviour
 {
     public bool HasEnemiesToSpawn { get { return enemiesToSpawn.Count > 0; } }
 
-    [SerializeField] List<GameObject> enemiesToSpawn;
-    [SerializeField] float spawnFrequency; // in seconds
+    [SerializeField] List<GameObject> enemiesToSpawn = new List<GameObject>();
+    [SerializeField] float spawnFrequency = 1; // in seconds
     int enemiesSpawned;
 
     void Start()

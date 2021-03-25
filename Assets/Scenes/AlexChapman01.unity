@@ -457,7 +457,7 @@ PrefabInstance:
         type: 3}
       propertyPath: drawPile.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: eedd7c73ef202fa49885246aea24d50b,
+      objectReference: {fileID: 11400000, guid: f909d5d15004bb44399ef4b3ee54f9d8,
         type: 2}
     - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
@@ -479,12 +479,12 @@ PrefabInstance:
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.601547
+      value: 6.253987
       objectReference: {fileID: 0}
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1666694
+      value: -3.166663
       objectReference: {fileID: 0}
     - target: {fileID: 6278012366111250603, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
@@ -823,7 +823,7 @@ PrefabInstance:
     - target: {fileID: 7412676942345361401, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: enemiesToSpawn.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7412676942345361401, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
