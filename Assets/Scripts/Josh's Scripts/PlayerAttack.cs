@@ -74,7 +74,7 @@ public class PlayerAttack : MonoBehaviour
                 par.GetComponent<PlayerMovement>().animator.SetTrigger("FrontCast");
                 //Debug.Log(transform.rotation.z);
             }
-            Debug.Log(transform.eulerAngles.z);
+            //Debug.Log(transform.eulerAngles.z);
         }
     }
 }

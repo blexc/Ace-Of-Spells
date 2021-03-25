@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     public float timeControl;
     public float cd;
 
+    public SpriteRenderer sprite;
     [SerializeField] private GameObject ScriptManager;
 
     private void Awake()
@@ -50,5 +51,13 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= damage;
         ScriptManager.GetComponent<GameplayUI>().HealthUpdate(currentHealth);
+        StartCoroutine(Flash());
+    }
+
+    public IEnumerator Flash()
+    {
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(.125f);
+        sprite.color = Color.white;
     }
 }

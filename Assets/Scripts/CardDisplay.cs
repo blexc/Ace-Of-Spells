@@ -12,14 +12,22 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text elementText;
     public TMP_Text desctiptionText;
-    //public TMP_Text manaCostText;
-
 
     private void Update()
     {
-        nameText.text = card.name;
-        elementText.text = card.element;
-        desctiptionText.text = card.description;
-        //manaCostText.text = card.manaCost.ToString();
+        if (nameText!=null)
+        {
+            nameText.text = card.name;
+        }
+
+        if (elementText != null)
+        {
+            elementText.text = card.element;
+        }
+
+        if (desctiptionText != null)
+        {
+            desctiptionText.text = card.description;
+        }
     }
 }
