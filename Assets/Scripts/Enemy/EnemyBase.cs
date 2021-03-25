@@ -203,6 +203,7 @@ public class EnemyBase : MonoBehaviour
     public void FreezeCharacter(float amountSec = 3)
     {
         frozenTimer = amountSec;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero; 
     }
 
     /// <summary>

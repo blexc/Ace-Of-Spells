@@ -8,7 +8,7 @@ public class Spell : MonoBehaviour
     private Rigidbody2D spellRigidbody;
 
     [SerializeField] float spellLifetime = 10f; // in seconds
-    [SerializeField] int effectlifeTime = 3; // duration of effect in seconds
+    [SerializeField] protected int effectlifeTime = 3; // duration of effect in seconds
 
     public float spellDamage = 1f;
     [SerializeField] private float spellSpeed = 20f;
