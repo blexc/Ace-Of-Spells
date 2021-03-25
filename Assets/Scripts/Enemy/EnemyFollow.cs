@@ -9,7 +9,7 @@ public class EnemyFollow : MonoBehaviour
     //enemy movement speed
     public float moveSpeed = 1;
     //enemy detection radius
-    public float detectionRadius = 1;
+    public float detectionRadius = 40f;
     //player reference
     GameObject player;
     //enemy rigidbody reference

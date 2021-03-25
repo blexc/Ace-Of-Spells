@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Cigar
   m_EditorClassIdentifier: 
   name: Cigar
-  description: You're gunna go far.
+  description: Causes Rot, which doubles damage of all applied status effects for
+    6 seconds..
   element: Shadow
   spell: {fileID: 8880743940131354364, guid: f0d8b54199261a9458bf010b1fad8591, type: 3}

@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: -4220772727081076763}
   - component: {fileID: 7755161757383502300}
   - component: {fileID: -2244860691256358237}
-  - component: {fileID: 5320697417864867459}
-  - component: {fileID: 25947001877480549}
   - component: {fileID: 8894174864701209098}
   m_Layer: 13
   m_Name: ChainLightning
@@ -124,20 +122,20 @@ MonoBehaviour:
   spellLifetime: 10
   effectlifeTime: 3
   spellDamage: 1
+  spellSpeed: 20
   applyIgniteEffect: 0
   applyFreezeEffect: 0
   applyShockEffect: 0
   applyRotEffect: 0
   applyChainLightning: 1
   numIceCounters: 0
-  explosionCollider: {fileID: 5320697417864867459}
-  eruptionCollider: {fileID: 25947001877480549}
+  explosionCollider: {fileID: 0}
+  eruptionCollider: {fileID: 0}
   explosionDamage: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 0
   hit: 0
-  spellSpeed: 20
   enemyHit: {fileID: 0}
   burnerPrefab: {fileID: 2061318786083438459, guid: fc2d9a7aede5a6149b6479912c64d4b9,
     type: 3}
@@ -156,7 +154,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.056847513, y: -0.06965065}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.6033399, y: 0.5034128}
@@ -167,49 +165,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
-  m_EdgeRadius: 0
---- !u!58 &5320697417864867459
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880743940131354364}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!61 &25947001877480549
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880743940131354364}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.02239418, y: 0.018463492}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6033399, y: 0.5034128}
-    oldSize: {x: 1.92, y: 1.71}
-    newSize: {x: 0.2, y: 0.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.417529, y: 1.8627932}
+  m_Size: {x: 1.4094797, y: 0.8568938}
   m_EdgeRadius: 0
 --- !u!95 &8894174864701209098
 Animator:

@@ -10,7 +10,8 @@ public class Spell : MonoBehaviour
     [SerializeField] float spellLifetime = 10f; // in seconds
     [SerializeField] int effectlifeTime = 3; // duration of effect in seconds
 
-    public float spellDamage;
+    public float spellDamage = 1f;
+    [SerializeField] private float spellSpeed = 20f;
 
     public bool applyIgniteEffect;
     public bool applyFreezeEffect;
@@ -31,9 +32,6 @@ public class Spell : MonoBehaviour
     public bool hit;
 
     private List<Transform> targets = new List<Transform>();
-    //spell speed
-    [SerializeField]
-    private float spellSpeed = 0;
 
     public GameObject enemyHit;
 
@@ -61,7 +59,10 @@ public class Spell : MonoBehaviour
         if (spellLifetime < 0) Destroy(gameObject);
     }
 
-    protected virtual void OnCollisionEnter2D(Collision2D other)
+    // should NOT be on collision enter, as it will propel
+    // the enemies backwards upon contact
+    // we should only have TRIGGER colliders
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         //if hits an enemy
         if (other.gameObject.CompareTag("Enemy"))
