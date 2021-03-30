@@ -15,7 +15,6 @@ public class PlayerAttack : MonoBehaviour
         par = transform.parent.gameObject;
     }
 
-
     // Update is called once per frame
     void Update()
     {
@@ -38,9 +37,13 @@ public class PlayerAttack : MonoBehaviour
         {
             spellCast = true;
             par.GetComponent<PlayerStats>().cd = par.GetComponent<PlayerStats>().spellCooldown;
+
             //spawn spell at my rotation
-            //print("PlayerAttack: spawning spell: " + spellPrefab.name);
-            Instantiate(spellPrefab, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), transform.rotation);
+            var spellInst = Instantiate(spellPrefab, transform.position, transform.rotation);
+
+            // set up the spell the way it wants
+            spellInst.GetComponent<Spell>().InitSpell();
+
             if (transform.eulerAngles.z <= 45f || transform.eulerAngles.z > 315f)
             {
                 //face right
