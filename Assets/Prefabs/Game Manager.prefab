@@ -721,6 +721,11 @@ PrefabInstance:
       propertyPath: spellCooldown
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 4889278154387037153, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
+        type: 3}
+      propertyPath: ScriptManager
+      value: 
+      objectReference: {fileID: 8560584751444804969}
     - target: {fileID: 4889278154387037154, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
       propertyPath: m_Radius
@@ -730,6 +735,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889278154387037155, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
+        type: 3}
+      propertyPath: m_Mass
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889278154387037155, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4889278154387037156, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
@@ -870,12 +885,12 @@ PrefabInstance:
     - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.177639
+      value: -24.231789
       objectReference: {fileID: 0}
     - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -33.333336
+      value: -29.66667
       objectReference: {fileID: 0}
     - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
@@ -967,6 +982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pause Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919625676596390822, guid: 00d44f4792c318c42a86888b05b6f036,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1919625676596390842, guid: 00d44f4792c318c42a86888b05b6f036,
         type: 3}

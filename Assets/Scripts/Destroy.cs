@@ -2,20 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// this script will destroy the gameobject attached in a specified
+// amount of time
 public class Destroy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float time;
+    public float timeToDestroySec = 1.5f;
+
     void Start()
     {
-        Destroy(this, time);
+        Destroy(gameObject, timeToDestroySec);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-   
 }

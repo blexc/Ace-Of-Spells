@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8485704622028064155}
   - component: {fileID: 8485704622028064154}
   - component: {fileID: 8485704622028064153}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wide Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8485704622028064151}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 37.43, y: 0, z: 1.69}
+  m_LocalPosition: {x: 37.43, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
