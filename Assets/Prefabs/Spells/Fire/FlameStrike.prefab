@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4947009444928555337}
   m_Layer: 13
   m_Name: FlameStrike
-  m_TagString: Untagged
+  m_TagString: AoESpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
     m_Bits: 0
   hit: 0
   enemyHit: {fileID: 0}
+  AoETime: 0.1
   burnerPrefab: {fileID: 2061318786083438459, guid: fc2d9a7aede5a6149b6479912c64d4b9,
     type: 3}
   chainLightningPrefab: {fileID: 465657183414590700, guid: 7c1955f9045754742beac5df572f52ca,
