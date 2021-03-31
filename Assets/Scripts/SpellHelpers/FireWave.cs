@@ -11,6 +11,11 @@ public class FireWave : MonoBehaviour
     private void Start()
     {
         deck  = GameObject.Find("Deck");
+
+        // I made Deck singleton, so you can refer to Deck like this:
+        // Deck.instance.DiscardCardUntil(CardType.Fire, false);
+        // -- Alex (delete after read)
+
         StartCoroutine(Wait());
         numberOfWaves = 3;
     }

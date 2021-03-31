@@ -9,3 +9,11 @@ public enum StatusEffect
     Rot,    // doubles damage of all current status effects
 }
 
+public enum CardType
+{
+    Lightning,
+    Frost,
+    Shadow,
+    Fire
+}
+
