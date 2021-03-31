@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 8880743940131354365}
   - component: {fileID: -4220772727081076763}
   - component: {fileID: 7755161757383502300}
-  - component: {fileID: -2244860691256358237}
   - component: {fileID: -2995725916226422911}
+  - component: {fileID: 8518218935660063989}
   m_Layer: 13
   m_Name: FireWave
-  m_TagString: Untagged
+  m_TagString: AoE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8880743940131354364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 3.1, y: 2.12, z: 0}
+  m_LocalScale: {x: 2.2035718, y: 2.2898297, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 85d67b08e9d407e42a40532dcc6f1529, type: 3}
   m_Color: {r: 1, g: 0.008489549, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
   spellLifetime: 10
   effectlifeTime: 3
   spellDamage: 5
-  spellSpeed: 1
-  applyIgniteEffect: 0
+  spellSpeed: 10
+  applyIgniteEffect: 1
   applyFreezeEffect: 0
   applyShockEffect: 0
   applyRotEffect: 0
@@ -136,12 +136,26 @@ MonoBehaviour:
     m_Bits: 0
   hit: 0
   enemyHit: {fileID: 0}
+  AoETime: 1
   burnerPrefab: {fileID: 2061318786083438459, guid: fc2d9a7aede5a6149b6479912c64d4b9,
     type: 3}
   chainLightningPrefab: {fileID: 465657183414590700, guid: 7c1955f9045754742beac5df572f52ca,
     type: 3}
---- !u!61 &-2244860691256358237
-BoxCollider2D:
+--- !u!114 &-2995725916226422911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880743940131354364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f3c794eab393047aa9566542343d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireWavePrefab: {fileID: 8880743940131354364}
+--- !u!60 &8518218935660063989
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -157,24 +171,47 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 2.16, y: 1.8}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
-  m_EdgeRadius: 0
---- !u!114 &-2995725916226422911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880743940131354364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3f3c794eab393047aa9566542343d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Points:
+    m_Paths:
+    - - {x: 1.01, y: -0.14}
+      - {x: 1.02, y: -0.04}
+      - {x: 1.02, y: 0.14999999}
+      - {x: 1.01, y: 0.29999998}
+      - {x: 0.98999995, y: 0.44}
+      - {x: 0.95, y: 0.59}
+      - {x: 0.9, y: 0.69}
+      - {x: 0.81, y: 0.78999996}
+      - {x: 0.71, y: 0.87}
+      - {x: 0.68, y: 0.87}
+      - {x: 0.57, y: 0.83}
+      - {x: 0.42, y: 0.74}
+      - {x: 0.32, y: 0.69}
+      - {x: 0.12, y: 0.59999996}
+      - {x: -0.07, y: 0.5}
+      - {x: -0.29, y: 0.37}
+      - {x: -0.42999998, y: 0.29}
+      - {x: -0.53, y: 0.24}
+      - {x: -0.68, y: 0.17999999}
+      - {x: -0.78, y: 0.13}
+      - {x: -0.88, y: 0.11}
+      - {x: -0.98999995, y: 0.049999997}
+      - {x: -0.98999995, y: 0}
+      - {x: -0.82, y: -0.099999994}
+      - {x: -0.71999997, y: -0.14}
+      - {x: -0.38, y: -0.34}
+      - {x: -0.06, y: -0.5}
+      - {x: 0.07, y: -0.55}
+      - {x: 0.21, y: -0.61}
+      - {x: 0.29999998, y: -0.65}
+      - {x: 0.61, y: -0.78999996}
+      - {x: 0.7, y: -0.83}
+      - {x: 0.76, y: -0.83}
+      - {x: 0.83, y: -0.75}
+      - {x: 0.9, y: -0.48999998}
+      - {x: 0.96, y: -0.31}

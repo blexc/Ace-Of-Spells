@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4662592411613912586}
   m_Layer: 13
   m_Name: FlameStrikeAoE
-  m_TagString: FlameStrike
+  m_TagString: AoE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,12 +123,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellLifetime: 200
-  spellDamage: 0
-  fire: 1
-  frost: 0
-  nature: 0
-  lightning: 0
-  shadow: 0
+  effectlifeTime: 3
+  spellDamage: 1
+  spellSpeed: 0
+  applyIgniteEffect: 1
+  applyFreezeEffect: 0
+  applyShockEffect: 0
+  applyRotEffect: 0
+  applyChainLightning: 0
+  numIceCounters: 0
   explosionCollider: {fileID: 0}
   eruptionCollider: {fileID: 0}
   explosionDamage: 0
@@ -136,11 +139,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   hit: 0
-  spellSpeed: 0
   enemyHit: {fileID: 0}
+  AoETime: 3
   burnerPrefab: {fileID: 2061318786083438459, guid: fc2d9a7aede5a6149b6479912c64d4b9,
-    type: 3}
-  bramblePrefab: {fileID: 2061318786083438459, guid: 611bc24b61491d445bdbbcd414e4658f,
     type: 3}
   chainLightningPrefab: {fileID: 465657183414590700, guid: 7c1955f9045754742beac5df572f52ca,
     type: 3}

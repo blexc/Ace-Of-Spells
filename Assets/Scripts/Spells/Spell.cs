@@ -36,6 +36,8 @@ public class Spell : MonoBehaviour
 
     public GameObject enemyHit;
 
+    public float AoETime;
+
     // these object will be spawned upon an enemy if the spell causes ignite or bramble
     public GameObject burnerPrefab;
     public GameObject chainLightningPrefab;
@@ -114,9 +116,22 @@ public class Spell : MonoBehaviour
             #endregion
         }
 
-        // delete spell if hits ANYTHING
-        // should not be left, since it could hit multiple enemies
-        Destroy(gameObject);
+        if(this.gameObject.tag == "AoE")
+        {
+            StartCoroutine(AoEWait());
+        }
+        else if (this.gameObject.tag ==  "AoESpawner")
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+            StartCoroutine(AoEWait());
+        }
+        else
+        {
+            // delete spell if hits ANYTHING
+            // should not be left, since it could hit multiple enemies
+            Destroy(gameObject);
+        }
+        
     }
 
     public void Chain()
@@ -144,6 +159,15 @@ public class Spell : MonoBehaviour
         //room size collider
         eruptionCollider.enabled = true;
     }
+
+    public IEnumerator AoEWait()
+    {
+       
+        yield return new WaitForSeconds(AoETime);
+        Destroy(this.gameObject);
+    }
+
+  
 }
 
 
