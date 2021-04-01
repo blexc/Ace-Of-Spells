@@ -10,6 +10,11 @@ public class EnemyUI : MonoBehaviour
     public Image HPBarFull; //Full HP bar that will be adjusted when the enemy heals/takes damage
     public GameObject damageText; //Variable to hold the damage text
 
+    //Variables for Status Effects
+    public GameObject fireEffect;
+    public GameObject frostEffect;
+    public GameObject shockEffect;
+
 
     [HideInInspector]
     public int HPMax; //Int for the maximum amount of hp that the enemy has
@@ -34,5 +39,45 @@ public class EnemyUI : MonoBehaviour
 
         //Assigns the Damage Amount to the Text game object (which is the child of the DamageText GameObject)
         DamageTextInstance.GetComponent<Transform>().GetComponentInChildren<TextMeshPro>().SetText(DamageAmount.ToString());   
+    }
+
+    /// <summary>
+    /// Function to display the proper status effects that the enemy currently has - AHL (4/1/21)
+    /// </summary>
+    public void statusEffectUpdate()
+    {
+        //List of if statements to check what status effect was taken or removed
+
+        print("Time to show a status!");
+
+        //Shock Effect
+        if (GetComponentInParent<EnemyBase>().HasStatusEffect(StatusEffect.Shock) == true)
+        {
+            print("Shock Status!");
+            shockEffect.SetActive(true);
+        }
+
+        else //Non-active effect
+            shockEffect.SetActive(false);
+
+        //Fire Effect
+        if (GetComponentInParent<EnemyBase>().HasStatusEffect(StatusEffect.Ignite) == true)
+        {
+            print("Ignite Status!");
+            fireEffect.SetActive(true);
+        }
+
+        else //Non-active effect
+            fireEffect.SetActive(false);
+
+        //Freeze Effect
+        if (GetComponentInParent<EnemyBase>().HasStatusEffect(StatusEffect.Freeze) == true)
+        {
+            print("Freeze Status!");
+            frostEffect.SetActive(true);            
+        }
+
+        else //Non-active effect
+            frostEffect.SetActive(false);
     }
 }

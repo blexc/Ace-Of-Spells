@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
-  m_Name: ChainLightning
+  m_Name: Locked Card
   m_EditorClassIdentifier: 
-  name: Chain Lightning
-  description: Zap an array of nearby foes!
-  element: Lightning
-  spell: {fileID: 8880743940131354364, guid: 1aed62be1c7f5854cb1de0283966f456, type: 3}
-  isObtained: 1
+  name: Locked Card
+  description: You have not discovered this card yet in your journey.
+  element: Hidden
+  spell: {fileID: 0}
