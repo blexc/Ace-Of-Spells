@@ -1,7 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+/// <summary>
+/// Base class for all (most) spells
+/// </summary>
+[RequireComponent(typeof(Rigidbody2D))]
 public class Spell : MonoBehaviour
 {
     //spell rigidbody reference
@@ -45,13 +50,14 @@ public class Spell : MonoBehaviour
     {
         //get rigidbody
         spellRigidbody = GetComponent<Rigidbody2D>();
-    }
 
-    // Start is called before the first frame update
-    private void Start()
-    {
         //move spell 
         spellRigidbody.velocity = transform.right * spellSpeed;
+    }
+
+    protected virtual void Start()
+    {
+        // overridden by some spells
     }
 
     private void Update()
@@ -61,9 +67,22 @@ public class Spell : MonoBehaviour
         if (spellLifetime < 0) Destroy(gameObject);
     }
 
-    // should NOT be on collision enter, as it will propel
-    // the enemies backwards upon contact
-    // we should only have TRIGGER colliders
+    /// <summary>
+    /// some setup for the spell, as each spell may want to setup differently
+    /// sets the initial position of the spell to its desired place
+    /// (player position by default)
+    /// </summary>
+    public virtual void InitSpell()
+    {
+        var pa = GetComponent<PlayerAttack>();
+        if (pa) transform.position = pa.transform.position;
+    }
+
+    /// <summary>
+    /// should NOT be on collision enter, as it will propel
+    /// the enemies backwards upon contact
+    /// we should only have TRIGGER colliders
+    /// </summary>
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         //if hits an enemy

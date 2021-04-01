@@ -9,9 +9,11 @@ public class Card : ScriptableObject
 
     public new string name; 
     public string description;
-    public string element;
+    public CardType element;
 
     public GameObject spell;
+
+    public bool isObtained; //Variable to keep track of if the card has been collected to show in the card collection menu
 
     public void Print()
     {

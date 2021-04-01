@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
-  m_Name: BasicCard
+  m_Name: Charge
   m_EditorClassIdentifier: 
-  name: Card
-  description: Deal normal damage!
-  element: None
-  spell: {fileID: 8880743940131354364, guid: 9e93df0bf80d511448e7b0dfe69146b7, type: 3}
+  name: Charge
+  description: Apply shock to targeted area
+  element: Lightning
+  spell: {fileID: 8709703790699357833, guid: 2afea105a37301d43b8055254e05a77b, type: 3}

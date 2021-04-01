@@ -15,5 +15,6 @@ MonoBehaviour:
   name: Cigar
   description: Causes Rot, which doubles damage of all applied status effects for
     6 seconds..
-  element: Shadow
+  element: 2
   spell: {fileID: 8880743940131354364, guid: f0d8b54199261a9458bf010b1fad8591, type: 3}
+  isObtained: 1
