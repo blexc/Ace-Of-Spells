@@ -103,6 +103,8 @@ public class EnemyBase : MonoBehaviour
 
     void ChangeColor()
     {
+        GetComponentInChildren<EnemyUI>().statusEffectUpdate(); //Adjusts the enemy UI to display that the enemy has the added status effect
+
         Color c = originalColor;
 
         if (statusEffects.Count == 0)
@@ -134,6 +136,7 @@ public class EnemyBase : MonoBehaviour
         var pair = new KeyValuePair<StatusEffect, float>(effect, durationSeconds);
 
         statusEffects.Add(pair);
+
         ChangeColor();
     }
 
