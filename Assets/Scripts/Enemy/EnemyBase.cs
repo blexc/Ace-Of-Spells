@@ -154,7 +154,7 @@ public class EnemyBase : MonoBehaviour
 
         health -= amount;
 
-        //print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax);
+        print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax);
         GetComponentInChildren<EnemyUI>().damagePopUP(amount); //Calls the spawn of the enemy damage text in the UI script - AHL (3/9/21)
         GetComponentInChildren<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
     }

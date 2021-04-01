@@ -28,7 +28,13 @@ public class LightningStrikeSpell : Spell
         {
             enemyHit = other.gameObject;
             var eb = enemyHit.GetComponent<EnemyBase>();
-            eb.TakeDamage((int)spellDamage);
+
+            // deal more damage with more lightning cards in hand
+            int dmg = (int)spellDamage;
+            int numLightning = Deck.instance.NumOfTypeInHand(CardType.Lightning);
+            dmg *= numLightning;
+            eb.TakeDamage(dmg);
+
             StartCoroutine(ShockEnemy(eb));
         }
     }

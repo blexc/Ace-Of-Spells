@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Base class for all (most) spells
+/// </summary>
+[RequireComponent(typeof(Rigidbody2D))]
 public class Spell : MonoBehaviour
 {
     //spell rigidbody reference

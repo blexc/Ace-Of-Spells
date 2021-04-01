@@ -6,7 +6,7 @@ public enum StatusEffect
     Shock,  // double damage taken
     Ignite, // damage over time
     Freeze, // freezes enemy and deal % damage upon breaking
-    Rot,    // doubles damage of all current status effects
+    Rot,    // TODO apply damage whenever a card is discarded
 }
 
 public enum CardType
