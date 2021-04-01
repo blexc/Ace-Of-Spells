@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Assertions;
 
 public class Deck : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Deck : MonoBehaviour
     public List<Card> drawPile = new List<Card>();
     private List<Card> discardPile = new List<Card>();
     private List<Card> hand = new List<Card>();
+
+    // incremented by quick thinking spell
+    public int numTimesToCast = 1; 
 
     public int handSelectionIndex = 0;
     const int HAND_SIZE_MAX = 3;
@@ -42,10 +46,11 @@ public class Deck : MonoBehaviour
 
         var selectedCard = hand[handSelectionIndex];
         var spell = selectedCard.spell;
+
         if (showDebugPrints)
             print("Activating selected card: " + selectedCard.name);
 
-        if (spell == null)
+        if (!spell)
         {
             Debug.LogError("Spell unset for card: " + name);
             return;
@@ -53,25 +58,44 @@ public class Deck : MonoBehaviour
 
         // pass the spellPrefab into PlayerAttack script to spawn it
         var pa = FindObjectOfType<PlayerAttack>();
-        if (pa)
+        if (!pa)
         {
-            if (!pa.spellCast)
-            {
-                pa.CastSpell(spell);
-            }
+            Debug.LogError("Player Attack script not found in scene.");
+            return;
         }
-        else Debug.LogError("Player Attack script not found in scene.");
 
-        if (pa.spellCast)
+        if (numTimesToCast == 1)
         {
-            discardPile.Add(selectedCard);
-            hand.RemoveAt(handSelectionIndex);
-
-            FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
-
-            DrawCard();
-            pa.spellCast = false;
+            pa.CastSpell(spell);
         }
+        else if (numTimesToCast > 1)
+        {
+            StartCoroutine(CastSpellRepeated(pa, spell));
+        }
+
+        discardPile.Add(selectedCard);
+        hand.RemoveAt(handSelectionIndex);
+        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+        DrawCard();
+    }
+
+    /// <summary>
+    /// casts the activated spell multiple times every second
+    /// reduces numTimesToCast back to 1
+    /// </summary>
+    /// <param name="pa"></param>
+    /// <param name="spell"></param>
+    /// <returns></returns>
+    IEnumerator CastSpellRepeated(PlayerAttack pa, GameObject spell)
+    {
+        int i = numTimesToCast;
+        while (i > 0)
+        {
+            pa.CastSpell(spell);
+            i--;
+            yield return new WaitForSeconds(1f);
+        }
+        numTimesToCast = 1;
     }
 
     // changes the currently selected card to the next card in hand

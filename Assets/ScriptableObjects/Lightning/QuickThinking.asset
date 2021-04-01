@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: QuickThinking
   m_EditorClassIdentifier: 
   name: Quick Thinking
-  description: Deal the next card you cast twice.
-  element: Lightning
-  spell: {fileID: 0}
+  description: Cast your next spell X more times, where X is the number of lightning
+    cards in hand.
+  element: 0
+  spell: {fileID: 771606701737893958, guid: ed4247ea21b51fb47bda0c3e3f83a20f, type: 3}
+  isObtained: 0

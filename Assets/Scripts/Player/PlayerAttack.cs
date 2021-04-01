@@ -8,7 +8,6 @@ public class PlayerAttack : MonoBehaviour
     //camera reference
     public Camera mainCamera;
     private GameObject par;
-    public bool spellCast = false;
 
     private void Start()
     {
@@ -35,7 +34,6 @@ public class PlayerAttack : MonoBehaviour
         // if spellPrefab is not null...
         if (spellPrefab && par.GetComponent<PlayerStats>().cd <= 0f)
         {
-            spellCast = true;
             par.GetComponent<PlayerStats>().cd = par.GetComponent<PlayerStats>().spellCooldown;
 
             //spawn spell at my rotation
@@ -73,7 +71,7 @@ public class PlayerAttack : MonoBehaviour
             if (transform.eulerAngles.z > 225f && transform.eulerAngles.z <= 315f)
             {
                 //face down
-                Debug.Log("face down");
+                //Debug.Log("face down");
                 par.GetComponent<PlayerMovement>().animator.SetTrigger("FrontCast");
                 //Debug.Log(transform.rotation.z);
             }

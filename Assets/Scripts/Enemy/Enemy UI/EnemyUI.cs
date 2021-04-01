@@ -48,12 +48,12 @@ public class EnemyUI : MonoBehaviour
     {
         //List of if statements to check what status effect was taken or removed
 
-        print("Time to show a status!");
+        //print("Time to show a status!");
 
         //Shock Effect
         if (GetComponentInParent<EnemyBase>().HasStatusEffect(StatusEffect.Shock) == true)
         {
-            print("Shock Status!");
+            //print("Shock Status!");
             shockEffect.SetActive(true);
         }
 
@@ -63,7 +63,7 @@ public class EnemyUI : MonoBehaviour
         //Fire Effect
         if (GetComponentInParent<EnemyBase>().HasStatusEffect(StatusEffect.Ignite) == true)
         {
-            print("Ignite Status!");
+            //print("Ignite Status!");
             fireEffect.SetActive(true);
         }
 
@@ -73,7 +73,7 @@ public class EnemyUI : MonoBehaviour
         //Freeze Effect
         if (GetComponentInParent<EnemyBase>().HasStatusEffect(StatusEffect.Freeze) == true)
         {
-            print("Freeze Status!");
+            //print("Freeze Status!");
             frostEffect.SetActive(true);            
         }
 
