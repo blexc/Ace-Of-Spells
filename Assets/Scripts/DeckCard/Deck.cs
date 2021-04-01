@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class Deck : MonoBehaviour
 {
+    // singleton
+    public static Deck instance;
+
     public List<Card> Hand { get { return hand; } }
 
     public List<Card> drawPile = new List<Card>();
@@ -16,6 +19,20 @@ public class Deck : MonoBehaviour
 
     public bool showDebugPrints = false;
     int debugCall = 0;
+
+    private void Start()
+    {
+        if (instance != null) Destroy(gameObject);
+        instance = this;
+
+        ShuffleList(ref drawPile);
+        DrawCard(HAND_SIZE_MAX);
+
+        var cm = FindObjectOfType<CardManager>();
+        cm.discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+        cm.cardUpdate();
+        cm.showSelectedCard(handSelectionIndex);
+    }
 
     // uses the currently selected card (calls selected card's spell function)
     public void ActivateSelectedCard(InputAction.CallbackContext context)
@@ -43,7 +60,6 @@ public class Deck : MonoBehaviour
                 pa.CastSpell(spell);
             }
         }
-        
         else Debug.LogError("Player Attack script not found in scene.");
 
         if (pa.spellCast)
@@ -56,10 +72,10 @@ public class Deck : MonoBehaviour
             DrawCard();
             pa.spellCast = false;
         }
-        
     }
 
     // changes the currently selected card to the next card in hand
+    // draws at the beginning of the draw list
     public void SwapSelectedCard(InputAction.CallbackContext context)
     {
         if(context.performed)
@@ -99,6 +115,82 @@ public class Deck : MonoBehaviour
     public void AddNewCard(Card card)
     {
         drawPile.Add(card);
+    }
+
+
+    /// <summary>
+    /// Returns the number of cards of a specific type in player's hand.
+    /// </summary>
+    public int NumOfTypeInHand(CardType cardType)
+    {
+        int num = 0;
+        for (int i = hand.Count; --i >= 0;)
+        {
+            if (hand[i].element == cardType)
+                num++;
+        }
+
+        return num;
+    }
+
+    /// <summary>
+    /// Discard from the front of the draw list until you've met the condition
+    /// the args describe.
+    /// EX: Func(CardType.Fire, false)
+    /// Means to draw a card until you've drawn something other than a fire card
+    /// </summary>
+    /// <returns>The number of cards discarded. Returns -1 is no card exists in the discard and draw pile.</returns>
+    public int DiscardCardUntil(CardType cardTypeToRecieve, bool doesWant = true)
+    {
+        # region check if there exists a card with this condition in the first place
+        bool cardExists = false;
+        for (int i = 0; !cardExists && i < drawPile.Count; i++)
+        {
+            if ((drawPile[i].element == cardTypeToRecieve && doesWant) ||
+                (drawPile[i].element != cardTypeToRecieve && !doesWant) )
+            {
+                cardExists = true;
+            }
+        }
+        for (int i = 0; !cardExists && i < discardPile.Count; i++)
+        {
+            if ((discardPile[i].element == cardTypeToRecieve && doesWant) ||
+                (discardPile[i].element != cardTypeToRecieve && !doesWant) )
+            {
+                cardExists = true;
+            }
+        }
+        if (!cardExists) return -1;
+        #endregion
+
+        bool found = false;
+        int discardCounter = 0; // num cards discarded
+
+        while (!found)
+        {
+            // if you've exhausted all cards in the draw pile then 
+            if (drawPile.Count == 0) RefillHand();
+
+            if ((drawPile[0].element == cardTypeToRecieve && doesWant) ||
+                (drawPile[0].element != cardTypeToRecieve && !doesWant))
+            {
+                // you've found the card you want, so draw it
+                DrawCard();
+
+                found = true;
+            }
+            else
+            {
+
+                // discard the card
+                discardPile.Add(drawPile[0]);
+                drawPile.RemoveAt(0);
+
+                discardCounter++;
+            }
+        }
+
+        return discardCounter;
     }
 
     // scan discard, hand, and draw lists. if you find a matching card name,
@@ -178,14 +270,6 @@ public class Deck : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        ShuffleList(ref drawPile);
-        DrawCard(HAND_SIZE_MAX);
-        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
-        FindObjectOfType<CardManager>().cardUpdate();
-        FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
-    }
 
     /*
     void Update()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Spell : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class Spell : MonoBehaviour
 
     public GameObject enemyHit;
 
+    public float AoETime;
+
     // these object will be spawned upon an enemy if the spell causes ignite or bramble
     public GameObject burnerPrefab;
     public GameObject chainLightningPrefab;
@@ -43,13 +46,14 @@ public class Spell : MonoBehaviour
     {
         //get rigidbody
         spellRigidbody = GetComponent<Rigidbody2D>();
-    }
 
-    // Start is called before the first frame update
-    private void Start()
-    {
         //move spell 
         spellRigidbody.velocity = transform.right * spellSpeed;
+    }
+
+    protected virtual void Start()
+    {
+        // overridden by some spells
     }
 
     private void Update()
@@ -59,9 +63,22 @@ public class Spell : MonoBehaviour
         if (spellLifetime < 0) Destroy(gameObject);
     }
 
-    // should NOT be on collision enter, as it will propel
-    // the enemies backwards upon contact
-    // we should only have TRIGGER colliders
+    /// <summary>
+    /// some setup for the spell, as each spell may want to setup differently
+    /// sets the initial position of the spell to its desired place
+    /// (player position by default)
+    /// </summary>
+    public virtual void InitSpell()
+    {
+        var pa = GetComponent<PlayerAttack>();
+        if (pa) transform.position = pa.transform.position;
+    }
+
+    /// <summary>
+    /// should NOT be on collision enter, as it will propel
+    /// the enemies backwards upon contact
+    /// we should only have TRIGGER colliders
+    /// </summary>
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         //if hits an enemy
@@ -99,9 +116,22 @@ public class Spell : MonoBehaviour
             #endregion
         }
 
-        // delete spell if hits ANYTHING
-        // should not be left, since it could hit multiple enemies
-        Destroy(gameObject);
+        if(this.gameObject.tag == "AoE")
+        {
+            StartCoroutine(AoEWait());
+        }
+        else if (this.gameObject.tag ==  "AoESpawner")
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+            StartCoroutine(AoEWait());
+        }
+        else
+        {
+            // delete spell if hits ANYTHING
+            // should not be left, since it could hit multiple enemies
+            Destroy(gameObject);
+        }
+        
     }
 
     public void Chain()
@@ -129,6 +159,15 @@ public class Spell : MonoBehaviour
         //room size collider
         eruptionCollider.enabled = true;
     }
+
+    public IEnumerator AoEWait()
+    {
+       
+        yield return new WaitForSeconds(AoETime);
+        Destroy(this.gameObject);
+    }
+
+  
 }
 
 

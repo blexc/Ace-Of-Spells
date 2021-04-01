@@ -9,7 +9,7 @@ public class Card : ScriptableObject
 
     public new string name; 
     public string description;
-    public string element;
+    public CardType element;
 
     public GameObject spell;
 

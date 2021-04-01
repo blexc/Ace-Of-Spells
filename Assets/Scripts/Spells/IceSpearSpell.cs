@@ -4,7 +4,7 @@ using UnityEngine;
 
 // a spell that deals damage
 // if the enemy is frozen deal double damage
-public class IceSpear : Spell
+public class IceSpearSpell : Spell
 {
     protected override void OnTriggerEnter2D(Collider2D other)
     {

@@ -22,7 +22,24 @@ public class CardDisplay : MonoBehaviour
 
         if (elementText != null)
         {
-            elementText.text = card.element;
+            string cardTypeStr = "";
+            switch (card.element)
+            {
+                case CardType.Fire:
+                    cardTypeStr = "Fire";
+                    break;
+                case CardType.Frost:
+                    cardTypeStr = "Frost";
+                    break;
+                case CardType.Shadow:
+                    cardTypeStr = "Shadow";
+                    break;
+                case CardType.Lightning:
+                    cardTypeStr = "Lightning";
+                    break;
+            }
+
+            elementText.text = cardTypeStr;
         }
 
         if (desctiptionText != null)
