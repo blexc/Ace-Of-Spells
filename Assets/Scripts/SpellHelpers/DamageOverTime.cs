@@ -46,10 +46,7 @@ public class DamageOverTime : MonoBehaviour
         if (tick < 0)
         {
             // double damage if enemy is rotted 
-            int finalDmg = damagePerTick; 
-            if (myEnemy.HasStatusEffect(StatusEffect.Rot))
-                finalDmg *= 2;
-            myEnemy.TakeDamage(finalDmg);
+            myEnemy.TakeDamage(damagePerTick);
             tick = tickRate;
         } 
     }
