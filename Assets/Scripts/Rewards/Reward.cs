@@ -11,7 +11,7 @@ public class Reward : MonoBehaviour
 
     /// <summary>
     /// give the player reward
-    /// right now, it just deletes the Chest object
+    /// by default, it just deletes the object
     /// </summary>
     public virtual void RecieveReward()
     {

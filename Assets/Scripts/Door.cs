@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     public string sceneName;
-    public Sprite rewardSprite;
+    public Sprite rewardSpriteForNextRoom;
 
     Color originalColor;
     [SerializeField] bool locked = true;
@@ -51,7 +51,7 @@ public class Door : MonoBehaviour
         GameObject iconObject = GetComponentInChildren<DoorIcon>().gameObject;
         if (iconObject.activeSelf)
         {
-            iconObject.GetComponent<SpriteRenderer>().sprite = rewardSprite;
+            iconObject.GetComponent<SpriteRenderer>().sprite = rewardSpriteForNextRoom;
         }
     }
 }

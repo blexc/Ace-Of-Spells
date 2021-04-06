@@ -14,6 +14,7 @@ public enum CardType
     Lightning,
     Frost,
     Shadow,
-    Fire
+    Fire,
+    NA
 }
 
