@@ -51,10 +51,7 @@ public class EnemyBase : MonoBehaviour
                 if (HasStatusEffect(StatusEffect.Freeze))
                 {
                     // deal percentage damage to self once unthawed from freeze
-                    int finalDmg = (int)(healthMax * 0.3f);
-                    if (HasStatusEffect(StatusEffect.Rot))
-                        finalDmg *= 2;
-                    TakeDamage(finalDmg);
+                    TakeDamage((int)(healthMax * 0.3f));
                 }
             }
         }

@@ -51,18 +51,36 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= damage;
 
-        // insure no null references
+        // ensure no null references
         if (ScriptManager)
             ScriptManager.GetComponent<GameplayUI>().HealthUpdate(currentHealth);
         else
             Debug.LogWarning("null reference in PlayerStats.cs");
-        StartCoroutine(Flash());
+        StartCoroutine(Flash(Color.red));
     }
 
-    public IEnumerator Flash()
+    public void Heal(int amount)
     {
-        sprite.color = Color.red;
-        yield return new WaitForSeconds(.125f);
-        sprite.color = Color.white;
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        // ensure no null references
+        if (ScriptManager)
+            ScriptManager.GetComponent<GameplayUI>().HealthUpdate(currentHealth);
+        else
+            Debug.LogWarning("null reference in PlayerStats.cs");
+        StartCoroutine(Flash(Color.green));
+    }
+
+    public IEnumerator Flash(Color color)
+    {
+        int count = 2;
+        while (count-- > 0)
+        {
+            sprite.color = color;
+            yield return new WaitForSeconds(.125f);
+            sprite.color = Color.white;
+            yield return new WaitForSeconds(.125f);
+        }
     }
 }

@@ -141,7 +141,6 @@ public class Deck : MonoBehaviour
         drawPile.Add(card);
     }
 
-
     /// <summary>
     /// Returns the number of cards of a specific type in player's hand.
     /// </summary>
@@ -211,6 +210,17 @@ public class Deck : MonoBehaviour
                 drawPile.RemoveAt(0);
 
                 discardCounter++;
+            }
+        }
+
+        // check for enemies to see if any have Rot. deal damage to enemies
+        // based on the number of cards discarded
+        EnemyBase[] enemies = FindObjectsOfType<EnemyBase>();
+        foreach(EnemyBase e in enemies)
+        {
+            if (e.HasStatusEffect(StatusEffect.Rot))
+            {
+                e.TakeDamage(discardCounter);
             }
         }
 
