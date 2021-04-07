@@ -5,7 +5,7 @@ using UnityEngine;
 // functionality inherits from Reward.cs
 public class Chest : Reward
 {
-    public Card cardReward;
+    Card cardReward;
 
     private void Awake()
     {
