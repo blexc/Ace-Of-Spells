@@ -14,7 +14,7 @@ public class EnemyUI : MonoBehaviour
     public GameObject fireEffect;
     public GameObject frostEffect;
     public GameObject shockEffect;
-
+    public GameObject rotEffect;
 
     [HideInInspector]
     public int HPMax; //Int for the maximum amount of hp that the enemy has
@@ -48,8 +48,6 @@ public class EnemyUI : MonoBehaviour
     {
         //List of if statements to check what status effect was taken or removed
 
-        //print("Time to show a status!");
-
         //Shock Effect
         if (GetComponentInParent<EnemyBase>().HasStatusEffect(StatusEffect.Shock) == true)
         {
@@ -77,7 +75,14 @@ public class EnemyUI : MonoBehaviour
             frostEffect.SetActive(true);            
         }
 
+        //Rot Effect
+        if (GetComponentInParent<EnemyBase>().HasStatusEffect(StatusEffect.Rot) == true)
+        {
+            //print("Freeze Status!");
+            rotEffect.SetActive(true);
+        }
+
         else //Non-active effect
-            frostEffect.SetActive(false);
+            rotEffect.SetActive(false);
     }
 }
