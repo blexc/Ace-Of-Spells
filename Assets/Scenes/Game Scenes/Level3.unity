@@ -349,6 +349,12 @@ PrefabInstance:
       propertyPath: sceneName
       value: Level4
       objectReference: {fileID: 0}
+    - target: {fileID: 5902504057094275335, guid: e9b2360814fa38d4ca4709cddfe75593,
+        type: 3}
+      propertyPath: rewardSpriteForNextRoom
+      value: 
+      objectReference: {fileID: 21300000, guid: c589c0ac273047b409cf85efa7ee4241,
+        type: 3}
     - target: {fileID: 6868531033739062816, guid: e9b2360814fa38d4ca4709cddfe75593,
         type: 3}
       propertyPath: m_LocalPosition.x
