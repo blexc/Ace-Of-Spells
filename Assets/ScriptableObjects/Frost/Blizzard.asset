@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
-  m_Name: Locked Card
+  m_Name: Blizzard
   m_EditorClassIdentifier: 
-  name: Locked Card
-  description: You have not discovered this card yet on your journey.
-  element: 4
-  spell: {fileID: 0}
+  name: Blizzard
+  description: Large AOE that damages and slows
+  element: 1
+  spell: {fileID: 3776639527467529045, guid: 1f41ee533595fa8439fb83913c8c2e87, type: 3}
   isObtained: 0

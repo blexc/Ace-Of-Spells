@@ -74,7 +74,7 @@ public class Spell : MonoBehaviour
     /// </summary>
     public virtual void InitSpell()
     {
-        var pa = GetComponent<PlayerAttack>();
+        var pa = FindObjectOfType<PlayerAttack>();
         if (pa) transform.position = pa.transform.position;
     }
 

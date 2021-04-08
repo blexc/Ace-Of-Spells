@@ -15,7 +15,7 @@ public class EnemyRoomManager : MonoBehaviour
             bool roomHasEnemiesToSpawn = false;
             foreach (EnemySpawner es in enemySpawners)
             {
-                if (es.HasEnemiesToSpawn)
+                if (es.HasEnemiesToSpawn && es.gameObject.activeSelf)
                 {
                     roomHasEnemiesToSpawn = true;
                     break;
@@ -36,6 +36,7 @@ public class EnemyRoomManager : MonoBehaviour
     
     private void Start()
     {
+        rewardObject.SetActive(false); 
         enemiesLeft = FindObjectsOfType<EnemyBase>().Length;
         enemySpawners = FindObjectsOfType<EnemySpawner>();
         StartCoroutine("CheckEnemyCount");
