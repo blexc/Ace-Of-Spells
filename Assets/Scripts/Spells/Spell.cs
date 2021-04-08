@@ -12,11 +12,11 @@ public class Spell : MonoBehaviour
     //spell rigidbody reference
     private Rigidbody2D spellRigidbody;
 
-    [SerializeField] float spellLifetime = 10f; // in seconds
+    [SerializeField] protected float spellLifetime = 10f; // in seconds
     [SerializeField] protected int effectlifeTime = 3; // duration of effect in seconds
 
     public float spellDamage = 1f;
-    [SerializeField] private float spellSpeed = 20f;
+    [SerializeField] protected float spellSpeed = 20f;
 
     public bool applyIgniteEffect;
     public bool applyFreezeEffect;
@@ -60,7 +60,7 @@ public class Spell : MonoBehaviour
         // overridden by some spells
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         // delete projectile if spell lifetime is 0
         spellLifetime -= Time.deltaTime;
@@ -171,7 +171,18 @@ public class Spell : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-  
+    protected void PlaceAtMousePos()
+    {
+        //get mouse position
+        Vector3 mouse = Mouse.current.position.ReadValue();
+        mouse.z = Mathf.Abs(Camera.main.transform.position.z);
+
+        // get screen point
+        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mouse);
+        worldPoint.z = 0f;
+
+        transform.position = worldPoint;
+    }
 }
 
 

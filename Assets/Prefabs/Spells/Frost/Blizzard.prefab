@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellLifetime: 10
   effectlifeTime: 3
-  spellDamage: 1
-  spellSpeed: 20
+  spellDamage: 5
+  spellSpeed: 1
   applyIgniteEffect: 0
   applyFreezeEffect: 0
   applyShockEffect: 0
@@ -67,6 +67,7 @@ MonoBehaviour:
   AoETime: 0
   burnerPrefab: {fileID: 0}
   chainLightningPrefab: {fileID: 0}
+  enemies: []
 --- !u!50 &3776639527467529049
 Rigidbody2D:
   serializedVersion: 4
