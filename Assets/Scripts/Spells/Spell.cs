@@ -16,7 +16,7 @@ public class Spell : MonoBehaviour
     [SerializeField] protected int effectlifeTime = 3; // duration of effect in seconds
 
     public float spellDamage = 1f;
-    [SerializeField] private float spellSpeed = 20f;
+    [SerializeField] protected float spellSpeed = 20f;
 
     public bool applyIgniteEffect;
     public bool applyFreezeEffect;

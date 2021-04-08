@@ -62,7 +62,6 @@ public class BlizzardSpell : Spell
     /// </summary>
     void DealDamageToAll()
     {
-        print("");
         foreach (EnemyBase eb in enemies)
         {
             eb.TakeDamage((int)spellDamage);
