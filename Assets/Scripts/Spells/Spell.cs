@@ -171,6 +171,11 @@ public class Spell : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+
+    protected void SpawnAtMousePos()
+    {
+
+    }
   
 }
 
