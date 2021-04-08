@@ -1824,8 +1824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1c7488289d5154cb32185cce6ae2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locked: {fileID: 8602633259998316564}
-  unlocked: {fileID: 727603719907672420}
+  locked: {fileID: 0}
+  unlocked: {fileID: 0}
 --- !u!1 &1809206789937129083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,7 +2704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1919625676596390842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5954,8 +5954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1c7488289d5154cb32185cce6ae2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locked: {fileID: 2380928634825216384}
-  unlocked: {fileID: 2631883243456828951}
+  locked: {fileID: 0}
+  unlocked: {fileID: 0}
 --- !u!1 &3315441513449317503
 GameObject:
   m_ObjectHideFlags: 0
@@ -6006,8 +6006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1c7488289d5154cb32185cce6ae2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locked: {fileID: 4109814244838902814}
-  unlocked: {fileID: 7073337303524869926}
+  locked: {fileID: 0}
+  unlocked: {fileID: 0}
 --- !u!1 &3320815714340616158
 GameObject:
   m_ObjectHideFlags: 0
@@ -7410,8 +7410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1c7488289d5154cb32185cce6ae2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locked: {fileID: 2496702562507169433}
-  unlocked: {fileID: 6491710545907437708}
+  locked: {fileID: 0}
+  unlocked: {fileID: 0}
 --- !u!1 &4309288362510065186
 GameObject:
   m_ObjectHideFlags: 0
@@ -7876,8 +7876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1c7488289d5154cb32185cce6ae2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locked: {fileID: 4985352968108430583}
-  unlocked: {fileID: 7195692664544240363}
+  locked: {fileID: 0}
+  unlocked: {fileID: 0}
 --- !u!1 &4559205337236798438
 GameObject:
   m_ObjectHideFlags: 0
@@ -9014,7 +9014,7 @@ GameObject:
   - component: {fileID: 2495823859428463684}
   - component: {fileID: 2649731952041454353}
   m_Layer: 5
-  m_Name: Card Collection Background
+  m_Name: Deck List Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9559,7 +9559,7 @@ GameObject:
   - component: {fileID: 8370615597813262963}
   - component: {fileID: 2955535843607852971}
   m_Layer: 5
-  m_Name: Card Collection
+  m_Name: Deck List
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11542,7 +11542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Card Collection
+  m_text: 'Deck List '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11569,12 +11569,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.1
+  m_fontSize: 60
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 50
+  m_fontSizeMax: 60
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -11927,8 +11927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1c7488289d5154cb32185cce6ae2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locked: {fileID: 5963616634630021454}
-  unlocked: {fileID: 3703940517719816045}
+  locked: {fileID: 0}
+  unlocked: {fileID: 0}
 --- !u!1 &7920041531612644029
 GameObject:
   m_ObjectHideFlags: 0
@@ -11979,8 +11979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1c7488289d5154cb32185cce6ae2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locked: {fileID: 1356363694666678509}
-  unlocked: {fileID: 3116634191450904322}
+  locked: {fileID: 0}
+  unlocked: {fileID: 0}
 --- !u!1 &7962497038953834701
 GameObject:
   m_ObjectHideFlags: 0
@@ -12031,8 +12031,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1c7488289d5154cb32185cce6ae2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locked: {fileID: 8877452292302134195}
-  unlocked: {fileID: 4826773776386740845}
+  locked: {fileID: 0}
+  unlocked: {fileID: 0}
 --- !u!1 &8054337304551894997
 GameObject:
   m_ObjectHideFlags: 0
@@ -13162,5 +13162,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1c7488289d5154cb32185cce6ae2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locked: {fileID: 3689643099621958955}
-  unlocked: {fileID: 5153871093603593570}
+  locked: {fileID: 0}
+  unlocked: {fileID: 0}

@@ -226,7 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeNum: 10
   slowedTime: 0.55
-  increaseDelayNum: 1.5
+  increaseDelayNum: 1.15
   decreaseDelayNum: 0.05
 --- !u!114 &6240721442182085351
 MonoBehaviour:
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pause: {fileID: 5499005432509555408}
-  CardCollectionMenu: {fileID: 1792859388620937123}
+  DeckListMenu: {fileID: 1792859388620937123}
 --- !u!114 &8560584751444804951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,6 +990,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 1919625676596390822, guid: 00d44f4792c318c42a86888b05b6f036,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1919625676596390842, guid: 00d44f4792c318c42a86888b05b6f036,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1110,11 +1115,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6240721442182085351}
+    - target: {fileID: 2955535843607852971, guid: 00d44f4792c318c42a86888b05b6f036,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeckList
+      objectReference: {fileID: 0}
     - target: {fileID: 5741796124401227657, guid: 00d44f4792c318c42a86888b05b6f036,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6240721442182085351}
+    - target: {fileID: 5741796124401227657, guid: 00d44f4792c318c42a86888b05b6f036,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeckListBack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d44f4792c318c42a86888b05b6f036, type: 3}
 --- !u!1 &5499005432727485965 stripped
