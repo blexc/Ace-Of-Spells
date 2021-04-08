@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
     public bool IsFrozen { get { return frozenTimer > 0; } }
+    public bool IsSlowed { get { return HasStatusEffect(StatusEffect.Slow); } }
 
     public int healthMax;
     public int attackDmg;
@@ -56,9 +57,19 @@ public class EnemyBase : MonoBehaviour
             }
         }
 
-        // if the enemy is using AI pathfinding and their frozen, stop them
-        if (GetComponent<Pathfinding.AIPath>())
-            GetComponent<Pathfinding.AIPath>().canMove = !IsFrozen;
+        // if the enemy is using AI pathfinding...
+        var aiPath = GetComponent<Pathfinding.AIPath>();
+        if (aiPath)
+        {
+            // ...and their frozen, stop them
+            aiPath.canMove = !IsFrozen;
+            
+            if (IsSlowed)
+            {
+                // TODO half the speed of the enemy with ai path
+                // note: do we have enemies with this AI path???
+            }
+        }
 
 
         // attack in intervals
@@ -151,7 +162,7 @@ public class EnemyBase : MonoBehaviour
 
         health -= amount;
 
-        print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax);
+        //print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax);
         GetComponentInChildren<EnemyUI>().damagePopUP(amount); //Calls the spawn of the enemy damage text in the UI script - AHL (3/9/21)
         GetComponentInChildren<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
     }
@@ -182,7 +193,7 @@ public class EnemyBase : MonoBehaviour
 
     // return true if remove effect, false otherwise
     // removes ONE effect of a specific type (not all stacked types)
-    bool RemoveEffect(StatusEffect se)
+    public bool RemoveEffect(StatusEffect se)
     {
         // scan the list of status effects..
         for (int i = statusEffects.Count; --i >= 0;)

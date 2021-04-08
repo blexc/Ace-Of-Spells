@@ -7,6 +7,7 @@ public enum StatusEffect
     Ignite, // damage over time
     Freeze, // freezes enemy and deal % damage upon breaking
     Rot,    // apply damage whenever a card is discarded
+    Slow,   // cuts movement speed in half 
 }
 
 public enum CardType

@@ -6,9 +6,11 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     private bool IsFrozen { get { return GetComponent<EnemyBase>().IsFrozen; } }
+    private bool IsSlowed { get { return GetComponent<EnemyBase>().IsSlowed; } }
 
     //enemy movement speed
     public float moveSpeed = 1;
+    float moveSpeedStart;
     //enemy detection radius
     public int detectionRadius = 40;
     //player reference
@@ -29,6 +31,7 @@ public class EnemyFollow : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         //get enemy rigidbody
         enemyRB = GetComponent<Rigidbody2D>();
+        moveSpeedStart = moveSpeed;
     }
 
     private void FixedUpdate()
@@ -43,6 +46,9 @@ public class EnemyFollow : MonoBehaviour
             enemyRB.rotation = angle;
             direction.Normalize();
             movementDirection = direction;
+
+            // if you're slowed move, half as fast as normal
+            moveSpeed = (IsSlowed) ? moveSpeedStart / 2 : moveSpeedStart;
 
             //move enemy
             MoveCharacter(movementDirection);
