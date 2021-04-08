@@ -5,7 +5,7 @@ using UnityEngine;
 public class CardCollection : MonoBehaviour
 {
     //Variable List
-    public GameObject locked, unlocked; //Card variables to hold the locked card and unlocked card aspects that will be used
+    public Card locked, unlocked; //Card variables to hold the locked card and unlocked card aspects that will be used
 
 
     /// <summary>
@@ -13,10 +13,12 @@ public class CardCollection : MonoBehaviour
     /// </summary>
     private void OnEnable()
     {
-        if(unlocked.gameObject.GetComponent<CardDisplay>().card.isObtained == true)
+        if(unlocked.isObtained == false)
         {
-            locked.SetActive(false);
-            unlocked.SetActive(true);
+            GetComponentInChildren<CardDisplay>().card = locked;
         }
+
+        else
+            GetComponentInChildren<CardDisplay>().card = unlocked;
     }
 }
