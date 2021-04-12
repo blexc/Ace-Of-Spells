@@ -173,8 +173,9 @@ public class Spell : MonoBehaviour
 
     /// <summary>
     /// places object attached to whereever the mouse position is
+    /// returns position
     /// </summary>
-    protected void PlaceAtMousePos()
+    protected Vector3 PlaceAtMousePos()
     {
         //get mouse position
         Vector3 mouse = Mouse.current.position.ReadValue();
@@ -185,6 +186,7 @@ public class Spell : MonoBehaviour
         worldPoint.z = 0f;
 
         transform.position = worldPoint;
+        return worldPoint;
     }
 }
 
