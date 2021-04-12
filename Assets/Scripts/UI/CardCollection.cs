@@ -13,7 +13,7 @@ public class CardCollection : MonoBehaviour
     /// </summary>
     private void OnEnable()
     {
-        if(unlocked.isObtained == false)
+        if(!unlocked.isObtained)
         {
             GetComponentInChildren<CardDisplay>().card = locked;
         }

@@ -142,9 +142,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4478540050321266008}
-  - component: {fileID: 3698375509497173544}
   m_Layer: 5
-  m_Name: Chain Lightning Manager
+  m_Name: Card Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,20 +169,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3698375509497173544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623205282447366164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba1c7488289d5154cb32185cce6ae2e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locked: {fileID: 11400000, guid: c150014979d194a4abaa82751e5c3eee, type: 2}
-  unlocked: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa, type: 2}
 --- !u!1 &1919625675116171071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,6 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded518572c18baa4e81629ce4936af70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardTemplate: {fileID: 623205282447366164}
   allCards: []
   deck: {fileID: 0}
 --- !u!1 &5834923491879040978
@@ -2437,7 +2423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fdfdb2f6ecf2f438de3fd2e7539074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa, type: 2}
+  card: {fileID: 11400000, guid: c150014979d194a4abaa82751e5c3eee, type: 2}
   artworkImage: {fileID: 4360062970061742665}
   nameText: {fileID: 1649211871208753313}
   elementText: {fileID: 1777267517779847646}
