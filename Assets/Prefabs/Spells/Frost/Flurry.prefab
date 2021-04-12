@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6328664475335039620}
   - component: {fileID: 6328664475335039623}
   - component: {fileID: 6328664475335039622}
-  - component: {fileID: 6328664475335039617}
+  - component: {fileID: 7093386463004744690}
   m_Layer: 13
   m_Name: Flurry
   m_TagString: Untagged
@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70792dbf9c184014aac9323e99d3b31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLifetime: 10
+  spellLifetime: 1
   effectlifeTime: 3
   spellDamage: 1
-  spellSpeed: 20
+  spellSpeed: 0
   applyIgniteEffect: 0
   applyFreezeEffect: 0
   applyShockEffect: 0
@@ -67,6 +67,8 @@ MonoBehaviour:
   AoETime: 0
   burnerPrefab: {fileID: 0}
   chainLightningPrefab: {fileID: 0}
+  flurrySpellProjectilePrefab: {fileID: 8280734705933972463, guid: 56e22d0653237df409e3dea8f9954cd6,
+    type: 3}
 --- !u!50 &6328664475335039623
 Rigidbody2D:
   serializedVersion: 4
@@ -104,7 +106,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.09
---- !u!212 &6328664475335039617
+--- !u!212 &7093386463004744690
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +146,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.6839622, g: 1, b: 0.98264885, a: 1}
+  m_Color: {r: 0, g: 0.7974181, b: 1, a: 0.42745098}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

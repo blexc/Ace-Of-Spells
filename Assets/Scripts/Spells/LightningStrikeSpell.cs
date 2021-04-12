@@ -9,15 +9,7 @@ public class LightningStrikeSpell : Spell
 
     public override void InitSpell()
     {
-        //get mouse position
-        Vector3 mouse = Mouse.current.position.ReadValue();
-        mouse.z = Mathf.Abs(Camera.main.transform.position.z);
-
-        // get screen point
-        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mouse);
-        worldPoint.z = 0f;
-
-        transform.position = worldPoint;
+        PlaceAtMousePos();
     }
 
     // doesn't get destroyed by triggers
