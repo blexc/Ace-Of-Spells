@@ -165,10 +165,10 @@ RectTransform:
   m_Father: {fileID: 2960183380049592362}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 700, y: -200}
-  m_SizeDelta: {x: 350, y: 400}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3698375509497173544
 MonoBehaviour:
@@ -2234,6 +2234,7 @@ GameObject:
   - component: {fileID: 1687872916762016606}
   - component: {fileID: 2495823859428463684}
   - component: {fileID: 2649731952041454353}
+  - component: {fileID: 6305424540345865991}
   m_Layer: 5
   m_Name: Deck List Background
   m_TagString: Untagged
@@ -2331,6 +2332,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6305424540345865991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5625560202799251976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded518572c18baa4e81629ce4936af70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allCards: []
+  deck: {fileID: 0}
 --- !u!1 &5834923491879040978
 GameObject:
   m_ObjectHideFlags: 0
