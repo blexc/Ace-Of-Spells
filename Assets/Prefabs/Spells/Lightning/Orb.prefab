@@ -50,7 +50,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3c01543a8482d334dbfc95a6356b053a, type: 2}
+  - {fileID: 2100000, guid: ec739259ec61f5d4ba3ed6d34fd802a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,7 +80,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.23617935
+        value: 0.6633148
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -88,13 +88,13 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.71461177
+        time: 0.49543452
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: 0.431352
+        outSlope: 0.431352
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.9521531
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
