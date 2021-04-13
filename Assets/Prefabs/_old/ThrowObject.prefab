@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   journeyTime: 30
+  slowTime: 1
+  slowAmount: 0.3
 --- !u!50 &5089817012755253824
 Rigidbody2D:
   serializedVersion: 4
