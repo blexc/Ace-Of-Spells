@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class DeckList : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class DeckList : MonoBehaviour
     public List<Card> allCards; //A list of all the cards currently in the Discard, Hand, and Draw piles
     public Deck deck; //The deck script to keep track of the lists for the different card piles 
 
+    [HideInInspector] public List<GameObject> templates; //List of the card templates created so they can be easily removed when the player leaves the scene
+
     //Function is called when the UI becomes active - AHL (4/12/21)
     private void OnEnable()
     {
+        GetComponentInChildren<Scrollbar>().value = 1; //Resets the scrollbar to the top of the page for the player
         ShowSortedList();
     }
 
@@ -51,41 +55,29 @@ public class DeckList : MonoBehaviour
     //Function to create the cards to be displayed on the menu - AHL(4/12/21)
     private void createCards()
     {
-        //Goes through the sorted list and sets the careds to be displayed based on the list
+        //Goes through the sorted list and sets the cards to be displayed based on the list
         foreach (Card currCard in allCards)
         {
-            //If the template is null then we set the first card to be this one
-            if (cardTemplate.GetComponentInChildren<CardDisplay>().card != null)
-            {
-                cardTemplate.GetComponentInChildren<CardDisplay>().card = currCard;
-            }
+            GameObject card1 = Instantiate(cardTemplate) as GameObject; //Instantiate a new card
+            card1.SetActive(true);
 
-            //If the template isn't null then we create cards for the rest of the sorted list to be displayed
-            else
-            {
-                GameObject card1 = Instantiate(cardTemplate) as GameObject;
-                card1.SetActive(true);
+            card1.GetComponentInChildren<CardDisplay>().card = currCard; //Sets the card to a specific sorted card display aspect
 
-                card1.GetComponentInChildren<CardDisplay>().card = currCard;
+            card1.transform.SetParent(cardTemplate.transform.parent, false); //Makes sure the new object is parented correctly to get the effect of the grid based view
 
-                card1.transform.SetParent(cardTemplate.transform.parent, false);
-            }
+            templates.Add(card1); //Adds the new object to the list to be removed later
         }
     }
 
     //Function to remove all the cards within the allCards list so everything can be refreshed if the player collects or discards cards
     private void refreshList()
     {
-        allCards.Clear();
-
-        /*
-        GameObject go = GameObject.Find("Card Template(Clone)");
-
-        //Remove all the UI Card Templates
-        do
+        allCards.Clear(); //Clear the list of all cards
+        
+        //Goes through the list of templates and destroys all the GameObjects
+        foreach (GameObject cardTemps in templates)
         {
-            Destroy(go);
-            go = GameObject.Find("Card Template(Clone)");
-        } while (go != null);*/
+            Destroy(cardTemps);
+        }
     }
 }
