@@ -55,7 +55,7 @@ public class DeckList : MonoBehaviour
         foreach (Card currCard in allCards)
         {
             //If the template is null then we set the first card to be this one
-            if (cardTemplate.GetComponentInChildren<CardDisplay>().card.name == "Locked Card")
+            if (cardTemplate.GetComponentInChildren<CardDisplay>().card != null)
             {
                 cardTemplate.GetComponentInChildren<CardDisplay>().card = currCard;
             }
@@ -77,5 +77,15 @@ public class DeckList : MonoBehaviour
     private void refreshList()
     {
         allCards.Clear();
+
+        /*
+        GameObject go = GameObject.Find("Card Template(Clone)");
+
+        //Remove all the UI Card Templates
+        do
+        {
+            Destroy(go);
+            go = GameObject.Find("Card Template(Clone)");
+        } while (go != null);*/
     }
 }
