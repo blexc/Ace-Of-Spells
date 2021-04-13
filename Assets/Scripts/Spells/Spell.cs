@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; // needed in PlaceAtMousePos()
 
 /// <summary>
 /// Base class for all (most) spells
@@ -171,7 +171,11 @@ public class Spell : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    protected void PlaceAtMousePos()
+    /// <summary>
+    /// places object attached to whereever the mouse position is
+    /// returns position
+    /// </summary>
+    protected Vector3 PlaceAtMousePos()
     {
         //get mouse position
         Vector3 mouse = Mouse.current.position.ReadValue();
@@ -182,6 +186,7 @@ public class Spell : MonoBehaviour
         worldPoint.z = 0f;
 
         transform.position = worldPoint;
+        return worldPoint;
     }
 }
 
