@@ -99,7 +99,7 @@ public class GameplayUI : MonoBehaviour
         {
             gamePaused = true;
             Time.timeScale = 0f;
-            GetComponent<GameplayUI>().pauseMenu.SetActive(true);
+            pauseMenu.SetActive(true);
             GetComponent<PlayerInput>().SwitchCurrentActionMap("Menu");
         }
     }

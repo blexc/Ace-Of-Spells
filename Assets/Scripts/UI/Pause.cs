@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Pause : MonoBehaviour
 {
+    //Variable Declaration/Initialization List
     public GameObject pause; //Variable to hold the pause menu (not the canvas) to be adjusted through the card collection buttons
     public GameObject DeckListMenu; //Variable to hold the Card Collection Menu that will be turned on and off based on the button input
     public GameObject DiscardCardPopUp; //Little popup for the player to choose if they want to discard a card or not
@@ -83,6 +84,23 @@ public class Pause : MonoBehaviour
     public void DiscardCardReward()
     {
         print("Discarding a card?");
+
+        //Essentially the pause function from the Gameplay UI - AHL (4/14/21)
+        GetComponent<GameplayUI>().gamePaused = true;
+        Time.timeScale = 0f;
+        GetComponent<GameplayUI>().pauseMenu.SetActive(true);
+        GetComponent<PlayerInput>().SwitchCurrentActionMap("Menu");
+
+        //Go to the decklist menu
+        DeckList();
+
+        //Open up the Discard Card Popup Menu
+        DiscardCardPopUp.SetActive(true);
+
+
+
+
+
 
 
 
