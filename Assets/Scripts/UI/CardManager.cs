@@ -49,4 +49,14 @@ public class CardManager : MonoBehaviour
             card3.transform.localScale = maxScale;
         }
     }
+
+    /// <summary>
+    /// Function to update the UI and cards in hand from anything happening with the deck - AHL (4/14/21)
+    /// </summary>
+    public void cardUIUpdate()
+    {
+        discardUI.text = "" + deck.GetComponent<Deck>().discardPile.Count; //Updates the discard Num UI
+        cardUpdate(); //Updates what is displayed for the cards in hand UI
+        deckUI.text = "" + deck.GetComponent<Deck>().drawPile.Count; //Updates the deck Num UI
+    }
 }

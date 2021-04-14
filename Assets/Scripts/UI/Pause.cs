@@ -158,6 +158,9 @@ public class Pause : MonoBehaviour
         //Goes back to the main pause menu
         DiscardCardFinalPopup.SetActive(false);
         DeckListBack();
+
+        //Update the UI
+        GetComponent<CardManager>().cardUIUpdate();
     }
 
     /// <summary>

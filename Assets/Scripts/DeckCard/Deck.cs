@@ -273,6 +273,8 @@ public class Deck : MonoBehaviour
         }
 
         FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+        FindObjectOfType<CardManager>().cardUpdate(); //Updates what is displayed for the cards in hand UI
+        FindObjectOfType<CardManager>().deckUI.text = "" + drawPile.Count; //Updates the deck Num UI
         return false;
     }
 
