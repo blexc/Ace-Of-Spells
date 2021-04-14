@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     public float timeControl;
     public float cd;
 
+    public bool discardCard;
     public SpriteRenderer sprite;
     [SerializeField] private GameObject ScriptManager = null;
 

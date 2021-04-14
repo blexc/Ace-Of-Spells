@@ -18,7 +18,6 @@ public class FlurrySpellProjectile : Spell
     {
         base.Update();
 
-
         // seek enemy, if one exists
         if (target)
         {
