@@ -7,7 +7,7 @@ public class EnemyBase : MonoBehaviour
     public bool IsFrozen { get { return frozenTimer > 0; } }
     public bool IsSlowed { get { return HasStatusEffect(StatusEffect.Slow); } }
 
-    public int healthMax;
+    public float healthMax;
     public int attackDmg;
     public int attackSpd; // in seconds
 
@@ -26,8 +26,9 @@ public class EnemyBase : MonoBehaviour
 
     void Start()
     {
-        health = healthMax;
-        GetComponentInChildren<EnemyUI>().HPMax = healthMax;
+        healthMax = healthMax * (1 + (.2f * RoomTracker.roomsCleared));
+        health = (int)healthMax;
+        GetComponentInChildren<EnemyUI>().HPMax = (int)healthMax;
         attackCooldownTimer = attackSpd;
         originalColor = GetComponent<SpriteRenderer>().color;
 
