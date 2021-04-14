@@ -9,6 +9,12 @@ public class Deck : MonoBehaviour
     // singleton
     public static Deck instance;
 
+    // every card in the project should be added to this
+    // no duplicates
+    // NOT changeable in-game
+    public List<Card> AllCards { get { return allCards; } }
+    [SerializeField] List<Card> allCards = new List<Card>();
+
     public List<Card> Hand { get { return hand; } }
 
     public List<Card> drawPile = new List<Card>();
