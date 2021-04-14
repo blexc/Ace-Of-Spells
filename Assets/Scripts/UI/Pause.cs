@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class Pause : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class Pause : MonoBehaviour
     public GameObject pause; //Variable to hold the pause menu (not the canvas) to be adjusted through the card collection buttons
     public GameObject DeckListMenu; //Variable to hold the Card Collection Menu that will be turned on and off based on the button input
     public GameObject DiscardCardPopUp; //Little popup for the player to choose if they want to discard a card or not
+    
+    [SerializeField]
+    private GameObject DiscardCardFinalPopup; //Popup to confirm that this is the card that the player wants to discard from their deck
+    
+    [SerializeField]
+    private TMP_Text DiscardCardFinalText; //The text for the final popup will be altered to show the name of the card that the player wants to discard
 
     //Bools
     private bool canDestroy = false; //Bool to keep control on if the player can discard a card or not from the deck
@@ -19,6 +26,10 @@ public class Pause : MonoBehaviour
     /// </summary>
     public void resume()
     {
+        //If canDestroy is yes then set it to no
+        if (canDestroy)
+            canDestroy = false;
+
         GetComponent<GameplayUI>().gamePaused = false;
         Time.timeScale = 1f;
         GetComponent<GameplayUI>().pauseMenu.SetActive(false);
@@ -30,6 +41,10 @@ public class Pause : MonoBehaviour
     /// </summary>
     public void mainMenu()
     {
+        //If canDestroy is yes then set it to no
+        if (canDestroy)
+            canDestroy = false;
+
         GetComponent<GameplayUI>().gamePaused = false;
         Time.timeScale = 1f;
         GetComponent<GameplayUI>().pauseMenu.SetActive(false);     
@@ -74,6 +89,10 @@ public class Pause : MonoBehaviour
             //If the decklist is active then we set it back to the initial pause menu before resuming the game
             if(DeckListMenu)
                 DeckListBack();
+
+            //If canDestroy is yes then set it to no
+            if (canDestroy)
+                canDestroy = false;
 
             GetComponent<GameplayUI>().gamePaused = false;
             Time.timeScale = 1f;
@@ -127,5 +146,23 @@ public class Pause : MonoBehaviour
 
         //Calls the resume function to resume the game
         resume();
+    }
+
+    /// <summary>
+    /// Yes button from the Discard Card Popup to adjust the deck by discarding a card - AHL (4/14/21)
+    /// </summary>
+    public void DiscardCardYes()
+    {
+        //Closes the discard pop up and adjusts the canDestroy bool to yes
+        DiscardCardPopUp.SetActive(false);
+        canDestroy = true;
+    }
+
+    /// <summary>
+    /// Function the Card buttons will access for the player to decide if this is the card they want to discard or not - AHL (4/14/21)
+    /// </summary>
+    public void DiscardACardDecision()
+    {
+
     }
 }
