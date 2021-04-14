@@ -12,7 +12,7 @@ public class Deck : MonoBehaviour
     public List<Card> Hand { get { return hand; } }
 
     public List<Card> drawPile = new List<Card>();
-    private List<Card> discardPile = new List<Card>();
+    [HideInInspector] public List<Card> discardPile = new List<Card>();
     private List<Card> hand = new List<Card>();
 
     // incremented by quick thinking spell
