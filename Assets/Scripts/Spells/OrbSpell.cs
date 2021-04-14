@@ -6,7 +6,7 @@ using UnityEngine;
 // every "damageTimerStart" seconds, deal damage to a random enemy
 public class OrbSpell : Spell
 {
-    [SerializeField] GameObject trailObject, trailTarget;
+    [SerializeField] GameObject trailObject = null, trailTarget = null;
 
     // all enemies in the orb circle
     [SerializeField] List<EnemyBase> enemies = new List<EnemyBase>();
