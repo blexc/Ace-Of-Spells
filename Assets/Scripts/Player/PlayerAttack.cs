@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
     //camera reference
     public Camera mainCamera;
     private GameObject par;
-
+    public bool discardCard;
     private void Start()
     {
         par = transform.parent.gameObject;
@@ -34,6 +34,8 @@ public class PlayerAttack : MonoBehaviour
         // if spellPrefab is not null...
         if (spellPrefab && par.GetComponent<PlayerStats>().cd <= 0f)
         {
+        
+
             par.GetComponent<PlayerStats>().cd = par.GetComponent<PlayerStats>().spellCooldown;
 
             //spawn spell at my rotation
@@ -76,6 +78,8 @@ public class PlayerAttack : MonoBehaviour
                 //Debug.Log(transform.rotation.z);
             }
             //Debug.Log(transform.eulerAngles.z);
+
+            par.GetComponent<PlayerStats>().discardCard = true;
         }
     }
 }

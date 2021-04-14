@@ -14,6 +14,7 @@ public class Deck : MonoBehaviour
     public List<Card> drawPile = new List<Card>();
     [HideInInspector] public List<Card> discardPile = new List<Card>();
     private List<Card> hand = new List<Card>();
+    public GameObject player;
 
     // incremented by quick thinking spell
     public int numTimesToCast = 1; 
@@ -26,6 +27,7 @@ public class Deck : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         if (instance != null) Destroy(gameObject);
         instance = this;
 
@@ -73,10 +75,15 @@ public class Deck : MonoBehaviour
             StartCoroutine(CastSpellRepeated(pa, spell));
         }
 
-        discardPile.Add(selectedCard);
-        hand.RemoveAt(handSelectionIndex);
-        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
-        DrawCard();
+        if (player.GetComponent<PlayerStats>().discardCard)
+        {
+            player.GetComponent<PlayerStats>().discardCard = false;
+            discardPile.Add(selectedCard);
+            hand.RemoveAt(handSelectionIndex);
+            FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
+            DrawCard();
+        }
+       
     }
 
     /// <summary>
