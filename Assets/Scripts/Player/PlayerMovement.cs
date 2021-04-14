@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
    //player movement speed
-    private float movementSpeed;
+    public float movementSpeed;
 
     public Animator animator;
     public SpriteRenderer sprite;
