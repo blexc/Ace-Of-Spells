@@ -13,8 +13,7 @@ public class Pause : MonoBehaviour
     public GameObject DiscardCardPopUp; //Little popup for the player to choose if they want to discard a card or not
     public GameObject DiscardCardFinalPopup; //Popup to confirm that this is the card that the player wants to discard from their deck
     public TMP_Text DiscardCardFinalText; //The text for the final popup will be altered to show the name of the card that the player wants to discard
-    //[HideInInspector] 
-    public Card cardToBeDeleted; //Card gameobject that will be set by the card buttons
+    [HideInInspector] public Card cardToBeDeleted; //Card gameobject that will be set by the card buttons
 
 
     //Bools
@@ -119,16 +118,6 @@ public class Pause : MonoBehaviour
 
         //Open up the Discard Card Popup Menu
         DiscardCardPopUp.SetActive(true);
-
-
-
-
-
-
-
-
-
-        //Use the destroy card function located in the deck script
     }
 
 
@@ -162,7 +151,13 @@ public class Pause : MonoBehaviour
     /// </summary>
     public void DiscardACardFinalPopupYes()
     {
+        //Removes the card from the deck
+        gameObject.transform.root.GetComponentInChildren<Deck>().DestroyCard(cardToBeDeleted.name);
+        canDestroy = false;
 
+        //Goes back to the main pause menu
+        DiscardCardFinalPopup.SetActive(false);
+        DeckListBack();
     }
 
     /// <summary>
