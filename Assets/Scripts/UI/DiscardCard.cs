@@ -16,10 +16,8 @@ public class DiscardCard : MonoBehaviour
         if (pauseScript.canDestroy)
         {
             pauseScript.DiscardCardFinalPopup.SetActive(true);
-            //DiscardCardFinalText.text = ("Are you sure you want to discard " + name + '?');
+            pauseScript.DiscardCardFinalText.text = ("Are you sure you want to discard " + GetComponent<CardDisplay>().card.name + '?');
+            pauseScript.cardToBeDeleted = GetComponent<CardDisplay>().card;
         }
-
-        else
-            print("No Destroying today bud");
     }
 }

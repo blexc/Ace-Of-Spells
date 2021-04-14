@@ -11,10 +11,11 @@ public class Pause : MonoBehaviour
     public GameObject pause; //Variable to hold the pause menu (not the canvas) to be adjusted through the card collection buttons
     public GameObject DeckListMenu; //Variable to hold the Card Collection Menu that will be turned on and off based on the button input
     public GameObject DiscardCardPopUp; //Little popup for the player to choose if they want to discard a card or not
-
     public GameObject DiscardCardFinalPopup; //Popup to confirm that this is the card that the player wants to discard from their deck
-
     public TMP_Text DiscardCardFinalText; //The text for the final popup will be altered to show the name of the card that the player wants to discard
+    //[HideInInspector] 
+    public Card cardToBeDeleted; //Card gameobject that will be set by the card buttons
+
 
     //Bools
     [HideInInspector] public bool canDestroy = false; //Bool to keep control on if the player can discard a card or not from the deck
@@ -159,7 +160,7 @@ public class Pause : MonoBehaviour
     /// <summary>
     /// Function the Card buttons will access for the player to decide if this is the card they want to discard or not - AHL (4/14/21)
     /// </summary>
-    public void DiscardACardDecision()
+    public void DiscardACardFinalPopupYes()
     {
 
     }
