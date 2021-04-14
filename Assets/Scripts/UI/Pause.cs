@@ -11,7 +11,8 @@ public class Pause : MonoBehaviour
     public GameObject DeckListMenu; //Variable to hold the Card Collection Menu that will be turned on and off based on the button input
     public GameObject DiscardCardPopUp; //Little popup for the player to choose if they want to discard a card or not
 
-    //public bool isDiscardReward; //
+    //Bools
+    private bool canDestroy = false; //Bool to keep control on if the player can discard a card or not from the deck
 
     /// <summary>
     /// Function that lets the player continue playing - AHL (3/10/21)
@@ -70,6 +71,10 @@ public class Pause : MonoBehaviour
     {
         if (context.performed && GetComponent<GameplayUI>().gamePaused == true)
         {
+            //If the decklist is active then we set it back to the initial pause menu before resuming the game
+            if(DeckListMenu)
+                DeckListBack();
+
             GetComponent<GameplayUI>().gamePaused = false;
             Time.timeScale = 1f;
             GetComponent<GameplayUI>().pauseMenu.SetActive(false);
@@ -80,11 +85,11 @@ public class Pause : MonoBehaviour
 
 
 
-
+    /// <summary>
+    /// Function that is accessed by the Discard Card Reward script that will pause the game and bring up the discard card popup so the player can choose if they want to discard a card - AHL (4/14/21)
+    /// </summary>
     public void DiscardCardReward()
     {
-        print("Discarding a card?");
-
         //Essentially the pause function from the Gameplay UI - AHL (4/14/21)
         GetComponent<GameplayUI>().gamePaused = true;
         Time.timeScale = 0f;
@@ -106,5 +111,21 @@ public class Pause : MonoBehaviour
 
 
         //Use the destroy card function located in the deck script
+    }
+
+
+    /// <summary>
+    /// No button from the Discard Card Popup to resume the game - AHL (4/14/21)
+    /// </summary>
+    public void DiscardCardNo()
+    {
+        //Close the Discard Card Popup Menu
+        DiscardCardPopUp.SetActive(false);
+
+        //Goes back to the main pause menu
+        DeckListBack();
+
+        //Calls the resume function to resume the game
+        resume();
     }
 }

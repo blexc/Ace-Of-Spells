@@ -901,12 +901,12 @@ PrefabInstance:
     - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.874332
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6666656
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
@@ -1154,6 +1154,16 @@ PrefabInstance:
       propertyPath: deck
       value: 
       objectReference: {fileID: 504244567667360446}
+    - target: {fileID: 9019275319836106008, guid: 00d44f4792c318c42a86888b05b6f036,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6240721442182085351}
+    - target: {fileID: 9019275319836106008, guid: 00d44f4792c318c42a86888b05b6f036,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DiscardCardNo
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2397530406217909651, guid: 00d44f4792c318c42a86888b05b6f036, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00d44f4792c318c42a86888b05b6f036, type: 3}
