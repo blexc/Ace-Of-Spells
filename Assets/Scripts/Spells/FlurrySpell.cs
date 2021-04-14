@@ -9,8 +9,8 @@ public class FlurrySpell : Spell
 
     public override void InitSpell()
     {
-        PlaceAtMousePos();
-
+        //PlaceAtMousePos();
+        
         InvokeRepeating(nameof(CastProjectile), 0f, 0.1f);
     }
 

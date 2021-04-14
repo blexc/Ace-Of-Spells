@@ -46,7 +46,7 @@ public class Door : MonoBehaviour
     public void Unlock()
     {
         locked = false;
-        
+        RoomTracker.roomsCleared += 1;
         // hide the lock sprite
         GameObject iconObject = GetComponentInChildren<DoorIcon>().gameObject;
         if (iconObject.activeSelf)

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034d4426cdd6dab4d93e6b01fcece009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLifetime: 10
+  spellLifetime: 0.5
   effectlifeTime: 3
   spellDamage: 1
   spellSpeed: 0
