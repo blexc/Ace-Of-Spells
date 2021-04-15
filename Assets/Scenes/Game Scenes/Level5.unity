@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -928,13 +928,19 @@ PrefabInstance:
         type: 3}
       propertyPath: enemiesToSpawn.Array.data[1]
       value: 
-      objectReference: {fileID: 7252567977041878557, guid: 03df12170f9e66042bf841304db931a2,
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
         type: 3}
     - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
       propertyPath: enemiesToSpawn.Array.data[2]
       value: 
-      objectReference: {fileID: 7252567977041878557, guid: 03df12170f9e66042bf841304db931a2,
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
+        type: 3}
+    - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
+        type: 3}
+      propertyPath: enemiesToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
         type: 3}
     - target: {fileID: 476395709275712104, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
@@ -1061,13 +1067,19 @@ PrefabInstance:
         type: 3}
       propertyPath: enemiesToSpawn.Array.data[1]
       value: 
-      objectReference: {fileID: 7252567977041878557, guid: 03df12170f9e66042bf841304db931a2,
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
         type: 3}
     - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
       propertyPath: enemiesToSpawn.Array.data[2]
       value: 
-      objectReference: {fileID: 7252567977041878557, guid: 03df12170f9e66042bf841304db931a2,
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
+        type: 3}
+    - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
+        type: 3}
+      propertyPath: enemiesToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
         type: 3}
     - target: {fileID: 476395709275712104, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
@@ -2467,37 +2479,6 @@ PolygonCollider2D:
       - {x: -23.604586, y: -21.86252}
       - {x: 93.14668, y: -22.469543}
       - {x: 93.36488, y: 11.386526}
---- !u!114 &6868531034287783489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2621891097604103566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58cfad356cfd462428038ae1a332bddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cards:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &6868531034565262929
 MonoBehaviour:
   m_ObjectHideFlags: 0

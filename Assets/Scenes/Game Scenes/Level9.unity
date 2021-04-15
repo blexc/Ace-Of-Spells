@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -573,12 +573,12 @@ PrefabInstance:
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -61.28516
+      value: -52.97024
       objectReference: {fileID: 0}
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.388205
+      value: 16.466602
       objectReference: {fileID: 0}
     - target: {fileID: 8948110860438753254, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
@@ -1005,6 +1005,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1790391875773127187, guid: 041c3a3d366a35d48b669ac7577043e1,
     type: 3}
   m_PrefabInstance: {fileID: 1587331000}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1607324119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4660345631604792243, guid: 4975e357785118b4e97119a9be40ee12,
+    type: 3}
+  m_PrefabInstance: {fileID: 1420545279}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1824006973
 PrefabInstance:
@@ -1601,7 +1607,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6343284, y: 1}
+    m_SensorSize: {x: 2.1880999, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1641,7 +1647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf58d5d5185cf6469b7dc636f9e33d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rewardObject: {fileID: 0}
+  rewardObject: {fileID: 1607324119}
   enemiesLeft: 0
   checkFrequency: 1
   enemySpawners: []
@@ -1661,13 +1667,19 @@ PrefabInstance:
         type: 3}
       propertyPath: enemiesToSpawn.Array.data[4]
       value: 
-      objectReference: {fileID: 8883940010358041061, guid: 830e72aebfd3a5a4f9d2478da1d301dd,
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
         type: 3}
     - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
       propertyPath: enemiesToSpawn.Array.data[0]
       value: 
-      objectReference: {fileID: 8883940010358041061, guid: 830e72aebfd3a5a4f9d2478da1d301dd,
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
+        type: 3}
+    - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
+        type: 3}
+      propertyPath: enemiesToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
         type: 3}
     - target: {fileID: 476395709275712104, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
@@ -1876,32 +1888,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6868531034706372594}
     m_Modifications:
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: destinationScene
-      value: AlexChapman02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: destinationName
-      value: Assets/Scenes/AlexChapman02.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: scenePath
-      value: Assets/Scenes/AlexChapman02.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: sceneName
-      value: AlexChapman02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: rewardSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c589c0ac273047b409cf85efa7ee4241,
-        type: 3}
     - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
       propertyPath: enemiesToSpawn.Array.size
@@ -1911,7 +1897,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemiesToSpawn.Array.data[1]
       value: 
-      objectReference: {fileID: 7252567977041878557, guid: 03df12170f9e66042bf841304db931a2,
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
         type: 3}
     - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
@@ -1928,7 +1914,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemiesToSpawn.Array.data[3]
       value: 
-      objectReference: {fileID: 7252567977041878557, guid: 03df12170f9e66042bf841304db931a2,
+      objectReference: {fileID: 6977890408372049062, guid: 46f5cdb5eabec1c42bc13cae7a5dc2d9,
         type: 3}
     - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
@@ -2011,6 +1997,32 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: destinationScene
+      value: AlexChapman02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: destinationName
+      value: Assets/Scenes/AlexChapman02.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: scenePath
+      value: Assets/Scenes/AlexChapman02.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: sceneName
+      value: AlexChapman02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: rewardSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c589c0ac273047b409cf85efa7ee4241,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9960371577c7441b0db3889fd14a63, type: 3}
 --- !u!4 &8418492721557729880 stripped
