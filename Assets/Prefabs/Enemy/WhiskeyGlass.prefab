@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthMax: 20
-  attackDmg: 2
+  attackDmg: 4
   attackSpd: 2
   frozenTimer: 0
 --- !u!114 &6977890408372049049
@@ -188,7 +188,7 @@ MonoBehaviour:
   repathRate: 0.2
   canSearch: 1
   canMove: 1
-  maxSpeed: 2
+  maxSpeed: 3.5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2

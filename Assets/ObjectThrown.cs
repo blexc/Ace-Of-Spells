@@ -20,6 +20,7 @@ public class ObjectThrown : MonoBehaviour
     public float slowTime;
     public float slowAmount;
     public float force;
+    private bool struck = false;
     private Vector2 lastPos;
     Rigidbody2D rb;
     void Start()
@@ -82,10 +83,10 @@ public class ObjectThrown : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("HITTING OBJECT!");
+  
         if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("HITTING PLAYER");
+        
             //Destroy(this.gameObject);
             //StartCoroutine(SlowPlayer());
             StartCoroutine(player.GetComponent<PlayerStats>().SlowPlayer(slowTime, slowAmount));
@@ -93,10 +94,11 @@ public class ObjectThrown : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             player.gameObject.GetComponent<PlayerStats>().TakeDamage(3);
+            struck = true;
            
         }
 
-        if (other.gameObject.tag == "Wall")
+        if (other.gameObject.tag == "Wall" && !struck)
         {
             Destroy(gameObject);
         }
@@ -108,7 +110,10 @@ public class ObjectThrown : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
        
-        Destroy(this.gameObject);
+        if (!struck)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public IEnumerator SlowPlayer()
