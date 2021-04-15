@@ -46,7 +46,14 @@ public class PlayerStats : MonoBehaviour
         {
             TakeDamage(other.gameObject.GetComponent<EnemyBase>().attackDmg);
         }
+
+        if (other.gameObject.tag == "Projectile")
+        {
+            TakeDamage(3);
+        }
     }
+
+  
 
     public void TakeDamage(int damage)
     {
@@ -83,5 +90,13 @@ public class PlayerStats : MonoBehaviour
             sprite.color = Color.white;
             yield return new WaitForSeconds(.125f);
         }
+    }
+
+    public IEnumerator SlowPlayer(float slowTime, float slowAmount)
+    {
+        Debug.Log("SLOWING");
+        gameObject.GetComponent<PlayerMovement>().movementSpeed = gameObject.GetComponent<PlayerMovement>().movementSpeed * (1-slowAmount);
+        yield return new WaitForSeconds(slowTime);
+        gameObject.GetComponent<PlayerMovement>().movementSpeed = 10;
     }
 }

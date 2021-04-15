@@ -15,12 +15,12 @@ public class CardDisplay : MonoBehaviour
 
     private void Update()
     {
-        if (nameText!=null)
+        if (nameText!=null && card!=null)
         {
             nameText.text = card.name;
         }
 
-        if (elementText != null)
+        if (elementText != null && card!=null)
         {
             string cardTypeStr = "";
             switch (card.element)
@@ -42,7 +42,7 @@ public class CardDisplay : MonoBehaviour
             elementText.text = cardTypeStr;
         }
 
-        if (desctiptionText != null)
+        if (desctiptionText != null && card!=null)
         {
             desctiptionText.text = card.description;
         }

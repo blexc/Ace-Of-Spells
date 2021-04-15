@@ -12,6 +12,8 @@ public class Chest : Reward
         // get all Card scriptable objects and store them in a list
         Card[] allCardsArr = Resources.FindObjectsOfTypeAll<Card>();
         List<Card> allCardsList = new List<Card>(allCardsArr);
+        Debug.Log(allCardsList.Count);
+        Debug.Log(allCardsArr.Length);
 
         // choose a random one and set it be Chest's reward 
         // keep picking a card until its not NA (to prevent locked card)
