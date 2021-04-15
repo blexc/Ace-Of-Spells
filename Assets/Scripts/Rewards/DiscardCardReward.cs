@@ -14,8 +14,6 @@ public class DiscardCardReward : Reward
     public override void RecieveReward()
     {
         pauseScript.DiscardCardReward();
-        
-        // TODO display discard menu
         Destroy(gameObject);
     }
 }

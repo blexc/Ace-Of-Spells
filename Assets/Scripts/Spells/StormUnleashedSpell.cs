@@ -5,7 +5,7 @@ using UnityEngine;
 // cast Lightning Strike on the cursor 5 times over the duration of the spell.
 public class StormUnleashedSpell : Spell
 {
-    [SerializeField] GameObject lightningStrikeSpellPrefab;
+    [SerializeField] GameObject lightningStrikeSpellPrefab = null;
 
     public override void InitSpell()
     {
