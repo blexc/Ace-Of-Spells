@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  detectionRadius: 20
+  detectionRadius: 300
   canFollow: 0
 --- !u!50 &7252567977041878555
 Rigidbody2D:

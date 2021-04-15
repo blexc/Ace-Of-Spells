@@ -51,7 +51,7 @@ MonoBehaviour:
   spellDamage: 0
   spellSpeed: 5
   applyIgniteEffect: 0
-  applyFreezeEffect: 0
+  applyFreezeEffect: 1
   applyShockEffect: 0
   applyRotEffect: 0
   applyChainLightning: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
     m_Bits: 0
   hit: 0
   enemyHit: {fileID: 0}
+  AoETime: 0
   burnerPrefab: {fileID: 0}
   chainLightningPrefab: {fileID: 0}
 --- !u!50 &3732428998259870120

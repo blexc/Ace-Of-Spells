@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8877501526054205149}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -121,3 +121,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cfad356cfd462428038ae1a332bddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cards:
+  - {fileID: 11400000, guid: 8da8efbdac07f99458ce6d7984f22188, type: 2}
+  - {fileID: 11400000, guid: f909d5d15004bb44399ef4b3ee54f9d8, type: 2}
+  - {fileID: 11400000, guid: 3091b4b442321844d954b40ed53d3f51, type: 2}
+  - {fileID: 11400000, guid: df7cd2daf60cdf049ae5521e6d62d982, type: 2}
+  - {fileID: 11400000, guid: 7bce8e145ec5d19489c6c1a147786db2, type: 2}
+  - {fileID: 11400000, guid: 931bcfd7b552dc74ca043b12de051492, type: 2}
+  - {fileID: 11400000, guid: eedd7c73ef202fa49885246aea24d50b, type: 2}
+  - {fileID: 11400000, guid: 896d265e2804ae44faa1ae20355353c1, type: 2}
+  - {fileID: 11400000, guid: ee960870151426142a48636927b38bb2, type: 2}
+  - {fileID: 11400000, guid: 92419adfb8f4e6a4ca964bdb6e9081fa, type: 2}
+  - {fileID: 11400000, guid: 3ba60c49e695b534ea1de6f7e416ffec, type: 2}
+  - {fileID: 11400000, guid: 9898767184fd04c419ed802ad42d1113, type: 2}
+  - {fileID: 11400000, guid: e239838176fea174babd64cc9fa8878e, type: 2}
+  - {fileID: 11400000, guid: e239838176fea174babd64cc9fa8878e, type: 2}
+  - {fileID: 11400000, guid: cef02f6bc9af59849b9877285a409ffb, type: 2}
+  - {fileID: 11400000, guid: fe24dfc41ff90ad489576b717a96cca1, type: 2}
+  - {fileID: 11400000, guid: a3186399bfa6e56429d08099a9e962dc, type: 2}
+  - {fileID: 11400000, guid: 9d656608cff161741b740bac4ebf18c9, type: 2}

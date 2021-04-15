@@ -6,6 +6,7 @@ using UnityEngine;
 public class Chest : Reward
 {
     Card cardReward;
+    public Card[]  cards = new Card[18];
 
     private void Awake()
     {
@@ -20,11 +21,11 @@ public class Chest : Reward
         int i;
         do
         {
-            i = Random.Range(0, allCardsList.Count);
+            i = Random.Range(0, cards.Length);
         }
-        while (allCardsList[i].element == CardType.NA);
+        while (cards[i].element == CardType.NA);
 
-        cardReward = allCardsList[i];
+        cardReward = cards[i];
     }
 
     public override void RecieveReward()

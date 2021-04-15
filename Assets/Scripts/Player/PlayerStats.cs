@@ -69,7 +69,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Heal(int amount)
     {
-        currentHealth += amount;
+        currentHealth += (float)amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         // ensure no null references
