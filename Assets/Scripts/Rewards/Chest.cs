@@ -5,13 +5,12 @@ using UnityEngine;
 // functionality inherits from Reward.cs
 public class Chest : Reward
 {
-    Card cardReward;
+    [SerializeField] Card cardReward;
 
-    private void Awake()
+    private void GenerateRandomCard()
     {
         // get all Card scriptable objects and store them in a list
-        Card[] allCardsArr = Resources.FindObjectsOfTypeAll<Card>();
-        List<Card> allCardsList = new List<Card>(allCardsArr);
+        List<Card> allCardsList = Deck.instance.AllCards;
 
         // choose a random one and set it be Chest's reward 
         // keep picking a card until its not NA (to prevent locked card)
@@ -27,6 +26,7 @@ public class Chest : Reward
 
     public override void RecieveReward()
     {
+        GenerateRandomCard();
         Deck.instance.AddNewCard(cardReward);
         Destroy(gameObject);
     }
