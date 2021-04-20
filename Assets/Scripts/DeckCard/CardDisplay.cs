@@ -12,6 +12,7 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text elementText;
     public TMP_Text desctiptionText;
+    [SerializeField] private Image favoriteStar;
 
     private void Update()
     {
@@ -45,6 +46,16 @@ public class CardDisplay : MonoBehaviour
         if (desctiptionText != null)
         {
             desctiptionText.text = card.description;
+        }
+
+        if(card.isFavorite)
+        {
+            favoriteStar.gameObject.SetActive(true);
+        }
+
+        else if(favoriteStar.IsActive() && !card.isFavorite)
+        {
+            favoriteStar.gameObject.SetActive(false);
         }
     }
 }
