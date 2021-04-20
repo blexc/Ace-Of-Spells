@@ -19,6 +19,8 @@ public class ObjectThrown : MonoBehaviour
 
     public float slowTime;
     public float slowAmount;
+    public float force;
+    private bool struck = false;
     private Vector2 lastPos;
     Rigidbody2D rb;
     void Start()
@@ -32,11 +34,14 @@ public class ObjectThrown : MonoBehaviour
         //startTime = Time.time;
         StartCoroutine(LastPos());
         StartCoroutine(DestroyThis());
+        Thrown();
     }
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(this.gameObject.transform.position, lastPos, 0.5f);
+        //transform.position = Vector2.MoveTowards(this.gameObject.transform.position, lastPos, .1f);
+
+   
 
         /*
         endPos = lastPos;
@@ -62,6 +67,13 @@ public class ObjectThrown : MonoBehaviour
 
     }
 
+
+    public void Thrown()
+    {
+        Vector2 dir = (player.transform.position - transform.position).normalized;
+        rb.velocity = dir * force;
+    }
+
     public IEnumerator LastPos()
     {
         lastPos = player.transform.position;
@@ -69,17 +81,28 @@ public class ObjectThrown : MonoBehaviour
         StartCoroutine(LastPos());
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    { 
-        if(other.gameObject.tag == "Player")
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+  
+        if(other.gameObject.CompareTag("Player"))
         {
+        
             //Destroy(this.gameObject);
-            StartCoroutine(SlowPlayer());
+            //StartCoroutine(SlowPlayer());
+            StartCoroutine(player.GetComponent<PlayerStats>().SlowPlayer(slowTime, slowAmount));
 
             GetComponent<Collider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             player.gameObject.GetComponent<PlayerStats>().TakeDamage(3);
+            struck = true;
+           
         }
+
+        if (other.gameObject.tag == "Wall" && !struck)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     public IEnumerator DestroyThis()
@@ -87,7 +110,10 @@ public class ObjectThrown : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
        
-        Destroy(this.gameObject);
+        if (!struck)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public IEnumerator SlowPlayer()
@@ -96,8 +122,6 @@ public class ObjectThrown : MonoBehaviour
         yield return new WaitForSeconds(slowTime);
         player.gameObject.GetComponent<PlayerMovement>().movementSpeed = 10;
         Destroy(this.gameObject);
-
-
     }
 
 

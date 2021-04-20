@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 50
+  healthMax: 20
   attackDmg: 5
   attackSpd: 2
   frozenTimer: 0
@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fa21c62f71f4e4c9e3c71091c07390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
-  detectionRadius: 20
+  moveSpeed: 5.9
+  detectionRadius: 300
   canFollow: 0
 --- !u!50 &7252567977041878555
 Rigidbody2D:
@@ -187,9 +187,9 @@ GameObject:
   - component: {fileID: 8067726817817957058}
   - component: {fileID: 8555245499544558463}
   - component: {fileID: 215874201786322523}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: EnemyDetectionCircle
-  m_TagString: Untagged
+  m_TagString: DetectionCircle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

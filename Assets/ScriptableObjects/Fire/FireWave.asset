@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FireWave
   m_EditorClassIdentifier: 
   name: Fire Wave
-  description: Wavy
+  description: Shoots a cone of fire, igniting enemies
   element: 3
   spell: {fileID: 8880743940131354364, guid: a25e7b5e40a14c0419040170cf8fa966, type: 3}
+  isObtained: 0

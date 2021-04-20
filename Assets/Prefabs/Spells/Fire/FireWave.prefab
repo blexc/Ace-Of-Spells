@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellLifetime: 10
   effectlifeTime: 3
-  spellDamage: 5
+  spellDamage: 8
   spellSpeed: 10
   applyIgniteEffect: 1
   applyFreezeEffect: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireWavePrefab: {fileID: 8880743940131354364}
+  deck: {fileID: 0}
 --- !u!60 &8518218935660063989
 PolygonCollider2D:
   m_ObjectHideFlags: 0
