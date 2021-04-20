@@ -26,6 +26,9 @@ public class Pause : MonoBehaviour
     public TMP_Text FavoriteCardText; //Favorite Card Pop-Up Text
     public TMP_Text UnfavoriteCardText; //Unfavorite Card Pop-Up Text
 
+    //Card Gameobject so we know what to set as favorite or not
+    [HideInInspector] public GameObject cardSelected;
+
 
     /// <summary>
     /// Function that lets the player continue playing - AHL (3/10/21)
@@ -179,14 +182,23 @@ public class Pause : MonoBehaviour
         DiscardCardFinalPopup.SetActive(false);
     }
 
+    /// <summary>
+    /// Yes button pressed on MakeFavoritePopup so now the card will be favorited - AHL(4/20/21)
+    /// </summary>
+    public void MakeFavorite()
+    {
+        cardSelected.GetComponent<CardDisplay>().card.isFavorite = true;
+        MakeFavoritePopup.SetActive(false);
+    }
 
-
-
-
-
-
-
-
+    /// <summary>
+    /// Yes button pressed on RemoveFavoritePopup so now the card will be Unfavorited - AHL(4/20/21)
+    /// </summary>
+    public void RemoveFavorite()
+    {
+        cardSelected.GetComponent<CardDisplay>().card.isFavorite = false;
+        RemoveFavoritePopup.SetActive(false);
+    }
 
     /// <summary>
     /// Back button that will be used for the Favorite and Unfavorite Pop-Ups - AHL (4/20/21)
@@ -201,10 +213,4 @@ public class Pause : MonoBehaviour
         if (RemoveFavoritePopup.activeSelf)
             RemoveFavoritePopup.SetActive(false);
     }
-
-
-
-
-
-
 }

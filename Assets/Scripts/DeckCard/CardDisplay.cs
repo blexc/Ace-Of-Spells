@@ -48,7 +48,7 @@ public class CardDisplay : MonoBehaviour
             desctiptionText.text = card.description;
         }
 
-        if(card.isFavorite)
+        if(card.isFavorite && card.isObtained)
         {
             favoriteStar.gameObject.SetActive(true);
         }

@@ -17,6 +17,7 @@ public class FavoriteCard : MonoBehaviour
         {
             pauseScript.MakeFavoritePopup.SetActive(true);
             pauseScript.FavoriteCardText.text = ("Do you want to favorite " + GetComponent<CardDisplay>().card.name + '?');
+            pauseScript.cardSelected = gameObject;
         }
 
         //If the card is favorited then bring up the remove pop-up
@@ -24,6 +25,7 @@ public class FavoriteCard : MonoBehaviour
         {
             pauseScript.RemoveFavoritePopup.SetActive(true);
             pauseScript.UnfavoriteCardText.text = ("Do you want to remove the favorite from " + GetComponent<CardDisplay>().card.name + '?');
+            pauseScript.cardSelected = gameObject;
         }
     }
 }
