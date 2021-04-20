@@ -19,6 +19,14 @@ public class Pause : MonoBehaviour
     //Bools
     [HideInInspector] public bool canDestroy = false; //Bool to keep control on if the player can discard a card or not from the deck
 
+
+    //Favoriting Card Menus and needed variables
+    public GameObject MakeFavoritePopup; //Pop-up menu that makes the card scriptable object favorited
+    public GameObject RemoveFavoritePopup; //Pop-up menu that removes the card scriptable object favorited component
+    public TMP_Text FavoriteCardText; //Favorite Card Pop-Up Text
+    public TMP_Text UnfavoriteCardText; //Unfavorite Card Pop-Up Text
+
+
     /// <summary>
     /// Function that lets the player continue playing - AHL (3/10/21)
     /// </summary>
@@ -170,4 +178,33 @@ public class Pause : MonoBehaviour
     {
         DiscardCardFinalPopup.SetActive(false);
     }
+
+
+
+
+
+
+
+
+
+
+    /// <summary>
+    /// Back button that will be used for the Favorite and Unfavorite Pop-Ups - AHL (4/20/21)
+    /// </summary>
+    public void FavoriteBack()
+    {
+        //If the favorite pop-up is active then deactivate it
+        if(MakeFavoritePopup.activeSelf)
+            MakeFavoritePopup.SetActive(false);
+
+        //If the remove pop-up is active then deactivate it
+        if (RemoveFavoritePopup.activeSelf)
+            RemoveFavoritePopup.SetActive(false);
+    }
+
+
+
+
+
+
 }

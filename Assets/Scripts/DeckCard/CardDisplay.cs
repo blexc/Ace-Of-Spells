@@ -53,7 +53,7 @@ public class CardDisplay : MonoBehaviour
             favoriteStar.gameObject.SetActive(true);
         }
 
-        else if(favoriteStar.IsActive() && !card.isFavorite)
+        else if(favoriteStar.isActiveAndEnabled && !card.isFavorite)
         {
             favoriteStar.gameObject.SetActive(false);
         }
