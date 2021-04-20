@@ -129,7 +129,7 @@ public class Spell : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine(AoEWait());
         }
-        else
+        else if (other.tag != "DetectionCircle" && other.tag != "Projectile")
         {
             // delete spell if hits ANYTHING
             // should not be left, since it could hit multiple enemies

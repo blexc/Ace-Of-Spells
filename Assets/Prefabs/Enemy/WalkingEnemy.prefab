@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPBarFull: {fileID: 847655656396061805}
   damageText: {fileID: 0}
+  fireEffect: {fileID: 0}
+  frostEffect: {fileID: 0}
+  shockEffect: {fileID: 0}
+  rotEffect: {fileID: 0}
   HPMax: 0
 --- !u!1 &8883940010358041061
 GameObject:
@@ -68,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthMax: 20
-  attackDmg: 2
+  attackDmg: 15
   attackSpd: 2
   frozenTimer: 0
 --- !u!114 &8883940010358041080
