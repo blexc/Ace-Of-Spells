@@ -5,31 +5,28 @@ using UnityEngine;
 // functionality inherits from Reward.cs
 public class Chest : Reward
 {
-    Card cardReward;
-    public Card[]  cards = new Card[18];
+    [SerializeField] Card cardReward;
 
-    private void Awake()
+    private void GenerateRandomCard()
     {
         // get all Card scriptable objects and store them in a list
-        Card[] allCardsArr = Resources.FindObjectsOfTypeAll<Card>();
-        List<Card> allCardsList = new List<Card>(allCardsArr);
-        Debug.Log(allCardsList.Count);
-        Debug.Log(allCardsArr.Length);
+        List<Card> allCardsList = Deck.instance.AllCards;
 
         // choose a random one and set it be Chest's reward 
         // keep picking a card until its not NA (to prevent locked card)
         int i;
         do
         {
-            i = Random.Range(0, cards.Length);
+            i = Random.Range(0, allCardsList.Count);
         }
-        while (cards[i].element == CardType.NA);
+        while (allCardsList[i].element == CardType.NA);
 
-        cardReward = cards[i];
+        cardReward = allCardsList[i];
     }
 
     public override void RecieveReward()
     {
+        GenerateRandomCard();
         Deck.instance.AddNewCard(cardReward);
         Destroy(gameObject);
     }
