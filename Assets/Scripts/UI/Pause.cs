@@ -19,6 +19,17 @@ public class Pause : MonoBehaviour
     //Bools
     [HideInInspector] public bool canDestroy = false; //Bool to keep control on if the player can discard a card or not from the deck
 
+
+    //Favoriting Card Menus and needed variables
+    public GameObject MakeFavoritePopup; //Pop-up menu that makes the card scriptable object favorited
+    public GameObject RemoveFavoritePopup; //Pop-up menu that removes the card scriptable object favorited component
+    public TMP_Text FavoriteCardText; //Favorite Card Pop-Up Text
+    public TMP_Text UnfavoriteCardText; //Unfavorite Card Pop-Up Text
+
+    //Card Gameobject so we know what to set as favorite or not
+    [HideInInspector] public GameObject cardSelected;
+
+
     /// <summary>
     /// Function that lets the player continue playing - AHL (3/10/21)
     /// </summary>
@@ -169,5 +180,37 @@ public class Pause : MonoBehaviour
     public void DiscardACardFinalPopupNo()
     {
         DiscardCardFinalPopup.SetActive(false);
+    }
+
+    /// <summary>
+    /// Yes button pressed on MakeFavoritePopup so now the card will be favorited - AHL(4/20/21)
+    /// </summary>
+    public void MakeFavorite()
+    {
+        cardSelected.GetComponent<CardDisplay>().card.isFavorite = true;
+        MakeFavoritePopup.SetActive(false);
+    }
+
+    /// <summary>
+    /// Yes button pressed on RemoveFavoritePopup so now the card will be Unfavorited - AHL(4/20/21)
+    /// </summary>
+    public void RemoveFavorite()
+    {
+        cardSelected.GetComponent<CardDisplay>().card.isFavorite = false;
+        RemoveFavoritePopup.SetActive(false);
+    }
+
+    /// <summary>
+    /// Back button that will be used for the Favorite and Unfavorite Pop-Ups - AHL (4/20/21)
+    /// </summary>
+    public void FavoriteBack()
+    {
+        //If the favorite pop-up is active then deactivate it
+        if(MakeFavoritePopup.activeSelf)
+            MakeFavoritePopup.SetActive(false);
+
+        //If the remove pop-up is active then deactivate it
+        if (RemoveFavoritePopup.activeSelf)
+            RemoveFavoritePopup.SetActive(false);
     }
 }
