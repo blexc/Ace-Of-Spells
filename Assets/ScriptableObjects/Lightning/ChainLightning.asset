@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: ChainLightning
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: b36a579d03d0e174aacb03ef090af484, type: 3}
   name: Chain Lightning
   description: Zap an array of nearby foes!
-  element: Lightning
+  element: 0
   spell: {fileID: 8880743940131354364, guid: 1aed62be1c7f5854cb1de0283966f456, type: 3}
   isObtained: 1
+  isFavorite: 0

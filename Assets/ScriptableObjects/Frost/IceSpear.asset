@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: IceSpear
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 6e57294786cd3ba49964f44d29345908, type: 3}
   name: Ice Spear
   description: Deal double damage if enemy is frozen
   element: 1
   spell: {fileID: 148802832949261098, guid: a4a1d05576134804498e8c9b53c1edc6, type: 3}
+  isObtained: 0
+  isFavorite: 0

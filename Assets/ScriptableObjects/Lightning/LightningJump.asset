@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: LightningJump
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: b36a579d03d0e174aacb03ef090af484, type: 3}
   name: Lightning Jump
   description: Teleport to the cursor. Deal damage between your start and new position.
   element: 0
   spell: {fileID: 1487469020448442936, guid: 4b64ce1fb41fa2148a28ee0c36743012, type: 3}
   isObtained: 0
+  isFavorite: 0

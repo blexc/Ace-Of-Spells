@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: Orb
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: b36a579d03d0e174aacb03ef090af484, type: 3}
   name: Orb
   description: A slow moving orb that does damage every second.
   element: 0
   spell: {fileID: 6209358456873369233, guid: 11bc6cc0aa6f207428bae3df188f75d9, type: 3}
   isObtained: 0
+  isFavorite: 0

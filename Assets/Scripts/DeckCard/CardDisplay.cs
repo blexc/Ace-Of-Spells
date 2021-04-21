@@ -14,14 +14,14 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text desctiptionText;
     [SerializeField] private Image favoriteStar;
 
-    private void Update()
+    private void Start()
     {
-        if (nameText!=null && card!=null)
+        if (nameText != null && card != null)
         {
             nameText.text = card.name;
         }
 
-        if (elementText != null && card!=null)
+        if (elementText != null && card != null)
         {
             string cardTypeStr = "";
             switch (card.element)
@@ -43,11 +43,14 @@ public class CardDisplay : MonoBehaviour
             elementText.text = cardTypeStr;
         }
 
-        if (desctiptionText != null && card!=null)
+        if (desctiptionText != null && card != null)
         {
             desctiptionText.text = card.description;
         }
+    }
 
+    private void Update()
+    {
         if(card.isFavorite && card.isObtained)
         {
             favoriteStar.gameObject.SetActive(true);
