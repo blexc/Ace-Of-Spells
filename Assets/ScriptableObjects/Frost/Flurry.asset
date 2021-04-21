@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Flurry
   description: Shoot many ice projectiles to a target.
   element: 1
+  backgroundColor: {r: 0.5019608, g: 0.7490196, b: 0.75686276, a: 1}
   spell: {fileID: 6328664475335039616, guid: 2c5825d517688344eaad2a24765c2785, type: 3}
   isObtained: 0
   isFavorite: 0

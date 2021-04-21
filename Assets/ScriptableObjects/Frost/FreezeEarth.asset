@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Freeze Earth
   description: Freezes all enemies in target area
   element: 1
+  backgroundColor: {r: 0.5019608, g: 0.7490196, b: 0.75686276, a: 1}
   spell: {fileID: 3732428998259870116, guid: 96d317921353ff242847ca54acd23ef0, type: 3}
   isObtained: 0
   isFavorite: 0

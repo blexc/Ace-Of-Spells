@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Chain Lightning
   description: Zap an array of nearby foes!
   element: 0
+  backgroundColor: {r: 0.827451, g: 0.83137256, b: 0.5372549, a: 1}
   spell: {fileID: 8880743940131354364, guid: 1aed62be1c7f5854cb1de0283966f456, type: 3}
   isObtained: 1
   isFavorite: 0

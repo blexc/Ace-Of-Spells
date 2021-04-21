@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Frost Bolt
   description: Deal damage and adds an ice counter
   element: 1
+  backgroundColor: {r: 0.5019608, g: 0.7490196, b: 0.75686276, a: 1}
   spell: {fileID: 8880743940131354364, guid: 60756da1b07665342929705e53269302, type: 3}
   isObtained: 0
   isFavorite: 0

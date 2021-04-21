@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Nova
   description: Rapidly freeze enemies around player
   element: 1
+  backgroundColor: {r: 0.501958, g: 0.7472829, b: 0.754717, a: 1}
   spell: {fileID: 7931530272634092795, guid: 7cef759ce9bc67645a66582bc1d0fa95, type: 3}
   isObtained: 0
   isFavorite: 0

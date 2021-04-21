@@ -17,6 +17,7 @@ MonoBehaviour:
   description: Damage in small area. Applies shock after one second. Damage is multiplied
     by amount of Lightning cards in hand.
   element: 0
+  backgroundColor: {r: 0.827451, g: 0.83137256, b: 0.5372549, a: 1}
   spell: {fileID: 4127120409538572277, guid: c39b903da7e3f604692324b050da0f52, type: 3}
   isObtained: 0
   isFavorite: 0

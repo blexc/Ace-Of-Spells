@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Flame Strike
   description: AOE that leaves a flame patch
   element: 3
+  backgroundColor: {r: 0.8207547, g: 0.5320097, b: 0.40650585, a: 1}
   spell: {fileID: 8880743940131354364, guid: 6c5b53d3c6c99df47b177330373ef85b, type: 3}
   isObtained: 0
   isFavorite: 0

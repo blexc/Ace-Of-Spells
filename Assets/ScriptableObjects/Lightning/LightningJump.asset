@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Lightning Jump
   description: Teleport to the cursor. Deal damage between your start and new position.
   element: 0
+  backgroundColor: {r: 0.827451, g: 0.83137256, b: 0.5372549, a: 1}
   spell: {fileID: 1487469020448442936, guid: 4b64ce1fb41fa2148a28ee0c36743012, type: 3}
   isObtained: 0
   isFavorite: 0

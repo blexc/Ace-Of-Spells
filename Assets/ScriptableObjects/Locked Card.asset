@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Locked Card
   description: You have not discovered this card yet on your journey.
   element: 4
+  backgroundColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
   spell: {fileID: 0}
   isObtained: 0
   isFavorite: 0

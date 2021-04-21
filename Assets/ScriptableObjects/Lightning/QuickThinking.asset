@@ -17,6 +17,7 @@ MonoBehaviour:
   description: Cast your next spell X more times, where X is the number of lightning
     cards in hand.
   element: 0
+  backgroundColor: {r: 0.827451, g: 0.83137256, b: 0.5372549, a: 1}
   spell: {fileID: 771606701737893958, guid: ed4247ea21b51fb47bda0c3e3f83a20f, type: 3}
   isObtained: 0
   isFavorite: 0

@@ -12,6 +12,7 @@ public class Card : ScriptableObject
     public new string name; 
     public string description;
     public CardType element;
+    public Color backgroundColor;
 
     public GameObject spell;
 

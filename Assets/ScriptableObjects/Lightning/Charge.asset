@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Charge
   description: Apply shock to targeted area
   element: 0
+  backgroundColor: {r: 0.827451, g: 0.83137256, b: 0.5372549, a: 1}
   spell: {fileID: 8709703790699357833, guid: 2afea105a37301d43b8055254e05a77b, type: 3}
   isObtained: 0
   isFavorite: 0

@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Orb
   description: A slow moving orb that does damage every second.
   element: 0
+  backgroundColor: {r: 0.827451, g: 0.83137256, b: 0.5372549, a: 1}
   spell: {fileID: 6209358456873369233, guid: 11bc6cc0aa6f207428bae3df188f75d9, type: 3}
   isObtained: 0
   isFavorite: 0
