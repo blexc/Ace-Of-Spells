@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: Locked Card
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 77cbd970e7d432148a7225b9d345d576, type: 3}
   name: Locked Card
   description: You have not discovered this card yet on your journey.
   element: 4
   spell: {fileID: 0}
   isObtained: 0
+  isFavorite: 0
