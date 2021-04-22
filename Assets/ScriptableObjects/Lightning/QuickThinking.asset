@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: QuickThinking
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: b36a579d03d0e174aacb03ef090af484, type: 3}
   name: Quick Thinking
   description: Cast your next spell X more times, where X is the number of lightning
     cards in hand.
   element: 0
+  backgroundColor: {r: 0.827451, g: 0.83137256, b: 0.5372549, a: 1}
   spell: {fileID: 771606701737893958, guid: ed4247ea21b51fb47bda0c3e3f83a20f, type: 3}
   isObtained: 0
+  isFavorite: 0

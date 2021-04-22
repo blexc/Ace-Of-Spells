@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: Blizzard
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 6e57294786cd3ba49964f44d29345908, type: 3}
   name: Blizzard
   description: Large AOE that damages and slows
   element: 1
+  backgroundColor: {r: 0.5019608, g: 0.7490196, b: 0.75686276, a: 1}
   spell: {fileID: 3776639527467529045, guid: 1f41ee533595fa8439fb83913c8c2e87, type: 3}
   isObtained: 0
+  isFavorite: 0

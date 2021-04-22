@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: FlameStrike
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 49086713de4732f40a7dae9c65ef57a0, type: 3}
   name: Flame Strike
-  description: AoE
+  description: AOE that leaves a flame patch
   element: 3
+  backgroundColor: {r: 0.90588236, g: 0.7058824, b: 0.69803923, a: 1}
   spell: {fileID: 8880743940131354364, guid: 6c5b53d3c6c99df47b177330373ef85b, type: 3}
+  isObtained: 0
+  isFavorite: 0
