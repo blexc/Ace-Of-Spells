@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 49086713de4732f40a7dae9c65ef57a0, type: 3}
   name: Fireball
   description: Damages and ignites enemy
   element: 3
+  backgroundColor: {r: 0.9056604, g: 0.7044888, b: 0.6963332, a: 1}
   spell: {fileID: 8880743940131354364, guid: adf6c49375a88e44f9b8b057d74426c5, type: 3}
   isObtained: 1
   isFavorite: 0

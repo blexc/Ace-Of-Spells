@@ -16,12 +16,18 @@ public class CardDisplay : MonoBehaviour
 
     private void Update()
     {
-        if (nameText!=null && card!=null)
+
+        if (artworkImage != null && card != null)
+        {
+            artworkImage.sprite = card.image;
+        }
+
+        if (nameText != null && card != null)
         {
             nameText.text = card.name;
         }
 
-        if (elementText != null && card!=null)
+        if (elementText != null && card != null)
         {
             string cardTypeStr = "";
             switch (card.element)
@@ -43,17 +49,24 @@ public class CardDisplay : MonoBehaviour
             elementText.text = cardTypeStr;
         }
 
-        if (desctiptionText != null && card!=null)
+        if (desctiptionText != null && card != null)
         {
             desctiptionText.text = card.description;
         }
 
-        if(card.isFavorite && card.isObtained)
+        //Sets the Background card color
+        if (card != null)
         {
-            favoriteStar.gameObject.SetActive(true);
+            gameObject.GetComponent<Image>().color = card.backgroundColor;
         }
 
-        else if(favoriteStar.isActiveAndEnabled && !card.isFavorite)
+
+        if (card.isFavorite && card.isObtained)
+            {
+                favoriteStar.gameObject.SetActive(true);
+            }
+
+        else if (favoriteStar.isActiveAndEnabled && !card.isFavorite)
         {
             favoriteStar.gameObject.SetActive(false);
         }

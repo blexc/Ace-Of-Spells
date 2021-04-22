@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: Flurry
   m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 6e57294786cd3ba49964f44d29345908, type: 3}
   name: Flurry
   description: Shoot many ice projectiles to a target.
   element: 1
+  backgroundColor: {r: 0.5019608, g: 0.7490196, b: 0.75686276, a: 1}
   spell: {fileID: 6328664475335039616, guid: 2c5825d517688344eaad2a24765c2785, type: 3}
   isObtained: 0
+  isFavorite: 0
