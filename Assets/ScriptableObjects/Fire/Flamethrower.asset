@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: Flamethrower
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
   name: Flamethrower
   description: Shoot a flurry of projectiles that move through enemies. Applies ignite.
   element: 3
+  backgroundColor: {r: 0.90588236, g: 0.7058824, b: 0.69803923, a: 1}
   spell: {fileID: 3071077254654534808, guid: 23fc713dbbbbcbb48ae8004cd040c893, type: 3}
   isObtained: 0
   isFavorite: 0

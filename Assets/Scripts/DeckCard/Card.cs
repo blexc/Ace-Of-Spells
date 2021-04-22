@@ -12,7 +12,7 @@ public class Card : ScriptableObject
     public new string name; 
     public string description;
     public CardType element;
-    public Color backgroundColor;
+    public Color backgroundColor = Color.white; // default (in the advent of github probs)
 
     public GameObject spell;
 
