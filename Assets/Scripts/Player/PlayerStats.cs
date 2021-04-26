@@ -26,12 +26,6 @@ public class PlayerStats : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -95,7 +89,7 @@ public class PlayerStats : MonoBehaviour
 
     public IEnumerator SlowPlayer(float slowTime, float slowAmount)
     {
-        playerMovement.CurMoveSpeed = playerMovement.MoveSpeed * (1-slowAmount);
+        playerMovement.CurMoveSpeed = playerMovement.MoveSpeed * slowAmount;
         yield return new WaitForSeconds(slowTime);
         playerMovement.CurMoveSpeed = playerMovement.MoveSpeed; 
     }
