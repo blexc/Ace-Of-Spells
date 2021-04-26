@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
-  m_Name: Fireball
+  m_Name: Embers
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 49086713de4732f40a7dae9c65ef57a0, type: 3}
-  name: Fireball
-  description: Damages and ignites enemy
+  image: {fileID: 0}
+  name: Embers
+  description: 'Project embers around player that will seek a target over time. Applies
+    ignite. '
   element: 3
   backgroundColor: {r: 0.90588236, g: 0.7058824, b: 0.69803923, a: 1}
-  spell: {fileID: 8880743940131354364, guid: adf6c49375a88e44f9b8b057d74426c5, type: 3}
-  isObtained: 1
+  spell: {fileID: 814699585992915906, guid: 6ba16685ecf9bea429191559952e0bcb, type: 3}
+  isObtained: 0
   isFavorite: 0
