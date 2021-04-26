@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.46219245, b: 0, a: 0.44705883}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -135,8 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellLifetime: 10
   effectlifeTime: 3
-  spellDamage: 1
-  spellSpeed: 20
+  spellDamage: 0
+  spellSpeed: 0
   applyIgniteEffect: 0
   applyFreezeEffect: 0
   applyShockEffect: 0
@@ -154,3 +154,5 @@ MonoBehaviour:
   AoETime: 0
   burnerPrefab: {fileID: 0}
   chainLightningPrefab: {fileID: 0}
+  emberProjectilePrefab: {fileID: 7424060147940431823, guid: 4f3c8e525b030b94b9edee57c099585e,
+    type: 3}
