@@ -650,6 +650,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4889278154387037153, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
         type: 3}
+      propertyPath: moveSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889278154387037153, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
+        type: 3}
       propertyPath: ScriptManager
       value: 
       objectReference: {fileID: 8560584751444804969}
@@ -712,6 +717,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -155.05884
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820932835798140984, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 37.46667
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bd2c0f15bfd2af44aaa207b7ac0bd4b, type: 3}
@@ -1163,23 +1178,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
-        type: 3}
-      propertyPath: drawPile.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
-        type: 3}
-      propertyPath: drawPile.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2aad6fc885e09b9458548024510ee3dd,
-        type: 2}
-    - target: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
-        type: 3}
-      propertyPath: drawPile.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2aad6fc885e09b9458548024510ee3dd,
-        type: 2}
     - target: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
         type: 3}
       propertyPath: drawPile.Array.data[2]

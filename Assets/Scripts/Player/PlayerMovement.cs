@@ -33,13 +33,20 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
     }
+
+    /// <summary>
+    /// move player 
+    /// </summary>
+    private void FixedUpdate()
+    {
+        rb.velocity = moveInput * Time.fixedDeltaTime * curMoveSpeed;
+    }
     
     /// <summary>
-    /// move the player and adjust animations
+    /// adjust animations
     /// </summary>
     private void Update()
     {
-        rb.velocity = moveInput * Time.deltaTime * curMoveSpeed;
 
         #region anims
 

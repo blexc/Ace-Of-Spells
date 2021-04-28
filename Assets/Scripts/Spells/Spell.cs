@@ -42,14 +42,19 @@ public class Spell : MonoBehaviour
 
     public float AoETime;
 
+    protected float spellLifetimeStart;
+    protected SpriteRenderer sr;
+
     // these object will be spawned upon an enemy if the spell causes ignite or bramble
     public GameObject burnerPrefab;
     public GameObject chainLightningPrefab;
 
     private void Awake()
     {
+        sr = GetComponent<SpriteRenderer>();
         //get rigidbody
         spellRigidbody = GetComponent<Rigidbody2D>();
+        spellLifetimeStart = spellLifetime;
 
         //move spell 
         spellRigidbody.velocity = transform.right * spellSpeed;
@@ -75,7 +80,10 @@ public class Spell : MonoBehaviour
     public virtual void InitSpell()
     {
         var pa = FindObjectOfType<PlayerAttack>();
-        if (pa) transform.position = pa.transform.position;
+        if (pa)
+        {
+            transform.position = pa.transform.position;
+        }
     }
 
     /// <summary>
@@ -205,6 +213,14 @@ public class Spell : MonoBehaviour
             }
         }
         return tMin;
+    }
+
+    // add this to update method to fade out as time of spell runs out
+    protected void FadeOutAlpha()
+    {
+        Color c = sr.color;
+        c.a = Mathf.Lerp(spellLifetime, spellLifetimeStart, 0.1f);
+        sr.color = c;
     }
 }
 

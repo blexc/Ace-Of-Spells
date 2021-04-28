@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4064354998441235409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 45, y: 45, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.4492972, g: 0.19063723, b: 0.6415094, a: 0.09803922}
+  m_Color: {r: 0.10627952, g: 0.06941973, b: 0.2264151, a: 0.70980394}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b6af4b31648ae4bb8d377213a59fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLifetime: 10
+  spellLifetime: 3
   effectlifeTime: 3
   spellDamage: 1
-  spellSpeed: 20
+  spellSpeed: 0
   applyIgniteEffect: 0
   applyFreezeEffect: 0
   applyShockEffect: 0

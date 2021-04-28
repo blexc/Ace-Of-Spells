@@ -5,4 +5,5 @@ using UnityEngine;
 // Circle that pulls enemies towards its center.
 public class BlackHoleSpell : Spell
 {
+
 }
