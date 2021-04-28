@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
   m_Name: Darkness
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: f1ec438f21ff7194f83e31b5066afdea, type: 3}
   name: Darkness
   description: Spawns X cone projectiles, where X is the number of cards in discard.
   element: 2
