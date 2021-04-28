@@ -39,9 +39,8 @@ public class SiphonSpellProjectile : Spell
         PlayerStats ps = other.gameObject.GetComponent<PlayerStats>();
         if (ps)
         {
-            print("hit player");
             // once you hit the player...
-            ps.Heal(healAmount);
+            if (healAmount > 0) ps.Heal(healAmount);
             Destroy(gameObject);
         }
     }
