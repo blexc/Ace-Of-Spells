@@ -31,7 +31,7 @@ public class ShroudSpell : Spell
         var eb = other.gameObject.GetComponent<EnemyBase>();
         if (eb)
         {
-            if (eb.HasStatusEffect(StatusEffect.Rot))
+            if (!eb.HasStatusEffect(StatusEffect.Rot))
                eb.AddStatusEffect(StatusEffect.Rot, effectlifeTime);
             eb.TakeDamage((int)spellDamage);
         }

@@ -220,6 +220,7 @@ public class Spell : MonoBehaviour
     {
         Color c = sr.color;
         c.a = Mathf.Lerp(spellLifetime, spellLifetimeStart, 0.1f);
+        c.a = Mathf.Clamp(c.a, 0, 0.8f);
         sr.color = c;
     }
 }
