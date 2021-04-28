@@ -19,6 +19,8 @@ public class SiphonSpell : Spell
         base.Update();
 
         if (target) transform.position = target.position;
+
+        OscAlpha(0.1f);
     }
 
     public override void InitSpell()

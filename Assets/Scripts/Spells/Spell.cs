@@ -231,6 +231,14 @@ public class Spell : MonoBehaviour
         c.a += amount;
         sr.color = c;
     }
+
+    // add this to update method to oscillate
+    protected void OscAlpha(float period)
+    {
+        Color c = sr.color;
+        c.a = 0.25f * Mathf.Sin(Mathf.PI * 2 * Time.time / period);
+        sr.color = c;
+    }
 }
 
 
