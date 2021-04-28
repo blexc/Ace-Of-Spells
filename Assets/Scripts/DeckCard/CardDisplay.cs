@@ -12,7 +12,7 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text elementText;
     public TMP_Text desctiptionText;
-    [SerializeField] private Image favoriteStar;
+    [SerializeField] private Image favoriteStar = null;
 
     private void Update()
     {

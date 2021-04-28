@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FireWave : MonoBehaviour
 {
-    private int numberOfWaves = 1;
     public GameObject FireWavePrefab;
     public GameObject deck;
 
@@ -17,7 +16,6 @@ public class FireWave : MonoBehaviour
         // -- Alex (delete after read)
 
         StartCoroutine(Wait());
-        numberOfWaves = 3;
     }
 
     private void Update()

@@ -86,9 +86,6 @@ public class ObjectThrown : MonoBehaviour
   
         if(other.gameObject.CompareTag("Player"))
         {
-        
-            //Destroy(this.gameObject);
-            //StartCoroutine(SlowPlayer());
             StartCoroutine(player.GetComponent<PlayerStats>().SlowPlayer(slowTime, slowAmount));
 
             GetComponent<Collider2D>().enabled = false;
@@ -116,26 +113,6 @@ public class ObjectThrown : MonoBehaviour
         }
     }
 
-    public IEnumerator SlowPlayer()
-    {
-        player.gameObject.GetComponent<PlayerMovement>().movementSpeed = player.gameObject.GetComponent<PlayerMovement>().movementSpeed * slowAmount;
-        yield return new WaitForSeconds(slowTime);
-        player.gameObject.GetComponent<PlayerMovement>().movementSpeed = 10;
-        Destroy(this.gameObject);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*
     void Start()
     {
@@ -153,5 +130,4 @@ public class ObjectThrown : MonoBehaviour
 
     }
     */
-
 }

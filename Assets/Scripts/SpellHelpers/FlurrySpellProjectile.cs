@@ -73,23 +73,5 @@ public class FlurrySpellProjectile : Spell
             transform.position = p012;
         }
     }
-    
-    Transform GetClosestEnemy(float minDist)
-    {
-        EnemyBase[] enemies = FindObjectsOfType<EnemyBase>();
-
-        Transform tMin = null;
-        Vector3 currentPos = transform.position;
-        foreach (EnemyBase t in enemies)
-        {
-            float dist = Vector3.Distance(t.transform.position, currentPos);
-            if (dist < minDist)
-            {
-                tMin = t.transform;
-                minDist = dist;
-            }
-        }
-        return tMin;
-    }
 
 }

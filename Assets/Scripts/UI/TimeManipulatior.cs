@@ -22,14 +22,14 @@ public class TimeManipulatior : MonoBehaviour
 
     /// <summary>
     /// Slow Time funciton that when the certain key binding is pressed the time will slow down for a few seconds
-    /// **Currently set to 'E' key but can be adjusted in the input manager**
+    /// **Currently set to 'Q' key but can be adjusted in the input manager**
     /// AHL (3/2/21)
     /// </summary>
     public void slowtime(InputAction.CallbackContext context)
     { 
         if(context.performed)
         {
-            if(timeNum == 100) //This function can only be performed it the timer is at 100%
+            if(timeNum == 100) //This function can only be performed if the timer is at 100%
             {
                 notSlow = false;
                 Time.timeScale = slowedTime;

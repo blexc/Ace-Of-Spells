@@ -5,36 +5,52 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-   //player movement speed
-    public float movementSpeed;
+    public float MoveSpeed { get { return movementSpeed; } } // READONLY
+    public float CurMoveSpeed { set { curMoveSpeed = value; } }
+
+    //player movement speed
+    [HideInInspector] float movementSpeed; // should not be changed in game 
+
+    float curMoveSpeed;
 
     public Animator animator;
     public SpriteRenderer sprite;
     private Vector2 moveInput;
-
+    Rigidbody2D rb;
 
     private void Awake()
     {
         movementSpeed = GetComponent<PlayerStats>().moveSpeed;
+        curMoveSpeed = movementSpeed;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     /// <summary>
     /// Player movement with Unity's input manager system - AHL (3/1/21)
     /// </summary>
     /// 
-    
     public void playerMovement(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
     }
+
+    /// <summary>
+    /// move player 
+    /// </summary>
+    private void FixedUpdate()
+    {
+        rb.velocity = moveInput * Time.fixedDeltaTime * curMoveSpeed;
+    }
     
-
-
+    /// <summary>
+    /// adjust animations
+    /// </summary>
     private void Update()
     {
-        transform.position = new Vector2(transform.position.x + (moveInput.x * Time.deltaTime * movementSpeed), transform.position.y + (moveInput.y * Time.deltaTime * movementSpeed));
 
-        if  (moveInput.x != 0 || moveInput.y !=0)
+        #region anims
+
+        if (moveInput.x != 0 || moveInput.y !=0)
         {
             animator.SetBool("moving", true);
         }
@@ -42,8 +58,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("moving", false);
         }
-
-        
 
         if ((moveInput.x > 0.5f) && !animator.GetBool("front"))
         {
@@ -86,10 +100,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("idle", false);
         }
 
+        #endregion
     }
-
-  
-    
 }
 
  

@@ -19,16 +19,11 @@ public class PlayerStats : MonoBehaviour
     public bool discardCard;
     public SpriteRenderer sprite;
     [SerializeField] private GameObject ScriptManager = null;
+    PlayerMovement playerMovement;
 
     private void Awake()
     {
-
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -94,9 +89,8 @@ public class PlayerStats : MonoBehaviour
 
     public IEnumerator SlowPlayer(float slowTime, float slowAmount)
     {
-        Debug.Log("SLOWING");
-        gameObject.GetComponent<PlayerMovement>().movementSpeed = gameObject.GetComponent<PlayerMovement>().movementSpeed * (1-slowAmount);
+        playerMovement.CurMoveSpeed = playerMovement.MoveSpeed * slowAmount;
         yield return new WaitForSeconds(slowTime);
-        gameObject.GetComponent<PlayerMovement>().movementSpeed = 10;
+        playerMovement.CurMoveSpeed = playerMovement.MoveSpeed; 
     }
 }

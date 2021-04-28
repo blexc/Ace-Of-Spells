@@ -15,7 +15,7 @@ public class PlayerInteract : MonoBehaviour
     /// </summary>
     public void interact(InputAction.CallbackContext context)
     {
-        if(context.performed && canInteract)
+        if (context.performed && canInteract)
         {
             // if the object is a door, then go interact with that
             var door = interactableObject.GetComponent<Door>();
@@ -34,19 +34,19 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-       if(other.gameObject.tag == "Interactable")
-       {
+        if (other.CompareTag("Interactable"))
+        {
             canInteract = true;
             interactableObject = other.gameObject;
 
             var door = interactableObject.GetComponent<Door>();
             if (door) door.IndicateActive();
-       }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Interactable")
+        if (other.CompareTag("Interactable") && interactableObject)
         {
             var door = interactableObject.GetComponent<Door>();
             if (door) door.IndicateStop();
@@ -55,10 +55,4 @@ public class PlayerInteract : MonoBehaviour
             interactableObject = null;
         }
     }
-
-
-
-
-
-
 }
