@@ -223,6 +223,14 @@ public class Spell : MonoBehaviour
         c.a = Mathf.Clamp(c.a, 0, 0.8f);
         sr.color = c;
     }
+
+    // add this to update method to oscillate
+    protected void IncreaseAlpha(float amount)
+    {
+        Color c = sr.color;
+        c.a += amount;
+        sr.color = c;
+    }
 }
 
 

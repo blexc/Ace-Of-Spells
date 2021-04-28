@@ -22,10 +22,12 @@ public class CardManager : MonoBehaviour
     /// </summary>
     public void cardUpdate()
     {
-        cardsInHand = deck.GetComponent<Deck>().Hand;
+        cardsInHand = Deck.instance.Hand;
         card1.GetComponent<CardDisplay>().card = cardsInHand[0];
         card2.GetComponent<CardDisplay>().card = cardsInHand[1];
         card3.GetComponent<CardDisplay>().card = cardsInHand[2];
+        discardUI.text = "" + Deck.instance.discardPile.Count; //Updates the discard Num UI
+        deckUI.text = "" + Deck.instance.drawPile.Count; //Updates the deck Num UI
     }
 
     /// <summary>
@@ -48,15 +50,5 @@ public class CardManager : MonoBehaviour
             card2.transform.localScale = minScale;
             card3.transform.localScale = maxScale;
         }
-    }
-
-    /// <summary>
-    /// Function to update the UI and cards in hand from anything happening with the deck - AHL (4/14/21)
-    /// </summary>
-    public void cardUIUpdate()
-    {
-        discardUI.text = "" + deck.GetComponent<Deck>().discardPile.Count; //Updates the discard Num UI
-        cardUpdate(); //Updates what is displayed for the cards in hand UI
-        deckUI.text = "" + deck.GetComponent<Deck>().drawPile.Count; //Updates the deck Num UI
     }
 }

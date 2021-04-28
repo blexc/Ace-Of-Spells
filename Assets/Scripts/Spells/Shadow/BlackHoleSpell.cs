@@ -6,7 +6,7 @@ using UnityEngine;
 public class BlackHoleSpell : Spell
 {
     Vector3 center;
-    [SerializeField] float gravityStrength;
+    [SerializeField] float gravityStrength = 0.05f;
 
     public override void InitSpell()
     {

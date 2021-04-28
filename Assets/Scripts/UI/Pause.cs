@@ -171,7 +171,7 @@ public class Pause : MonoBehaviour
         DeckListBack();
 
         //Update the UI
-        GetComponent<CardManager>().cardUIUpdate();
+        GetComponent<CardManager>().cardUpdate();
     }
 
     /// <summary>
