@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
+  m_Name: Siphon
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  name: Siphon
+  description: 'Target an enemy. Pull projectiles out of that enemy, and towards
+    you. For each enemy hit by the projectile, heal 1 hp. '
+  element: 2
+  backgroundColor: {r: 0.6392157, g: 0.48235294, b: 0.69803923, a: 1}
+  spell: {fileID: 2477308959824161237, guid: a1b2e974ca91989489ace47528f13141, type: 3}
+  isObtained: 0
+  isFavorite: 0

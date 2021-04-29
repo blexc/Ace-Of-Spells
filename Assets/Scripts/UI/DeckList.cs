@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DeckList : MonoBehaviour
 {
     [SerializeField]
-    private GameObject cardTemplate; //Variable to hold and create the cards for the deckList screen
+    private GameObject cardTemplate = null; //Variable to hold and create the cards for the deckList screen
 
     public List<Card> allCards; //A list of all the cards currently in the Discard, Hand, and Draw piles
     public Deck deck; //The deck script to keep track of the lists for the different card piles 

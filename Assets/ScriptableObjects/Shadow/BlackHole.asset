@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
-  m_Name: Cigar
+  m_Name: BlackHole
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: f1ec438f21ff7194f83e31b5066afdea, type: 3}
-  name: Shadowbolt
-  description: Causes Rot, which doubles damage of all applied status effects for
-    6 seconds..
+  name: Black Hole
+  description: Circle that pulls enemies towards its center.
   element: 2
-  backgroundColor: {r: 0.6383801, g: 0.48406908, b: 0.6981132, a: 1}
-  spell: {fileID: 8880743940131354364, guid: f0d8b54199261a9458bf010b1fad8591, type: 3}
-  isObtained: 1
+  backgroundColor: {r: 0.6392157, g: 0.48235294, b: 0.69803923, a: 1}
+  spell: {fileID: 5667003025003450860, guid: 3574991b5ec47754cb4a8ae84d5d1984, type: 3}
+  isObtained: 0
   isFavorite: 0

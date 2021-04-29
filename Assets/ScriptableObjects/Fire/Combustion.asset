@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
+  m_Name: Combustion
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 49086713de4732f40a7dae9c65ef57a0, type: 3}
+  name: Combustion
+  description: Apply ignite to all enemies on screen
+  element: 3
+  backgroundColor: {r: 0.90588236, g: 0.7058824, b: 0.69803923, a: 1}
+  spell: {fileID: 1586282390515532949, guid: d7d97dedc5183c447a6238e103e19182, type: 3}
+  isObtained: 0
+  isFavorite: 0
