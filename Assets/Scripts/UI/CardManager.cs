@@ -14,7 +14,7 @@ public class CardManager : MonoBehaviour
     public TMP_Text discardUI; //Discard # UI variable to adjust that number as needed
     List<Card> cardsInHand; //Connects with the CardsInHand List from the Deck script
     private Vector3 maxScale = new Vector3(1f, 1f, 1f); //Vector to hold the maximum scale for the selected card in hand
-    private Vector3 minScale = new Vector3(0.5f, 0.5f, 0.5f); //Vector to hold the maximum scale for the selected card in hand
+    private Vector3 minScale = new Vector3(0.4f, 0.4f, 0.4f); //Vector to hold the maximum scale for the selected card in hand
 
 
     /// <summary>
