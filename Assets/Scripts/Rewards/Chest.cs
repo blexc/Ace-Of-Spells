@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // functionality inherits from Reward.cs
 public class Chest : Reward
 {
     [SerializeField] Card cardReward;
+    [SerializeField] GameObject RewardMenu; //Menu Popup for the reward to provide all the information needed
+    [SerializeField] GameObject cardDisplay; //The card game object being displayed on the menu
 
     private void GenerateRandomCard()
     {
@@ -27,7 +30,44 @@ public class Chest : Reward
     public override void RecieveReward()
     {
         GenerateRandomCard();
+
+        //Adjusts aspects on the Reward Menu
+        cardDisplay.GetComponent<CardDisplay>().card = cardReward;
+
+        //Sets up the menu system
+        Time.timeScale = 0f;
+        RewardMenu.SetActive(true);
+        FindObjectOfType<PlayerInput>().SwitchCurrentActionMap("Menu");
+    }
+
+    /// <summary>
+    /// Accepts the card reward and places it into the Deck and keeps the game going - AHL (4/29/21)
+    /// </summary>
+    public void AcceptReward()
+    {
+        //If the player accepts the reward then it will be added to their deck of spells
         Deck.instance.AddNewCard(cardReward);
+
+        //The player will then resumes the game
+        Time.timeScale = 1f;
+        RewardMenu.SetActive(false);
+        FindObjectOfType<PlayerInput>().SwitchCurrentActionMap("Gameplay");
+
+        //Then it finally destroys the Chest Game Object
+        Destroy(gameObject);
+    }
+
+    /// <summary>
+    /// Declines the Card Reward and moves on with the game - AHL (4/29/21)
+    /// </summary>
+    public void DeclineReward()
+    {
+        //The player will then resumes the game without adding the card to the deck
+        Time.timeScale = 1f;
+        RewardMenu.SetActive(false);
+        FindObjectOfType<PlayerInput>().SwitchCurrentActionMap("Gameplay");
+
+        //Then it finally destroys the Chest Game Object
         Destroy(gameObject);
     }
 }
