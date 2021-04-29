@@ -206,7 +206,7 @@ public class Spell : MonoBehaviour
         foreach (EnemyBase t in enemies)
         {
             float dist = Vector3.Distance(t.transform.position, currentPos);
-            if (dist < minDist)
+            if (dist < minDist && dist > 5f)
             {
                 tMin = t.transform;
                 minDist = dist;
@@ -238,6 +238,18 @@ public class Spell : MonoBehaviour
         Color c = sr.color;
         c.a = 0.25f * Mathf.Sin(Mathf.PI * 2 * Time.time / period);
         sr.color = c;
+    }
+
+    // used to sort list of enemies by closeness to this spell
+    // useage:
+    // List<EnemyBase> enemies = new List<EnemyBase>();
+    // ...add enemies to list...
+    // enemies.Sort(SortByDistanceToMe);
+    protected int SortByDistanceToMe(EnemyBase a, EnemyBase b)
+    {
+        float squaredRangeA = (a.transform.position - transform.position).sqrMagnitude;
+        float squaredRangeB = (b.transform.position - transform.position).sqrMagnitude;
+        return squaredRangeA.CompareTo(squaredRangeB);
     }
 }
 

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.10627952, g: 0.06941973, b: 0.2264151, a: 0.70980394}
+  m_Color: {r: 0.10627952, g: 0.06941973, b: 0.2264151, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellLifetime: 10
   effectlifeTime: 3
-  spellDamage: 1
+  spellDamage: 5
   spellSpeed: 20
   applyIgniteEffect: 0
   applyFreezeEffect: 0
@@ -154,3 +154,5 @@ MonoBehaviour:
   AoETime: 0
   burnerPrefab: {fileID: 0}
   chainLightningPrefab: {fileID: 0}
+  projectilePrefab: {fileID: 8880743940131354364, guid: f0d8b54199261a9458bf010b1fad8591,
+    type: 3}
