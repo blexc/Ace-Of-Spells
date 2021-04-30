@@ -17,7 +17,8 @@ public class DeckList : MonoBehaviour
     //Function is called when the UI becomes active - AHL (4/12/21)
     private void OnEnable()
     {
-        GetComponentInChildren<Scrollbar>().value = 1; //Resets the scrollbar to the top of the page for the player
+        if(GetComponentInChildren<Scrollbar>())
+            GetComponentInChildren<Scrollbar>().value = 1; //Resets the scrollbar to the top of the page for the player
         ShowSortedList();
     }
 

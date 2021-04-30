@@ -48,6 +48,9 @@ public class Chest : Reward
         //If the player accepts the reward then it will be added to their deck of spells
         Deck.instance.AddNewCard(cardReward);
 
+        //Updates the card UI to show the new card added to the deck
+        FindObjectOfType<CardManager>().cardUpdate();
+
         //Sets the card scriptable object to isObtained as the card is now in the players deck
         cardReward.isObtained = true;
 
