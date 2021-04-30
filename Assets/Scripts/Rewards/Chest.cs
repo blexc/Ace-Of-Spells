@@ -48,6 +48,9 @@ public class Chest : Reward
         //If the player accepts the reward then it will be added to their deck of spells
         Deck.instance.AddNewCard(cardReward);
 
+        //Sets the card scriptable object to isObtained as the card is now in the players deck
+        cardReward.isObtained = true;
+
         //The player will then resumes the game
         Time.timeScale = 1f;
         RewardMenu.SetActive(false);
