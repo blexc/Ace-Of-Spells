@@ -42,14 +42,19 @@ public class Spell : MonoBehaviour
 
     public float AoETime;
 
+    protected float spellLifetimeStart;
+    protected SpriteRenderer sr;
+
     // these object will be spawned upon an enemy if the spell causes ignite or bramble
     public GameObject burnerPrefab;
     public GameObject chainLightningPrefab;
 
     private void Awake()
     {
+        sr = GetComponent<SpriteRenderer>();
         //get rigidbody
         spellRigidbody = GetComponent<Rigidbody2D>();
+        spellLifetimeStart = spellLifetime;
 
         //move spell 
         spellRigidbody.velocity = transform.right * spellSpeed;
@@ -75,7 +80,10 @@ public class Spell : MonoBehaviour
     public virtual void InitSpell()
     {
         var pa = FindObjectOfType<PlayerAttack>();
-        if (pa) transform.position = pa.transform.position;
+        if (pa)
+        {
+            transform.position = pa.transform.position;
+        }
     }
 
     /// <summary>
@@ -198,13 +206,50 @@ public class Spell : MonoBehaviour
         foreach (EnemyBase t in enemies)
         {
             float dist = Vector3.Distance(t.transform.position, currentPos);
-            if (dist < minDist)
+            if (dist < minDist && dist > 5f)
             {
                 tMin = t.transform;
                 minDist = dist;
             }
         }
         return tMin;
+    }
+
+    // add this to update method to fade out as time of spell runs out
+    protected void FadeOutAlpha()
+    {
+        Color c = sr.color;
+        c.a = Mathf.Lerp(spellLifetime, spellLifetimeStart, 0.1f);
+        c.a = Mathf.Clamp(c.a, 0, 0.8f);
+        sr.color = c;
+    }
+
+    // add this to update method to oscillate
+    protected void IncreaseAlpha(float amount)
+    {
+        Color c = sr.color;
+        c.a += amount;
+        sr.color = c;
+    }
+
+    // add this to update method to oscillate
+    protected void OscAlpha(float period)
+    {
+        Color c = sr.color;
+        c.a = 0.25f * Mathf.Sin(Mathf.PI * 2 * Time.time / period);
+        sr.color = c;
+    }
+
+    // used to sort list of enemies by closeness to this spell
+    // useage:
+    // List<EnemyBase> enemies = new List<EnemyBase>();
+    // ...add enemies to list...
+    // enemies.Sort(SortByDistanceToMe);
+    protected int SortByDistanceToMe(EnemyBase a, EnemyBase b)
+    {
+        float squaredRangeA = (a.transform.position - transform.position).sqrMagnitude;
+        float squaredRangeB = (b.transform.position - transform.position).sqrMagnitude;
+        return squaredRangeA.CompareTo(squaredRangeB);
     }
 }
 

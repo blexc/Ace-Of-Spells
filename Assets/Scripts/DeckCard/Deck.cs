@@ -10,28 +10,26 @@ public class Deck : MonoBehaviour
     public static Deck instance;
 
     // every card in the project should be added to this
-    // no duplicates
-    // NOT changeable in-game
     public List<Card> AllCards { get { return allCards; } }
-    [SerializeField] List<Card> allCards = new List<Card>();
-
     public List<Card> Hand { get { return hand; } }
+    public int NumCardsInDiscard { get { return discardPile.Count; } }
 
     public List<Card> drawPile = new List<Card>();
-    [HideInInspector] public List<Card> discardPile = new List<Card>();
-    private List<Card> hand = new List<Card>();
+    public List<Card> discardPile = new List<Card>();
+
     public GameObject player;
-
-    // incremented by quick thinking spell
-    public int numTimesToCast = 1; 
-
+    
+    public int numTimesToCast = 1; // incremented by quick thinking spell
     public int handSelectionIndex = 0;
-    const int HAND_SIZE_MAX = 3;
-
     public bool showDebugPrints = false;
+
+    [SerializeField] List<Card> allCards = new List<Card>();
+    List<Card> hand = new List<Card>();
+
+    const int HAND_SIZE_MAX = 3;
     int debugCall = 0;
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         if (instance != null) Destroy(gameObject);
@@ -41,7 +39,6 @@ public class Deck : MonoBehaviour
         DrawCard(HAND_SIZE_MAX);
 
         var cm = FindObjectOfType<CardManager>();
-        cm.discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
         cm.cardUpdate();
         cm.showSelectedCard(handSelectionIndex);
     }
@@ -144,7 +141,6 @@ public class Deck : MonoBehaviour
         }
 
         FindObjectOfType<CardManager>().cardUpdate(); //Updates what is displayed for the cards in hand UI
-        FindObjectOfType<CardManager>().deckUI.text = "" + drawPile.Count; //Updates the deck Num UI
     }
 
     // adds a new card to the draw pile
@@ -272,9 +268,7 @@ public class Deck : MonoBehaviour
             }
         }
 
-        FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
         FindObjectOfType<CardManager>().cardUpdate(); //Updates what is displayed for the cards in hand UI
-        FindObjectOfType<CardManager>().deckUI.text = "" + drawPile.Count; //Updates the deck Num UI
         return false;
     }
 

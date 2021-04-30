@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cf1e624ef787148badb2e0c9d9ea76, type: 3}
+  m_Name: Gravemass
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: f1ec438f21ff7194f83e31b5066afdea, type: 3}
+  name: Gravemass
+  description: Slow moving large projectiles that deals more damage if you have cards
+    in your discard.
+  element: 2
+  backgroundColor: {r: 0.6392157, g: 0.48235294, b: 0.69803923, a: 1}
+  spell: {fileID: 2350361578283595437, guid: 1b14b4205e6c0404dac2a7eb83dc8e2e, type: 3}
+  isObtained: 0
+  isFavorite: 0

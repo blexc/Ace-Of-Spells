@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float CurMoveSpeed { set { curMoveSpeed = value; } }
 
     //player movement speed
-    [HideInInspector] float movementSpeed; // should not be changed in game 
+    [HideInInspector] public float movementSpeed; // should not be changed in game 
 
     float curMoveSpeed;
 
@@ -33,13 +33,20 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
     }
+
+    /// <summary>
+    /// move player 
+    /// </summary>
+    private void FixedUpdate()
+    {
+        rb.velocity = moveInput * Time.fixedDeltaTime * curMoveSpeed;
+    }
     
     /// <summary>
-    /// move the player and adjust animations
+    /// adjust animations
     /// </summary>
     private void Update()
     {
-        rb.velocity = moveInput * Time.deltaTime * curMoveSpeed;
 
         #region anims
 

@@ -4,13 +4,24 @@ using UnityEngine;
 //spell that casts around the player and freezes enemies around the player.
 public class NovaSpell : Spell
 {
+    Transform playerTransform;
+
+    protected override void Start()
+    {
+        playerTransform = FindObjectOfType<PlayerMovement>().transform;
+    }
+
     /// <summary>
     /// stick with the player
     /// </summary>
-    public override void InitSpell()
+    protected override void Update()
     {
-        var pa = FindObjectOfType<PlayerAttack>();
-        if (pa) transform.parent = pa.transform;
+        base.Update();
+
+        FadeOutAlpha();
+
+        if (playerTransform)
+            transform.position = playerTransform.position;
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)
@@ -22,11 +33,6 @@ public class NovaSpell : Spell
             var eb = enemyHit.GetComponent<EnemyBase>();
             eb.AddStatusEffect(StatusEffect.Freeze, effectlifeTime);
             eb.FreezeCharacter(effectlifeTime);
-        }
-        else
-        {
-            // delete spell if hits anything other than an enemy
-            Destroy(gameObject);
         }
     }
 }

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4364989240547047154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 5000, y: 5000, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.4492972, g: 0.19063723, b: 0.6415094, a: 0.09803922}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.50980395}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf448f027276d7849b46feec9b2be195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLifetime: 10
+  spellLifetime: 0.8
   effectlifeTime: 3
-  spellDamage: 1
-  spellSpeed: 20
+  spellDamage: 0
+  spellSpeed: 0
   applyIgniteEffect: 0
   applyFreezeEffect: 0
   applyShockEffect: 0
@@ -154,3 +154,5 @@ MonoBehaviour:
   AoETime: 0
   burnerPrefab: {fileID: 0}
   chainLightningPrefab: {fileID: 0}
+  darknessProjectilePrefab: {fileID: 1910541087324549010, guid: 3319d54f5c853ed4e9cd765377ac01c7,
+    type: 3}

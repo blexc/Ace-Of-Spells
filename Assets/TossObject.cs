@@ -28,7 +28,6 @@ public class TossObject : MonoBehaviour
         yield return new WaitForSeconds(1.2f);
         Instantiate(objectPrefab, transform.position, Quaternion.identity);
         Vector2 dir = (player.transform.position - transform.position).normalized;
-        Debug.Log(dir);
         if (dir.x <0)
         {
             sR.flipX = false;
