@@ -88,9 +88,10 @@ GameObject:
   - component: {fileID: 5654486896370105260}
   - component: {fileID: 1296341063551880202}
   - component: {fileID: 1296341063551880201}
+  - component: {fileID: 1842993877}
   m_Layer: 2
   m_Name: FlyingSnake Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +181,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &5654486896370105260
 Animator:
   serializedVersion: 3
@@ -231,6 +232,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &1842993877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296341063551880203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &3591104385086458738
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,128 +683,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &8115939100041542601
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100041542600}
-  - component: {fileID: 8115939100041542598}
-  - component: {fileID: 8115939100041542599}
-  m_Layer: 11
-  m_Name: Collider (20)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100041542600
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100041542601}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100041542598
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100041542601}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100041542599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100041542601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100580584666}
---- !u!1 &8115939100214450829
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100214450828}
-  - component: {fileID: 8115939100214450826}
-  - component: {fileID: 8115939100214450827}
-  m_Layer: 11
-  m_Name: Collider (1)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100214450828
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100214450829}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100214450826
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100214450829}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100214450827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100214450829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100844790676}
 --- !u!1 &8115939100241406134
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,9 +697,10 @@ GameObject:
   - component: {fileID: 8115939100241406132}
   - component: {fileID: 8115939100241406133}
   - component: {fileID: 8115939100241406131}
+  - component: {fileID: 1434413265}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (7)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,7 +790,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100241406132
 Animator:
   serializedVersion: 3
@@ -927,7 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939101240216417}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 3.5
+  delay: 1.75
 --- !u!58 &8115939100241406131
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -944,6 +841,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &1434413265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939100241406134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939100278981588
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8115939100278981587}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SnakeHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -997,128 +911,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8115939100319760228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100319760227}
-  - component: {fileID: 8115939100319760225}
-  - component: {fileID: 8115939100319760226}
-  m_Layer: 11
-  m_Name: Collider (19)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100319760227
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100319760228}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100319760225
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100319760228}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100319760226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100319760228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939101171825130}
---- !u!1 &8115939100345392576
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100345392607}
-  - component: {fileID: 8115939100345392605}
-  - component: {fileID: 8115939100345392606}
-  m_Layer: 11
-  m_Name: Collider (21)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100345392607
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100345392576}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100345392605
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100345392576}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100345392606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100345392576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100772604807}
 --- !u!1 &8115939100419068871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,9 +925,10 @@ GameObject:
   - component: {fileID: 8115939100419068869}
   - component: {fileID: 8115939100419068870}
   - component: {fileID: 8115939100419068868}
+  - component: {fileID: 1921893034}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (15)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1225,7 +1018,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100419068869
 Animator:
   serializedVersion: 3
@@ -1259,7 +1052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939101989018283}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 7.5
+  delay: 3.75
 --- !u!58 &8115939100419068868
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1276,189 +1069,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
---- !u!1 &8115939100425824942
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100425824941}
-  - component: {fileID: 8115939100425824939}
-  - component: {fileID: 8115939100425824940}
-  m_Layer: 11
-  m_Name: Collider
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100425824941
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100425824942}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100425824939
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100425824942}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100425824940
+--- !u!114 &1921893034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100425824942}
+  m_GameObject: {fileID: 8115939100419068871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snake: {fileID: 1296341063551880209}
---- !u!1 &8115939100452986760
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100452986759}
-  - component: {fileID: 8115939100452986757}
-  - component: {fileID: 8115939100452986758}
-  m_Layer: 11
-  m_Name: Collider (9)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100452986759
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100452986760}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100452986757
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100452986760}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100452986758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100452986760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100870457791}
---- !u!1 &8115939100474092605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100474092604}
-  - component: {fileID: 8115939100474092602}
-  - component: {fileID: 8115939100474092603}
-  m_Layer: 11
-  m_Name: Collider (2)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100474092604
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100474092605}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100474092602
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100474092605}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100474092603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100474092605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939101269668364}
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939100492301938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,9 +1100,10 @@ GameObject:
   - component: {fileID: 8115939100492301839}
   - component: {fileID: 8115939100492301936}
   - component: {fileID: 8115939100492301838}
+  - component: {fileID: 202218633}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (13)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1565,7 +1193,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100492301839
 Animator:
   serializedVersion: 3
@@ -1599,7 +1227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939101974821399}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 6.5
+  delay: 3.25
 --- !u!58 &8115939100492301838
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1616,189 +1244,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
---- !u!1 &8115939100495774907
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100495774906}
-  - component: {fileID: 8115939100495774904}
-  - component: {fileID: 8115939100495774905}
-  m_Layer: 11
-  m_Name: Collider (16)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100495774906
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100495774907}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100495774904
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100495774907}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100495774905
+--- !u!114 &202218633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100495774907}
+  m_GameObject: {fileID: 8115939100492301938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snake: {fileID: 8115939101537395584}
---- !u!1 &8115939100538084352
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100538084383}
-  - component: {fileID: 8115939100538084381}
-  - component: {fileID: 8115939100538084382}
-  m_Layer: 11
-  m_Name: Collider (15)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100538084383
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100538084352}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100538084381
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100538084352}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100538084382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100538084352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100419068865}
---- !u!1 &8115939100571054040
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100571054039}
-  - component: {fileID: 8115939100571054037}
-  - component: {fileID: 8115939100571054038}
-  m_Layer: 11
-  m_Name: Collider (7)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100571054039
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100571054040}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100571054037
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100571054040}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100571054038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100571054040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100241406128}
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939100580584640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,9 +1275,10 @@ GameObject:
   - component: {fileID: 8115939100580584670}
   - component: {fileID: 8115939100580584671}
   - component: {fileID: 8115939100580584669}
+  - component: {fileID: 11944284}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (20)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1905,7 +1368,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100580584670
 Animator:
   serializedVersion: 3
@@ -1939,7 +1402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939101171825104}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 10
+  delay: 5
 --- !u!58 &8115939100580584669
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1956,67 +1419,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
---- !u!1 &8115939100615398977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100615398976}
-  - component: {fileID: 8115939100615399006}
-  - component: {fileID: 8115939100615399007}
-  m_Layer: 11
-  m_Name: Collider (17)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100615398976
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100615398977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100615399006
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100615398977}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100615399007
+--- !u!114 &11944284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100615398977}
+  m_GameObject: {fileID: 8115939100580584640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100970813730}
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939100772604808
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,9 +1450,10 @@ GameObject:
   - component: {fileID: 8115939100772604805}
   - component: {fileID: 8115939100772604806}
   - component: {fileID: 8115939100772604804}
+  - component: {fileID: 1624176427}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (21)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2123,7 +1543,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100772604805
 Animator:
   serializedVersion: 3
@@ -2157,7 +1577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939100580584640}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 10.5
+  delay: 5.25
 --- !u!58 &8115939100772604804
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2174,67 +1594,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
---- !u!1 &8115939100782860888
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100782860887}
-  - component: {fileID: 8115939100782860885}
-  - component: {fileID: 8115939100782860886}
-  m_Layer: 11
-  m_Name: Collider (6)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100782860887
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100782860888}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100782860885
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100782860888}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100782860886
+--- !u!114 &1624176427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100782860888}
+  m_GameObject: {fileID: 8115939100772604808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snake: {fileID: 8115939101240216443}
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939100788618949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2249,9 +1625,10 @@ GameObject:
   - component: {fileID: 8115939100788618947}
   - component: {fileID: 8115939100788618948}
   - component: {fileID: 8115939100788618946}
+  - component: {fileID: 899158081}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (8)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2341,7 +1718,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100788618947
 Animator:
   serializedVersion: 3
@@ -2375,7 +1752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939100241406134}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 4
+  delay: 2
 --- !u!58 &8115939100788618946
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2392,6 +1769,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &899158081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939100788618949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939100844790682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,9 +1800,10 @@ GameObject:
   - component: {fileID: 8115939100844790680}
   - component: {fileID: 8115939100844790681}
   - component: {fileID: 8115939100844790679}
+  - component: {fileID: 865927606}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2498,7 +1893,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100844790680
 Animator:
   serializedVersion: 3
@@ -2532,7 +1927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 1296341063551880203}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 0.5
+  delay: 0.25
 --- !u!58 &8115939100844790679
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2549,67 +1944,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
---- !u!1 &8115939100853642182
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939100853642181}
-  - component: {fileID: 8115939100853642179}
-  - component: {fileID: 8115939100853642180}
-  m_Layer: 11
-  m_Name: Collider (5)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939100853642181
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100853642182}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939100853642179
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100853642182}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939100853642180
+--- !u!114 &865927606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939100853642182}
+  m_GameObject: {fileID: 8115939100844790682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100924868635}
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939100870457765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,9 +1975,10 @@ GameObject:
   - component: {fileID: 8115939100870457763}
   - component: {fileID: 8115939100870457764}
   - component: {fileID: 8115939100870457762}
+  - component: {fileID: 1980329570}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (9)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2716,7 +2068,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100870457763
 Animator:
   serializedVersion: 3
@@ -2750,7 +2102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939100788618949}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 4.5
+  delay: 2.25
 --- !u!58 &8115939100870457762
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2767,6 +2119,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &1980329570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939100870457765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939100924868609
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,9 +2150,10 @@ GameObject:
   - component: {fileID: 8115939100924868639}
   - component: {fileID: 8115939100924868608}
   - component: {fileID: 8115939100924868638}
+  - component: {fileID: 651757347}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (5)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2873,7 +2243,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100924868639
 Animator:
   serializedVersion: 3
@@ -2907,7 +2277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939102004116415}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 2.5
+  delay: 1.25
 --- !u!58 &8115939100924868638
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2924,6 +2294,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &651757347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939100924868609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939100970813736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,9 +2325,10 @@ GameObject:
   - component: {fileID: 8115939100970813734}
   - component: {fileID: 8115939100970813735}
   - component: {fileID: 8115939100970813733}
+  - component: {fileID: 572325743}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (17)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3030,7 +2418,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100970813734
 Animator:
   serializedVersion: 3
@@ -3064,7 +2452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939101537395590}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 8.5
+  delay: 4.25
 --- !u!58 &8115939100970813733
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3081,6 +2469,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &572325743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939100970813736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939100987411274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3095,9 +2500,10 @@ GameObject:
   - component: {fileID: 8115939100987411272}
   - component: {fileID: 8115939100987411273}
   - component: {fileID: 8115939100987411271}
+  - component: {fileID: 1071482119}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (11)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3187,7 +2593,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939100987411272
 Animator:
   serializedVersion: 3
@@ -3221,7 +2627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939101517987705}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 5.5
+  delay: 2.75
 --- !u!58 &8115939100987411271
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3238,6 +2644,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &1071482119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939100987411274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939101008386229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3252,9 +2675,10 @@ GameObject:
   - component: {fileID: 8115939101008386227}
   - component: {fileID: 8115939101008386228}
   - component: {fileID: 8115939101008386226}
+  - component: {fileID: 590861617}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3344,7 +2768,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939101008386227
 Animator:
   serializedVersion: 3
@@ -3378,7 +2802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939101269668466}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 1.5
+  delay: 0.75
 --- !u!58 &8115939101008386226
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3395,6 +2819,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &590861617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939101008386229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939101010530680
 GameObject:
   m_ObjectHideFlags: 0
@@ -3409,9 +2850,10 @@ GameObject:
   - component: {fileID: 8115939101010530678}
   - component: {fileID: 8115939101010530679}
   - component: {fileID: 8115939101010530677}
+  - component: {fileID: 1347013672}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (18)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3501,7 +2943,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939101010530678
 Animator:
   serializedVersion: 3
@@ -3535,7 +2977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939100970813736}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 9
+  delay: 4.5
 --- !u!58 &8115939101010530677
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3552,250 +2994,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
---- !u!1 &8115939101042804998
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939101042804997}
-  - component: {fileID: 8115939101042804995}
-  - component: {fileID: 8115939101042804996}
-  m_Layer: 11
-  m_Name: Collider (4)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939101042804997
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101042804998}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939101042804995
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101042804998}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939101042804996
+--- !u!114 &1347013672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101042804998}
+  m_GameObject: {fileID: 8115939101010530680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snake: {fileID: 8115939102004116409}
---- !u!1 &8115939101060221455
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939101060221454}
-  - component: {fileID: 8115939101060221452}
-  - component: {fileID: 8115939101060221453}
-  m_Layer: 11
-  m_Name: Collider (14)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939101060221454
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101060221455}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939101060221452
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101060221455}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939101060221453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101060221455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939101989018277}
---- !u!1 &8115939101069809881
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939101069809880}
-  - component: {fileID: 8115939101069809878}
-  - component: {fileID: 8115939101069809879}
-  m_Layer: 11
-  m_Name: Collider (13)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939101069809880
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101069809881}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939101069809878
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101069809881}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939101069809879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101069809881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100492301937}
---- !u!1 &8115939101082180612
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939101082180611}
-  - component: {fileID: 8115939101082180609}
-  - component: {fileID: 8115939101082180610}
-  m_Layer: 11
-  m_Name: Collider (8)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939101082180611
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101082180612}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939101082180609
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101082180612}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939101082180610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101082180612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100788618975}
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939101171825104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,9 +3025,10 @@ GameObject:
   - component: {fileID: 8115939101171825134}
   - component: {fileID: 8115939101171825135}
   - component: {fileID: 8115939101171825133}
+  - component: {fileID: 1110131286}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (19)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3902,7 +3118,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939101171825134
 Animator:
   serializedVersion: 3
@@ -3936,7 +3152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939101010530680}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 9.5
+  delay: 4.75
 --- !u!58 &8115939101171825133
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3953,6 +3169,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &1110131286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939101171825104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939101240216417
 GameObject:
   m_ObjectHideFlags: 0
@@ -3967,9 +3200,10 @@ GameObject:
   - component: {fileID: 8115939101240216447}
   - component: {fileID: 8115939101240216416}
   - component: {fileID: 8115939101240216446}
+  - component: {fileID: 764658404}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (6)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4059,7 +3293,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939101240216447
 Animator:
   serializedVersion: 3
@@ -4093,7 +3327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939100924868609}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 3
+  delay: 1.5
 --- !u!58 &8115939101240216446
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4110,67 +3344,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
---- !u!1 &8115939101252554159
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939101252554158}
-  - component: {fileID: 8115939101252554156}
-  - component: {fileID: 8115939101252554157}
-  m_Layer: 11
-  m_Name: Collider (3)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939101252554158
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101252554159}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939101252554156
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101252554159}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939101252554157
+--- !u!114 &764658404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101252554159}
+  m_GameObject: {fileID: 8115939101240216417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snake: {fileID: 8115939101008386127}
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939101269668466
 GameObject:
   m_ObjectHideFlags: 0
@@ -4185,9 +3375,10 @@ GameObject:
   - component: {fileID: 8115939101269668464}
   - component: {fileID: 8115939101269668465}
   - component: {fileID: 8115939101269668367}
+  - component: {fileID: 637405799}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4277,7 +3468,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939101269668464
 Animator:
   serializedVersion: 3
@@ -4311,7 +3502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939100844790682}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 1
+  delay: 0.5
 --- !u!58 &8115939101269668367
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4328,6 +3519,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &637405799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939101269668466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939101330240385
 GameObject:
   m_ObjectHideFlags: 0
@@ -4342,7 +3550,7 @@ GameObject:
   - component: {fileID: 8115939101330240413}
   - component: {fileID: 8115939101330240412}
   - component: {fileID: 8115939101330240411}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: SnakeHead
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4361,28 +3569,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3591104385343802643}
-  - {fileID: 8115939100425824941}
-  - {fileID: 8115939100214450828}
-  - {fileID: 8115939100474092604}
-  - {fileID: 8115939101252554158}
-  - {fileID: 8115939101042804997}
-  - {fileID: 8115939100853642181}
-  - {fileID: 8115939100782860887}
-  - {fileID: 8115939100571054039}
-  - {fileID: 8115939101082180611}
-  - {fileID: 8115939100452986759}
-  - {fileID: 8115939101965232156}
-  - {fileID: 8115939101451244013}
-  - {fileID: 8115939101499981004}
-  - {fileID: 8115939101069809880}
-  - {fileID: 8115939101060221454}
-  - {fileID: 8115939100538084383}
-  - {fileID: 8115939100495774906}
-  - {fileID: 8115939100615398976}
-  - {fileID: 8115939101931445566}
-  - {fileID: 8115939100319760227}
-  - {fileID: 8115939100041542600}
-  - {fileID: 8115939100345392607}
   m_Father: {fileID: 8115939100278981587}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4411,9 +3597,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 5
+  healthMax: 60
   attackDmg: 2
   attackSpd: 1
+  parentObj: {fileID: 0}
   frozenTimer: 0
 --- !u!58 &8115939101330240413
 CircleCollider2D:
@@ -4422,7 +3609,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8115939101330240385}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -4502,128 +3689,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &8115939101451244014
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939101451244013}
-  - component: {fileID: 8115939101451244011}
-  - component: {fileID: 8115939101451244012}
-  m_Layer: 11
-  m_Name: Collider (11)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939101451244013
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101451244014}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939101451244011
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101451244014}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939101451244012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101451244014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939100987411268}
---- !u!1 &8115939101499981005
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939101499981004}
-  - component: {fileID: 8115939101499981002}
-  - component: {fileID: 8115939101499981003}
-  m_Layer: 11
-  m_Name: Collider (12)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939101499981004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101499981005}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939101499981002
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101499981005}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939101499981003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101499981005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939101974821393}
 --- !u!1 &8115939101517987705
 GameObject:
   m_ObjectHideFlags: 0
@@ -4638,9 +3703,10 @@ GameObject:
   - component: {fileID: 8115939101517987703}
   - component: {fileID: 8115939101517987704}
   - component: {fileID: 8115939101517987702}
+  - component: {fileID: 1566327174}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (10)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4730,7 +3796,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939101517987703
 Animator:
   serializedVersion: 3
@@ -4764,7 +3830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939100870457765}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 5
+  delay: 2.5
 --- !u!58 &8115939101517987702
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4781,6 +3847,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &1566327174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939101517987705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939101537395590
 GameObject:
   m_ObjectHideFlags: 0
@@ -4795,9 +3878,10 @@ GameObject:
   - component: {fileID: 8115939101537395588}
   - component: {fileID: 8115939101537395589}
   - component: {fileID: 8115939101537395587}
+  - component: {fileID: 1646119994}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (16)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4887,7 +3971,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939101537395588
 Animator:
   serializedVersion: 3
@@ -4921,7 +4005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939100419068871}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 8
+  delay: 4
 --- !u!58 &8115939101537395587
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4938,128 +4022,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
---- !u!1 &8115939101931445567
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939101931445566}
-  - component: {fileID: 8115939101931445564}
-  - component: {fileID: 8115939101931445565}
-  m_Layer: 11
-  m_Name: Collider (18)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939101931445566
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101931445567}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939101931445564
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101931445567}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939101931445565
+--- !u!114 &1646119994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101931445567}
+  m_GameObject: {fileID: 8115939101537395590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snake: {fileID: 8115939101010530674}
---- !u!1 &8115939101965232157
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8115939101965232156}
-  - component: {fileID: 8115939101965232154}
-  - component: {fileID: 8115939101965232155}
-  m_Layer: 11
-  m_Name: Collider (10)
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8115939101965232156
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101965232157}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8115939101330240384}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8115939101965232154
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101965232157}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &8115939101965232155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8115939101965232157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13861fcf77877498bb673c96c48596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snake: {fileID: 8115939101517987699}
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939101974821399
 GameObject:
   m_ObjectHideFlags: 0
@@ -5074,9 +4053,10 @@ GameObject:
   - component: {fileID: 8115939101974821397}
   - component: {fileID: 8115939101974821398}
   - component: {fileID: 8115939101974821396}
+  - component: {fileID: 23333173}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (12)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5166,7 +4146,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939101974821397
 Animator:
   serializedVersion: 3
@@ -5200,7 +4180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939100987411274}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 6
+  delay: 3
 --- !u!58 &8115939101974821396
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5217,6 +4197,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &23333173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939101974821399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939101989018283
 GameObject:
   m_ObjectHideFlags: 0
@@ -5231,9 +4228,10 @@ GameObject:
   - component: {fileID: 8115939101989018281}
   - component: {fileID: 8115939101989018282}
   - component: {fileID: 8115939101989018280}
+  - component: {fileID: 1527318677}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (14)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5323,7 +4321,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939101989018281
 Animator:
   serializedVersion: 3
@@ -5357,7 +4355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939100492301938}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 7
+  delay: 3.5
 --- !u!58 &8115939101989018280
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5374,6 +4372,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &1527318677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939101989018283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8115939102004116415
 GameObject:
   m_ObjectHideFlags: 0
@@ -5388,9 +4403,10 @@ GameObject:
   - component: {fileID: 8115939102004116413}
   - component: {fileID: 8115939102004116414}
   - component: {fileID: 8115939102004116412}
+  - component: {fileID: 892408351}
   m_Layer: 2
   m_Name: FlyingSnake Enemy (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5480,7 +4496,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8115939102004116413
 Animator:
   serializedVersion: 3
@@ -5514,7 +4530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowTarget: {fileID: 8115939101008386229}
   snakeHead: {fileID: 8115939101330240385}
-  delay: 2
+  delay: 1
 --- !u!58 &8115939102004116412
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5531,6 +4547,23 @@ CircleCollider2D:
   m_Offset: {x: -0.0035014153, y: -0.021008372}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &892408351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8115939102004116415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5bbb74590b69419c1f437726953fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 5
+  attackDmg: 2
+  attackSpd: 0
+  parentObj: {fileID: 8115939101330240385}
+  frozenTimer: 0
 --- !u!1 &8921940686658959137
 GameObject:
   m_ObjectHideFlags: 0
