@@ -30,8 +30,11 @@ public class EnemyBase : MonoBehaviour
         health = (int)healthMax;
         GetComponentInChildren<EnemyUI>().HPMax = (int)healthMax;
         attackCooldownTimer = attackSpd;
-        originalColor = GetComponent<SpriteRenderer>().color;
-
+        if (gameObject.GetComponent<SpriteRenderer>())
+        {
+            originalColor = GetComponent<SpriteRenderer>().color;
+        }
+     
         iceCounter = 0;
         frozenTimer = -1f;
     }
