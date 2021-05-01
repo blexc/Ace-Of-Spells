@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float CurMoveSpeed { set { curMoveSpeed = value; } }
 
     //player movement speed
-    [HideInInspector] float movementSpeed; // should not be changed in game 
+    [HideInInspector] public float movementSpeed; // should not be changed in game 
 
     float curMoveSpeed;
 
