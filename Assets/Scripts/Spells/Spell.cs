@@ -18,8 +18,6 @@ public class Spell : MonoBehaviour
     public float spellDamage = 1f;
     [SerializeField] protected float spellSpeed = 20f;
 
-    public GameObject particleEffect;
-
     public bool applyIgniteEffect;
     public bool applyFreezeEffect;
     public bool applyShockEffect;
@@ -53,11 +51,6 @@ public class Spell : MonoBehaviour
 
     private void Awake()
     {
-        if (particleEffect!=null)
-        {
-            GameObject ps = Instantiate(particleEffect);
-            ps.GetComponent<ParticleEffect>().obj = gameObject.GetComponent<Transform>();
-        }
         sr = GetComponent<SpriteRenderer>();
         //get rigidbody
         spellRigidbody = GetComponent<Rigidbody2D>();
