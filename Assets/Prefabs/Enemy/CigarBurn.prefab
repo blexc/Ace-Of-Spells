@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4704064318917848775}
   - component: {fileID: 7895753113950416312}
   - component: {fileID: -771481074175294587}
+  - component: {fileID: 1837457432246535470}
   m_Layer: 0
   m_Name: CigarBurn
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5018178409573865466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.093898, y: -6.8912153, z: -9.71875}
-  m_LocalScale: {x: 0.23043859, y: 0.23043859, z: 0.23043859}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 78087825061e748448aec609873836d6, type: 3}
+  m_Sprite: {fileID: -6524816113546870144, guid: 2b3ef807234b2ab488b3d14325eb9a5c,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,9 +98,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.06397839}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.8243093
+  m_Radius: 0.49
 --- !u!114 &-771481074175294587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,3 +114,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
+--- !u!95 &1837457432246535470
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5018178409573865466}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af30e1f6ea985f8428e5fd41572afb20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
