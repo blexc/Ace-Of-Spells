@@ -11,9 +11,6 @@ public class EnemyBase : MonoBehaviour
     public int attackDmg;
     public int attackSpd; // in seconds
 
-    [Tooltip("Applies damge to a parent object if")]
-    public GameObject parentObj;
-
     // key=>status effect
     // value=>life time
     public List<KeyValuePair<StatusEffect, float>> statusEffects =
@@ -31,17 +28,10 @@ public class EnemyBase : MonoBehaviour
     {
         healthMax = healthMax * (1 + (.2f * RoomTracker.roomsCleared));
         health = (int)healthMax;
-        if (GetComponentInChildren<EnemyUI>())
-        {
-            GetComponentInChildren<EnemyUI>().HPMax = (int)healthMax;
-        }
-       
+        GetComponentInChildren<EnemyUI>().HPMax = (int)healthMax;
         attackCooldownTimer = attackSpd;
-        if (gameObject.GetComponent<SpriteRenderer>())
-        {
-            originalColor = GetComponent<SpriteRenderer>().color;
-        }
-     
+        originalColor = GetComponent<SpriteRenderer>().color;
+
         iceCounter = 0;
         frozenTimer = -1f;
     }
@@ -122,7 +112,6 @@ public class EnemyBase : MonoBehaviour
 
     void ChangeColor()
     {
-        if (GetComponentInChildren<EnemyUI>())
         GetComponentInChildren<EnemyUI>().statusEffectUpdate(); //Adjusts the enemy UI to display that the enemy has the added status effect
 
         Color c = originalColor;
@@ -162,32 +151,21 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (parentObj==null)
+        // take more damage if shocked
+        if (HasStatusEffect(StatusEffect.Shock))
         {
-            // take more damage if shocked
-            if (HasStatusEffect(StatusEffect.Shock))
-            {
-                // mutiply damage by two
-                amount *= 2;
+            // mutiply damage by two
+            amount *= 2;
 
-                // remove that shock from the list
-                RemoveEffect(StatusEffect.Shock);
-            }
-
-            health -= amount;
-
-            //print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax);
-            if (GetComponentInChildren<EnemyUI>())
-            {
-                GetComponentInChildren<EnemyUI>().damagePopUP(amount); //Calls the spawn of the enemy damage text in the UI script - AHL (3/9/21)
-                GetComponentInChildren<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
-            }
-          
+            // remove that shock from the list
+            RemoveEffect(StatusEffect.Shock);
         }
-        else if (parentObj !=null)
-        {
-            parentObj.GetComponent<EnemyBase>().TakeDamage(amount);
-        }
+
+        health -= amount;
+
+        //print(gameObject.name + ": took" + amount + " damage | " + health + " / " + healthMax);
+        GetComponentInChildren<EnemyUI>().damagePopUP(amount); //Calls the spawn of the enemy damage text in the UI script - AHL (3/9/21)
+        GetComponentInChildren<EnemyUI>().enemyHPUpdate(health); //Adjusts the enemey HP bar in the UI script - AHL (3/3/21)
     }
 
     void PrintStatusEffectList()
