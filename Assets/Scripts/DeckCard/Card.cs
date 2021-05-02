@@ -18,7 +18,6 @@ public class Card : ScriptableObject
 
     public bool isObtained; //Variable to keep track of if the card has been collected to show in the card collection menu
     
-    [HideInInspector]
     public bool isFavorite; //Variable to keep track of if the card has been favorited or not
 
     public void Print()

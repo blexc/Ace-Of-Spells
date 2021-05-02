@@ -73,12 +73,12 @@ public class GameplayUI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+  /*  void Update()
     {
         //AHL - Will need to remove this and put this with enemy collisons or when the player takes damage.
         //HealthUpdate(HPtemp); //Checks to make sure that the health of the player is always up to date.
         coinUpdate(coinNum); //Checks to make sure that the coins are always up to date.
-    }
+    }*/
 
     /// <summary>
     /// Function to kill the player and end the game - AHL (3/10/21)
