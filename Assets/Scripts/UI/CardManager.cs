@@ -23,6 +23,10 @@ public class CardManager : MonoBehaviour
     public void cardUpdate()
     {
         cardsInHand = Deck.instance.Hand;
+
+        if (cardsInHand.Count != Deck.HAND_SIZE_MAX)
+            Debug.LogAssertion("Cards in hand must be " + Deck.HAND_SIZE_MAX);
+
         card1.GetComponent<CardDisplay>().card = cardsInHand[0];
         card2.GetComponent<CardDisplay>().card = cardsInHand[1];
         card3.GetComponent<CardDisplay>().card = cardsInHand[2];
