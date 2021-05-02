@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5259025}
   - component: {fileID: 5259026}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 15228027}
   - component: {fileID: 15228028}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 59666201}
   - component: {fileID: 59666202}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 63803827}
   - component: {fileID: 63803828}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 65469012}
   - component: {fileID: 65469013}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 88293578}
   - component: {fileID: 88293579}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red4 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 103899572}
   - component: {fileID: 103899573}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134520320}
   - component: {fileID: 134520321}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 154151469}
   - component: {fileID: 154151470}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1265,7 +1265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 165703926}
   - component: {fileID: 165703927}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red2 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1437,7 +1437,7 @@ PrefabInstance:
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.466667
+      value: 8.466663
       objectReference: {fileID: 0}
     - target: {fileID: 8948110860438753254, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
@@ -1587,7 +1587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196092263}
   - component: {fileID: 196092264}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1668,7 +1668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 197260191}
   - component: {fileID: 197260192}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1897,6 +1897,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikeTrap (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8385039278173496653, guid: ab34a7482fce3914f9e83aab9c7742e8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab34a7482fce3914f9e83aab9c7742e8, type: 3}
 --- !u!4 &227013835 stripped
@@ -1915,7 +1920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231302374}
   - component: {fileID: 231302375}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red4 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2077,7 +2082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 241810252}
   - component: {fileID: 241810253}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2401,7 +2406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342144993}
   - component: {fileID: 342144994}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2968,7 +2973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 438315411}
   - component: {fileID: 438315412}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3211,7 +3216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510033325}
   - component: {fileID: 510033326}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3454,7 +3459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 578833832}
   - component: {fileID: 578833833}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4183,7 +4188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662057707}
   - component: {fileID: 662057708}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4588,7 +4593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 781339134}
   - component: {fileID: 781339135}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4669,7 +4674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 787956108}
   - component: {fileID: 787956109}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red4 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4922,7 +4927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 829789362}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5198,7 +5203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 886252409}
   - component: {fileID: 886252410}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red4 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5279,7 +5284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887201266}
   - component: {fileID: 887201267}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5684,7 +5689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 926763092}
   - component: {fileID: 926763093}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6413,7 +6418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1072680598}
   - component: {fileID: 1072680599}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6575,7 +6580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1114143962}
   - component: {fileID: 1114143963}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6656,7 +6661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1114767897}
   - component: {fileID: 1114767898}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7223,7 +7228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1228427963}
   - component: {fileID: 1228427964}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7628,7 +7633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314497998}
   - component: {fileID: 1314497999}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7709,7 +7714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1335548102}
   - component: {fileID: 1335548103}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8194,7 +8199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1444419416}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Block (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8389,7 +8394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486228690}
   - component: {fileID: 1486228691}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9250,7 +9255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1657060292}
   - component: {fileID: 1657060293}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9579,7 +9584,7 @@ GameObject:
   - component: {fileID: 1703439629}
   - component: {fileID: 1703439628}
   - component: {fileID: 1703439627}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9673,7 +9678,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -70.89856, y: -3.7680664}
+  m_Offset: {x: -70.89856, y: -3.6294022}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9684,7 +9689,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.504303, y: 21.833527}
+  m_Size: {x: 3.504303, y: 23.959763}
   m_EdgeRadius: 0
 --- !u!61 &1703439628
 BoxCollider2D:
@@ -9699,7 +9704,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 11.704155, y: -3.760521}
+  m_Offset: {x: 11.704155, y: -3.8067436}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9710,7 +9715,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.7425423, y: 22.37355}
+  m_Size: {x: 2.7425423, y: 24.130005}
   m_EdgeRadius: 0
 --- !u!61 &1703439629
 BoxCollider2D:
@@ -10017,7 +10022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1788937622}
   - component: {fileID: 1788937623}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10407,6 +10412,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpikeTrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8385039278173496653, guid: ab34a7482fce3914f9e83aab9c7742e8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab34a7482fce3914f9e83aab9c7742e8, type: 3}
@@ -11803,7 +11813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2129153778}
   - component: {fileID: 2129153779}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11884,7 +11894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2135199543}
   - component: {fileID: 2135199544}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11965,7 +11975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2136772177}
   - component: {fileID: 2136772178}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12141,7 +12151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1606655345619498696}
   - component: {fileID: 1606655345619498703}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12272,7 +12282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1606655346045441582}
   - component: {fileID: 1606655346045441581}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12318,7 +12328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1606655346066694816}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: WallDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12335,7 +12345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615941319463971314}
   - component: {fileID: 1615941319463971315}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12480,7 +12490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615941320066663704}
   - component: {fileID: 1615941320066663705}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12497,7 +12507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615941320112980542}
   - component: {fileID: 1615941320112980543}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12577,7 +12587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1615941320683726918}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: WallRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12936,7 +12946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7145742864848335365}
   - component: {fileID: 7145742864848335364}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red2 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12953,7 +12963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7145742865524378615}
   - component: {fileID: 7145742865524378614}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13098,7 +13108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7145742865597389586}
   - component: {fileID: 7145742865597389585}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red2 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13129,7 +13139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7145742865648463752}
   - component: {fileID: 7145742865648463759}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red2 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13215,7 +13225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7145742866058494476}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: WallLeft (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13296,7 +13306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7145742866430785589}
   - component: {fileID: 7145742866430785588}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13365,7 +13375,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7288557, y: 1}
+    m_SensorSize: {x: 2.205029, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13764,7 +13774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8730030980179672791}
   - component: {fileID: 8730030980179672788}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13859,7 +13869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8730030980662252810}
   - component: {fileID: 8730030980662252811}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: red1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13875,7 +13885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8730030981065203665}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: WallUp (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
