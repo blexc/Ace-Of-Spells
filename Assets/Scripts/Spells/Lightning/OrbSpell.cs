@@ -28,7 +28,7 @@ public class OrbSpell : Spell
         damageTimer -= Time.deltaTime;
         if (damageTimer <= 0f && enemies.Count > 0)
         {
-            DealDamageToAll();
+            DealDamageToRandom();
             damageTimer = damageTimerStart;
         }
 
@@ -47,7 +47,7 @@ public class OrbSpell : Spell
             trailObject.SetActive(false);
         }
 
-        print("enemies: " + enemies.Count);
+        //print("enemies: " + enemies.Count);
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)
@@ -72,7 +72,7 @@ public class OrbSpell : Spell
     /// deal damage to a random enemy in the enemies list
     /// set target of trail renderer to be that enemy
     /// </summary>
-    void DealDamageToAll()
+    void DealDamageToRandom()
     {
         int r = Random.Range(0, enemies.Count);
         enemies[r].TakeDamage((int)spellDamage);
