@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4851,7 +4851,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -43.53203, y: -38.385406}
+  m_Offset: {x: -43.53203, y: -38.338947}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4862,7 +4862,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.6476784, y: 2.9931793}
+  m_Size: {x: 3.6476746, y: 4.4797897}
   m_EdgeRadius: 0
 --- !u!61 &339637448
 BoxCollider2D:
@@ -4929,7 +4929,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 15.023796, y: -36.06752}
+  m_Offset: {x: 15.023796, y: -36.43917}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4940,7 +4940,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 55.406044, y: 7.214432}
+  m_Size: {x: 55.406044, y: 7.957733}
   m_EdgeRadius: 0
 --- !u!61 &339637451
 BoxCollider2D:
@@ -4981,7 +4981,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -43.40743, y: 3.826563}
+  m_Offset: {x: -43.40743, y: 4.2602673}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4992,7 +4992,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9879684, y: 55.84165}
+  m_Size: {x: 2.9879684, y: 58.489613}
   m_EdgeRadius: 0
 --- !u!61 &339637453
 BoxCollider2D:
@@ -5059,7 +5059,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.1421585, y: 36.090454}
+  m_Offset: {x: -2.1421585, y: 36.338776}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5070,7 +5070,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9995918, y: 7.26593}
+  m_Size: {x: 2.9995918, y: 7.7625732}
   m_EdgeRadius: 0
 --- !u!61 &339637456
 BoxCollider2D:
@@ -5085,7 +5085,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.3891068, y: 41.438324}
+  m_Offset: {x: -2.168377, y: 41.438324}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5096,7 +5096,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.075012, y: 2.870926}
+  m_Size: {x: 15.454575, y: 2.870926}
   m_EdgeRadius: 0
 --- !u!61 &339637457
 BoxCollider2D:
@@ -5111,7 +5111,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 41.11177, y: -16.23238}
+  m_Offset: {x: 41.11177, y: -16.023884}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5122,7 +5122,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9582672, y: 31.908852}
+  m_Size: {x: 2.9582672, y: 33.719536}
   m_EdgeRadius: 0
 --- !u!61 &339637458
 BoxCollider2D:
@@ -5137,7 +5137,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 34.700005, y: 16.104568}
+  m_Offset: {x: 34.700005, y: 16.678696}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5148,7 +5148,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.914108, y: 31.257553}
+  m_Size: {x: 15.914108, y: 32.405807}
   m_EdgeRadius: 0
 --- !u!61 &339637459
 BoxCollider2D:
@@ -26352,12 +26352,12 @@ PrefabInstance:
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.001398
+      value: 30.165356
       objectReference: {fileID: 0}
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 63.46667
+      value: 63.46666
       objectReference: {fileID: 0}
     - target: {fileID: 8948110860438753254, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
@@ -29694,7 +29694,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7288557, y: 1}
+    m_SensorSize: {x: 2.205029, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

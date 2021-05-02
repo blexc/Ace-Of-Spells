@@ -6,6 +6,12 @@ using UnityEngine;
 // if the enemy is frozen deal double damage
 public class IceSpearSpell : Spell
 {
+    protected override void Update()
+    {
+        base.Update();
+        FadeOutAlpha();
+    }
+
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         //if hits an enemy
@@ -20,9 +26,5 @@ public class IceSpearSpell : Spell
 
             eb.TakeDamage(finalDmg);
         }
-
-        // delete spell if hits ANYTHING
-        // should not be left, since it could hit multiple enemies
-        Destroy(gameObject);
     }
 }

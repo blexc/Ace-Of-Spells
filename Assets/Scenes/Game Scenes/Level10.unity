@@ -6436,12 +6436,12 @@ PrefabInstance:
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.403079
+      value: -5.3361516
       objectReference: {fileID: 0}
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.453222
+      value: -3.688167
       objectReference: {fileID: 0}
     - target: {fileID: 8948110860438753254, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
@@ -7330,7 +7330,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -8.236464, y: 4.3122673}
+  m_Offset: {x: -8.170154, y: 4.3122673}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7341,7 +7341,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.9952326, y: 3.3814926}
+  m_Size: {x: 7.719305, y: 3.3814926}
   m_EdgeRadius: 0
 --- !u!61 &1736227695
 BoxCollider2D:
@@ -7434,7 +7434,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 14.207798, y: -18.549145}
+  m_Offset: {x: 14.207798, y: -18.617636}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7445,7 +7445,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.246769, y: 27.459465}
+  m_Size: {x: 3.246769, y: 28.819279}
   m_EdgeRadius: 0
 --- !u!61 &1736227699
 BoxCollider2D:
@@ -7460,7 +7460,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -30.564663, y: -18.644833}
+  m_Offset: {x: -30.564663, y: -18.581583}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -7471,7 +7471,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0523758, y: 26.917}
+  m_Size: {x: 3.0523758, y: 29.000858}
   m_EdgeRadius: 0
 --- !u!61 &1736227700
 BoxCollider2D:
@@ -10099,7 +10099,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7288557, y: 1}
+    m_SensorSize: {x: 2.205029, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

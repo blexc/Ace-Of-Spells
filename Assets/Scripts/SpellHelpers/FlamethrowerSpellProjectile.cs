@@ -76,7 +76,13 @@ public class FlamethrowerSpellProjectile : Spell
         EnemyBase eb = other.gameObject.GetComponent<EnemyBase>();
         if (eb)
         {
-            eb.AddStatusEffect(StatusEffect.Ignite);
+            if (!eb.HasStatusEffect(StatusEffect.Ignite))
+            {
+                eb.AddStatusEffect(StatusEffect.Ignite);
+                var burnerInstance = Instantiate(burnerPrefab, eb.transform);
+                burnerInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
+            }
+
             eb.TakeDamage((int)spellDamage);
             numEnemiesHit++;
         }

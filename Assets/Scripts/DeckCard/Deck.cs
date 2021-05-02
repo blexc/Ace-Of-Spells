@@ -26,21 +26,33 @@ public class Deck : MonoBehaviour
     [SerializeField] List<Card> allCards = new List<Card>();
     List<Card> hand = new List<Card>();
 
-    const int HAND_SIZE_MAX = 3;
+    public const int HAND_SIZE_MAX = 3;
     int debugCall = 0;
+
+    CardManager cardManager;
 
     private void Awake()
     {
+        // singleton stuff
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
         player = GameObject.FindGameObjectWithTag("Player");
-        if (instance != null) Destroy(gameObject);
-        instance = this;
+
+        handSelectionIndex = 0;
 
         ShuffleList(ref drawPile);
         DrawCard(HAND_SIZE_MAX);
 
-        var cm = FindObjectOfType<CardManager>();
-        cm.cardUpdate();
-        cm.showSelectedCard(handSelectionIndex);
+        cardManager = FindObjectOfType<CardManager>();
+        cardManager.cardUpdate();
+        cardManager.showSelectedCard(handSelectionIndex);
     }
 
     // uses the currently selected card (calls selected card's spell function)
@@ -83,10 +95,8 @@ public class Deck : MonoBehaviour
             player.GetComponent<PlayerStats>().discardCard = false;
             discardPile.Add(selectedCard);
             hand.RemoveAt(handSelectionIndex);
-            FindObjectOfType<CardManager>().discardUI.text = "" + discardPile.Count; //Updates the discard Num UI
             DrawCard();
         }
-       
     }
 
     /// <summary>
@@ -117,7 +127,8 @@ public class Deck : MonoBehaviour
             handSelectionIndex++;
             handSelectionIndex %= hand.Count;
 
-            FindObjectOfType<CardManager>().showSelectedCard(handSelectionIndex);
+            cardManager.cardUpdate();
+            cardManager.showSelectedCard(handSelectionIndex);
 
             if (showDebugPrints)
             {
@@ -140,7 +151,12 @@ public class Deck : MonoBehaviour
             cardsDrew++;
         }
 
-        FindObjectOfType<CardManager>().cardUpdate(); //Updates what is displayed for the cards in hand UI
+        // null reference check, for Awake()
+        if (cardManager)
+        {
+            cardManager.cardUpdate();
+            cardManager.showSelectedCard(handSelectionIndex);
+        }
     }
 
     // adds a new card to the draw pile
@@ -268,7 +284,9 @@ public class Deck : MonoBehaviour
             }
         }
 
-        FindObjectOfType<CardManager>().cardUpdate(); //Updates what is displayed for the cards in hand UI
+        DrawCard(HAND_SIZE_MAX);
+        cardManager.cardUpdate();
+        cardManager.showSelectedCard(handSelectionIndex);
         return false;
     }
 

@@ -58,17 +58,15 @@ public class CardDisplay : MonoBehaviour
         if (card != null)
         {
             gameObject.GetComponent<Image>().color = card.backgroundColor;
-        }
 
-
-        if (card.isFavorite && card.isObtained)
+            if (card.isFavorite && card.isObtained)
             {
                 favoriteStar.gameObject.SetActive(true);
             }
-
-        else if (favoriteStar.isActiveAndEnabled && !card.isFavorite)
-        {
-            favoriteStar.gameObject.SetActive(false);
+            else if (favoriteStar.isActiveAndEnabled && !card.isFavorite)
+            {
+                favoriteStar.gameObject.SetActive(false);
+            }
         }
     }
 }

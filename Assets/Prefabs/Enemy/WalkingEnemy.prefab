@@ -74,6 +74,7 @@ MonoBehaviour:
   healthMax: 20
   attackDmg: 15
   attackSpd: 2
+  parentObj: {fileID: 0}
   frozenTimer: 0
 --- !u!114 &8883940010358041080
 MonoBehaviour:
