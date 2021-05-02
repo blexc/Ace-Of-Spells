@@ -1687,6 +1687,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 318456785}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &318456787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4660345631604792243, guid: 4975e357785118b4e97119a9be40ee12,
+    type: 3}
+  m_PrefabInstance: {fileID: 318456785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &319752437
 GameObject:
   m_ObjectHideFlags: 0
@@ -10183,7 +10189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf58d5d5185cf6469b7dc636f9e33d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rewardObject: {fileID: 0}
+  rewardObject: {fileID: 318456787}
   enemiesLeft: 0
   checkFrequency: 1
   enemySpawners: []
