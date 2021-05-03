@@ -9,7 +9,7 @@ public class DarknessSpellProjectile : Spell
         EnemyBase eb = other.GetComponent<EnemyBase>();
         if (eb)
         {
-            eb.TakeDamage((int)spellDamage);
+            DealDamageTo(eb);
             Destroy(gameObject);
         }
     }

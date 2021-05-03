@@ -75,7 +75,7 @@ public class OrbSpell : Spell
     void DealDamageToRandom()
     {
         int r = Random.Range(0, enemies.Count);
-        enemies[r].TakeDamage((int)spellDamage);
+        DealDamageTo(enemies[r]);
         trailTarget = enemies[r].gameObject; 
     }
 

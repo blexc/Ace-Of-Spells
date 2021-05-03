@@ -52,7 +52,7 @@ public class EmberSpellProjectile : Spell
                 var burnerInstance = Instantiate(burnerPrefab, eb.transform);
                 burnerInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
             }
-            eb.TakeDamage((int)spellDamage);
+            DealDamageTo(eb);
             Destroy(gameObject);
         }
     }

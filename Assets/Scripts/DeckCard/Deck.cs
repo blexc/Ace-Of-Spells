@@ -168,13 +168,14 @@ public class Deck : MonoBehaviour
 
     /// <summary>
     /// Returns the number of cards of a specific type in player's hand.
+    /// Ignores cards of type NA.
     /// </summary>
     public int NumOfTypeInHand(CardType cardType)
     {
         int num = 0;
         for (int i = hand.Count; --i >= 0;)
         {
-            if (hand[i].element == cardType)
+            if (hand[i].element == cardType && hand[i].element != CardType.NA)
                 num++;
         }
 
@@ -328,7 +329,6 @@ public class Deck : MonoBehaviour
             print(debugCall + ": Discard, hand, draw sizes: " + discardPile.Count + ", " + hand.Count + ", " + drawPile.Count);
         }
     }
-
 
     /*
     void Update()
