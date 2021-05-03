@@ -36,7 +36,7 @@ public class BossScript : MonoBehaviour
         if(canAttack || loopNumber >= 3)
         {
             canAttack = false;
-            print("FAN ATTACK");
+            //print("FAN ATTACK");
             Instantiate(fanAttackPrefab, transform.position, Quaternion.identity);
 
            
@@ -54,7 +54,7 @@ public class BossScript : MonoBehaviour
         if (canAttack || loopNumber >= 3)
         {
             canAttack = false;
-            print("SWING ATTACK");
+            //print("SWING ATTACK");
 
             table1.GetComponent<SpriteRenderer>().color = Color.black;
             table2.GetComponent<SpriteRenderer>().color = Color.black;
@@ -96,7 +96,7 @@ public class BossScript : MonoBehaviour
         if (canAttack || loopNumber >= 3)
         {
             canAttack = false;
-            print("SLAP ATTACK");
+            //print("SLAP ATTACK");
 
             int randomInt = Random.Range(1, 4);
             if(randomInt == 1)
@@ -194,7 +194,7 @@ public class BossScript : MonoBehaviour
         if (loopNumber >= 3)
         {
             canAttack = false;
-            print("Enrage");
+            //print("Enrage");
 
             StartCoroutine(FanAttack());
           

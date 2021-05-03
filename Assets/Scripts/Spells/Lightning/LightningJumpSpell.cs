@@ -66,7 +66,7 @@ public class LightningJumpSpell : Spell
         if (other.gameObject.CompareTag("Enemy"))
         {
             var eb = other.gameObject.GetComponent<EnemyBase>();
-            eb.TakeDamage((int)spellDamage);
+            DealDamageTo(eb);
         }
     }
 }

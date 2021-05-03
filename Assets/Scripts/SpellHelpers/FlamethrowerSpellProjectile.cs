@@ -83,7 +83,7 @@ public class FlamethrowerSpellProjectile : Spell
                 burnerInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
             }
 
-            eb.TakeDamage((int)spellDamage);
+            DealDamageTo(eb);
             numEnemiesHit++;
         }
 
