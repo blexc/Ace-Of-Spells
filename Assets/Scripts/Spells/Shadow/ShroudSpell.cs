@@ -33,7 +33,7 @@ public class ShroudSpell : Spell
         {
             if (!eb.HasStatusEffect(StatusEffect.Rot))
                eb.AddStatusEffect(StatusEffect.Rot, effectlifeTime);
-            eb.TakeDamage((int)spellDamage);
+            DealDamageTo(eb);
         }
         else if (other.gameObject.CompareTag("Projectile"))
         {

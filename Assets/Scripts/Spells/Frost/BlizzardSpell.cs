@@ -64,7 +64,7 @@ public class BlizzardSpell : Spell
     {
         foreach (EnemyBase eb in enemies)
         {
-            eb.TakeDamage((int)spellDamage);
+            DealDamageTo(eb);
 
             if (!eb.IsSlowed) eb.AddStatusEffect(StatusEffect.Slow);
         }

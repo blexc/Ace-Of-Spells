@@ -18,7 +18,7 @@ public class GravemassSpell : Spell
         var eb = other.gameObject.GetComponent<EnemyBase>();
         if (eb)
         {
-            eb.TakeDamage(finalDamage);
+            DealDamageTo(eb);
             Destroy(gameObject);
         }
     }

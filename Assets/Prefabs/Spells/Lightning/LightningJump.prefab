@@ -86,6 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellLifetime: 5
   effectlifeTime: 3
+  cardType: 0
   spellDamage: 10
   spellSpeed: 0
   applyIgniteEffect: 0
@@ -155,7 +156,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.0931848
+        value: 0.1475386
         inSlope: -0.13053834
         outSlope: -0.13053834
         tangentMode: 0
