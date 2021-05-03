@@ -53,6 +53,19 @@ public class Deck : MonoBehaviour
         cardManager = FindObjectOfType<CardManager>();
         cardManager.cardUpdate();
         cardManager.showSelectedCard(handSelectionIndex);
+
+        //Goes through all the cards that the player has in their Deck/Hand to make sure that each isObtained if they weren't already - AHL (5/3/21)
+        foreach (Card card in drawPile)
+        {
+            if (!card.isObtained)
+                card.isObtained = true;
+        }
+
+        foreach (Card card in Hand)
+        {
+            if (!card.isObtained)
+                card.isObtained = true;
+        }
     }
 
     // uses the currently selected card (calls selected card's spell function)
