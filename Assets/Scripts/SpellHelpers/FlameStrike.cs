@@ -12,16 +12,6 @@ public class FlameStrike : MonoBehaviour
         StartCoroutine(WaitToStrike());
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        SpawnStrike();
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        SpawnStrike();
-    }
-
     public IEnumerator WaitToStrike()
     {
         yield return new WaitForSeconds(1);
