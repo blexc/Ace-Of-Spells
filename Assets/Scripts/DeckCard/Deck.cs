@@ -53,6 +53,22 @@ public class Deck : MonoBehaviour
         cardManager = FindObjectOfType<CardManager>();
         cardManager.cardUpdate();
         cardManager.showSelectedCard(handSelectionIndex);
+
+        //This only applies during the Build and not the editor
+#if UNITY_STANDALONE && !UNITY_EDITOR
+        //Goes through all the cards that the player has in their Deck/Hand to make sure that each isObtained if they weren't already - AHL (5/3/21)
+        foreach (Card card in drawPile)
+        {
+            if (!card.isObtained)
+                card.isObtained = true;
+        }
+
+        foreach (Card card in Hand)
+        {
+            if (!card.isObtained)
+                card.isObtained = true;
+        }
+#endif
     }
 
     // uses the currently selected card (calls selected card's spell function)
@@ -191,7 +207,7 @@ public class Deck : MonoBehaviour
     /// <returns>The number of cards discarded. Returns -1 is no card exists in the discard and draw pile.</returns>
     public int DiscardCardUntil(CardType cardTypeToRecieve, bool doesWant = true)
     {
-        # region check if there exists a card with this condition in the first place
+#region check if there exists a card with this condition in the first place
         bool cardExists = false;
         for (int i = 0; !cardExists && i < drawPile.Count; i++)
         {
@@ -210,7 +226,7 @@ public class Deck : MonoBehaviour
             }
         }
         if (!cardExists) return -1;
-        #endregion
+#endregion
 
         bool found = false;
         int discardCounter = 0; // num cards discarded
