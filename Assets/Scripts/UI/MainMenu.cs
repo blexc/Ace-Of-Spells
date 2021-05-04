@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour
     //Variable Declaration/Initialization
     public string sceneName; //The name of the scene that the player will load in first
     public GameObject CardCollectionMenu; //Variable to hold the Card Collection Menu that will be activated or deactivated based on the button input
+    public GameObject TutorialMenu; //GameObject of the Tutorial Menu 
+    public GameObject ControlsMenu; //GameObject of the Controls Menu
 
     /// <summary>
     /// Function that starts the game and sends the player to the scene specified - AHL (3/10/21)
@@ -56,5 +58,43 @@ public class MainMenu : MonoBehaviour
     public void CardCollectionBack()
     {
         CardCollectionMenu.SetActive(false);
+    }
+
+    /// <summary>
+    /// Function that puts the player at the First Tutorial Screen - AHL (5/3/21)
+    /// </summary>
+    public void Tutorial()
+    {
+        //If the Controls Menu is open then we set it to false
+        if (ControlsMenu)
+            ControlsMenu.SetActive(false);
+
+        TutorialMenu.SetActive(true);
+    }
+
+    /// <summary>
+    /// Function that puts the player at the Second Tutorial Screen - AHL (5/3/21)
+    /// </summary>
+    public void Controls()
+    {
+        //If the Tutorials Menu is open then we set it to false
+        if (TutorialMenu)
+            TutorialMenu.SetActive(false);
+
+        ControlsMenu.SetActive(true);
+    }
+
+    /// <summary>
+    /// Function that puts the player back to the main menu from any Tutorial Menu - AHL (5/3/21)
+    /// </summary>
+    public void TutorialBack()
+    {
+        //If the Tutorial Menu is open then we set it to False so it closes
+        if (TutorialMenu)
+            TutorialMenu.SetActive(false);
+
+        //If the Controls Menu is open then we set it to False so it closes
+        if (ControlsMenu)
+            ControlsMenu.SetActive(false);
     }
 }

@@ -24,7 +24,8 @@ public class IceSpearSpell : Spell
             if (eb.HasStatusEffect(StatusEffect.Freeze))
                 finalDmg *= 2;
 
-            eb.TakeDamage(finalDmg);
+            spellDamage = finalDmg;
+            DealDamageTo(eb);
         }
     }
 }

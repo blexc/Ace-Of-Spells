@@ -32,7 +32,7 @@ public class SiphonSpellProjectile : Spell
         if (eb)
         {
             healAmount++;
-            eb.TakeDamage((int)spellDamage);
+            DealDamageTo(eb);
             IncreaseAlpha(0.4f);
         }
 
