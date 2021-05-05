@@ -12,15 +12,9 @@ public class FreezeEarthSpell : Spell
         //if hits an enemy
         if (other.gameObject.CompareTag("Enemy"))
         {
-            enemyHit = other.gameObject;
-            var eb = enemyHit.GetComponent<EnemyBase>();
+            var eb = other.gameObject.GetComponent<EnemyBase>();
             eb.AddStatusEffect(StatusEffect.Freeze, effectlifeTime);
             eb.FreezeCharacter(effectlifeTime);
-        }
-        else
-        {
-            // delete spell if hits anything other than an enemy
-            Destroy(gameObject);
         }
     }
 }
