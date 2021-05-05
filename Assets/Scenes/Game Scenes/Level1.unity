@@ -1492,47 +1492,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
-        type: 3}
-      propertyPath: drawPile.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
-        type: 3}
-      propertyPath: drawPile.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 61c3a04fe90ea6745bfec87fabebb7d5,
-        type: 2}
-    - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
-        type: 3}
-      propertyPath: drawPile.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: bb5c482e001a7444d8de8efcfcabb847,
-        type: 2}
-    - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
-        type: 3}
-      propertyPath: drawPile.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8da8efbdac07f99458ce6d7984f22188,
-        type: 2}
-    - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
-        type: 3}
-      propertyPath: drawPile.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: f909d5d15004bb44399ef4b3ee54f9d8,
-        type: 2}
-    - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
-        type: 3}
-      propertyPath: drawPile.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3091b4b442321844d954b40ed53d3f51,
-        type: 2}
-    - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
-        type: 3}
-      propertyPath: drawPile.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2aad6fc885e09b9458548024510ee3dd,
-        type: 2}
     - target: {fileID: 3178216223236789495, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_Name
