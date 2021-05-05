@@ -46,6 +46,9 @@ public class LightningJumpSpell : Spell
 
         // place the spell back to the original player position (before teleport)
         transform.position = origin;
+
+        // make player invinsible
+        player.GetComponent<PlayerStats>().MakePlayerInvunerable();
     }
 
     protected override void Update()

@@ -20,8 +20,9 @@ public class PlayerStats : MonoBehaviour
     public SpriteRenderer sprite;
     [SerializeField] private GameObject ScriptManager = null;
     PlayerMovement playerMovement;
+    [SerializeField] float invincibleTimer, invincibleTimerStart = 3f; // time the player in invunerable
 
-    private void Awake()
+    void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
     }
@@ -33,6 +34,10 @@ public class PlayerStats : MonoBehaviour
         {
             cd -= Time.deltaTime * 1f;
         }
+
+        // decrement invincible timer
+        invincibleTimer = Mathf.Clamp(invincibleTimer - Time.deltaTime,
+            -1f, invincibleTimerStart);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -48,10 +53,11 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-  
-
     public void TakeDamage(int damage)
     {
+        // don't take damage, if the player is invunerable
+        if (invincibleTimer > 0f) return;
+
         currentHealth -= damage;
 
         // ensure no null references
@@ -92,5 +98,13 @@ public class PlayerStats : MonoBehaviour
         playerMovement.CurMoveSpeed = playerMovement.MoveSpeed * slowAmount;
         yield return new WaitForSeconds(slowTime);
         playerMovement.CurMoveSpeed = playerMovement.MoveSpeed; 
+    }
+
+    /// <summary>
+    /// make the player invincible for a couple seconds (see invinsibleTimerStart)
+    /// </summary>
+    public void MakePlayerInvunerable()
+    {
+        invincibleTimer = invincibleTimerStart;
     }
 }
