@@ -74,4 +74,14 @@ public class FlurrySpellProjectile : Spell
         }
     }
 
+    protected override void OnTriggerEnter2D(Collider2D other)
+    {
+        //if hits an enemy
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            var eb = other.gameObject.GetComponent<EnemyBase>();
+            DealDamageTo(eb);
+            Destroy(gameObject);
+        }
+    }
 }

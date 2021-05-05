@@ -94,6 +94,9 @@ public class Spell : MonoBehaviour
     /// </summary>
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
+        // don't do anything with spell
+        if (other.gameObject.GetComponent<Spell>()) return;
+
         //if hits an enemy
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -133,7 +136,7 @@ public class Spell : MonoBehaviour
         {
             StartCoroutine(AoEWait());
         }
-        else if (this.gameObject.tag ==  "AoESpawner")
+        else if (this.gameObject.tag == "AoESpawner")
         {
             GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine(AoEWait());
@@ -259,17 +262,20 @@ public class Spell : MonoBehaviour
     /// </summary>
     protected void DealDamageTo(EnemyBase eb)
     {
-        int finalDamage;
-        int numCardsOfElement = Deck.instance.NumOfTypeInHand(cardType) + 1; 
-        float multiplier;
+        if (eb)
+        {
+            int finalDamage;
+            int numCardsOfElement = Deck.instance.NumOfTypeInHand(cardType) + 1; 
+            float multiplier;
 
-        if (numCardsOfElement > 2) multiplier = 2.0f;
-        else if (numCardsOfElement == 2) multiplier = 1.5f;
-        else multiplier = 1.0f;
+            if (numCardsOfElement > 2) multiplier = 2.0f;
+            else if (numCardsOfElement == 2) multiplier = 1.5f;
+            else multiplier = 1.0f;
 
-        finalDamage = Mathf.FloorToInt(spellDamage * multiplier);
-        print("Dealing " + spellDamage + " * " + multiplier + " damage." + " Type: " + cardType);
-        eb.TakeDamage(finalDamage);
+            finalDamage = Mathf.FloorToInt(spellDamage * multiplier);
+            //print("Dealing " + spellDamage + " * " + multiplier + " damage." + " Type: " + cardType);
+            eb.TakeDamage(finalDamage);
+        }
     }
 }
 
