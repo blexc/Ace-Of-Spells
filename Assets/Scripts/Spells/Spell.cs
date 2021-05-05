@@ -94,6 +94,9 @@ public class Spell : MonoBehaviour
     /// </summary>
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
+        // don't do anything with spell
+        if (other.gameObject.GetComponent<Spell>()) return;
+
         //if hits an enemy
         if (other.gameObject.CompareTag("Enemy"))
         {
