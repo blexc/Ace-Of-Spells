@@ -22,11 +22,7 @@ public class TimeManipulatior : MonoBehaviour
     /// </summary>
     public void slowtime(InputAction.CallbackContext context)
     { 
-        if(context.performed)
-        {
-            isSlow = !isSlow;
-        }
-
+        if (context.performed) isSlow = !isSlow;
         Time.timeScale = (isSlow) ? slowTimeScale : 1f;
     }
 

@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: b36a579d03d0e174aacb03ef090af484, type: 3}
   name: Lightning Strike
-  description: Damage in small area. Applies shock after one second. Damage is multiplied
-    by amount of Lightning cards in hand.
+  description: Damage in small area. Applies shock after one second.
   element: 0
   backgroundColor: {r: 0.827451, g: 0.83137256, b: 0.5372549, a: 1}
   spell: {fileID: 4127120409538572277, guid: c39b903da7e3f604692324b050da0f52, type: 3}
