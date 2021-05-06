@@ -56,10 +56,10 @@ public class GameplayUI : MonoBehaviour
     /// Alexander Lopez (2/16/21): Function that takes in the time addition and adjusts the time bar based on it. 
     /// **AHL- Might need to be removed with an enum or power-up section. Need to talk to lead about it.**
     /// </summary>
-    public void TimeUpdate(int Time)
+    public void TimeUpdate(float Time)
     {
-        timetxt.text = "" + Time + '%'; //Changes the text
-        float TimeBaradjustment = (float)Time / 100f; //Gets a percantage of health remaining to adjust the HP UI
+        timetxt.text = "" + Mathf.FloorToInt(Time) + '%'; //Changes the text
+        float TimeBaradjustment = Time / 100f; //Gets a percantage of health remaining to adjust the HP UI
         timeFull.fillAmount = TimeBaradjustment; //Adjusts the HP Image
     }
 
