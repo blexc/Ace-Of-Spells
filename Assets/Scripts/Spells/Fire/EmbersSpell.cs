@@ -14,7 +14,7 @@ public class EmbersSpell : Spell
             Debug.LogError("projectile not attached");
             return;
         }
-        float dist = 5f;
+        float dist = 10f;
         Transform playerTransform = FindObjectOfType<PlayerMovement>().gameObject.transform;
         
         // spawn 360 tiny projectiles around the player and hurle them towards the enemies
@@ -25,7 +25,9 @@ public class EmbersSpell : Spell
             float yComp = Mathf.Sin(theta * Mathf.Deg2Rad) * dist;
             float xComp = Mathf.Cos(theta * Mathf.Deg2Rad) * dist;
 
-            proj.transform.position += new Vector3(xComp, yComp);
+            proj.transform.localPosition = new Vector3(xComp, yComp);
+
+            proj.GetComponent<Spell>().InitSpell();
         }
     }
 

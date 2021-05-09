@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8880743940131354364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.008489549, b: 0, a: 1}
+  m_Color: {r: 0.8207547, g: 0.06405408, b: 0.058072258, a: 0.8156863}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -120,9 +120,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellLifetime: 1.1
   effectlifeTime: 3
+  cardType: 3
   spellDamage: 5
-  spellSpeed: 10
-  applyIgniteEffect: 0
+  spellSpeed: 20
+  applyIgniteEffect: 1
   applyFreezeEffect: 0
   applyShockEffect: 0
   applyRotEffect: 0
@@ -136,7 +137,7 @@ MonoBehaviour:
     m_Bits: 0
   hit: 0
   enemyHit: {fileID: 0}
-  AoETime: 0.1
+  AoETime: 0.3
   burnerPrefab: {fileID: 2061318786083438459, guid: fc2d9a7aede5a6149b6479912c64d4b9,
     type: 3}
   chainLightningPrefab: {fileID: 465657183414590700, guid: 7c1955f9045754742beac5df572f52ca,
@@ -154,7 +155,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0007292628}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -165,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.2, y: 0.19854149}
   m_EdgeRadius: 0
 --- !u!114 &-4947009444928555337
 MonoBehaviour:

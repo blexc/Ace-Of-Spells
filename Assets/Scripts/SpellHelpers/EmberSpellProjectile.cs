@@ -7,10 +7,11 @@ public class EmberSpellProjectile : Spell
     float timer = 3f;
     float speed = 40f;
     Transform target = null;
+    Vector2 localPos;
 
     public override void InitSpell()
     {
-        // do nothing.
+        localPos = transform.localPosition;
     }
 
     protected override void Update()
@@ -21,6 +22,7 @@ public class EmberSpellProjectile : Spell
         if (!Mathf.Approximately(timer, -1f))
         {
             timer -= Time.deltaTime;
+            transform.localPosition = localPos;
             if (timer < 0)
             {
                 timer = -1;
@@ -52,7 +54,7 @@ public class EmberSpellProjectile : Spell
                 var burnerInstance = Instantiate(burnerPrefab, eb.transform);
                 burnerInstance.GetComponent<DamageOverTime>().Init(0.5f, effectlifeTime, 1);
             }
-            eb.TakeDamage((int)spellDamage);
+            DealDamageTo(eb);
             Destroy(gameObject);
         }
     }

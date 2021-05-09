@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c498ffb1c039c88469df81d7cb14a3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLifetime: 10
+  spellLifetime: 5
   effectlifeTime: 3
+  cardType: 1
   spellDamage: 0
   spellSpeed: 5
   applyIgniteEffect: 0

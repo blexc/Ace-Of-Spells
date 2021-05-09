@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 465657183414590703}
   - component: {fileID: 786671727872377382}
   - component: {fileID: -3117018682444694395}
+  - component: {fileID: -1903609121978516861}
   m_Layer: 0
   m_Name: ChainLightningEffect
   m_TagString: Untagged
@@ -96,10 +97,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2026b0c592dcc48a8af4573494e120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellLifetime: 10
+  effectlifeTime: 3
+  cardType: 0
+  spellDamage: 2
+  spellSpeed: 20
+  applyIgniteEffect: 0
+  applyFreezeEffect: 0
+  applyShockEffect: 0
+  applyRotEffect: 0
+  applyChainLightning: 0
+  numIceCounters: 0
+  explosionCollider: {fileID: 0}
+  eruptionCollider: {fileID: 0}
+  explosionDamage: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  hit: 0
+  enemyHit: {fileID: 0}
+  AoETime: 0
+  burnerPrefab: {fileID: 0}
+  chainLightningPrefab: {fileID: 0}
   spellPrefab: {fileID: 8321941504294198269, guid: e110cc8e7001a2142b26af996d173f52,
     type: 3}
   triggerList: []
-  spellDamage: 1
 --- !u!58 &786671727872377382
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -129,3 +151,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroySec: 0.5
+--- !u!50 &-1903609121978516861
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465657183414590700}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

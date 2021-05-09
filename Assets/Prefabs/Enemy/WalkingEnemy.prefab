@@ -33,7 +33,6 @@ GameObject:
   - component: {fileID: 8883940010358041083}
   - component: {fileID: 8883940010358041082}
   - component: {fileID: 8883940010358041084}
-  - component: {fileID: 8883940010358041087}
   - component: {fileID: 8883940010358041085}
   - component: {fileID: 7544297313292112267}
   - component: {fileID: 1846587596215178320}
@@ -74,7 +73,6 @@ MonoBehaviour:
   healthMax: 20
   attackDmg: 15
   attackSpd: 2
-  parentObj: {fileID: 0}
   frozenTimer: 0
 --- !u!114 &8883940010358041080
 MonoBehaviour:
@@ -175,22 +173,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &8883940010358041087
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8883940010358041061}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 8.62
 --- !u!61 &8883940010358041085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -201,7 +183,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

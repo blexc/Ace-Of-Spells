@@ -14,7 +14,6 @@ public class ChargeSpell : Spell
             var eb = enemyHit.GetComponent<EnemyBase>();
             eb.AddStatusEffect(StatusEffect.Shock, effectlifeTime);
         }
-        else Destroy(gameObject);
     }
 
     /// <summary>

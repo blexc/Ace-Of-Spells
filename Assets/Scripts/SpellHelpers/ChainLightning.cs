@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChainLightning : MonoBehaviour
+public class ChainLightning : Spell
 {
     public GameObject spellPrefab;
 
     public List<GameObject> triggerList = new List<GameObject>();
 
-    public int spellDamage = 1;
 
-    void Start()
+    protected override void Start()
     {
+        spellDamage = 1;
         StartCoroutine(Destroy());
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
@@ -26,7 +26,7 @@ public class ChainLightning : MonoBehaviour
                 {
                     Instantiate(spellPrefab, other.gameObject.transform.position, Quaternion.identity);
                     
-                    other.gameObject.GetComponent<EnemyBase>().TakeDamage(spellDamage);
+                    DealDamageTo(other.gameObject.GetComponent<EnemyBase>());
                 }
             }
         }

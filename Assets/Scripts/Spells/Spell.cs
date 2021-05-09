@@ -14,6 +14,7 @@ public class Spell : MonoBehaviour
 
     [SerializeField] protected float spellLifetime = 10f; // in seconds
     [SerializeField] protected int effectlifeTime = 3; // duration of effect in seconds
+    [SerializeField] protected CardType cardType = CardType.NA;
 
     public float spellDamage = 1f;
     [SerializeField] protected float spellSpeed = 20f;
@@ -93,12 +94,15 @@ public class Spell : MonoBehaviour
     /// </summary>
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
+        // don't do anything with spell
+        if (other.gameObject.GetComponent<Spell>()) return;
+
         //if hits an enemy
         if (other.gameObject.CompareTag("Enemy"))
         {
             enemyHit = other.gameObject;
             var eb = enemyHit.GetComponent<EnemyBase>();
-            eb.TakeDamage((int)spellDamage);
+            DealDamageTo(eb);
 
             if (applyChainLightning) Chain();
             if (numIceCounters > 0) eb.AddIceCounters(numIceCounters);
@@ -132,12 +136,12 @@ public class Spell : MonoBehaviour
         {
             StartCoroutine(AoEWait());
         }
-        else if (this.gameObject.tag ==  "AoESpawner")
+        else if (this.gameObject.tag == "AoESpawner")
         {
             GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine(AoEWait());
         }
-        else if (other.tag != "DetectionCircle" && other.tag != "Projectile")
+        else if (other.tag != "DetectionCircle" && other.tag != "Projectile" && !applyChainLightning)
         {
             // delete spell if hits ANYTHING
             // should not be left, since it could hit multiple enemies
@@ -250,6 +254,28 @@ public class Spell : MonoBehaviour
         float squaredRangeA = (a.transform.position - transform.position).sqrMagnitude;
         float squaredRangeB = (b.transform.position - transform.position).sqrMagnitude;
         return squaredRangeA.CompareTo(squaredRangeB);
+    }
+
+    /// <summary>
+    /// deal damage to an enemy, dealing more with more cards of a specific element is in hand
+    /// all spells should call this when they want to deal damage
+    /// </summary>
+    protected void DealDamageTo(EnemyBase eb)
+    {
+        if (eb)
+        {
+            int finalDamage;
+            int numCardsOfElement = Deck.instance.NumOfTypeInHand(cardType) + 1; 
+            float multiplier;
+
+            if (numCardsOfElement > 2) multiplier = 2.0f;
+            else if (numCardsOfElement == 2) multiplier = 1.5f;
+            else multiplier = 1.0f;
+
+            finalDamage = Mathf.FloorToInt(spellDamage * multiplier);
+            //print("Dealing " + spellDamage + " * " + multiplier + " damage." + " Type: " + cardType);
+            eb.TakeDamage(finalDamage);
+        }
     }
 }
 
