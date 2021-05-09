@@ -52,7 +52,6 @@ public class SpikeTrap : MonoBehaviour
     public IEnumerator SpikeWait()
     {
         yield return new WaitForSeconds(triggerTime);
-        GetComponent<SpriteRenderer>().color = Color.red;
         if(isOnSpikes)
         {
             player.GetComponent<PlayerStats>().TakeDamage(damage);
