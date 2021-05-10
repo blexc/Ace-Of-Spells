@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1492,6 +1492,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
+        type: 3}
+      propertyPath: drawPile.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
+        type: 3}
+      propertyPath: drawPile.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: e239838176fea174babd64cc9fa8878e,
+        type: 2}
+    - target: {fileID: 504244567667360446, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
+        type: 3}
+      propertyPath: drawPile.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: cb47ef6e23250b2478e20829f09163b8,
+        type: 2}
     - target: {fileID: 3178216223236789495, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_Name
@@ -1500,7 +1517,7 @@ PrefabInstance:
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.0166707
+      value: 10.733262
       objectReference: {fileID: 0}
     - target: {fileID: 4903810853807377264, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
@@ -8919,32 +8936,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6868531033890206486}
     m_Modifications:
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: destinationScene
-      value: AlexChapman02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: destinationName
-      value: Assets/Scenes/AlexChapman02.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: scenePath
-      value: Assets/Scenes/AlexChapman02.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: sceneName
-      value: AlexChapman02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: rewardSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c589c0ac273047b409cf85efa7ee4241,
-        type: 3}
     - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
       propertyPath: enemiesToSpawn.Array.size
@@ -9043,6 +9034,32 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: destinationScene
+      value: AlexChapman02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: destinationName
+      value: Assets/Scenes/AlexChapman02.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: scenePath
+      value: Assets/Scenes/AlexChapman02.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: sceneName
+      value: AlexChapman02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: rewardSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c589c0ac273047b409cf85efa7ee4241,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9960371577c7441b0db3889fd14a63, type: 3}
 --- !u!4 &459840125 stripped
@@ -41126,7 +41143,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.1780303, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -42198,32 +42215,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6868531033890206486}
     m_Modifications:
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: destinationScene
-      value: AlexChapman02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: destinationName
-      value: Assets/Scenes/AlexChapman02.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: scenePath
-      value: Assets/Scenes/AlexChapman02.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: sceneName
-      value: AlexChapman02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
-        type: 3}
-      propertyPath: rewardSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c589c0ac273047b409cf85efa7ee4241,
-        type: 3}
     - target: {fileID: 32121428908784074, guid: bf9960371577c7441b0db3889fd14a63,
         type: 3}
       propertyPath: enemiesToSpawn.Array.size
@@ -42322,6 +42313,32 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: destinationScene
+      value: AlexChapman02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: destinationName
+      value: Assets/Scenes/AlexChapman02.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: scenePath
+      value: Assets/Scenes/AlexChapman02.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: sceneName
+      value: AlexChapman02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406991767388138396, guid: 538298fd4bde9ff48a8d7fee7b3d601a,
+        type: 3}
+      propertyPath: rewardSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c589c0ac273047b409cf85efa7ee4241,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9960371577c7441b0db3889fd14a63, type: 3}
 --- !u!4 &8418492720188106420 stripped
