@@ -33,8 +33,7 @@ public class BlizzardSpell : Spell
         //if hits an enemy
         if (other.gameObject.CompareTag("Enemy"))
         {
-            enemyHit = other.gameObject;
-            var eb = enemyHit.GetComponent<EnemyBase>();
+            var eb = other.gameObject.GetComponent<EnemyBase>();
             enemies.Add(eb);
             
             // if this is a unique enemy, apply damage to all enemies
@@ -47,7 +46,7 @@ public class BlizzardSpell : Spell
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            var eb = enemyHit.GetComponent<EnemyBase>();
+            var eb = other.gameObject.GetComponent<EnemyBase>();
 
             // if you're slow, stop being slow
             if (eb.IsSlowed) eb.RemoveEffect(StatusEffect.Slow);
