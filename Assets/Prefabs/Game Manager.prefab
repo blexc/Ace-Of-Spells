@@ -1184,7 +1184,43 @@ PrefabInstance:
         type: 3}
       propertyPath: drawPile.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 2aad6fc885e09b9458548024510ee3dd,
+      objectReference: {fileID: 11400000, guid: 9898767184fd04c419ed802ad42d1113,
+        type: 2}
+    - target: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
+        type: 3}
+      propertyPath: drawPile.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8da8efbdac07f99458ce6d7984f22188,
+        type: 2}
+    - target: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
+        type: 3}
+      propertyPath: drawPile.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: bb5c482e001a7444d8de8efcfcabb847,
+        type: 2}
+    - target: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
+        type: 3}
+      propertyPath: drawPile.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: a50a8ab8009c9a14cae1740a208110f9,
+        type: 2}
+    - target: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
+        type: 3}
+      propertyPath: drawPile.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: eedd7c73ef202fa49885246aea24d50b,
+        type: 2}
+    - target: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
+        type: 3}
+      propertyPath: drawPile.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bce8e145ec5d19489c6c1a147786db2,
+        type: 2}
+    - target: {fileID: 7359602793790444723, guid: 17ed7a0256f0847429c0a27d1998ee33,
+        type: 3}
+      propertyPath: drawPile.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: a3186399bfa6e56429d08099a9e962dc,
         type: 2}
     - target: {fileID: 7359602793790444725, guid: 17ed7a0256f0847429c0a27d1998ee33,
         type: 3}
