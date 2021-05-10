@@ -32,6 +32,8 @@ public class CardManager : MonoBehaviour
         card3.GetComponent<CardDisplay>().card = cardsInHand[2];
         discardUI.text = "" + Deck.instance.discardPile.Count; //Updates the discard Num UI
         deckUI.text = "" + Deck.instance.drawPile.Count; //Updates the deck Num UI
+
+        showSelectedCard(Deck.instance.handSelectionIndex);
     }
 
     /// <summary>
