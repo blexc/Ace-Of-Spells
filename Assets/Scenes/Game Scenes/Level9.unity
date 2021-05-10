@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -254,6 +254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 18.466667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278012366111250601, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 8948110860438753254, guid: 2bcb69de9bfa53b459e0c3b5caf34fe9,
         type: 3}
@@ -6255,21 +6260,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 8385039278173496649, guid: ab34a7482fce3914f9e83aab9c7742e8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385039278173496649, guid: ab34a7482fce3914f9e83aab9c7742e8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385039278173496649, guid: ab34a7482fce3914f9e83aab9c7742e8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8385039278173496653, guid: ab34a7482fce3914f9e83aab9c7742e8,
         type: 3}
       propertyPath: m_Name
@@ -7877,6 +7867,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 763939262}
     m_Modifications:
+    - target: {fileID: 1913553704174109024, guid: ab34a7482fce3914f9e83aab9c7742e8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913553704174109024, guid: ab34a7482fce3914f9e83aab9c7742e8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913553704174109024, guid: ab34a7482fce3914f9e83aab9c7742e8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8385039278173496649, guid: ab34a7482fce3914f9e83aab9c7742e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7931,21 +7936,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385039278173496649, guid: ab34a7482fce3914f9e83aab9c7742e8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385039278173496649, guid: ab34a7482fce3914f9e83aab9c7742e8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385039278173496649, guid: ab34a7482fce3914f9e83aab9c7742e8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 8385039278173496653, guid: ab34a7482fce3914f9e83aab9c7742e8,
         type: 3}
@@ -10701,7 +10691,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.173913, y: 1}
+    m_SensorSize: {x: 2.1780303, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

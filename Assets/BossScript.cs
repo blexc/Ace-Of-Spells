@@ -11,6 +11,8 @@ public class BossScript : MonoBehaviour
 
     public GameObject fanAttackPrefab;
 
+    private Animator anim;
+
     public GameObject table1;
     public GameObject table2;
     public GameObject table3;
@@ -20,14 +22,9 @@ public class BossScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = gameObject.GetComponent<Animator>();
         canAttack = true;
         StartCoroutine(FanAttack());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
    
@@ -35,6 +32,7 @@ public class BossScript : MonoBehaviour
     {
         if(canAttack || loopNumber >= 3)
         {
+            anim.SetTrigger("Deal");
             canAttack = false;
             //print("FAN ATTACK");
             Instantiate(fanAttackPrefab, transform.position, Quaternion.identity);
@@ -95,6 +93,7 @@ public class BossScript : MonoBehaviour
     {
         if (canAttack || loopNumber >= 3)
         {
+            anim.SetTrigger("Slap");
             canAttack = false;
             //print("SLAP ATTACK");
 
