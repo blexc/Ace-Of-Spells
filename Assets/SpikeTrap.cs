@@ -33,6 +33,7 @@ public class SpikeTrap : MonoBehaviour
             player = other.gameObject;
             if(canSpikes)
             {
+                gameObject.GetComponent<Animator>().SetTrigger("Trigger");
                 StartCoroutine(SpikeWait());
                 canSpikes = false;
 
