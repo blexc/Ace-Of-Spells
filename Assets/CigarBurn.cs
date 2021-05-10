@@ -5,6 +5,7 @@ using UnityEngine;
 public class CigarBurn : MonoBehaviour
 {
     public int damage;
+    public float duration;
 
     private GameObject player;
 
@@ -12,7 +13,7 @@ public class CigarBurn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(gameObject, duration);
     }
 
     // Update is called once per frame
